@@ -1,0 +1,176 @@
+
+//kp=1/60
+targ: 90, head: 0, power: -99, dedt: 0.000000, int:0.000000
+targ: 90, head: 0, power: -99, dedt: 0.000000, int:0.540000
+targ: 90, head: 0, power: -99, dedt: 0.000000, int:1.080000
+targ: 90, head: 0, power: -99, dedt: 0.000000, int:1.620000
+targ: 90, head: 0, power: -99, dedt: 0.000000, int:2.160000
+targ: 90, head: 0, power: -99, dedt: 0.000000, int:2.700000
+targ: 90, head: 0, power: -99, dedt: 0.000000, int:3.240000
+targ: 90, head: 0, power: -99, dedt: -4.001892, int:3.780000
+targ: 90, head: 0, power: -99, dedt: 0.000000, int:4.410000
+targ: 90, head: 0, power: -99, dedt: 0.000000, int:4.950000
+targ: 90, head: 0, power: -99, dedt: 0.000000, int:5.490000
+targ: 90, head: 0, power: -99, dedt: -11.001526, int:6.030000
+targ: 90, head: 0, power: -99, dedt: -11.001526, int:6.570000
+targ: 90, head: 1, power: -99, dedt: -42.001526, int:7.104000
+targ: 90, head: 1, power: -99, dedt: -46.001526, int:7.727000
+targ: 90, head: 1, power: -99, dedt: -46.001526, int:8.261000
+targ: 90, head: 2, power: -99, dedt: -86.001526, int:8.965000
+targ: 90, head: 3, power: -99, dedt: -116.001526, int:9.487000
+targ: 90, head: 3, power: -99, dedt: -116.001526, int:10.096001
+targ: 90, head: 4, power: -99, dedt: -123.001526, int:10.612000
+targ: 90, head: 6, power: -99, dedt: -136.001526, int:11.284000
+targ: 90, head: 6, power: -99, dedt: -136.001526, int:11.788000
+ dedt: -140.001526, int:16.593000
+targ: 90, head: 16, p -99, dedt: -153.001526, int:19.028000
+targ: 90, head: 21, power: -99, dedt: -153.001526, int:19.441999
+targ: 90, head: 22, power: -99, dedt: -154.001526, int:19.917999
+targ: 90, head: 24, power: -99, dedt: -170.001526, int:20.313999
+targ: 90, head: 24, power: -99, dedt: -170.001526, int:20.775999
+targ: 90, head: 26, power: -99, dedt: -167.001526, head: 29, power: -99, dedt: -159.001526, int:22.716999
+targ: 90, head: 31, power: -97, dedt: -166.001526, int:23.129999
+targ: 90, head: 32, power: -96, dedt: -164.001526, int:23.477999
+targ: 90, head: 32, power: -96, dedt: -164.001526, int:23.941999
+targ: 90, head: 34, power: -92, dedt: -167.001526, int:24.389999
+targ: 90, head: 36, power: -89, dedarg: 90, head: 40, power: -82, dedt: -168.001526, int:26.061998
+targ: 90, head: 41, power: -81, dedt: -169.001526, int:26.355999
+targ: 90, head: 41, power: -81, dedt: -169.001526, int:26.747999
+targ: 90, head: 43, power: -77, dedt: -169.001526, int:27.077000
+targ: 90, head: 45, power: -74, dedt: -174.001526, int:27.437000
+targ: 90, head: 46, power: int:28.303001
+targ: 90, head: 50, power: -66, dedt: -172.001526, int:28.583002
+targ: 90, head: 50, power: -66, dedt: -172.001526, int:28.903002
+targ: 90, head: 52, power: -62, dedt: -162.001526, int:29.131002
+targ: 90, head: 53, power: -61, dedt: -170.001526, int:29.390003
+targ: 90, head: 55, power: -57, dedt: -168.001526, int:29.670004
+targ: 90, power: -49, dedt: -161.001526, int:30.837004
+targ: 90, head: 61, power: -47, dedt: -166.001526, int:31.040003
+targ: 90, head: 61, power: -47, dedt: -166.001526, int:31.214003
+targ: 90, head: 63, power: -44, dedt: -166.001526, int:31.376003
+targ: 90, head: 65, power: -41, dedt: -163.001526, int:31.576004
+targ: 90, head: 65, power: -41, dedt: -163.00int:32.254005
+targ: 90, head: 70, power: -32, dedt: -162.001526, int:32.374004
+targ: 90, head: 71, power: -31, dedt: -161.001526, int:32.545006
+targ: 90, head: 73, power: -27, dedt: -155.001526, int:32.647007
+targ: 90, head: 74, power: -26, dedt: -150.001526, int:32.791008
+targ: 90, head: 74, power: -26, dedt: -150.001526, int:32.887009
+targ: 90, h 79, power: -17, dedt: -152.001526, int:33.229008
+targ: 90, head: 81, power: -14, dedt: -150.001526, int:33.283009
+targ: 90, head: 82, power: -12, dedt: -142.001526, int:33.347008
+targ: 90, head: 82, power: -12, dedt: -142.001526, int:33.403008
+targ: 90, head: 83, power: -11, dedt: -144.001526, int:33.452007
+targ: 90, head: 85, power: -7, dedt: -14:33.562008
+targ: 90, head: 88, power: -2, dedt: -143.001526, int:33.580009
+targ: 90, head: 89, power: -1, dedt: -135.001526, int:33.588009
+targ: 90, head: 90, power: 0, dedt: -130.001526, int:33.588009
+targ: 90, head: 92, power: 3, dedt: -124.001526, int:33.576008
+targ: 90, head: 93, power: 5, dedt: -116.001526, int:33.552010
+targ: 90, head: 93, po.001526, int:33.452011
+targ: 90, head: 96, power: 10, dedt: -118.001526, int:33.404011
+targ: 90, head: 96, power: 10, dedt: -118.001526, int:33.368011
+targ: 90, head: 98, power: 13, dedt: -118.001526, int:33.320011
+targ: 90, head: 99, power: 15, dedt: -108.001526, int:33.248013
+targ: 90, head: 99, power: 15, dedt: -108.001526, int:33.194012
+targ: 91, power: 18, dedt: -4.001526, int:32.828007
+targ: 90, head: 101, power: 18, dedt: 31.998474, int:32.729008
+targ: 90, head: 101, power: 18, dedt: 31.998474, int:32.663006
+targ: 90, head: 100, power: 17, dedt: 38.998474, int:32.593006
+targ: 90, head: 100, power: 17, dedt: 38.998474, int:32.533005
+targ: 90, head: 100, power: 17, dedt: 26.998474, int:ead: 99, power: 15, dedt: 31.998474, int:32.049000
+targ: 90, head: 99, power: 15, dedt: 31.998474, int:31.994999
+targ: 90, head: 98, power: 13, dedt: 54.998474, int:31.931000
+targ: 90, head: 97, power: 12, dedt: 60.998474, int:31.889000
+targ: 90, head: 97, power: 12, dedt: 60.998474, int:31.847000
+targ: 90, head: 97, power: 12, dedt: 52.998474, int, head: 95, power: 8, dedt: 51.998474, int:31.636999
+targ: 90, head: 95, power: 8, dedt: 51.99597998
+targ: 90, head: 87, power: -4, dedt: -6.001526, 526, int:31.748993
+targ: 90, head: 88, power: -2, dedt: -6.001526, int:31.760992
+targ: 90, head: 88, power: -2, dedt: -6.001526, int:31.776993
+targ: 90, head: 88, power: -2, dedt: -6.001526, int:31.788992
+targ: 90, head: 88, power: -2, dedt: -4.001526, int:31.802992
+targ: 90, head: 88, power: -2, dedt: -4.001526, int:31.814991
+targ: 90, head: 88, p2, dedt: -2.001526, int:31.938984
+targ: 90, head: 88, power: -2, dedt: 0.000000, int:31.952984
+targ: 90, head: 88, power: -2, dedt: 0.000000, int:31.964983
+targ: 90, head: 88, power: -2, dedt: 0.000000, int:31.976982
+targ: 90, head: 88, power: -2, dedt: 2.088745, int:31.988981
+targ: 90, head: 88, power: -2, dedt: 2.088745, int:32.004982
+targ: 90, h-2, dedt: 0.000000, int:32.066986
+targ: 90, head: 88, power: -2, dedt: 0.000000, int:32.078987
+targ: 90, head: 88, power: -2, dedt: 0.000000, int:32.090988
+targ: 90, head: 88, power: -2, dedt: 0.000000, int:32.102989
+targ: 90, head: 88, power: -2, dedt: 0.000000, int:32.114990
+targ: 90, head: 88, power: -2, dedt: 0.000000, int:32.126991
+targ: 90, h-2, dedt: 0.000000, int:32.188995
+targ: 90, head: 88, power: -2, dedt: 0.000000, int:32.200996
+targ: 90, head: 88, power: -2, dedt: 0.000000, int:32.212997
+targ: 90, head: 88, power: -2, dedt: 0.000000, int:32.224998
+targ: 90, head: 88, power: -2, dedt: 0.000000, int:32.237000
+targ: 90, head: 88, power: -2, dedt: 0.000000, int:32.249001
+targ: 90, h-2, dedt: 0.000000, int:32.339005
+targ: 90, head: 88, power: -2, dedt: 0.000000, int:32.353004
+targ: 90, head: 88, power: -2, dedt: 0.000000, int:32.365005
+targ: 90, head: 88, power: -2, dedt: 0.000000, int:32.377007
+targ: 90, head: 88, power: -2, dedt: 0.000000, int:32.389008
+targ: 90, head: 88, power: -2, dedt: 0.000000, int:32.401009
+targ: 90, head: 88, power: -2, dedt: 0.000000, int:32.415009
+targ: 90, head: 88, power: -2, dedt: 0.000000, int:32.427010
+targ: 90, head: 88, power: -2, dedt: 0.000000, int:32.439011
+targ: 90, head: 88, power: -2, dedt: 0.000000, int:32.453011
+targ: 90, head: 88, power: -2, dedt: 0.000000, int:32.465012
+targ: 90, head: 88, power: -2, dedt: 0.000000, int:32.477013
+targ: 90, head: 88, power: -2, dedt: 0.000000, int:32.489014
+targ: 90, head: 88, power: -2, dedt: 0.000000, int:32.503014
+targ: 90, head: 88, power: -2, dedt: 0.000000, int:32.515015
+targ: 90, head: 88, power: -2, dedt: 0.000000, int:32.527016
+targ: 90, head: 88, power: -2, dedt: 0.000000, int:32.539017
+targ: 90, head: 88, power: -2, dedt: 0.000000, int:32.551018
+targ: 90, head: 88, power: -2, dedt: 0.000000, int:32.563019
+targ: 90, head: 88, power: -2, dedt: 0.000000, int:32.575020
+targ: 90, head: 88, power: -2, dedt: 0.000000, int:32.587021
+targ: 90, head: 88, power: -2, dedt: 0.000000, int:32.599022
+targ: 90, head: 88, power: -2, dedt: 0.000000, int:32.611023
+targ: 90, head: 88, power: -2, dedt: 0.000000, int:32.623024
+targ: 90, head: 88, power: -2, dedt: 0.000000, int:32.635025
+targ: 90, head: 88, power: -2, dedt: 0.000000, int:32.647026
+targ: 90, head: 88, power: -2, dedt: 0.000000, int:32.659027
+targ: 90, head: 88, power: -2, dedt: 0.000000, int:32.673027
+targ: 90, head: 88, power: -2, dedt: 0.000000, int:32.685028
+targ: 90, head: 88, power: -2, dedt: 0.000000, int:32.697029
+targ: 90, head: 88, power: -2, dedt: 0.000000, int:32.709030
+targ: 90, head: 88, power: -2, dedt: 0.000000, int:32.723030
+targ: 90, head: 88, power: -2, dedt: 0.000000, int:32.735031
+targ: 90, head: 88, power: -2, dedt: 0.000000, int:32.747032
+targ: 90, head: 88, power: -2, dedt: 0.000000, int:32.759033
+targ: 90, head: 88, power: -2, dedt: 0.000000, int:32.773033
+targ: 90, head: 88, power: -2, dedt: 0.000000, int:32.785034
+targ: 90, head: 88, power: -2, dedt: 0.000000, int:32.797035
+targ: 90, head: 88, power: -2, dedt: 0.000000, int:32.809036
+targ: 90, head: 88, power: -2, dedt: 0.000000, int:32.821037
+targ: 90, head: 88, power: -2, dedt: 0.000000, int:32.833038
+targ: 90, head: 88, power: -2, dedt: 0.000000, int:32.847038
+targ: 90, head: 88, power: -2, dedt: 0.000000, int:32.859039
+targ: 90, head: 88, power: -2, dedt: 0.000000, int:32.873039
+targ: 90, head: 88, power: -2, dedt: 0.000000, int:32.885040
+targ: 90, head: 88, power: -2, dedt: 0.000000, int:32.899040
+targ: 90, head: 88, power: -2, dedt: 0.000000, int:32.911041
+targ: 90, head: 88, power: -2, dedt: 0.000000, int:32.925041
+targ: 90, head: 88, power: -2, dedt: 0.000000, int:32.937042
+targ: 90, head: 88, power: -2, dedt: 0.000000, int:32.951042
+targ: 90, head: 88, power: -2, dedt: 0.000000, int:32.963043
+targ: 90, head: 88, power: -2, dedt: 0.000000, int:32.977043
+targ: 90, head: 88, power: -2, dedt: 0.000000, int:32.989044
+targ: 90, head: 88, power: -2, dedt: 0.000000, int:33.003044
+targ: 90, head: 88, power: -2, dedt: 0.000000, int:33.015045
+targ: 90, head: 88, power: -2, dedt: 0.000000, int:33.029045
+targ: 90, head: 88, power: -2, dedt: 0.000000, int:33.041046
+targ: 90, head: 88, power: -2, dedt: 0.000000, int:33.055046
+targ: 90, head: 88, power: -2, dedt: 0.000000, int:33.067047
+targ: 90, head: 88, power: -2, dedt: 0.000000, int:33.079048
+targ: 90, head: 88, power: -2, dedt: 0.000000, int:33.091049
+targ: 90, head: 88, power: -2, dedt: 0.000000, int:33.103050
+targ: 90, head: 88, power: -2, dedt: 0.000000, int:33.115051
+targ: 90, head: 88, power: -2, dedt: 0.000000, int:33.125050
+targ: 90, head: 88, power: -2, dedt: 0.000000, int:33.137051
+targ: 90, head: 88, power: -2, dedt: 0.000000, int:33.149052

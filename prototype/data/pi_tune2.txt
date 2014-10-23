@@ -1,0 +1,215 @@
+const int TURN_POWER=100;
+const int easing_zone =60;//to be tuned
+const int TOLERANCE=1;
+const float kp = 1.0/easing_zone;
+const float kd = 0.0;//not  needed
+const float ki = 0.001;//to be tuned to eliminate offset
+
+targ: 180, head: 0, power: -99, dedt: 0.000000, int:0.000000
+targ: 180, head: 0, power: -99, dedt: 0.000000, int:0.900000
+targ: 180, head: 0, power: -99, dedt: 0.000000, int:1.980000
+targ: 180, head: 0, power: -99, dedt: 0.000000, int:3.060000
+targ: 180, head: 0, power: -99, dedt: 0.000000, int:4.140000
+targ: 180, head: 0, power: -99, dedt: 0.000000, int:5.220000
+targ: 180, head: 0, power: -99, dedt: 0.000000, int:6.300000
+targ: 180, head: 0, power: -99, dedt: 0.000000, int:7.380000
+targ: 180, head: 0, power: -99, dedt: -3.737122, int:8.460000
+targ: 180, head: 0, power: -99, dedt: -3.737122, int:9.720000
+targ: 180, head: 0, power: -99, dedt: -8.737122, int:10.800000
+targ: 180, head: 0, power: -99, dedt: -8.737122, int:11.880000
+targ: 180, head: 0, power: -99, dedt: -24.737122, int:13.140000
+targ: 180, head: 1, power: -99, dedt: -37.737122, int:14.214001
+targ: 180, head: 1, power: -99, dedt: -37.737122, int:15.288001
+ -99, dedt: -182.737122, int:42.016994
+targ: 180, head:dedt: -180.737122, int:47.671993
+targ: 180, head: 30, power: -99, dedt: -180.737122, int:48.721992
+targ: 180, head: 32, power: -99, dedt: -182.737122, int:49.609993
+targ: 180, head: 34, power: -99, dedt: -180.737122, int:50.777992
+targ: 180, head: 36, power: -99, dedt: -183.737122, int:51.929993
+targ: 180, head: 36, power: -99, dedt: -183.737122, i92.737122, int:56.033993
+targ: 180, head: 42, power: -99, dedt: -193.737122, int:56.861992
+targ: 180, head: 44, power: -99, dedt: -187.737122, int:57.677994
+targ: 180, head: 44, power: -99, dedt: -187.737122, int:58.629993
+targ: 180, head: 45, power: -99, dedt: -187.737122, int:59.439995
+targ: 180, head: 47, power: -99, dedt: -188.737122, int:60.2322, int:61.954994
+targ: 180, head: 51, power: -99, dedt: -192.737122, int:62.857994
+targ: 180, head: 51, power: -99, dedt: -192.737122, int:63.631992
+targ: 180, head: 53, power: -99, dedt: -189.737122, int:64.393990
+targ: 180, head: 53, power: -99, dedt: -189.737122, int:65.282990
+targ: 180, head: 55, power: -99, dedt: -190.737122, int:66.032990
+ta.357986
+targ: 180, head: 61, power: -99, dedt: -193.737122, int:69.071983
+targ: 180, head: 61, power: -99, dedt: -193.737122, int:69.785980
+targ: 180, head: 63, power: -99, dedt: -194.737122, int:70.487984
+targ: 180, head: 63, power: -99, dedt: -194.737122, int:71.189987
+targ: 180, head: 65, power: -99, dedt: -202.737122, int:71.879990
+targ: 180, hd: 73, power: -99, dedt: -189.737122, int:76.822990
+targ: 180, head: 75, power: -99, dedt: -189.737122, int:77.452988
+targ: 180, head: 76, power: -99, dedt: -189.737122, int:78.076988
+targ: 180, head: 76, power: -99, dedt: -189.737122, int:78.804985
+targ: 180, head: 78, power: -99, dedt: -193.737122, int:79.416985
+targ: 180, head: 80, power: -99, d7122, int:86.868973
+targ: 180, head: 96, power: -99, dedt: -198.737122, int:87.372971
+targ: 180, head: 96, power: -99, dedt: -198.737122, int:87.960968
+targ: 180, head: 98, power: -99, dedt: -202.737122, int:88.452965
+targ: 180, head: 100, power: -99, dedt: -201.737122, int:88.932968
+targ: 180, head: 100, power: -99, dedt: -201.737122, int:89.41297t:90.944977
+targ: 180, head: 106, power: -99, dedt: -198.737122, int:91.388977
+targ: 180, head: 106, power: -99, dedt: -198.737122, int:91.832977
+targ: 180, head: 108, power: -99, dedt: -198.737122, int:92.336975
+targ: 180, head: 110, power: -99, dedt: -198.737122, int:92.756973
+targ: 180, head: 110, power: -99, dedt: -198.737122, int:93.246971
+tar122, int:94.512970
+targ: 180, head: 116, power: -99, dedt: -202.737122, int:94.896973
+targ: 180, head: 118, power: -99, dedt: -203.737122, int:95.330971
+targ: 180, head: 118, power: -99, dedt: -203.737122, int:95.764969
+targ: 180, head: 120, power: -99, dedt: -192.737122, int:96.244972
+targ: 180, head: 122, power: -99, dedt: -200.737122, int:96.65037122, int:97.056969
+targ: 180, head: 124, power: -99, dedt: -199.737122, int:97.392967
+targ: 180, head: 126, power: -99, dedt: -201.737122, int:97.716965
+targ: 180, head: 126, power: -99, dedt: -201.737122, int:98.094963
+targ: 180, head: 128, power: -96, dedt: -204.737122, int:98.406960
+targ: 180, head: 130, power: -92, dedt: -208.737122, int:98.7 dedt: -198.737122, int:99.800957
+targ: 180, head: 137, power: -81, dedt: -202.737122, int:100.101959
+targ: 180, head: 137, power: -81, dedt: -202.737122, int:100.359962
+targ: 180, head: 139, power: -77, dedt: -206.737122, int:100.646965
+targ: 180, head: 141, power: -74, dedt: -199.737122, int:100.919968
+targ: 180, head: 141, power: -74, dedt: -199ad: 143, power: -71, dedt: -202.737122, int:101.597969
+targ: 180, head: 145, power: -68, dedt: -196.737122, int:101.807968
+targ: 180, head: 147, power: -64, dedt: -201.737122, int:102.038971
+targ: 180, head: 147, power: -64, dedt: -201.737122, int:102.236969
+targ: 180, head: 149, power: -61, dedt: -201.737122, int:102.515968
+targ: 180, head: 151, p int:103.283974
+targ: 180, head: 157, power: -48, dedt: -196.737122, int:103.444977
+targ: 180,37122, int:103.862976
+targ: 180, head: 197, power: 18, 96, power: 16, dedt: 53.262878, int:102.889977
+targ: 180, head: 196, power: 16, dedt: 53.262878, int:102.793976
+targ: 180, head: 195, power: 15, dedt: 52.262878, int:102.658974
+targ: 180, head: 195, power: 15, dedt: 43.262878, int:102.568977
+targ: 180, head: 195, power: 15, dedt: 43.262878, int:102.463974
+targ: 180, head: 194, power: 13, dedt: 43.2int:101.845970
+targ: 180, head: 192, power: 10, dedt: 50.262878, int:101.749969
+targ: 180, head: 192, power: 10, dedt: 50.262878, int:101.677971
+targ: 180, head: 192, power: 10, dedt: 49.262878, int:101.605972
+targ: 180, head: 191, power: 8, dedt: 49.262878, int:101.539970
+targ: 180, head: 191, power: 8, dedt: 49.262878, int:101.462967
+targ: 180, her: 5, dedt: 40.262878, int:101.078964
+targ: 180, head: 189, power: 5, dedt: 40.262878, int:101.024963
+targ: 180, head: 189, power: 5, dedt: 39.262878, int:100.961960
+targ: 180, head: 189, power: 5, dedt: 39.262878, int:100.907959
+targ: 180, head: 188, power: 3, dedt: 36.262878, int:100.843956
+targ: 180, head: 188, power: 3, dedt: 40.262878, int:10, head: 187, power: 2, dedt: 32.262878, int:100.649963
+targ: 180, head: 187, power: 2, dedt: 32.262878, int:100.607964
+targ: 180, head: 187, power: 2, dedt: 30.262878, int:100.558960
+targ: 180, head: 187, power: 2, dedt: 26.262878, int:100.502960
+targ: 180, head: 187, power: 2, dedt: 26.262878, int:100.460960
+targ: 180, head: 186, power: 0, dedt: 22957
+targ: 180, head: 186, power: 0, dedt: 16.262878, int:100.346954
+targ: 180, head: 186, power: 0, dedt: 10.262878, int:100.310951
+targ: 180, head: 186, power: 0, dedt: 8.262878, int:100.262955
+targ: 180, head: 186, power: 0, dedt: 8.262878, int:100.226952
+targ: 180, head: 186, power: 0, dedt: 7.262878, int:100.178955
+targ: 180, head: 186, power: int:100.064949
+targ: 180, head: 186, power: 0, dedt: -5.737122, int:100.022949
+targ: 180, head: 186, power: 0, dedt: -5.737122, int:99.986946
+targ: 180, head: 186, power: 0, dedt: -2.737122, int:99.950943
+targ: 180, head: 186, power: 0, dedt: -2.737122, int:99.914940
+targ: 180, head: 186, power: 0, dedt: 2.262878, int:99.872940
+targ: 180, head: 182878, int:99.800934
+targ: 180, head: 186, power: 0, dedt: 6.262878, int:99.758934
+targ: 180, head: 186, power: 0, dedt: 3.262878, int:99.722931
+targ: 180, head: 186, power: 0, dedt: 3.262878, int:99.686928
+targ: 180, head: 186, power: 0, dedt: 0.000000, int:99.644928
+targ: 180, head: 186, power: 0, dedt: 0.000000, int:99.608925
+targ: 180, head: 186 -1.587097, int:99.380913
+targ: 180, head: 186, power: 0, dedt: -1.428406, int:99.344910
+targ: 180, head: 186, power: 0, dedt: -1.285522, int:99.302910
+targ: 180, head: 186, power: 0, dedt: -1.285522, int:99.260910
+targ: 180, head: 186, power: 0, dedt: 0.000000, int:99.224907
+targ: 180, head: 186, power: 0, dedt: 0.000000, int:99.188904
+targ: 180, edt: 2.772827, int:99.116898
+targ: 180, head: 186, power: 0, dedt: 2.772827, int:99.080894
+targ: 180, head: 186, power: 0, dedt: 2.772827, int:99.038895
+targ: 180, head: 186, power: 0, dedt: 0.000000, int:99.002892
+targ: 180, head: 186, power: 0, dedt: 0.000000, int:98.966888
+targ: 180, head: 186, power: 0, dedt: 0.000000, int:98.930885
+targ: 180, edt: 0.000000, int:98.708870
+targ: 180, head: 186, power: 0, dedt: 0.000000, int:98.666870
+targ: 180, head: 186, power: 0, dedt: -1.399231, int:98.630867
+targ: 180, head: 186, power: 0, dedt: 0.000000, int:98.582870
+targ: 180, head: 186, power: 0, dedt: 0.000000, int:98.540871
+targ: 180, head: 186, power: 0, dedt: 0.000000, int:98.498871
+targ: 180,dedt: 0.000000, int:97.940834
+targ: 180, head: 186, power: 0, dedt: 0.000000, int:97.898834
+targ: 180, head: 186, power: 0, dedt: 0.000000, int:97.862831
+targ: 180, head: 186, power: 0, dedt: 0.000000, int:97.826828
+targ: 180, head: 186, power: 0, dedt: 0.000000, int:97.790825
+targ: 180, head: 186, power: 0, dedt: 0.000000, int:97.754822
+targ: 180, dedt: 0.000000, int:97.502823
+targ: 180, head: 186, power: 0, dedt: 0.000000, int:97.460823
+t0000, int:96.230766
+targ: 180, head: 186, power: 0, ded0, int:95.936745
+targ: 180, head: 186, power: 0, dedt: 0.000000, int:95.900742
+targ: 180, head: 186, power: 0, dedt: 0.000000, int:95.858742
+targ: 180, head: 186, power: 0, dedt: 0.000000, int:95.822739
+targ: 180, head: 186, power: 0, dedt: 0.000000, int:95.786736
+targ: 180, head: 186, power: 0, dedt: 0.000000, int:95.750732
+targ: 180, head: 186, power: 0, dedt: 0.000000, int:95.708733
+targ: 180, head: 186, power: 0, dedt: 0.000000, int:95.672729
+targ: 180, head: 186, power: 0, dedt: 0.000000, int:95.636726
+targ: 180, head: 186, power: 0, dedt: 0.000000, int:95.600723
+targ: 180, head: 186, power: 0, dedt: 0.000000, int:95.558723
+targ: 180, head: 186, power: 0, dedt: 0.000000, int:95.522720
+targ: 180, head: 186, power: 0, dedt: 0.000000, int:95.486717
+targ: 180, head: 186, power: 0, dedt: 0.000000, int:95.444717
+targ: 180, head: 186, power: 0, dedt: 0.000000, int:95.408714
+targ: 180, head: 186, power: 0, dedt: 0.000000, int:95.372711
+targ: 180, head: 186, power: 0, dedt: 0.000000, int:95.336708
+targ: 180, head: 186, power: 0, dedt: 0.000000, int:95.300705
+targ: 180, head: 186, power: 0, dedt: 0.000000, int:95.258705
+targ: 180, head: 186, power: 0, dedt: 0.000000, int:95.222702
+targ: 180, head: 186, power: 0, dedt: 0.000000, int:95.180702
+targ: 180, head: 186, power: 0, dedt: 0.000000, int:95.138702
+targ: 180, head: 186, power: 0, dedt: 0.000000, int:95.096703
+targ: 180, head: 186, power: 0, dedt: 0.000000, int:95.054703
+targ: 180, head: 186, power: 0, dedt: 0.000000, int:95.018700
+targ: 180, head: 186, power: 1, dedt: 0.000000, int:94.976700
+targ: 180, head: 186, power: 1, dedt: 0.000000, int:94.940697
+targ: 180, head: 186, power: 1, dedt: 0.000000, int:94.904694
+targ: 180, head: 186, power: 1, dedt: 0.000000, int:94.862694
+targ: 180, head: 186, power: 1, dedt: 0.000000, int:94.826691
+targ: 180, head: 186, power: 1, dedt: 0.000000, int:94.784691
+targ: 180, head: 186, power: 1, dedt: 1.401428, int:94.748688
+targ: 180, head: 186, power: 1, dedt: 1.401428, int:94.706688
+targ: 180, head: 186, power: 1, dedt: 8.261292, int:94.670685
+targ: 180, head: 186, power: 1, dedt: 11.261292, int:94.628685
+targ: 180, head: 186, power: 1, dedt: 11.261292, int:94.592682
+targ: 180, head: 185, power: 0, dedt: 12.261292, int:94.557678
+targ: 180, head: 186, power: 1, dedt: -1.738708, int:94.521675
+targ: 180, head: 186, power: 1, dedt: -1.738708, int:94.479675
+targ: 180, head: 186, power: 1, dedt: -7.564819, int:94.443672
+targ: 180, head: 186, power: 1, dedt: -7.564819, int:94.407669
+targ: 180, head: 186, power: 1, dedt: -6.564819, int:94.365669
+targ: 180, head: 186, power: 1, dedt: 0.000000, int:94.329666
+targ: 180, head: 186, power: 1, dedt: 0.000000, int:94.293663
+targ: 180, head: 186, power: 1, dedt: 3.391663, int:94.257660
+targ: 180, head: 186, power: 1, dedt: 4.391663, int:94.221657
+targ: 180, head: 186, power: 1, dedt: 4.391663, int:94.179657
+targ: 180, head: 186, power: 1, dedt: 0.000000, int:94.143654
+targ: 180, head: 186, power: 1, dedt: 0.000000, int:94.107651
+targ: 180, head: 186, power: 1, dedt: -2.647522, int:94.071648
+targ: 180, head: 186, power: 1, dedt: -1.647522, int:94.035645
+targ: 180, head: 186, power: 1, dedt: -1.647522, int:93.999641
+targ: 180, head: 186, power: 1, dedt: 1.517212, int:93.963638
+targ: 180, head: 186, power: 1, dedt: 1.517212, int:93.927635
+targ: 180, head: 186, power: 1, dedt: 1.365479, int:93.885635
+targ: 180, head: 186, power: 1, dedt: 0.000000, int:93.849632
+targ: 180, head: 186, power: 1, dedt: 0.000000, int:93.813629
+targ: 180, head: 186, power: 1, dedt: -1.793945, int:93.777626
+targ: 180, head: 186, power: 1, dedt: -1.614502, int:93.741623
+targ: 180, head: 186, power: 1, dedt: -1.614502, int:93.705620
+targ: 180, head: 186, power: 1, dedt: 0.000000, int:93.669617
+targ: 180, head: 186, power: 1, dedt: 0.000000, int:93.633614
+targ: 180, head: 186, power: 1, dedt: 2.492249, int:93.591614
+targ: 180, head: 186, power: 1, dedt: 0.000000, int:93.555611
+targ: 180, head: 186, power: 1, dedt: 0.000000, int:93.513611
