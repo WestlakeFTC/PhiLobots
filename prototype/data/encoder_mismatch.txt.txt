@@ -1,0 +1,1042 @@
+
+
+rRCount: 980, power: 100
+counts to turn: 1070, encoderLCount: 0, encoderRCount: 0, power: 100
+er: 100
+counts to turn: 1074, encoderLCount: 1001, encoderRCount: 890, power: 100
+counts to turn: 1074, encoderLCount: 1001, encoderRCount: 890, power: 100
+counts to turn: 1074, encoderLCount: 1001, encoderRCount: 890, power: 100
+counts to turn: 1074, encoderLCount: 1001, encoderRCount: 890, power: 100
+counts to turn: 1074, encoderLCount: 1001, encoderRCount: 890, power: 100
+counts to turn: 1074, encoderLCount: 1001, encoderRCount: 890, power: 100
+counts to turn: 1074, encoderLCount: 1001, encoderRCount: 890, power: 100
+counts to turn: 1074, encoderLCount: 1001, encoderRCount: 890, power: 100
+counts to turn: 1074, encoderLCount: 1001, encoderRCount: 890, power: 100
+counts to turn: 1074, encoderLCount: 1028, encoderRCount: 890, power: 100
+counts to turn: 1074, encoderLCount: 1028, encoderRCount: 890, power: 100
+counts to turn: 1074, encoderLCount: 1028, encoderRCount: 890, power: 100
+counts to turn: 1074, encoderLCount: 1028, encoderRCount: 890, power: 100
+counts to turn: 1074, encoderLCount: 1028, encoderRCount: 890, power: 100
+counts to turn: 1074, encoderLCount: 1028, encoderRCount: 890, power: 100
+counts to turn: 1074, encoderLCount: 1028, encoderRCount: 890, power: 100
+counts to turn: 1074, encoderLCount: 1028, encoderRCount: 890, power: 100
+counts to turn: 1074, encoderLCount: 1028, encoderRCount: 890, power: 100
+counts to turn: 1074, encoderLCount: 1028, encoderRCount: 890, power: 100
+counts to turn: 1074, encoderLCount: 1028, encoderRCount: 941, power: 100
+counts to turn: 1074, encoderLCount: 1028, encoderRCount: 941, power: 100
+counts to turn: 1074, encoderLCount: 1028, encoderRCount: 941, power: 100
+counts to turn: 1074, encoderLCount: 1028, encoderRCount: 941, power: 100
+counts to turn: 1074, encoderLCount: 1028, encoderRCount: 941, power: 100
+counts to turn: 1074, encoderLCount: 1028, encoderRCount: 941, power: 100
+counts to turn: 1074, encoderLCount: 1028, encoderRCount: 941, power: 100
+counts to turn: 1074, encoderLCount: 1028, encoderRCount: 941, power: 100
+counts to turn: 1074, encoderLCount: 1028, encoderRCount: 941, power: 100
+counts to turn: 1074, encoderLCount: 1028, encoderRCount: 941, power: 100
+counts to turn: 1074, encoderLCount: 1028, encoderRCount: 941, power: 100
+counts to turn: 1074, encoderLCount: 1028, encoderRCount: 941, power: 100
+counts to turn: 1074, encoderLCount: 1056, encoderRCount: 941, power: 100
+counts to turn: 1074, encoderLCount: 1056, encoderRCount: 941, power: 100
+counts to turn: 1074, encoderLCount: 1056, encoderRCount: 941, power: 100
+counts to turn: 1074, encoderLCount: 1056, encoderRCount: 941, power: 100
+counts to turn: 1074, encoderLCount: 1056, encoderRCount: 941, power: 100
+counts to turn: 1074, encoderLCount: 1056, encoderRCount: 941, power: 100
+counts to turn: 1074, encoderLCount: 1056, encoderRCount: 941, power: 100
+counts to turn: 1074, encoderLCount: 1056, encoderRCount: 941, power: 100
+counts to turn: 1074, encoderLCount: 1056, encoderRCount: 941, power: 100
+counts to turn: 1074, encoderLCount: 1056, encoderRCount: 941, power: 100
+counts to turn: 1074, encoderLCount: 1056, encoderRCount: 941, power: 100
+counts to turn: 1074, encoderLCount: 1056, encoderRCount: 941, power: 100
+counts to turn: 1074, encoderLCount: 1056, encoderRCount: 941, power: 100
+counts to turn: 1074, encoderLCount: 1056, encoderRCount: 941, power: 100
+counts to turn: 1074, encoderLCount: 1056, encoderRCount: 941, power: 100
+counts to turn: 1074, encoderLCount: 1056, encoderRCount: 941, power: 100
+counts to turn: 1074, encoderLCount: 1056, encoderRCount: 941, power: 100
+counts to turn: 1074, encoderLCount: 1056, encoderRCount: 941, power: 100
+counts to turn: 1074, encoderLCount: 1056, encoderRCount: 941, power: 100
+counts to turn: 1074, encoderLCount: 1056, encoderRCount: 941, power: 100
+counts to turn: 1074, encoderLCount: 1056, encoderRCount: 941, power: 100
+counts to turn: 1074, encoderLCount: 1056, encoderRCount: 941, power: 100
+counts to turn: 1070, encoderLCount: 0, encoderRCount: 0, power: 100
+counts to turn: 6506, encoderLCount: 0, encoderRCount: 0, power: 100
+1199, encoderLCount: 291, encoderRCount: 102, power: 101199, encoderLCount: 379, encoderRCount: 212, power: 100
+counts to turn: 1199, encoderLCount: 379, encoderRCount: 212, power: 100
+counts to turn: 1199, encoderLCount: 379, encoderRCount: 212, power: 100
+counts to turn: 1199, encoderLCount: 379, enc1199, encoderLCount: 379, encoderRCount: 212, power: 100
+counts to turn: 1199, encoderLCount: 379, enc1199, encoderLCount: 602, encoderRCount: 453, power: 100
+counts to turn: 1199, encoderLCount: 602, encoderRCount: 453, power: 100
+counts to turn: 1199, encoderLCount: 602, encoderRCount: 453, power: 100
+counts to turn: 1199, encoderLCount: 602, encoderRCount: 453, power: 100
+counts to turn: 1199, encoderLCount: 602, encoderRCount: 453, power: 100
+c1199, encoderLCount: 793, encoderRCount: 634, power: 100
+counts to turn: 1199, encoderLCount: 793, encoderRCount: 634, power: 100
+counts to turn: 1199, encoderLCount: 793, encoderRCount: 634, power: 100
+counts to turn: 1199, encoderLCount: 825, enc1199, encoderLCount: 825, encoderRCount: 634, power: 100
+counts to turn: 1199, encoderLCount: 825, enc1199, encoderLCount: 920, encoderRCount: 697, power: 100
+counts to turn: 1199, encoderLCount: 920, encoderRCount: 697, p1199, encoderLCount: 920, encoderRCount: 760, power: 100
+counts to turn: 1199, encoderLCount: 920, encoderRCount: 760, power: 101199, encoderLCount: 920, encoderRCount: 760, power: 100
+counts to turn: 1199, encoderLCount: 920, enc00
+counts to turn: 1199, encoderLCount: 1020, encoderRCount: 830, power: 100
+counts to turn: 1199, encoderLCount: 1020, 00
+counts to turn: 1199, encoderLCount: 1020, encoderRCount: 830, power: 100
+counts to turn: 1199, encoderLCount: 1020, encoderR00
+counts to turn: 1199, encoderLCount: 1020, encoderRCount: 830, power: 100
+counts to turn: 1199, encturn: 1199, encoderLCount: 1114, encoderRCount: 955, power: 100
+counts to turn: 1199, encoderLCount: 1114, encoderRCount: 955, power: 100
+counts to turn: 1199, encoderLCount: 1114, encoderRCount: 955, power: 100
+counts to turn: 1199, encoderLCount: 1114, encoderRCount: 955, power: 100
+counts to turn: 1199, encoderLCount: 1114, encoderRCount: 955, power: 100
+counts to turn: 1199, encoderLCount: 1114, encoderRCount: 955, power: 100
+counts to turn: 1199, encoderLCount: 1114, encoderRCount: 955, power: 100
+counts to turn: 1199, encoderLCount: 1114, encoderRCount: 955, power: 100
+counts to turn: 1199, encoderLCount: 1114, encoderRCount: 955, power: 100
+counts to turn: 1199, encoderLCount: 1114, encoderRCount: 955, power: 100
+counts to turn: 1199, encoderLCount: 1148, encoderRCount: 955, power: 100
+counts to turn: 1199, encoderLCount: 1148, encoderRCount: 955, power: 100
+counts to turn: 1199, encoderLCount: 1148, encoderRCount: 955, power: 100
+counts to turn: 1199, encoderLCount: 1148, encoderRCount: 955, power: 100
+counts to turn: 1199, encoderLCount: 1148, encoderRCount: 955, power: 100
+counts to turn: 1199, encoderLCount: 1148, encoderRCount: 955, power: 100
+counts to turn: 1199, encoderLCount: 1148, encoderRCount: 955, power: 100
+counts to turn: 1199, encoderLCount: 1148, encoderRCount: 955, power: 100
+counts to turn: 1199, encoderLCount: 1148, encoderRCount: 955, power: 100
+counts to turn: 1199, encoderLCount: 1148, encoderRCount: 955, power: 100
+counts to turn: 1199, encoderLCount: 1148, encoderRCount: 955, power: 100
+counts to turn: 1199, encoderLCount: 1148, encoderRCount: 955, power: 100
+counts to turn: 1199, encoderLCount: 1148, encoderRCount: 955, power: 100
+counts to turn: 1199, encoderLCount: 1148, encoderRCount: 955, power: 100
+counts to turn: 1199, encoderLCount: 1148, encoderRCount: 955, power: 100
+counts to turn: 1199, encoderLCount: 1148, encoderRCount: 955, power: 100
+counts to turn: 1199, encoderLCount: 1148, encoderRCount: 955, power: 100
+counts to turn: 1199, encoderLCount: 1148, encoderRCount: 955, power: 100
+counts to turn: 1199, encoderLCount: 1148, encoderRCount: 955, power: 100
+counts to turn: 1199, encoderLCount: 1148, encoderRCount: 955, power: 100
+counts to turn: 1199, encoderLCount: 1148, encoderRCount: 955, power: 100
+counts to turn: 1199, encoderLCount: 1148, encoderRCount: 955, power: 100
+counts to turn: 1199, encoderLCount: 1182, encoderRCount: 955, power: 100
+counts to turn: 1199, encoderLCount: 1182, encoderRCount: 955, power: 100
+counts to turn: 1199, encoderLCount: 1182, encoderRCount: 955, power: 100
+counts to turn: 1199, encoderLCount: 1182, encoderRCount: 955, power: 100
+counts to turn: 1199, encoderLCount: 1182, encoderRCount: 955, power: 100
+counts to turn: 1199, encoderLCount: 1182, encoderRCount: 955, power: 100
+counts to turn: 1199, encoderLCount: 1182, encoderRCount: 955, power: 100
+counts to turn: 1199, encoderLCount: 1182, encoderRCount: 955, power: 100
+counts to turn: 1199, encoderLCount: 1182, encoderRCount: 955, power: 100
+counts to turn: 1199, encoderLCount: 1182, encoderRCount: 1019, power: 100
+counts to turn: 1199, encoderLCount: 1182, encoderRCount: 1019, power: 100
+counts to turn: 1199, encoderLCount: 1182, encoderRCount: 1019, power: 100
+counts to turn: 1199, encoderLCount: 1182, encoderRCount: 1019, power: 100
+counts to turn: 1199, encoderLCount: 1182, encoderRCount: 1019, power: 100
+counts to turn: 1199, encoderLCount: 1182, encoderRCount: 1019, power: 100
+counts to turn: 1199, encoderLCount: 1182, encoderRCount: 1019, power: 100
+counts to turn: 1199, encoderLCount: 1182, encoderRCount: 1019, power: 100
+counts to turn: 1199, encoderLCount: 1182, encoderRCount: 1019, power: 100
+counts to turn: 1199, encoderLCount: 1182, encoderRCount: 1019, power: 100
+counts to turn: 1199, encoderLCount: 1182, encoderRCount: 1019, power: 100
+counts to turn: 1199, encoderLCount: 1182, encoderRCount: 1019, power: 100
+counts to turn: 1199, encoderLCount: 1182, encoderRCount: 1019, power: 100
+counts to turn: 3832, encoderLCount: 0, encoderRCount: 0, power: 100
+power: 100
+counts to turn: 1199, encoderLCount: 84, encnt: 153, encoderRCount: 38, power: 100
+counts to turn: 1199, encoderLCount: 153, encoderRCount: 38, power: 100
+counts to turn: 1199, encoderLCount: 153, encoderRCount: 38, power: 100
+counts to turn: 1199, encoderLCount: 153, encoderRCount: 38, power: 100
+counts to turn: 1199, encoderLCount: 153, encoderRCount: 38, power: 100
+counts to turn: 1199, e1199, encoderLCount: 263, encoderRCount: 130, power: 100
+counts to turn: 1199, encoderLCount: 263, encoderRCount: 130, power: 100
+counts to turn: 1199, encoderLCount: 263, encoderRCount: 130, power: 100
+counts to turn: 1199, encoderLCount: 263, enc1199, encoderLCount: 263, encoderRCount: 130, power: 100
+counts to turn: 1199, encoderLCount: 263, enc1199, encoderLCount: 373, encoderRCount: 235, power: 100
+counts to turn: 1199, encoderLCount: 373, encoderRCount: 235, power: 100
+counts to turn: 1199, encoderLCount: 373, encoderRCount: 235, power: 100
+counts to turn: 1199, encoderLCount: 373, enc1199, encoderLCount: 373, encoderRCount: 235, power: 100
+counts to turn: 1199, encoderLCount: 373, enc1199, encoderLCount: 493, encoderRCount: 350, power: 100
+counts to turn: 1199, encoderLCount: 493, encoderRCount: 350, power: 100
+counts to turn: 1199, encoderLCount: 493, encoderRCount: 350, power: 100
+counts to turn: 1199, encoderLCount: 493, encoderRCount: 350, power: 100
+counts to turn: 1199, encoderLCount: 493, encoderRCount: 350, power: 100
+c1199, encoderLCount: 623, encoderRCount: 476, power: 100
+counts to turn: 1199, encoderLCount: 623, encoderRCount: 476, power: 100
+counts to turn: 1199, encoderLCount: 623, encoderRCount: 476, power: 100
+counts to turn: 1199, encoderLCount: 623, enc1199, encoderLCount: 623, encoderRCount: 476, power: 100
+counts to turn: 1199, encoderLCount: 623, enc1199, encoderLCount: 741, encoderRCount: 591, power: 100
+counts to turn: 1199, encoderLCount: 741, encoderRCount: 591, power: 100
+counts to turn: 1199, encoderLCount: 741, encoderRCount: 591, power: 100
+counts to turn: 1199, encoderLCount: 741, enc1199, encoderLCount: 741, encoderRCount: 591, power: 100
+counts to turn: 1199, encoderLCount: 741, enc1199, encoderLCount: 865, encoderRCount: 710, power: 100
+counts to turn: 1199, encoderLCount: 865, encoderRCount: 710, power: 100
+counts to turn: 1199, encoderLCount: 865, encoderRCount: 710, power: 100
+counts to turn: 1199, encoderLCount: 865, enc1199, encoderLCount: 865, encoderRCount: 710, power: 100
+counts to turn: 1199, encoderLCount: 865, encount: 777, power: 100
+counts to turn: 1199, encoderLCount: 970, encoderRCount: 777, power: 100
+counts to turn: 1199, encoderLCount: 970, encoderRCount: 777, power: 100
+counts to turn: 1199, encoderLCount: 970, encoderRCount: 834, power: 100
+counts to turn: 1199, encoderLCount: 970, encoderRCount: 834, power: 100
+counts to turn: 1199, encoderLCount:coderLCount: 1124, encoderRCount: 956, power: 100
+counts to turn: 1199, encoderLCount: 1124, encoderRCount: 956, power: 100
+counts to turn: 1199, encoderLCount: 1124, encoderRCount: 956, power: 100
+counts to turn: 1199, encoderLCount: 1124, encoderRCount: 956, power: 100
+counts to turn: 1199, encoderLCount: 1124, encoderRCount: 956, power: 100
+counts to turn: 1199, encoderLCount: 1124, encoderRCount: 956, power: 100
+counts to turn: 1199, encoderLCount: 1124, encoderRCount: 956, power: 100
+counts to turn: 1199, encoderLCount: 1124, encoderRCount: 956, power: 100
+counts to turn: 1199, encoderLCount: 1124, encoderRCount: 956, power: 100
+counts to turn: 1199, encoderLCount: 1124, encoderRCount: 956, power: 100
+counts to turn: 1199, encoderLCount: 1124, encoderRCount: 956, power: 100
+counts to turn: 1199, encoderLCount: 1124, encoderRCount: 956, power: 100
+counts to turn: 1199, encoderLCount: 1124, encoderRCount: 956, power: 100
+counts to turn: 1199, encoderLCount: 1124, encoderRCount: 956, power: 100
+counts to turn: 1199, encoderLCount: 1124, encoderRCount: 956, power: 100
+counts to turn: 1199, encoderLCount: 1124, encoderRCount: 956, power: 100
+counts to turn: 1199, encoderLCount: 1124, encoderRCount: 956, power: 100
+counts to turn: 1199, encoderLCount: 1124, encoderRCount: 956, power: 100
+counts to turn: 1199, encoderLCount: 1124, encoderRCount: 956, power: 100
+counts to turn: 1199, encoderLCount: 1154, encoderRCount: 956, power: 100
+counts to turn: 1199, encoderLCount: 1154, encoderRCount: 956, power: 100
+counts to turn: 1199, encoderLCount: 1154, encoderRCount: 956, power: 100
+counts to turn: 1199, encoderLCount: 1154, encoderRCount: 956, power: 100
+counts to turn: 1199, encoderLCount: 1154, encoderRCount: 956, power: 100
+counts to turn: 1199, encoderLCount: 1154, encoderRCount: 956, power: 100
+counts to turn: 1199, encoderLCount: 1154, encoderRCount: 956, power: 100
+counts to turn: 1199, encoderLCount: 1154, encoderRCount: 956, power: 100
+counts to turn: 1199, encoderLCount: 1154, encoderRCount: 1016, power: 100
+counts to turn: 1199, encoderLCount: 1154, encoderRCount: 1016, power: 100
+counts to turn: 1199, encoderLCount: 1154, encoderRCount: 1016, power: 100
+counts to turn: 1199, encoderLCount: 1154, encoderRCount: 1016, power: 100
+counts to turn: 1199, encoderLCount: 1154, encoderRCount: 1016, power: 100
+counts to turn: 1199, encoderLCount: 1154, encoderRCount: 1016, power: 100
+counts to turn: 1199, encoderLCount: 1154, encoderRCount: 1016, power: 100
+counts to turn: 1199, encoderLCount: 1154, encoderRCount: 1016, power: 100
+counts to turn: 1199, encoderLCount: 1154, encoderRCount: 1016, power: 100
+counts to turn: 1199, encoderLCount: 1154, encoderRCount: 1016, power: 100
+counts to turn: 1199, encoderLCount: 1154, encoderRCount: 1016, power: 100
+counts to turn: 1199, encoderLCount: 1184, encoderRCount: 1016, power: 100
+counts to turn: 1199, encoderLCount: 1184, encoderRCount: 1016, power: 100
+counts to turn: 1199, encoderLCount: 1184, encoderRCount: 1016, power: 100
+counts to turn: 1199, encoderLCount: 1184, encoderRCount: 1016, power: 100
+counts to turn: 1199, encoderLCount: 1184, encoderRCount: 1016, power: 100
+counts to turn: 1199, encoderLCount: 1184, encoderRCount: 1016, power: 100
+counts to turn: 1199, encoderLCount: 1184, encoderRCount: 1016, power: 100
+counts to turn: 1199, encoderLCount: 1184, encoderRCount: 1016, power: 100
+counts to turn: 1199, encoderLCount: 1184, encoderRCount: 1016, power: 100
+counts to turn: 1199, encoderLCount: 1184, encoderRCount: 1016, power: 100
+counts to turn: 1199, encoderLCount: 1184, encoderRCount: 1016, power: 100
+counts to turn: 1199, encoderLCount: 1184, encoderRCount: 1016, power: 100
+counts to turn: 1199, encoderLCount: 1184, encoderRCount: 1016, power: 100
+counts to turn: 1199, encoderLCount: 1184, encoderRCount: 1016, power: 100
+counts to turn: 1199, encoderLCount: 1184, encoderRCount: 1016, power: 100
+counts to turn: 1199, encoderLCount: 1184, encoderRCount: 1016, power: 100
+counts to turn: 1199, encoderLCount: 1184, encoderRCount: 1016, power: 100
+counts to turn: 1199, encoderLCount: 1184, encoderRCount: 1016, power: 100
+counts to turn: 1199, encoderLCount: 1184, encoderRCount: 1016, power: 100
+counts to turn: 1070, encoderLCount: 0, encoderRCount: 0, power: 100
+counts to turn: 6506, encoderLCount: 0, encoderRCount: 0, power: 100
+counts to turn: 6506, encoderLCount: 0, encoderRCount: 0, power: 100
+
+counts to turn: 1199, encoderLCount: 67, encoderRCount1199, encoderLCount: 153, encoderRCount: 110, power: 100
+counts to turn: 1199, encoderLCount: 153, encoderRCount: 110, power: 100
+counts to turn: 1199, encoderLCount: 176, encoderRCount: 110, power: 100
+counts to turn: 1199, encoderLCount: 176, encoderRCount: 110, power: 100
+counts to turn: 1199, encoderLCount: 176, encoderRCount: 110, power: 100
+c1199, encoderLCount: 237, encoderRCount: 167, power: 100
+counts to turn: 1199, encoderLCount: 237, encoderRCount: 167, power: 100
+counts to turn: 1199, encoderLCount: 265, encoderRCount: 167, power: 100
+counts to turn: 1199, encoderLCount: 265, enc1199, encoderLCount: 265, encoderRCount: 167, power: 100
+counts to turn: 1199, encoderLCount: 265, enc1199, encoderLCount: 413, encoderRCount: 328, power: 100
+counts to turn: 1199, encoderLCount: 413, encoderRCount: 328, power: 100
+counts to turn: 1199, encoderLCount: 413, encoderRCount: 328, power: 100
+counts to turn: 1199, encoderLCount: 413, encoderRCount: 328, power: 100
+counts to turn: 1199, encoderLCount: 413, encoderRCount: 328, power: 100
+c1199, encoderLCount: 499, encoderRCount: 445, power: 100
+counts to turn: 1199, encoderLCount: 499, encoderRCount: 445, power: 100
+counts to turn: 1199, encoderLCount: 499, encoderRCount: 445, power: 100
+counts to turn: 1199, encoderLCount: 499, encoderRCount: 445, power: 100
+counts to turn: 1199, encoderLCount: 499, encoderRCount: 445, power: 100
+c1199, encoderLCount: 633, encoderRCount: 562, power: 100
+counts to turn: 1199, encoderLCount: 633, encoderRCount: 562, power: 100
+counts to turn: 1199, encoderLCount: 633, encoderRCount: 562, power: 100
+counts to turn: 1199, encoderLCount: 633, encoderRCount: 562, power: 100
+counts to turn: 1199, encoderLCount: 633, encoderRCount: 562, power: 100
+c1199, encoderLCount: 725, encoderRCount: 620, power: 100
+counts to turn: 1199, encoderLCount: 725, encoderRCount: 620, power: 100
+counts to turn: 1199, encoderLCount: 725, encoderRCount: 620, power: 100
+counts to turn: 1199, encoderLCount: 725, encoderRCount: 620, power: 100
+counts to turn: 1199, encoderLCount: 725, encoderRCount: 620, power: 100
+c1199, encoderLCount: 849, encoderRCount: 738, power: 100
+counts to turn: 1199, encoderLCount: 849, encoderRCount: 738, p1199, encoderLCount: 886, encoderRCount: 738, power: 100
+counts to turn: 1199, encoderLCount: 886, encoderRCount: 738, power: 101199, encoderLCount: 886, encoderRCount: 738, power: 100
+counts to turn: 1199, encoderLCount: 886, encturn: 1199, encoderLCount: 1070, encoderRCount: 985, power: 100
+counts to turn: 1199, encoderLCount: 1070, encoderRCount: 985, power: 100
+counts to turn: 1199, encoderLCount: 1070, encoderRCount: 985, power: 100
+counts to turn: 1199, encoderLCount: 1070, encoderRCount: 985, power: 100
+counts to turn: 1199, encoderLCount: 1070, encoderRCount: 985, prRCount: 985, power: 100
+counts to turn: 1199, encoderLCount: 1133, encoderRCount: 985, power: 100
+counts to turn: 1199, encoderLCount: 1133, encoderRCount: 1045, power: 100
+counts to turn: 1199, encoderLCount: 1133, encoderRCount: 1045, power: 100
+counts to turn: 1199, encoderLCount: 1133, encoderRCount: 1045, power: 100
+counts to turn: 1199, encoderLCount: 1133, encoderRCount: 1045, power: 100
+counts to turn: 1199, encoderLCount: 1133, encoderRCount: 1045, power: 100
+counts to turn: 1199, encoderLCount: 1133, encoderRCount: 1045, power: 100
+counts to turn: 1199, encoderLCount: 1133, encoderRCount: 1045, power: 100
+counts to turn: 1199, encoderLCount: 1133, encoderRCount: 1045, power: 100
+counts to turn: 1199, encoderLCount: 1133, encoderRCount: 1045, power: 100
+counts to turn: 1199, encoderLCount: 1133, encoderRCount: 1045, power: 100
+counts to turn: 1199, encoderLCount: 1133, encoderRCount: 1045, power: 100
+counts to turn: 1199, encoderLCount: 1163, encoderRCount: 1045, power: 100
+counts to turn: 1199, encoderLCount: 1163, encoderRCount: 1045, power: 100
+counts to turn: 1199, encoderLCount: 1163, encoderRCount: 1045, power: 100
+counts to turn: 1199, encoderLCount: 1163, encoderRCount: 1045, power: 100
+counts to turn: 1199, encoderLCount: 1163, encoderRCount: 1045, power: 100
+counts to turn: 1199, encoderLCount: 1163, encoderRCount: 1045, power: 100
+counts to turn: 1199, encoderLCount: 1163, encoderRCount: 1045, power: 100
+counts to turn: 1199, encoderLCount: 1163, encoderRCount: 1045, power: 100
+counts to turn: 1199, encoderLCount: 1163, encoderRCount: 1045, power: 100
+counts to turn: 1199, encoderLCount: 1163, encoderRCount: 1045, power: 100
+counts to turn: 1199, encoderLCount: 1163, encoderRCount: 1045, power: 100
+counts to turn: 1199, encoderLCount: 1163, encoderRCount: 1045, power: 100
+counts to turn: 1199, encoderLCount: 1163, encoderRCount: 1045, power: 100
+counts to turn: 1199, encoderLCount: 1163, encoderRCount: 1045, power: 100
+counts to turn: 1199, encoderLCount: 1163, encoderRCount: 1045, power: 100
+counts to turn: 1199, encoderLCount: 1163, encoderRCount: 1045, power: 100
+counts to turn: 1199, encoderLCount: 1163, encoderRCount: 1045, power: 100
+counts to turn: 1199, encoderLCount: 1163, encoderRCount: 1045, power: 100
+counts to turn: 1199, encoderLCount: 1163, encoderRCount: 1045, power: 100
+counts to turn: 1199, encoderLCount: 1193, encoderRCount: 1045, power: 100
+counts to turn: 1199, encoderLCount: 1193, encoderRCount: 1045, power: 100
+counts to turn: 1199, encoderLCount: 1193, encoderRCount: 1045, power: 100
+counts to turn: 1199, encoderLCount: 1193, encoderRCount: 1045, power: 100
+counts to turn: 1199, encoderLCount: 1193, encoderRCount: 1045, power: 100
+counts to turn: 1199, encoderLCount: 1193, encoderRCount: 1045, power: 100
+counts to turn: 1199, encoderLCount: 1193, encoderRCount: 1045, power: 100
+counts to turn: 1199, encoderLCount: 1193, encoderRCount: 1045, power: 100
+counts to turn: 1199, encoderLCount: 1193, encoderRCount: 1045, power: 100
+counts to turn: 1199, encoderLCount: 1193, encoderRCount: 1045, power: 100
+counts to turn: 1199, encoderLCount: 1193, encoderRCount: 1045, power: 100
+counts to turn: 1199, encoderLCount: 1193, encoderRCount: 1045, power: 100
+counts to turn: 1199, encoderLCount: 1193, encoderRCount: 1045, power: 100
+counts to turn: 1199, encoderLCount: 1193, encoderRCount: 1045, power: 100
+counts to turn: 1199, encoderLCount: 1193, encoderRCount: 1045, power: 100
+counts to turn: 1199, encoderLCount: 1193, encoderRCount: 1115, power: 100
+counts to turn: 1199, encoderLCount: 1193, encoderRCount: 1115, power: 100
+counts to turn: 1199, encoderLCount: 1193, encoderRCount: 1115, power: 100
+counts to turn: 1199, encoderLCount: 1193, encoderRCount: 1115, power: 100
+counts to turn: 1199, encoderLCount: 1193, encoderRCount: 1115, power: 100
+counts to turn: 1199, encoderLCount: 1193, encoderRCount: 1115, power: 100
+counts to turn: 1199, encoderLCount: 1193, encoderRCount: 1115, power: 100
+counts to turn: 3832, encoderLCount: 0, encoderRCount: 0, power: 100
+1199, encoderLCount: 238, encoderRCount: 139, power: 101199, encoderLCount: 344, encoderRCount: 239, power: 100
+counts to turn: 1199, encoderLCount: 344, encoderRCount: 239, power: 100
+counts to turn: 1199, encoderLCount: 344, encoderRCount: 239, power: 100
+counts to turn: 1199, encoderLCount: 344, enc1199, encoderLCount: 344, encoderRCount: 239, power: 100
+counts to turn: 1199, encoderLCount: 344, enc1199, encoderLCount: 461, encoderRCount: 349, power: 100
+counts to turn: 1199, encoderLCount: 461, encoderRCount: 349, power: 100
+counts to turn: 1199, encoderLCount: 461, encoderRCount: 349, power: 100
+counts to turn: 1199, encoderLCount: 461, encoderRCount: 349, power: 100
+counts to turn: 1199, encoderLCount: 461, encoderRCount: 349, power: 100
+c1199, encoderLCount: 614, encoderRCount: 528, power: 100
+counts to turn: 1199, encoderLCount: 614, encoderRCount: 528, p1199, encoderLCount: 614, encoderRCount: 528, power: 100
+counts to turn: 1199, encoderLCount: 614, encoderRCount: 528, power: 101199, encoderLCount: 614, encoderRCount: 528, power: 100
+counts to turn: 1199, encoderLCount: 614, enc1199, encoderLCount: 727, encoderRCount: 646, power: 100
+counts to turn: 1199, encoderLCount: 727, encoderRCount: 646, power: 100
+counts to turn: 1199, encoderLCount: 727, encoderRCount: 646, power: 100
+counts to turn: 1199, encoderLCount: 727, enc1199, encoderLCount: 755, encoderRCount: 646, power: 100
+counts to turn: 1199, encoderLCount: 755, enc1199, encoderLCount: 814, encoderRCount: 707, power: 100
+counts to turn: 1199, encoderLCount: 814, encoderRCount: 707, power: 100
+counts to turn: 1199, encoderLCount: 814, encoderRCount: 707, power: 100
+counts to turn: 1199, encoderLCount: 814, enc1199, encoderLCount: 814, encoderRCount: 707, power: 100
+counts to turn: 1199, encoderLCount: 814, enc1199, encoderLCount: 910, encoderRCount: 774, power: 100
+counts to turn: 1199, encoderLCount: 910, encoderRCount: 774, power: 100
+counts to turn: 1199, encoderLCount: 910, encoderRCount: 833, power: 100
+counts to turn: 1199, encoderLCount: 910, enc1199, encoderLCount: 910, encoderRCount: 833, power: 100
+counts to turn: 1199, encoderLCount: 910, enc: 100
+counts to turn: 1199, encoderLCount: 998, encoderRCount: 891, power: 100
+counts to turn: 1199, encoderLCount: 998, encoderRCount: 891, power: 100
+counts to turn: 1199, encoderLCount: 998, encoderRCount: 891, power: 100
+counts to turn: 1199, encoderLCount: 1028, encoderRCount: 891, power: 100
+counts to turn: 1199, encoderLCount: 1028, encoderRCount: 1005, power: 100
+counts to turn: 1199, encoderLCount: 1119, encoderRCount: 1005, power: 100
+counts to turn: 1199, encoderLCount: 1119, encoderRCount: 1005, power: 100
+counts to turn: 1199, encoderLCount: 1119, encoderRCount: 1005, power: 100
+counts to turn: 1199, encoderLCount: 1119, encoderRCount: 1005, power: 100
+counts to turn: 1199, encoderLCount: 1119, encoderRCount: 1005, power: 100
+counts to turn: 1199, encoderLCount: 1119, encoderRCount: 1005, power: 100
+counts to turn: 1199, encoderLCount: 1119, encoderRCount: 1005, power: 100
+counts to turn: 1199, encoderLCount: 1119, encoderRCount: 1005, power: 100
+counts to turn: 1199, encoderLCount: 1119, encoderRCount: 1005, power: 100
+counts to turn: 1199, encoderLCount: 1119, encoderRCount: 1005, power: 100
+counts to turn: 1199, encoderLCount: 1119, encoderRCount: 1005, power: 100
+counts to turn: 1199, encoderLCount: 1149, encoderRCount: 1005, power: 100
+counts to turn: 1199, encoderLCount: 1149, encoderRCount: 1005, power: 100
+counts to turn: 1199, encoderLCount: 1149, encoderRCount: 1005, power: 100
+counts to turn: 1199, encoderLCount: 1149, encoderRCount: 1005, power: 100
+counts to turn: 1199, encoderLCount: 1149, encoderRCount: 1005, power: 100
+counts to turn: 1199, encoderLCount: 1149, encoderRCount: 1005, power: 100
+counts to turn: 1199, encoderLCount: 1149, encoderRCount: 1005, power: 100
+counts to turn: 1199, encoderLCount: 1149, encoderRCount: 1005, power: 100
+counts to turn: 1199, encoderLCount: 1149, encoderRCount: 1005, power: 100
+counts to turn: 1199, encoderLCount: 1149, encoderRCount: 1005, power: 100
+counts to turn: 1199, encoderLCount: 1149, encoderRCount: 1005, power: 100
+counts to turn: 1199, encoderLCount: 1149, encoderRCount: 1005, power: 100
+counts to turn: 1199, encoderLCount: 1149, encoderRCount: 1005, power: 100
+counts to turn: 1199, encoderLCount: 1149, encoderRCount: 1005, power: 100
+counts to turn: 1199, encoderLCount: 1149, encoderRCount: 1005, power: 100
+counts to turn: 1199, encoderLCount: 1149, encoderRCount: 1005, power: 100
+counts to turn: 1199, encoderLCount: 1149, encoderRCount: 1005, power: 100
+counts to turn: 1199, encoderLCount: 1149, encoderRCount: 1005, power: 100
+counts to turn: 1199, encoderLCount: 1149, encoderRCount: 1071, power: 100
+counts to turn: 1199, encoderLCount: 1149, encoderRCount: 1071, power: 100
+counts to turn: 1199, encoderLCount: 1149, encoderRCount: 1071, power: 100
+counts to turn: 1199, encoderLCount: 1186, encoderRCount: 1071, power: 100
+counts to turn: 1199, encoderLCount: 1186, encoderRCount: 1071, power: 100
+counts to turn: 1199, encoderLCount: 1186, encoderRCount: 1071, power: 100
+counts to turn: 1199, encoderLCount: 1186, encoderRCount: 1071, power: 100
+counts to turn: 1199, encoderLCount: 1186, encoderRCount: 1071, power: 100
+counts to turn: 1199, encoderLCount: 1186, encoderRCount: 1071, power: 100
+counts to turn: 1199, encoderLCount: 1186, encoderRCount: 1071, power: 100
+counts to turn: 1199, encoderLCount: 1186, encoderRCount: 1071, power: 100
+counts to turn: 1199, encoderLCount: 1186, encoderRCount: 1071, power: 100
+counts to turn: 1199, encoderLCount: 1186, encoderRCount: 1071, power: 100
+counts to turn: 1199, encoderLCount: 1186, encoderRCount: 1071, power: 100
+counts to turn: 1199, encoderLCount: 1186, encoderRCount: 1071, power: 100
+counts to turn: 1199, encoderLCount: 1186, encoderRCount: 1071, power: 100
+counts to turn: 1199, encoderLCount: 1186, encoderRCount: 1071, power: 100
+counts to turn: 1199, encoderLCount: 1186, encoderRCount: 1071, power: 100
+counts to turn: 1199, encoderLCount: 1186, encoderRCount: 1071, power: 100
+counts to turn: 1199, encoderLCount: 1186, encoderRCount: 1071, power: 100
+counts to turn: 1199, encoderLCount: 1186, encoderRCount: 1071, power: 100
+counts to turn: 1199, encoderLCount: 1186, encoderRCount: 1071, power: 100
+counts to turn: 1199, encoderLCount: 1186, encoderRCount: 1071, power: 100
+counts to turn: 1199, encoderLCount: 1186, encoderRCount: 1071, power: 100
+counts to turn: 3209, encoderLCount: 0, encoderRCount: 0, power: 100
+counts to turn: 6506, encoderLCount: 0, encoderRCount: 0, power: 100
+counts to turn: 1199, encoderLCount: 0, encoderRCount: nt: 26, encoderRCount: -30, power: 100
+counts to turn: 1199, encoderLCount: 26, encoderRCount: -30, power: 100
+counts tont: 26, encoderRCount: -30, power: 100
+counts to turn: 1199, encoderLCount: 26, encoderRCount: -30, power: 100
+counts to turn: 1nt: 26, encoderRCount: -30, power: 100
+counts to turn: 1199, encoderLCount: 26, encoderRCount: -30, pont: 130, encoderRCount: -7, power: 100
+counts to turn: 1199, encoderLCount: 130, encoderRCount: -7, power: 100
+counts to turn: 1199, encoderLCount: 130, encoderRCount: -7, power: 100
+counts to turn: 1199, encoderLCount: 130, encoderRCount: -7, power: 100
+counts to turn: 1199, encoderLCount: 130, encoderRCount: -7, power: 100
+counts to turn: 1199, e1199, encoderLCount: 308, encoderRCount: 149, power: 100
+counts to turn: 1199, encoderLCount: 308, encoderRCount: 149, power: 100
+counts to turn: 1199, encoderLCount: 308, encoderRCount: 149, power: 100
+counts to turn: 1199, encoderLCount: 308, enc1199, encoderLCount: 308, encoderRCount: 149, power: 100
+counts to turn: 1199, encoderLCount: 308, enc1199, encoderLCount: 380, encoderRCount: 248, power: 100
+counts to turn: 1199, encoderLCount: 380, encoderRCount: 248, p1199, encoderLCount: 380, encoderRCount: 248, power: 100
+counts to turn: 1199, encoderLCount: 380, encoderRCount: 248, power: 101199, encoderLCount: 380, encoderRCount: 248, power: 100
+counts to turn: 1199, encoderLCount: 380, enc1199, encoderLCount: 523, encoderRCount: 361, power: 100
+counts to turn: 1199, encoderLCount: 552, encoderRCount: 361, power: 100
+counts to turn: 1199, encoderLCount: 552, encoderRCount: 361, power: 100
+counts to turn: 1199, encoderLCount: 552, enc1199, encoderLCount: 552, encoderRCount: 361, power: 100
+counts to turn: 1199, encoderLCount: 552, enc1199, encoderLCo00
+counts to turn: 1199, encoderLCount: 1051, encoderRC00
+counts to turn: 1199, encoderLCount: 1111, encoderRCount: 925, power: 100
+counts to turn: 1199, encoderLCount: 1111, encoderRCount: 925, power: 100
+counts to turn: 1199, encoderLCount: 1111, encoderRCount: 925, power: 100
+counts to turn: 1199, encoderLCount: 1111, encoderRCount: 925, power: 100
+counts to turn: 1199, encoderLCount: 1111, encoderRCount: 925, power: 100
+counts to turn: 1199, encoderLCount: 1111, encoderRCount: 925, power: 100
+counts to turn: 1199, encoderLCount: 1111, encoderRCount: 925, power: 100
+counts to turn: 1199, encoderLCount: 1111, encoderRCount: 925, power: 100
+counts to turn: 1199, encoderLCount: 1111, encoderRCount: 925, power: 100
+counts to turn: 1199, encoderLCount: 1111, encoderRCount: 925, power: 100
+counts to turn: 1199, encoderLCount: 1111, encoderRCount: 925, power: 100
+counts to turn: 1199, encoderLCount: 1111, encoderRCount: 925, power: 100
+counts to turn: 1199, encoderLCount: 1140, encoderRCount: 925, power: 100
+counts to turn: 1199, encoderLCount: 1140, encoderRCount: 925, power: 100
+counts to turn: 1199, encoderLCount: 1140, encoderRCount: 925, power: 100
+counts to turn: 1199, encoderLCount: 1140, encoderRCount: 925, power: 100
+counts to turn: 1199, encoderLCount: 1140, encoderRCount: 925, power: 100
+counts to turn: 1199, encoderLCount: 1140, encoderRCount: 925, power: 100
+counts to turn: 1199, encoderLCount: 1140, encoderRCount: 925, power: 100
+counts to turn: 1199, encoderLCount: 1140, encoderRCount: 925, power: 100
+counts to turn: 1199, encoderLCount: 1140, encoderRCount: 925, power: 100
+counts to turn: 1199, encoderLCount: 1140, encoderRCount: 925, power: 100
+counts to turn: 1199, encoderLCount: 1140, encoderRCount: 925, power: 100
+counts to turn: 1199, encoderLCount: 1140, encoderRCount: 925, power: 100
+counts to turn: 1199, encoderLCount: 1140, encoderRCount: 925, power: 100
+counts to turn: 1199, encoderLCount: 1140, encoderRCount: 925, power: 100
+counts to turn: 1199, encoderLCount: 1140, encoderRCount: 925, power: 100
+counts to turn: 1199, encoderLCount: 1140, encoderRCount: 925, power: 100
+counts to turn: 1199, encoderLCount: 1140, encoderRCount: 925, power: 100
+counts to turn: 1199, encoderLCount: 1140, encoderRCount: 989, power: 100
+counts to turn: 1199, encoderLCount: 1140, encoderRCount: 989, power: 100
+counts to turn: 1199, encoderLCount: 1140, encoderRCount: 989, power: 100
+counts to turn: 1199, encoderLCount: 1140, encoderRCount: 989, power: 100
+counts to turn: 1199, encoderLCount: 1140, encoderRCount: 989, power: 100
+counts to turn: 1199, encoderLCount: 1177, encoderRCount: 989, power: 100
+counts to turn: 1199, encoderLCount: 1177, encoderRCount: 989, power: 100
+counts to turn: 1199, encoderLCount: 1177, encoderRCount: 989, power: 100
+counts to turn: 1199, encoderLCount: 1177, encoderRCount: 989, power: 100
+counts to turn: 1199, encoderLCount: 1177, encoderRCount: 989, power: 100
+counts to turn: 1199, encoderLCount: 1177, encoderRCount: 989, power: 100
+counts to turn: 1199, encoderLCount: 1177, encoderRCount: 989, power: 100
+counts to turn: 1199, encoderLCount: 1177, encoderRCount: 989, power: 100
+counts to turn: 1199, encoderLCount: 1177, encoderRCount: 989, power: 100
+counts to turn: 1199, encoderLCount: 1177, encoderRCount: 989, power: 100
+counts to turn: 1199, encoderLCount: 1177, encoderRCount: 989, power: 100
+counts to turn: 1199, encoderLCount: 1177, encoderRCount: 989, power: 100
+counts to turn: 1199, encoderLCount: 1177, encoderRCount: 989, power: 100
+counts to turn: 1199, encoderLCount: 1177, encoderRCount: 989, power: 100
+counts to turn: 1199, encoderLCount: 1177, encoderRCount: 989, power: 100
+counts to turn: 1199, encoderLCount: 1177, encoderRCount: 989, power: 100
+counts to turn: 1199, encoderLCount: 1177, encoderRCount: 989, power: 100
+counts to turn: 1199, encoderLCount: 1177, encoderRCount: 989, power: 100
+counts to turn: 1199, encoderLCount: 1177, encoderRCount: 989, power: 100
+counts to turn: 1199, encoderLCount: 1177, encoderRCount: 989, power: 100
+counts to turn: 4367, encoderLCount: 0, encoderRCount: 0, power: 100
+ encoderLCount: 81, encoderRCount: -1, power: 100
+countnt: 134, encoderRCount: 25, power: 100
+counts to turn: 1199, encoderLCount: 134, encoderRCount: 25, power: 100
+counts to turn: 1199, encoderLCount: 134, encoderRCount: 25, power: 100
+counts to turn: 1199, encoderLCount: 134, encoderRCount: 25, powent: 134, encoderRCount: 58, power: 100
+counts to turn: 1199, encoderLCount: 134, encoderRCount: 58, po96, power: 100
+counts to turn: 1199, encoderLCount: 171, encoderRCount: 96, power: 100
+counts to turn: 1199, encoderLCou, power: 100
+counts to turn: 1199, encoderLCount: 171, encoderRCount: 96, power: 100
+counts to turn: 1199, encoderLCount: 171, eower: 100
+counts to turn: 1199, encoderLCount: 171, encoderRCount: 96, power: 100
+counts to turn: 11991199, encoderLCount: 244, encoderRCount: 139, power: 100
+counts to turn: 1199, encoderLCount: 244, encoderRCount: 139, power: 100
+counts to turn: 1199, encoderLCount: 244, encoderRCount: 139, power: 100
+counts to turn: 1199, encoderLCount: 244, enc1199, encoderLCount: 244, encoderRCount: 139, power: 100
+counts to turn: 1199, encoderLCount: 267, enc1199, encoderLCount: 357, encoderRCount: 266, power: 100
+counts to turn: 1199, encoderLCount: 357, encoderRCount: 266, power: 100
+counts to turn: 1199, encoderLCount: 357, encoderRCount: 266, power: 100
+counts to turn: 1199, encoderLCount: 357, enc1199, encoderLCount: 381, encoderRCount: 266, power: 100
+counts to turn: 1199, encoderLCount: 381, enc1199, encoderLCount: 484, encoderRCount: 363, power: 100
+counts to turn: 1199, encoderLCount: 484, encoderRCount: 363, power: 100
+counts to turn: 1199, encoderLCount: 484, encoderRCount: 363, power: 100
+counts to turn: 1199, encoderLCount: 484, enc1199, encoderLCount: 484, encoderRCount: 363, power: 100
+counts to turn: 1199, encoderLCount: 484, enc1199, encoderLCount: 642, encoderRCount: 508, power: 100
+counts to turn: 1199, encoderLCount: 642, encoderRCount: 508, p1199, encoderLCount: 642, encoderRCount: 508, power: 100
+counts to turn: 1199, encoderLCount: 642, encoderRCount: 508, power: 101199, encoderLCount: 642, encoderRCount: 508, power: 100
+counts to turn: 1199, encoderLCount: 642, enc1199, encoderLCount: 814, encoderRCount: 672, power: 100
+counts to turn: 1199, encoderLCount: 814, encoderRCount: 672, power: 100
+counts to turn: 1199, encoderLCount: 814, encoderRCount: 672, power: 100
+counts to turn: 1199, encoderLCount: 814, encoderRCount: 672, power: 100
+counts to turn: 1199, encoderLCount: 814, encoderRCount: 672, power: 100
+ct: 834, power: 100
+counts to turn: 1199, encoderLCount: 981, encoderRCount: 834, power: 100
+counts to turn: 1199, encoderLCount: 981, encoderRCount: 834, power: 100
+counts to turn: 1199, encoderLCount: 981, encoderRCount: 834, power: 100
+counts to turn: 1199, encoderLCount: 981, encoderRCount: 834, power: 100
+counts to turn: 1199, encoderLCount: 981199, encoderLCount: 1076, encoderRCount: 953, power: 100
+counts to turn: 1199, encoderLCount: 1076, encoderRCount: 953,99, encoderLCount: 1076, encoderRCount: 953, power: 100
+counts to turn: 1199, encoderLCount: 1076, encoderRCount: 953, power: 10 encoderLCount: 1076, encoderRCount: 953, power: 100
+counts to turn: 1199, encoderLCount: 1076, encodeCount: 1007, power: 100
+counts to turn: 1199, encoderLCount: 1131, encoderRCount: 1007, power: 100
+counts to turn: 1199, encoderLCount: 1131, encoderRCount: 1007, power: 100
+counts to turn: 1199, encoderLCount: 1131, encoderRCount: 1007, power: 100
+counts to turn: 1199, encoderLCount: 1131, encoderRCount: 1007, power: 100
+counts to turn: 1199, encoderLCount: 1131, encoderRCount: 1007, power: 100
+counts to turn: 1199, encoderLCount: 1131, encoderRCount: 1007, power: 100
+counts to turn: 1199, encoderLCount: 1131, encoderRCount: 1007, power: 100
+counts to turn: 1199, encoderLCount: 1131, encoderRCount: 1007, power: 100
+counts to turn: 1199, encoderLCount: 1131, encoderRCount: 1007, power: 100
+counts to turn: 1199, encoderLCount: 1131, encoderRCount: 1007, power: 100
+counts to turn: 1199, encoderLCount: 1131, encoderRCount: 1007, power: 100
+counts to turn: 1199, encoderLCount: 1131, encoderRCount: 1007, power: 100
+counts to turn: 1199, encoderLCount: 1131, encoderRCount: 1007, power: 100
+counts to turn: 1199, encoderLCount: 1131, encoderRCount: 1007, power: 100
+counts to turn: 1199, encoderLCount: 1131, encoderRCount: 1007, power: 100
+counts to turn: 1199, encoderLCount: 1131, encoderRCount: 1007, power: 100
+counts to turn: 1199, encoderLCount: 1159, encoderRCount: 1007, power: 100
+counts to turn: 1199, encoderLCount: 1159, encoderRCount: 1007, power: 100
+counts to turn: 1199, encoderLCount: 1159, encoderRCount: 1007, power: 100
+counts to turn: 1199, encoderLCount: 1159, encoderRCount: 1007, power: 100
+counts to turn: 1199, encoderLCount: 1159, encoderRCount: 1007, power: 100
+counts to turn: 1199, encoderLCount: 1159, encoderRCount: 1007, power: 100
+counts to turn: 1199, encoderLCount: 1159, encoderRCount: 1007, power: 100
+counts to turn: 1199, encoderLCount: 1159, encoderRCount: 1007, power: 100
+counts to turn: 1199, encoderLCount: 1159, encoderRCount: 1007, power: 100
+counts to turn: 1199, encoderLCount: 1159, encoderRCount: 1007, power: 100
+counts to turn: 1199, encoderLCount: 1159, encoderRCount: 1007, power: 100
+counts to turn: 1199, encoderLCount: 1159, encoderRCount: 1007, power: 100
+counts to turn: 1199, encoderLCount: 1159, encoderRCount: 1007, power: 100
+counts to turn: 1199, encoderLCount: 1159, encoderRCount: 1007, power: 100
+counts to turn: 1199, encoderLCount: 1159, encoderRCount: 1007, power: 100
+counts to turn: 1199, encoderLCount: 1159, encoderRCount: 1007, power: 100
+counts to turn: 1199, encoderLCount: 1159, encoderRCount: 1007, power: 100
+counts to turn: 1199, encoderLCount: 1159, encoderRCount: 1007, power: 100
+counts to turn: 1199, encoderLCount: 1159, encoderRCount: 1007, power: 100
+counts to turn: 1199, encoderLCount: 1188, encoderRCount: 1060, power: 100
+counts to turn: 1199, encoderLCount: 1188, encoderRCount: 1060, power: 100
+counts to turn: 1199, encoderLCount: 1188, encoderRCount: 1060, power: 100
+counts to turn: 1199, encoderLCount: 1188, encoderRCount: 1060, power: 100
+counts to turn: 1199, encoderLCount: 1188, encoderRCount: 1060, power: 100
+counts to turn: 1199, encoderLCount: 1188, encoderRCount: 1060, power: 100
+counts to turn: 1199, encoderLCount: 1188, encoderRCount: 1060, power: 100
+counts to turn: 1199, encoderLCount: 1188, encoderRCount: 1060, power: 100
+counts to turn: 1199, encoderLCount: 1188, encoderRCount: 1060, power: 100
+counts to turn: 1199, encoderLCount: 1188, encoderRCount: 1060, power: 100
+counts to turn: 1199, encoderLCount: 1188, encoderRCount: 1060, power: 100
+counts to turn: 1199, encoderLCount: 1188, encoderRCount: 1060, power: 100
+counts to turn: 1199, encoderLCount: 1188, encoderRCount: 1060, power: 100
+counts to turn: 1199, encoderLCount: 1188, encoderRCount: 1060, power: 100
+counts to turn: 1199, encoderLCount: 1188, encoderRCount: 1060, power: 100
+counts to turn: 1199, encoderLCount: 1188, encoderRCount: 1060, power: 100
+counts to turn: 1199, encoderLCount: 1188, encoderRCount: 1060, power: 100
+counts to turn: 1199, encoderLCount: 1188, encoderRCount: 1060, power: 100
+counts to turn: 3209, encoderLCount: 0, encoderRCount: 0, power: 100
+counts to turn: 6506, encoderLCount: 0, encoderRCount: 0, power: 100
+counts to turn: 1199, encoderLCount: 0, encoderRCount: : 1199, encoderLCount: 8, encoderRCount: -26, power: 100
+counts to turn: 1199, encoderLCount: 8, encoderRCount: -26, pow1199, encoderLCount: 8, encoderRCount: -26, power: 100
+counts to turn: 1199, encoderLCount: 8, encoderRCount: -26, power: 100
+co99, encoderLCount: 8, encoderRCount: -26, power: 100
+counts to turn: 1199, encoderLCount: 8, encoderRCwer: 100
+counts to turn: 1199, encoderLCount: 81, encoderRCount: 4, power: 100
+counts to turn: 1199, encoderLCount: 81, encoderRCount: 4, power: 100
+counts to turn: 1199, encoderLCount: 81, encoderRCount: 4, power: 100
+counts to turn: 1199, encoderounts to turn: 1199, encoderLCount: 81199, encoderLCount: 592, encoderRCount: 441, power: 101199, encoderLCount: 650, encoderRCount: 496, power: 100
+counts to turn: 1199, encoderLCount: 650, encoderRCount: 496, power: 100
+counts to turn: 1199, encoderLCount: 650, encoderRCount: 496, power: 100
+counts to turn: 1199, encoderLCount: 650, enc1199, encoderLCount: 650, encoderRCount: 496, power: 100
+counts to turn: 1199, encoderLCount: 650, enc1199, encoderLCount: 737, encoderRCount: 608, power: 100
+counts to turn: 1199, encoderLCount: 737, encoderRCount: 608, power: 100
+counts to turn: 1199, encoderLCount: 769, encoderRCount: 608, power: 100
+counts to turn: 1199, encoderLCount: 769, enc1199, encoderLCount: 769, encoderRCount: 608, power: 100
+counts to turn: 1199, encoderLCount: 769, enc1199, encoderLCount: 894, encoderRCount: 730, power: 100
+counts to turn: 1199, encoderLCount: 894, encoderRCount: 730, p1199, encoderLCount: 894, encoderRCount: 730, power: 100
+counts to turn: 1199, encoderLCount: 894, encoderRCount: 730, power: 101199, encoderLCount: 894, encoderRCount: 730, power: 100
+counts to turn: 1199, encoderLCount: 894, enc45, power: 100
+counts to turn: 1199, encoderLCount: 984, encoderRCount: 845, power: 100
+counts to turn: 1199, encoderLCount: 984, encoderRCount: 845, power: 100
+counts to turn: 1199, encoderLCount: 984, encoderRCount: 845, power: 100
+counts to turn: 1199, encoderLCount: 984, encoderRCount: 845, power: 100
+counts to turn: 1199, encoderLCount: 984, ern: 1199, encoderLCount: 1104, encoderRCount: 961, power: 100
+counts to turn: 1199, encoderLCount: 1104, encoderRCount: 961, power: 100
+counts to turn: 1199, encoderLCount: 1104, encoderRCount: 961, power: 100
+counts to turn: 1199, encoderLCount: 1104, encoderRCount: 961, power: 100
+counts to turn: 1199, encoderLCount: 1104, encoderRCount: 961, power: 100
+counts to turn: 1199, encoderLCount: 1104, encoderRCount: 961, power: 100
+counts to turn: 1199, encoderLCount: 1104, encoderRCount: 961, power: 100
+counts to turn: 1199, encoderLCount: 1104, encoderRCount: 961, power: 100
+counts to turn: 1199, encoderLCount: 1104, encoderRCount: 961, power: 100
+counts to turn: 1199, encoderLCount: 1104, encoderRCount: 961, power: 100
+counts to turn: 1199, encoderLCount: 1133, encoderRCount: 961, power: 100
+counts to turn: 1199, encoderLCount: 1133, encoderRCount: 961, power: 100
+counts to turn: 1199, encoderLCount: 1133, encoderRCount: 961, power: 100
+counts to turn: 1199, encoderLCount: 1133, encoderRCount: 961, power: 100
+counts to turn: 1199, encoderLCount: 1133, encoderRCount: 961, power: 100
+counts to turn: 1199, encoderLCount: 1133, encoderRCount: 961, power: 100
+counts to turn: 1199, encoderLCount: 1133, encoderRCount: 961, power: 100
+counts to turn: 1199, encoderLCount: 1133, encoderRCount: 961, power: 100
+counts to turn: 1199, encoderLCount: 1133, encoderRCount: 961, power: 100
+counts to turn: 1199, encoderLCount: 1133, encoderRCount: 961, power: 100
+counts to turn: 1199, encoderLCount: 1133, encoderRCount: 961, power: 100
+counts to turn: 1199, encoderLCount: 1133, encoderRCount: 961, power: 100
+counts to turn: 1199, encoderLCount: 1133, encoderRCount: 961, power: 100
+counts to turn: 1199, encoderLCount: 1133, encoderRCount: 961, power: 100
+counts to turn: 1199, encoderLCount: 1133, encoderRCount: 961, power: 100
+counts to turn: 1199, encoderLCount: 1133, encoderRCount: 961, power: 100
+counts to turn: 1199, encoderLCount: 1133, encoderRCount: 961, power: 100
+counts to turn: 1199, encoderLCount: 1133, encoderRCount: 961, power: 100
+counts to turn: 1199, encoderLCount: 1133, encoderRCount: 961, power: 100
+counts to turn: 1199, encoderLCount: 1133, encoderRCount: 961, power: 100
+counts to turn: 1199, encoderLCount: 1133, encoderRCount: 961, power: 100
+counts to turn: 1199, encoderLCount: 1133, encoderRCount: 961, power: 100
+counts to turn: 1199, encoderLCount: 1133, encoderRCount: 961, power: 100
+counts to turn: 1199, encoderLCount: 1133, encoderRCount: 961, power: 100
+counts to turn: 1199, encoderLCount: 1169, encoderRCount: 961, power: 100
+counts to turn: 1199, encoderLCount: 1169, encoderRCount: 961, power: 100
+counts to turn: 1199, encoderLCount: 1169, encoderRCount: 961, power: 100
+counts to turn: 1199, encoderLCount: 1169, encoderRCount: 961, power: 100
+counts to turn: 1199, encoderLCount: 1169, encoderRCount: 961, power: 100
+counts to turn: 1199, encoderLCount: 1169, encoderRCount: 1026, power: 100
+counts to turn: 1199, encoderLCount: 1169, encoderRCount: 1026, power: 100
+counts to turn: 1199, encoderLCount: 1169, encoderRCount: 1026, power: 100
+counts to turn: 1199, encoderLCount: 1169, encoderRCount: 1026, power: 100
+counts to turn: 1199, encoderLCount: 1169, encoderRCount: 1026, power: 100
+counts to turn: 1199, encoderLCount: 1169, encoderRCount: 1026, power: 100
+counts to turn: 1199, encoderLCount: 1169, encoderRCount: 1026, power: 100
+counts to turn: 1199, encoderLCount: 1169, encoderRCount: 1026, power: 100
+counts to turn: 1199, encoderLCount: 1169, encoderRCount: 1026, power: 100
+counts to turn: 1199, encoderLCount: 1169, encoderRCount: 1026, power: 100
+counts to turn: 1199, encoderLCount: 1169, encoderRCount: 1026, power: 100
+counts to turn: 1199, encoderLCount: 1169, encoderRCount: 1026, power: 100
+counts to turn: 1199, encoderLCount: 1169, encoderRCount: 1026, power: 100
+counts to turn: 1199, encoderLCount: 1169, encoderRCount: 1026, power: 100
+counts to turn: 1199, encoderLCount: 1169, encoderRCount: 1026, power: 100
+counts to turn: 4189, encoderLCount: 0, encoderRCount: 0, power: 100
+nt: 160, encoderRCount: 17, power: 100
+counts to turn: 1199, encoderLCount: 228, encoderRCount: 103, power: 100
+counts to turn: 1199, encoderLCount: 228, encoderRCount: 103, power: 100
+counts to turn: 1199, encoderLCount: 228, encoderRCount: 103, power: 100
+counts to turn: 1199, encoderLCount: 228, enc1199, encoderLCount: 228, encoderRCount: 103, power: 100
+counts to turn: 1199, encoderLCount: 228, enc1199, encoderLCount: 304, encoderRCount: 147, power: 100
+counts to turn: 1199, encoderLCount: 304, encoderRCount: 147, power: 100
+counts to turn: 1199, encoderLCount: 329, encoderRCount: 147, power: 100
+counts to turn: 1199, encoderLCount: 329, enc1199, encoderLCount: 329, encoderRCount: 147, power: 100
+counts to turn: 1199, encoderLCount: 329, enc1199, encoderLCount: 405, encoderRCount: 246, power: 100
+counts to turn: 1199, encoderLCount: 405, encoderRCount: 246, power: 100
+counts to turn: 1199, encoderLCount: 405, encoderRCount: 246, power: 100
+counts to turn: 1199, encoderLCount: 405, enc1199, encoderLCount: 405, encoderRCount: 246, power: 100
+counts to turn: 1199, encoderLCount: 405, enc1199, encoderLCount: 462, encoderRCount: 295, power: 100
+counts to turn: 1199, encoderLCount: 462, encoderRCount: 295, p1199, encoderLCount: 488, encoderRCount: 295, power: 100
+counts to turn: 1199, encoderLCount: 488, encoderRCount: 295, power: 101199, encoderLCount: 488, encoderRCount: 295, power: 100
+counts to turn: 1199, encoderLCount: 488, enc1199, encoderLCount: 544, encoderRCount: 410, power: 100
+counts to turn: 1199, encoderLCount: 571, encoderRCount: 410, power: 100
+counts to turn: 1199, encoderLCount: 571, encoderRCount: 410, power: 100
+counts to turn: 1199, encoderLCount: 571, enc1199, encoderLCount: 571, encoderRCount: 410, power: 100
+counts to turn: 1199, encoderLCount: 571, enc1199, encoderLCount: 741, encoderRCount: 567, power: 100
+counts to turn: 1199, encoderLCount: 741, encoderRCount: 567, power: 100
+counts to turn: 1199, encoderLCount: 775, encoderRCount: 567, power: 100
+counts to turn: 1199, encoderLCount: 775, enc1199, encoderLCount: 775, encoderRCount: 567, power: 100
+counts to turn: 1199, encoderLCount: 775, enc1199, encoderLCount: 860, encoderRCount: 685, power: 100
+counts to turn: 1199, encoderLCount: 860, encoderRCount: 685, p1199, encoderLCount: 860, encoderRCount: 685, power: 100
+counts to turn: 1199, encoderLCount: 890, encoderRCount: 685, power: 101199, encoderLCount: 890, encoderRCount: 685, power: 100
+counts to turn: 1199, encoderLCount: 890, encr: 100
+counts to turn: 1199, encoderLCount: 980, encoderRCount: 797, power: 100
+counts to turn: 1199, encoderLCount: 980, encoderRCount: 797, power: 100
+counts to turn: 1199, encoderLCount: 980, encoderRCount: 797, power: 100
+counts to turn: 1199, 00
+counts to turn: 1199, encoderLCount: 1007, encoderRCount: 797, power: 100
+counts to turn: 1199, enc00
+counts to turn: 1199, encoderLCount: 1063, encoderRCount: 904, power: 100
+counts to turn: 1199, encoderLCount: 1063, 00
+counts to turn: 1199, encoderLCount: 1063, encoderRCount: 904, power: 100
+counts to turn: 1199, encoderLCount: 1097, encoderR00
+counts to turn: 1199, encoderLCount: 1097, encoderRCount: 904, power: 100
+counts to turn: 1199, encrn: 1199, encoderLCount: 1124, encoderRCount: 904, power: 100
+counts to turn: 1199, encoderLCount: 1124, encoderRCount: 966, power: 100
+counts to turn: 1199, encoderLCount: 1124, encoderRCount: 966, power: 100
+counts to turn: 1199, encoderLCount: 1124, encoderRCount: 966, power: 100
+counts to turn: 1199, encoderLCount: 1124, encoderRCount: 966, power: 100
+counts to turn: 1199, encoderLCount: 1124, encoderRCount: 966, power: 100
+counts to turn: 1199, encoderLCount: 1124, encoderRCount: 966, power: 100
+counts to turn: 1199, encoderLCount: 1124, encoderRCount: 966, power: 100
+counts to turn: 1199, encoderLCount: 1124, encoderRCount: 966, power: 100
+counts to turn: 1199, encoderLCount: 1124, encoderRCount: 966, power: 100
+counts to turn: 1199, encoderLCount: 1124, encoderRCount: 966, power: 100
+counts to turn: 1199, encoderLCount: 1124, encoderRCount: 966, power: 100
+counts to turn: 1199, encoderLCount: 1124, encoderRCount: 966, power: 100
+counts to turn: 1199, encoderLCount: 1124, encoderRCount: 966, power: 100
+counts to turn: 1199, encoderLCount: 1124, encoderRCount: 966, power: 100
+counts to turn: 1199, encoderLCount: 1151, encoderRCount: 966, power: 100
+counts to turn: 1199, encoderLCount: 1151, encoderRCount: 966, power: 100
+counts to turn: 1199, encoderLCount: 1151, encoderRCount: 966, power: 100
+counts to turn: 1199, encoderLCount: 1151, encoderRCount: 966, power: 100
+counts to turn: 1199, encoderLCount: 1151, encoderRCount: 966, power: 100
+counts to turn: 1199, encoderLCount: 1151, encoderRCount: 966, power: 100
+counts to turn: 1199, encoderLCount: 1151, encoderRCount: 966, power: 100
+counts to turn: 1199, encoderLCount: 1151, encoderRCount: 966, power: 100
+counts to turn: 1199, encoderLCount: 1151, encoderRCount: 966, power: 100
+counts to turn: 1199, encoderLCount: 1151, encoderRCount: 966, power: 100
+counts to turn: 1199, encoderLCount: 1151, encoderRCount: 966, power: 100
+counts to turn: 1199, encoderLCount: 1151, encoderRCount: 966, power: 100
+counts to turn: 1199, encoderLCount: 1151, encoderRCount: 966, power: 100
+counts to turn: 1199, encoderLCount: 1151, encoderRCount: 966, power: 100
+counts to turn: 1199, encoderLCount: 1151, encoderRCount: 966, power: 100
+counts to turn: 1199, encoderLCount: 1151, encoderRCount: 966, power: 100
+counts to turn: 1199, encoderLCount: 1151, encoderRCount: 966, power: 100
+counts to turn: 1199, encoderLCount: 1151, encoderRCount: 966, power: 100
+counts to turn: 1199, encoderLCount: 1151, encoderRCount: 966, power: 100
+counts to turn: 1199, encoderLCount: 1180, encoderRCount: 966, power: 100
+counts to turn: 1199, encoderLCount: 1180, encoderRCount: 966, power: 100
+counts to turn: 1199, encoderLCount: 1180, encoderRCount: 966, power: 100
+counts to turn: 1199, encoderLCount: 1180, encoderRCount: 966, power: 100
+counts to turn: 1199, encoderLCount: 1180, encoderRCount: 966, power: 100
+counts to turn: 1199, encoderLCount: 1180, encoderRCount: 1018, power: 100
+counts to turn: 1199, encoderLCount: 1180, encoderRCount: 1018, power: 100
+counts to turn: 1199, encoderLCount: 1180, encoderRCount: 1018, power: 100
+counts to turn: 1199, encoderLCount: 1180, encoderRCount: 1018, power: 100
+counts to turn: 1199, encoderLCount: 1180, encoderRCount: 1018, power: 100
+counts to turn: 1199, encoderLCount: 1180, encoderRCount: 1018, power: 100
+counts to turn: 1199, encoderLCount: 1180, encoderRCount: 1018, power: 100
+counts to turn: 1199, encoderLCount: 1180, encoderRCount: 1018, power: 100
+counts to turn: 1199, encoderLCount: 1180, encoderRCount: 1018, power: 100
+counts to turn: 1199, encoderLCount: 1180, encoderRCount: 1018, power: 100
+counts to turn: 1199, encoderLCount: 1180, encoderRCount: 1018, power: 100
+counts to turn: 1199, encoderLCount: 1180, encoderRCount: 1018, power: 100
+counts to turn: 1199, encoderLCount: 1180, encoderRCount: 1018, power: 100
+counts to turn: 1199, encoderLCount: 1180, encoderRCount: 1018, power: 100
+counts to turn: 1199, encoderLCount: 1180, encoderRCount: 1018, power: 100
+counts to turn: 3209, encoderLCount: 0, encoderRCount: 0, power: 100
+counts to turn: 6506, encoderLCount: 0, encoderRCount: 0, power: 100
+coderLCount: 74, encoderRCount: -21, power: 100
+counts nt: 161, encoderRCount: 12, power: 100
+counts to turn: 1199, encoderLCount: 161, encoderRCount: 12, power: 100
+counts to turn: 1199, encoderLCount: 161, encoderRCount: 12, power: 100
+counts to turn: 1199, encoderLCount: 161, encoderRCount: 12, powent: 161, encoderRCount: 12, power: 100
+counts to turn: 1199, encoderLCount: 184, encoderRCount: 12, poRCount: 81, power: 100
+counts to turn: 1199, encoderLCount: 234, encoderRCount: 81, power: 100
+counts to turn: 1199, encoderLCount: 234, encoderRCount: 81, power: 100
+counts to turn: 1199, encoderLCount: 258, encoderRCount: 81, power: 100
+counts to turn: 1199, encoderLCount: 258, encoderRCount: 81, power: 100
+counts to turn: 1199, encoderLCount: 251199, encoderLCount: 308, encoderRCount: 126, power: 100
+counts to turn: 1199, encoderLCount: 308, encoderRCount: 126, power: 100
+counts to turn: 1199, encoderLCount: 323, encoderRCount: 126, power: 100
+counts to turn: 1199, encoderLCount: 323, encoderRCount: 126, power: 100
+counts to turn: 1199, encoderLCount: 323, encoderRCount: 126, power: 100
+c1199, encoderLCount: 359, encoderRCount: 201, power: 100
+counts to turn: 1199, encoderLCount: 359, encoderRCount: 201, power: 100
+counts to turn: 1199, encoderLCount: 359, encoderRCount: 201, power: 100
+counts to turn: 1199, encoderLCount: 359, encoderRCount: 201, power: 100
+counts to turn: 1199, encoderLCount: 359, encoderRCount: 201, power: 100
+c1199, encoderLCount: 412, encoderRCount: 271, power: 100
+counts to turn: 1199, encoderLCount: 412, encoderRCount: 271, power: 100
+counts to turn: 1199, encoderLCount: 412, encoderRCount: 271, power: 100
+counts to turn: 1199, encoderLCount: 412, enc1199, encoderLCount: 412, encoderRCount: 271, power: 100
+counts to turn: 1199, encoderLCount: 412, enc1199, encoderLCount: 552, encoderRCount: 385, power: 100
+counts to turn: 1199, encoderLCount: 552, encoderRCount: 385, power: 100
+counts to turn: 1199, encoderLCount: 552, encoderRCount: 385, power: 100
+counts to turn: 1199, encoderLCount: 552, encoderRCount: 385, power: 100
+counts to turn: 1199, encoderLCount: 552, encoderRCount: 385, power: 100
+c1199, encoderLCount: 618, encoderRCount: 459, power: 100
+counts to turn: 1199, encoderLCount: 618, encoderRCount: 459, p1199, encoderLCount: 618, encoderRCount: 459, power: 100
+counts to turn: 1199, encoderLCount: 618, encoderRCount: 459, power: 101199, encoderLCount: 636, encoderRCount: 459, power: 100
+counts to turn: 1199, encoderLCount: 636, enc1199, encoderLCount: 691, encoderRCount: 535, power: 100
+counts to turn: 1199, encoderLCount: 691, encoderRCount: 535, power: 100
+counts to turn: 1199, encoderLCount: 691, encoderRCount: 535, power: 100
+counts to turn: 1199, encoderLCount: 691, enc1199, encoderLCount: 691, encoderRCount: 535, power: 100
+counts to turn: 1199, encoderLCount: 691, enc1199, encoderLCount: 767, encoderRCount: 610, power: 100
+counts to turn: 1199, encoderLCount: 767, encoderRCount: 610, power: 100
+counts to turn: 1199, encoderLCount: 767, encoderRCount: 610, power: 100
+counts to turn: 1199, encoderLCount: 767, enc1199, encoderLCount: 767, encoderRCount: 610, power: 100
+counts to turn: 1199, encoderLCount: 767, enc1199, encoderLCount: 854, encoderRCount: 687, power: 100
+counts to turn: 1199, encoderLCount: 854, encoderRCount: 687, power: 100
+counts to turn: 1199, encoderLCount: 854, encoderRCount: 687, power: 100
+counts to turn: 1199, encoderLCount: 854, enc1199, encoderLCount: 854, encoderRCount: 687, power: 100
+counts to turn: 1199, encoderLCount: 854, enc1199, encoderLCount: 928, encoderRCount: 765, power: 100
+counts to turn: 1199, encoderLCount: 928, encoderRCount: 765, power: 100
+counts to turn: 1199, encoderLCount: 928, encoderRCount: 765, power: 100
+counts to turn: 1199, encoderLCount: 928, encoderRCount: 765, power: 100
+counts to turn: 1199, encoderLCount: 928, encoderRCount: 765, power: 100
+c00
+counts to turn: 1199, encoderLCount: 1049, encoderRCount: 844, power: 100
+counts to turn: 1
+counts to turn: 1199, encoderLCount: 1135, encoderRCount: 924, power: 100
+counts to turn: 1199, encoderLCount: 1135, encoderRCount: 924, power: 100
+counts to turn: 1199, encoderLCount: 1135, encoderRCount: 924, power: 100
+counts to turn: 1199, encoderLCount: 1135, encoderRCount: 924, power: 100
+counts to turn: 1199, encoderLCount: 1135, encoderRCount: 924, power: 100
+counts to turn: 1199, encoderLCount: 1135, encoderRCount: 924, power: 100
+counts to turn: 1199, encoderLCount: 1135, encoderRCount: 970, power: 100
+counts to turn: 1199, encoderLCount: 1135, encoderRCount: 970, power: 100
+counts to turn: 1199, encoderLCount: 1135, encoderRCount: 970, power: 100
+counts to turn: 1199, encoderLCount: 1135, encoderRCount: 970, power: 100
+counts to turn: 1199, encoderLCount: 1135, encoderRCount: 970, power: 100
+counts to turn: 1199, encoderLCount: 1135, encoderRCount: 970, power: 100
+counts to turn: 1199, encoderLCount: 1159, encoderRCount: 970, power: 100
+counts to turn: 1199, encoderLCount: 1159, encoderRCount: 970, power: 100
+counts to turn: 1199, encoderLCount: 1159, encoderRCount: 970, power: 100
+counts to turn: 1199, encoderLCount: 1159, encoderRCount: 970, power: 100
+counts to turn: 1199, encoderLCount: 1159, encoderRCount: 970, power: 100
+counts to turn: 1199, encoderLCount: 1159, encoderRCount: 970, power: 100
+counts to turn: 1199, encoderLCount: 1159, encoderRCount: 970, power: 100
+counts to turn: 1199, encoderLCount: 1159, encoderRCount: 970, power: 100
+counts to turn: 1199, encoderLCount: 1159, encoderRCount: 970, power: 100
+counts to turn: 1199, encoderLCount: 1159, encoderRCount: 970, power: 100
+counts to turn: 1199, encoderLCount: 1159, encoderRCount: 970, power: 100
+counts to turn: 1199, encoderLCount: 1159, encoderRCount: 970, power: 100
+counts to turn: 1199, encoderLCount: 1159, encoderRCount: 970, power: 100
+counts to turn: 1199, encoderLCount: 1159, encoderRCount: 970, power: 100
+counts to turn: 1199, encoderLCount: 1159, encoderRCount: 970, power: 100
+counts to turn: 1199, encoderLCount: 1159, encoderRCount: 970, power: 100
+counts to turn: 1199, encoderLCount: 1159, encoderRCount: 970, power: 100
+counts to turn: 1199, encoderLCount: 1159, encoderRCount: 970, power: 100
+counts to turn: 1199, encoderLCount: 1159, encoderRCount: 970, power: 100
+counts to turn: 1199, encoderLCount: 1159, encoderRCount: 970, power: 100
+counts to turn: 1199, encoderLCount: 1159, encoderRCount: 970, power: 100
+counts to turn: 1199, encoderLCount: 1184, encoderRCount: 970, power: 100
+counts to turn: 1199, encoderLCount: 1184, encoderRCount: 970, power: 100
+counts to turn: 1199, encoderLCount: 1184, encoderRCount: 970, power: 100
+counts to turn: 1199, encoderLCount: 1184, encoderRCount: 970, power: 100
+counts to turn: 1199, encoderLCount: 1184, encoderRCount: 970, power: 100
+counts to turn: 1199, encoderLCount: 1184, encoderRCount: 970, power: 100
+counts to turn: 1199, encoderLCount: 1184, encoderRCount: 970, power: 100
+counts to turn: 1199, encoderLCount: 1184, encoderRCount: 970, power: 100
+counts to turn: 1199, encoderLCount: 1184, encoderRCount: 970, power: 100
+counts to turn: 1199, encoderLCount: 1184, encoderRCount: 970, power: 100
+counts to turn: 1199, encoderLCount: 1184, encoderRCount: 970, power: 100
+counts to turn: 1199, encoderLCount: 1184, encoderRCount: 970, power: 100
+counts to turn: 1199, encoderLCount: 1184, encoderRCount: 970, power: 100
+counts to turn: 1199, encoderLCount: 1184, encoderRCount: 1008, power: 100
+counts to turn: 1199, encoderLCount: 1184, encoderRCount: 1008, power: 100
+counts to turn: 1199, encoderLCount: 1184, encoderRCount: 1008, power: 100
+counts to turn: 1199, encoderLCount: 1184, encoderRCount: 1008, power: 100
+counts to turn: 1199, encoderLCount: 1184, encoderRCount: 1008, power: 100
+counts to turn: 1199, encoderLCount: 1184, encoderRCount: 1008, power: 100
+counts to turn: 1199, encoderLCount: 1184, encoderRCount: 1008, power: 100
+counts to turn: 4011, encoderLCount: 0, encoderRCount: 0, power: 100
+counts to turn: 6506, encoderLCount: 0, encoderRCount: 0, power: 100
+counts to turn: 6506, encoderLCount: 0, encoderRCount: 0, power: 100
+nt: 63, power: 100
+counts to turn: 1199, encoderLCount:1199, encoderLCount: 252, encoderRCount: 154, power: 100
+counts to turn: 1199, encoderLCount: 252, encoderRCount: 154, power: 100
+counts to turn: 1199, encoderLCount: 252, encoderRCount: 154, power: 100
+counts to turn: 1199, encoderLCount: 252, enc1199, encoderLCount: 252, encoderRCount: 154, power: 100
+counts to turn: 1199, encoderLCount: 252, enc1199, encoderLCount: 413, encoderRCount: 301, power: 100
+counts to turn: 1199, encoderLCount: 413, encoderRCount: 301, power: 100
+counts to turn: 1199, encoderLCount: 413, encoderRCount: 301, power: 100
+counts to turn: 1199, encoderLCount: 413, enc1199, encoderLCount: 413, encoderRCount: 301, power: 100
+counts to turn: 1199, encoderLCount: 439, enc1199, encoderLCount: 584, encoderRCount: 468, power: 100
+counts to turn: 1199, encoderLCount: 584, encoderRCount: 468, power: 100
+counts to turn: 1199, encoderLCount: 584, encoderRCount: 468, power: 100
+counts to turn: 1199, encoderLCount: 584, enc1199, encoderLCount: 584, encoderRCount: 468, power: 100
+counts to turn: 1199, encoderLCount: 584, enc1199, encoderLCount: 666, encoderRCount: 520, power: 100
+counts to turn: 1199, encoderLCount: 666, encoderRCount: 520, power: 100
+counts to turn: 1199, encoderLCount: 666, encoderRCount: 520, power: 100
+counts to turn: 1199, encoderLCount: 666, enc1199, encoderLCount: 692, encoderRCount: 520, power: 100
+counts to turn: 1199, encoderLCount: 692, enc1199, encoderLCount: 746, encoderRCount: 624, power: 100
+counts to turn: 1199, encoderLCount: 746, encoderRCount: 624, power: 100
+counts to turn: 1199, encoderLCount: 746, encoderRCount: 624, power: 100
+counts to turn: 1199, encoderLCount: 746, enc1199, encoderLCount: 773, encoderRCount: 624, power: 100
+counts to turn: 1199, encoderLCount: 773, enc1199, encoderLCount: 840, encoderRCount: 677, power: 100
+counts to turn: 1199, encoderLCount: 840, encoderRCount: 677, p1199, encoderLCount: 840, encoderRCount: 677, power: 100
+counts to turn: 1199, encoderLCount: 840, encoderRCount: 677, power: 101199, encoderLCount: 840, encoderRCount: 677, power: 100
+counts to turn: 1199, encoderLCount: 840, enc00
+counts to turn: 1199, encoderLCount: 1006, encoderRCount: 847, power: 100
+counts to turn: 1199, encoderLCount: 1006, encoderRCount: 847, power: 100
+counts to turn: 1199, encoderLCount: 1006, encoderRCount: 847, power: 100
+counts to turn: 1199, e00
+counts to turn: 1199, encoderLCount: 1006, encoderRCount: 847, power: 100
+counts to turn: 1199, encount: 1118, encoderRCount: 954, power: 100
+counts to turn: 1199, encoderLCount: 1118, encoderRCount: 954, power: 100
+counts to turn: 1199, encoderLCount: 1118, encoderRCount: 954, power: 100
+counts to turn: 1199, encoderLCount: 1118, encoderRCount: 954, power: 100
+counts to turn: 1199, encoderLCount: 1118, encoderRCount: 954, power: 100
+counts to turn: 1199, encoderLCount: 1118, encoderRCount: 954, power: 100
+counts to turn: 1199, encoderLCount: 1118, encoderRCount: 954, power: 100
+counts to turn: 1199, encoderLCount: 1118, encoderRCount: 954, power: 100
+counts to turn: 1199, encoderLCount: 1118, encoderRCount: 954, power: 100
+counts to turn: 1199, encoderLCount: 1118, encoderRCount: 954, power: 100
+counts to turn: 1199, encoderLCount: 1118, encoderRCount: 954, power: 100
+counts to turn: 1199, encoderLCount: 1118, encoderRCount: 954, power: 100
+counts to turn: 1199, encoderLCount: 1118, encoderRCount: 954, power: 100
+counts to turn: 1199, encoderLCount: 1118, encoderRCount: 954, power: 100
+counts to turn: 1199, encoderLCount: 1118, encoderRCount: 954, power: 100
+counts to turn: 1199, encoderLCount: 1118, encoderRCount: 954, power: 100
+counts to turn: 1199, encoderLCount: 1150, encoderRCount: 954, power: 100
+counts to turn: 1199, encoderLCount: 1150, encoderRCount: 954, power: 100
+counts to turn: 1199, encoderLCount: 1150, encoderRCount: 954, power: 100
+counts to turn: 1199, encoderLCount: 1150, encoderRCount: 954, power: 100
+counts to turn: 1199, encoderLCount: 1150, encoderRCount: 1013, power: 100
+counts to turn: 1199, encoderLCount: 1150, encoderRCount: 1013, power: 100
+counts to turn: 1199, encoderLCount: 1150, encoderRCount: 1013, power: 100
+counts to turn: 1199, encoderLCount: 1150, encoderRCount: 1013, power: 100
+counts to turn: 1199, encoderLCount: 1150, encoderRCount: 1013, power: 100
+counts to turn: 1199, encoderLCount: 1150, encoderRCount: 1013, power: 100
+counts to turn: 1199, encoderLCount: 1150, encoderRCount: 1013, power: 100
+counts to turn: 1199, encoderLCount: 1150, encoderRCount: 1013, power: 100
+counts to turn: 1199, encoderLCount: 1150, encoderRCount: 1013, power: 100
+counts to turn: 1199, encoderLCount: 1150, encoderRCount: 1013, power: 100
+counts to turn: 1199, encoderLCount: 1150, encoderRCount: 1013, power: 100
+counts to turn: 1199, encoderLCount: 1150, encoderRCount: 1013, power: 100
+counts to turn: 1199, encoderLCount: 1150, encoderRCount: 1013, power: 100
+counts to turn: 1199, encoderLCount: 1150, encoderRCount: 1013, power: 100
+counts to turn: 1199, encoderLCount: 1150, encoderRCount: 1013, power: 100
+counts to turn: 1199, encoderLCount: 1150, encoderRCount: 1013, power: 100
+counts to turn: 1199, encoderLCount: 1178, encoderRCount: 1013, power: 100
+counts to turn: 1199, encoderLCount: 1178, encoderRCount: 1013, power: 100
+counts to turn: 1199, encoderLCount: 1178, encoderRCount: 1013, power: 100
+counts to turn: 1199, encoderLCount: 1178, encoderRCount: 1013, power: 100
+counts to turn: 1199, encoderLCount: 1178, encoderRCount: 1013, power: 100
+counts to turn: 1199, encoderLCount: 1178, encoderRCount: 1013, power: 100
+counts to turn: 1199, encoderLCount: 1178, encoderRCount: 1013, power: 100
+counts to turn: 1199, encoderLCount: 1178, encoderRCount: 1013, power: 100
+counts to turn: 1199, encoderLCount: 1178, encoderRCount: 1013, power: 100
+counts to turn: 1199, encoderLCount: 1178, encoderRCount: 1013, power: 100
+counts to turn: 1199, encoderLCount: 1178, encoderRCount: 1013, power: 100
+counts to turn: 1199, encoderLCount: 1178, encoderRCount: 1013, power: 100
+counts to turn: 1199, encoderLCount: 1178, encoderRCount: 1013, power: 100
+counts to turn: 1199, encoderLCount: 1178, encoderRCount: 1013, power: 100
+counts to turn: 1199, encoderLCount: 1178, encoderRCount: 1013, power: 100
+counts to turn: 1199, encoderLCount: 1178, encoderRCount: 1013, power: 100
+counts to turn: 1199, encoderLCount: 1178, encoderRCount: 1013, power: 100
+counts to turn: 1199, encoderLCount: 1178, encoderRCount: 1013, power: 100
+counts to turn: 3832, encoderLCount: 0, encoderRCount: 0, power: 100
+counts to turn: 1199, encoderLCount: 0, encoderRCount: urn: 1199, encoderLCount: 20, encoderRCount: -17, power: 100
+counts to turn: 1199, encoderLCount: 20, encoderRCount: -17, power: 100
+counts to turn: 1199, encoderLCount: 20, encoderRCount: -17, power: 100
+counts to turn: 1199, encoderLCount: 20, en to turn: 1199, encoderLCount: 20, encoderRCount: -17, power: 100
+counts to turn: 1199, encoderLCount:nt: 114, encoderRCount: 50, power: 100
+counts to turn: 1199, encoderLCount: 114, encoderRCount: 50, power: 100
+counts to turn: 1199, encoderLCount: 114, encoderRCount: 50, power: 100
+counts to turn: 1199, encoderLCount: 114, encoderRCount: 50, power: 100
+counts to turn: 1199, encoderLCount: 114, encoderRCount: 50, power: 100
+counts to turn: 1199, e1199, encoderLCount: 263, encoderRCount: 186, power: 100
+counts to turn: 1199, encoderLCount: 263, encoderRCount: 186, power: 100
+counts to turn: 1199, encoderLCount: 263, encoderRCount: 186, power: 100
+counts to turn: 1199, encoderLCount: 263, encoderRCount: 186, power: 100
+counts to turn: 1199, encoderLCount: 263, encoderRCount: 186, power: 100
+c1199, encoderLCount: 364, encoderRCount: 281, power: 100
+counts to turn: 1199, encoderLCount: 364, encoderRCount: 281, power: 100
+counts to turn: 1199, encoderLCount: 364, encoderRCount: 281, power: 100
+counts to turn: 1199, encoderLCount: 364, enc1199, encoderLCount: 364, encoderRCount: 281, power: 100
+counts to turn: 1199, encoderLCount: 364, enc1199, encoderLCount: 439, encoderRCount: 331, power: 100
+counts to turn: 1199, encoderLCount: 439, encoderRCount: 331, p1199, encoderLCount: 439, encoderRCount: 331, power: 100
+counts to turn: 1199, encoderLCount: 439, encoderRCount: 331, power: 101199, encoderLCount: 439, encoderRCount: 385, power: 100
+counts to turn: 1199, encoderLCount: 439, enc1199, encoderLCount: 524, encoderRCount: 434, power: 100
+counts to turn: 1199, encoderLCount: 524, encoderRCount: 434, p1199, encoderLCount: 524, encoderRCount: 434, power: 100
+counts to turn: 1199, encoderLCount: 524, encoderRCount: 434, power: 101199, encoderLCount: 524, encoderRCount: 434, power: 100
+counts to turn: 1199, encoderLCount: 524, enc1199, encoderLCount: 605, encoderRCount: 537, power: 100
+counts to turn: 1199, encoderLCount: 605, encoderRCount: 537, power: 100
+counts to turn: 1199, encoderLCount: 605, encoderRCount: 537, power: 100
+counts to turn: 1199, encoderLCount: 605, encoderRCount: 537, power: 100
+counts to turn: 1199, encoderLCount: 605, encoderRCount: 537, power: 100
+c1199, encoderLCount: 685, encoderRCount: 586, power: 100
+counts to turn: 1199, encoderLCount: 685, encoderRCount: 586, power: 100
+counts to turn: 1199, encoderLCount: 685, encoderRCount: 586, power: 100
+counts to turn: 1199, encoderLCount: 685, enc1199, encoderLCount: 685, encoderRCount: 586, power: 100
+counts to turn: 1199, encoderLCount: 685, enc1199, encoderLCount: 825, encoderRCount: 697, power: 100
+counts to turn: 1199, encoderLCount: 825, encoderRCount: 697, power: 100
+counts to turn: 1199, encoderLCount: 825, encoderRCount: 697, power: 100
+counts to turn: 1199, encoderLCount: 825, enc1199, encoderLCount: 825, encoderRCount: 749, power: 100
+counts to turn: 1199, encoderLCount: 825, enc power: 100
+counts to turn: 1199, encodercoderRCount: 1014, power: 100
+counts to turn: 1199, encoderLCount: 1129, encoderRCount: 1014, power: 100
+counts to turn: 1199, encoderLCount: 1129, encoderRCount: 1014, power: 100
+counts to turn: 1199, encoderLCount: 1129, encoderRCount: 1014, power: 100
+counts to turn: 1199, encoderLCount: 1129, encoderRCount: 1014, power: 100
+counts to turn: 1199, encoderLCount: 1129, encoderRCount: 1014, power: 100
+counts to turn: 1199, encoderLCount: 1129, encoderRCount: 1014, power: 100
+counts to turn: 1199, encoderLCount: 1129, encoderRCount: 1014, power: 100
+counts to turn: 1199, encoderLCount: 1129, encoderRCount: 1014, power: 100
+counts to turn: 1199, encoderLCount: 1129, encoderRCount: 1014, power: 100
+counts to turn: 1199, encoderLCount: 1129, encoderRCount: 1014, power: 100
+counts to turn: 1199, encoderLCount: 1129, encoderRCount: 1014, power: 100
+counts to turn: 1199, encoderLCount: 1156, encoderRCount: 1014, power: 100
+counts to turn: 1199, encoderLCount: 1156, encoderRCount: 1014, power: 100
+counts to turn: 1199, encoderLCount: 1156, encoderRCount: 1014, power: 100
+counts to turn: 1199, encoderLCount: 1156, encoderRCount: 1014, power: 100
+counts to turn: 1199, encoderLCount: 1156, encoderRCount: 1014, power: 100
+counts to turn: 1199, encoderLCount: 1156, encoderRCount: 1014, power: 100
+counts to turn: 1199, encoderLCount: 1156, encoderRCount: 1014, power: 100
+counts to turn: 1199, encoderLCount: 1156, encoderRCount: 1014, power: 100
+counts to turn: 1199, encoderLCount: 1156, encoderRCount: 1064, power: 100
+counts to turn: 1199, encoderLCount: 1156, encoderRCount: 1064, power: 100
+counts to turn: 1199, encoderLCount: 1156, encoderRCount: 1064, power: 100
+counts to turn: 1199, encoderLCount: 1156, encoderRCount: 1064, power: 100
+counts to turn: 1199, encoderLCount: 1156, encoderRCount: 1064, power: 100
+counts to turn: 1199, encoderLCount: 1156, encoderRCount: 1064, power: 100
+counts to turn: 1199, encoderLCount: 1156, encoderRCount: 1064, power: 100
+counts to turn: 1199, encoderLCount: 1156, encoderRCount: 1064, power: 100
+counts to turn: 1199, encoderLCount: 1156, encoderRCount: 1064, power: 100
+counts to turn: 1199, encoderLCount: 1156, encoderRCount: 1064, power: 100
+counts to turn: 1199, encoderLCount: 1156, encoderRCount: 1064, power: 100
+counts to turn: 1199, encoderLCount: 1156, encoderRCount: 1064, power: 100
+counts to turn: 1199, encoderLCount: 1156, encoderRCount: 1064, power: 100
+counts to turn: 1199, encoderLCount: 1182, encoderRCount: 1064, power: 100
+counts to turn: 1199, encoderLCount: 1182, encoderRCount: 1064, power: 100
+counts to turn: 1199, encoderLCount: 1182, encoderRCount: 1064, power: 100
+counts to turn: 1199, encoderLCount: 1182, encoderRCount: 1064, power: 100
+counts to turn: 1199, encoderLCount: 1182, encoderRCount: 1064, power: 100
+counts to turn: 1199, encoderLCount: 1182, encoderRCount: 1064, power: 100
+counts to turn: 1199, encoderLCount: 1182, encoderRCount: 1064, power: 100
+counts to turn: 1199, encoderLCount: 1182, encoderRCount: 1064, power: 100
+counts to turn: 1199, encoderLCount: 1182, encoderRCount: 1064, power: 100
+counts to turn: 1199, encoderLCount: 1182, encoderRCount: 1064, power: 100
+counts to turn: 1199, encoderLCount: 1182, encoderRCount: 1064, power: 100
+counts to turn: 1199, encoderLCount: 1182, encoderRCount: 1064, power: 100
+counts to turn: 1199, encoderLCount: 1182, encoderRCount: 1064, power: 100
+counts to turn: 1199, encoderLCount: 1182, encoderRCount: 1064, power: 100
+counts to turn: 1199, encoderLCount: 1182, encoderRCount: 1064, power: 100
+counts to turn: 1199, encoderLCount: 1182, encoderRCount: 1064, power: 100
+counts to turn: 1199, encoderLCount: 1182, encoderRCount: 1064, power: 100
+counts to turn: 1199, encoderLCount: 1182, encoderRCount: 1064, power: 100
+counts to turn: 1199, encoderLCount: 1182, encoderRCount: 1064, power: 100
+counts to turn: 1199, encoderLCount: 1182, encoderRCount: 1064, power: 100
+counts to turn: 3209, encoderLCount: 0, encoderRCount: 0, power: 100

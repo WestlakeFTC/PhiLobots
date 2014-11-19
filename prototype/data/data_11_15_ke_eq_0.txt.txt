@@ -1,0 +1,69 @@
+counts:1119-off:0, encoderLCount: 0, encoderRCount: 0, power: 100, time: 2346741
+counts:1119-off:0, encoderLCount: 0, encoderRCount: 0,  100, time: 2346772
+counts:1119-off:0, encoderLCount: 0, encoderRCount: 6, power: 100, time: 2346783
+counts:1119-off:0, encoderLCount: 7, encoderRCount: 6, power: 100, time: 2346794
+counts:1119-off:0, encoderLCount: 17, encoderRCount: 17, power: 100, time: 2346805
+counts:1119-off:0, encoderLCount: 31, encoderRCount: 31, power: 100, time: 2346816
+counts:1119-off:0, encoderLCount: 51, encoderRCount: 43, power: 100, time: 2346827
+counts:1119-off:0, encoderLCount: 51, encoderRCount: 53, power: 100, time: 2346837
+counts:1119-off:0, encoderLCount: 70, encoderRCount: 67, power: 100, time: 2346848
+counts:1119-off:0, encoderLCount: 89, encoderRCount: 84, power: 100, time: 2346859
+counts:1119-off:0, encoderLCount: 111, encoderRCount: 84, power: 100, time: 2346871
+counts:1119-off:0, encoderLCount: 133, encoderRCount: 103, power: 100, time: 2346881
+counts:1119-off:0, encoderLCount: 133, encoderRCount: 123, power: 100, time: 2346892
+counts:1119-off:0, encoderLCount: 165, encoderRCount: 152, power: 100, time: 2346903
+counts:1119-off:0, encoderLCount: 188, encoderRCount: 152, power: 100, time: 2346914
+counts:1119-off:0, encoderLCount: 214, encoderRCount: 176, power: 100, time: 2346925
+counts:1119-off:0, encoderLCount: 242, encoderRCount: 202, power: 100, time: 2346936
+counts:1119-off:0, encoderLCount: 270, encoderRCount: 229, power: 100, time: 2346947
+counts:1119-off:0, encoderLCount: 270, encoderRCount: 257, power: 100, time: 2346957
+counts:1119-off:0, encoderLCount: 292, encoderRCount: 285, power: 100, time: 2346968
+counts:1119-off:0, encoderLCount: 320, encoderRCount: 314, power: 100, time: 2346980
+counts:1119-off:0, encoderLCount: 347, encoderRCount: 314, power: 100, time: 2346991
+counts:1119-off:0, encoderLCount: 377, encoderRCount: 341, power: 100, time: 2347002
+counts:1119-off:0, encoderLCount: 406, encoderRCount: 372, power: 100, time: 2347013
+counts:1119-off:0, encoderLCount: 438, encoderRCount: 404, power: 100, time: 2347024
+counts:1119-off:0, encoderLCount: 438, encoderRCount: 436, power: 100, time: 2347034
+counts:1119-off:0, encoderLCount: 479, encoderRCount: 436, power: 100, time: 2347045
+counts:1119-off:0, encoderLCount: 511, encoderRCount: 477, power: 100, time: 2347056
+counts:1119-off:0, encoderLCount: 544, encoderRCount: 509, power: 100, time: 2347067
+counts:1119-off:0, encoderLCount: 544, encoderRCount: 540, power: 100, time: 2347077
+counts:1119-off:0, encoderLCount: 576, encoderRCount: 572, power: 100, time: 2347088
+counts:1119-off:0, encoderLCount: 608, encoderRCount: 604, power: 100, time: 2347100
+counts:1119-off:0, encoderLCount: 639, encoderRCount: 604, power: 100, time: 2347112
+counts:1119-off:0, encoderLCount: 672, encoderRCount: 636, power: 100, time: 2347123
+counts:1119-off:0, encoderLCount: 700, encoderRCount: 669, power: 100, time: 2347134
+counts:1119-off:0, encoderLCount: 733, encoderRCount: 702, power: 100, time: 2347145
+counts:1119-off:0, encoderLCount: 733, encoderRCount: 734, power: 100, time: 2347155
+counts:1119-off:0, encoderLCount: 765, encoderRCount: 768, power: 100, time: 2347166
+counts:1119-off:0, encoderLCount: 796, encoderRCount: 768, power: 100, time: 2347177
+counts:1119-off:0, encoderLCount: 835, encoderRCount: 800, power: 100, time: 2347188
+counts:1119-off:0, encoderLCount: 865, encoderRCount: 842, power: 100, time: 2347199
+counts:1119-off:0, encoderLCount: 865, encoderRCount: 874, power: 100, time: 2347209
+counts:1119-off:0, encoderLCount: 898, encoderRCount: 874, power: 100, time: 2347220
+counts:1119-off:0, encoderLCount: 930, encoderRCount: 907, power: 100, time: 2347231
+counts:1119-off:0, encoderLCount: 963, encoderRCount: 940, power: 100, time: 2347242
+counts:1119-off:0, encoderLCount: 993, encoderRCount: 973, power: 100, time: 2347253
+counts:1119-off:0, encoderLCount: 993, encoderRCount: 1007, power: 100, time: 2347263
+counts:1119-off:0, encoderLCount: 1024, encoderRCount: 1040, power: 100, time: 2347274
+counts:1119-off:0, encoderLCount: 1052, encoderRCount: 1040, power: 100, time: 2347285
+counts:1119-off:0, encoderLCount: 1083, encoderRCount: 1074, power: 100, time: 2347297
+counts:1119-off:0, encoderLCount: 1115, encoderRCount: 1106, power: 100, time: 2347308
+counts:1119-off:0, encoderLCount: 1148, encoderRCount: 1136, power: 100, time: 2347319
+counts to turn: 1119, encoderLCount: 1148, encoderRCount: 1136, power: 0, time: 2347321
+counts to turn: 1119, encoderLCount: 1182, encoderRCount: 1212, power: 0, time: 2347342
+counts to turn: 1119, encoderLCount: 1242, encoderRCount: 1244, power: 0, time: 2347363
+counts to turn: 1119, encoderLCount: 1264, encoderRCount: 1268, power: 0, time: 2347384
+counts to turn: 1119, encoderLCount: 1268, encoderRCount: 1274, power: 0, time: 2347404
+counts to turn: 1119, encoderLCount: 1274, encoderRCount: 1285, power: 0, time: 2347424
+counts to turn: 1119, encoderLCount: 1275, encoderRCount: 1290, power: 0, time: 2347444
+counts to turn: 1119, encoderLCount: 1277, encoderRCount: 1292, power: 0, time: 2347465
+counts to turn: 1119, encoderLCount: 1278, encoderRCount: 1294, power: 0, time: 2347485
+counts to turn: 1119, encoderLCount: 1279, encoderRCount: 1295, power: 0, time: 2347506
+counts to turn: 1119, encoderLCount: 1279, encoderRCount: 1295, power: 0, time: 2347526
+counts to turn: 1119, encoderLCount: 1278, encoderRCount: 1295, power: 0, time: 2347547
+counts to turn: 1119, encoderLCount: 1278, encoderRCount: 1295, power: 0, time: 2347567
+counts to turn: 1119, encoderLCount: 1278, encoderRCount: 1295, power: 0, time: 2347588
+counts to turn: 1119, encoderLCount: 1278, encoderRCount: 1295, power: 0, time: 2347609
+counts to turn: 1119, encoderLCount: 1278, encoderRCount: 1295, power: 0, time: 2347629
+counts to turn: 1119, encoderLCount: 1278, encoderRCount: 1295, power: 0, time: 2347650
