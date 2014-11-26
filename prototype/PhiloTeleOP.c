@@ -1,9 +1,7 @@
-#pragma config(Hubs,  S1, HTMotor,  HTServo,  none,     none)
+ #pragma config(Hubs,  S1, HTMotor,  HTServo,  none,     none)
 #pragma config(Hubs,  S2, HTMotor,  HTServo,  none,     none)
 #pragma config(Hubs,  S3, HTMotor,  none,     none,     none)
-#pragma config(Sensor, S1,     ,               sensorI2CMuxController)
-#pragma config(Sensor, S2,     ,               sensorI2CMuxController)
-#pragma config(Sensor, S3,     ,               sensorI2CMuxController)
+#pragma config(Sensor, S4,     faucetTouch,    sensorTouch)
 #pragma config(Motor,  motorB,          l,             tmotorNXT, PIDControl, encoder)
 #pragma config(Motor,  mtr_S1_C1_1,     BackL,         tmotorTetrix, openLoop)
 #pragma config(Motor,  mtr_S1_C1_2,     FrontL,        tmotorTetrix, openLoop)
@@ -11,10 +9,10 @@
 #pragma config(Motor,  mtr_S2_C1_2,     FrontR,        tmotorTetrix, openLoop)
 #pragma config(Motor,  mtr_S3_C1_1,     FanR,          tmotorTetrix, openLoop)
 #pragma config(Motor,  mtr_S3_C1_2,     FanL,          tmotorTetrix, openLoop)
-#pragma config(Servo,  srvo_S1_C2_1,    transfer,             tServoStandard)
-#pragma config(Servo,  srvo_S1_C2_2,    intake,               tServoStandard)
-#pragma config(Servo,  srvo_S1_C2_3,    servo3,               tServoNone)
-#pragma config(Servo,  srvo_S1_C2_4,    servo4,               tServoNone)
+#pragma config(Servo,  srvo_S1_C2_1,    intake,               tServoContinuousRotation)
+#pragma config(Servo,  srvo_S1_C2_2,    rakes,                tServoContinuousRotation)
+#pragma config(Servo,  srvo_S1_C2_3,    insertion,            tServoStandard)
+#pragma config(Servo,  srvo_S1_C2_4,    faucet,               tServoStandard)
 #pragma config(Servo,  srvo_S1_C2_5,    servo5,               tServoNone)
 #pragma config(Servo,  srvo_S1_C2_6,    servo6,               tServoNone)
 #pragma config(Servo,  srvo_S2_C2_1,    servo7,               tServoNone)
@@ -67,25 +65,72 @@ void controlFans(bool fan){
 		wasOnLastTime = false;
 	}
 }
-void moveBelt(){
-	servo[transfer] = 0;
-}
-void moveIntake(bool intakeChoice)
+void moveBelt(bool intakeChoice)
 { if (!intakeChoice)
 		return;
 	static bool wasOnLastTime = false;
 	if (wasOnLastTime)
 	{
-	servo[intake] = 128;
-	wasOnLastTime = true;
+	servo[intake] = 0;
+	wasOnLastTime = false;
 	}
 	else
 	{
-		servo [intake] = 255;
-		wasOnLastTime = false;
+		servo [intake] = 128;
+		wasOnLastTime = true;
+	}
+}
+
+void moveRakes(bool rakeChoice)
+{ if (!rakeChoice)
+		return;
+	static bool wasOnLastTime = false;
+	if (wasOnLastTime)
+	{
+	servo[rakes] = 128;
+	wasOnLastTime = false;
+	}
+	else
+	{
+		servo [rakes] = 255;
+		wasOnLastTime = true;
 	}
 
 }
+void moveInsertion(bool insertChoice)
+{
+	if (!insertChoice)
+		return;
+	static bool wasOnLastTime = false;
+	if (wasOnLastTime)
+	{
+	servo[insertion] = -255;
+	wasOnLastTime = false;
+	}
+	else
+	{
+		servo [insertion] = 255;
+		wasOnLastTime = true;
+	}
+
+}
+void moveFaucet(bool faucetChoice)
+{
+	if (!faucetChoice)
+		return;
+	else
+	{
+
+		servo [faucet] = 127;
+		while (SensorValue[faucetTouch] != 1){}
+		servo [faucet] = 0;
+}
+
+
+
+}
+
+
 task main()
 {
 	//waitForStart();   // wait for start of tele-op phase
@@ -101,9 +146,10 @@ task main()
 
 		moveAround(rawLeftJoy, rawRightJoy);
 		controlFans(joy1Btn(2));
-		moveBelt();
-		moveIntake(joy1Btn(3));
-
+		moveBelt(joy1Btn(3));
+		moveRakes(joy1Btn(4));
+		moveInsertion(joy1Btn(6));
+		moveFaucet(joy1Btn(8));
 
 	}
 
