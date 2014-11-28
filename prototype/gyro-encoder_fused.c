@@ -187,8 +187,8 @@ void straightMove(int inches){
 
 }
 
-int observedBrakingOffSetL=0;
-int observedBrakingOffSetR=0;
+int observedBrakingOffSetL=118;
+int observedBrakingOffSetR=100;
 float observedGyroOffSet = 0;
 void encoderObservedTurn(int target){
 	nMotorEncoder[FrontR] = 0;
@@ -213,19 +213,21 @@ int full_power =target>0? -TURN_POWER:TURN_POWER;
 	long stopTime=nSysTime;
 	int last_encoderL=beginningEncoderL;
 	int last_encoderR=beginningEncoderR;
-	while(nMotorEncoder[FrontL]!=last_encoderL ||
-		nMotorEncoder[FrontR]!=last_encoderR){
 
+	do{
+    sleep(20);
 		last_encoderL=nMotorEncoder[FrontL];
 		last_encoderR=nMotorEncoder[FrontR];
 		writeDebugStreamLine("counts:%d-off:%d/%d, encoderL: %d, encoderR: %d, power: %d,heading:%d time: %d",
 		countToTurn, observedBrakingOffSetL, observedBrakingOffSetR,
-		beginningEncoderL, beginningEncoderR, 0, (int)gHeading, nSysTime);
+		last_encoderL, last_encoderR, 0, (int)gHeading, nSysTime);
 		sleep(20);
-	}
-	observedBrakingOffSetL=abs(last_encoderL-beginningEncoderL);
-	observedBrakingOffSetR=abs(last_encoderL-beginningEncoderR);
-	observedGyroOffSet=gHeading-target;
+	}while(nMotorEncoder[FrontL]!=last_encoderL ||
+		nMotorEncoder[FrontR]!=last_encoderR);
+
+	//observedBrakingOffSetL=abs(last_encoderL-beginningEncoderL);
+	//observedBrakingOffSetR=abs(last_encoderR-beginningEncoderR);
+	//observedGyroOffSet=gHeading-target;
 }
 
 void encoderPredictionTurn(int target){

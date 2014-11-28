@@ -1,7 +1,6 @@
- #pragma config(Hubs,  S1, HTMotor,  HTServo,  none,     none)
+#pragma config(Hubs,  S1, HTMotor,  HTServo,  none,     none)
 #pragma config(Hubs,  S2, HTMotor,  HTServo,  none,     none)
 #pragma config(Hubs,  S3, HTMotor,  none,     none,     none)
-#pragma config(Sensor, S4,     faucetTouch,    sensorTouch)
 #pragma config(Motor,  motorB,          l,             tmotorNXT, PIDControl, encoder)
 #pragma config(Motor,  mtr_S1_C1_1,     BackL,         tmotorTetrix, openLoop)
 #pragma config(Motor,  mtr_S1_C1_2,     FrontL,        tmotorTetrix, openLoop)
@@ -32,21 +31,21 @@ void moveAround(int rawLeftJoy, int rawRightJoy){
 
 
 
-		//movement
+	//movement
 
-		if(abs(rawLeftJoy/128.0*100) > 5)
-			leftJoy=rawLeftJoy/128.0*100;
-		else
-			leftJoy = 0;
-		if(abs(rawRightJoy/128.0*100) > 5)
-			rightJoy=rawRightJoy/128.0*100;
-		else
-			rightJoy = 0;
+	if(abs(rawLeftJoy/128.0*100) > 5)
+		leftJoy=rawLeftJoy/128.0*100;
+	else
+		leftJoy = 0;
+	if(abs(rawRightJoy/128.0*100) > 5)
+		rightJoy=rawRightJoy/128.0*100;
+	else
+		rightJoy = 0;
 
-		motor[FrontR] =-rightJoy;
-		motor[FrontL] = leftJoy;
-		motor[BackR] = -rightJoy;
-		motor[BackL] = leftJoy;
+	motor[FrontR] =-rightJoy;
+	motor[FrontL] = leftJoy;
+	motor[BackR] = -rightJoy;
+	motor[BackL] = leftJoy;
 
 }
 void controlFans(bool fan){
@@ -71,8 +70,8 @@ void moveBelt(bool intakeChoice)
 	static bool wasOnLastTime = false;
 	if (wasOnLastTime)
 	{
-	servo[intake] = 0;
-	wasOnLastTime = false;
+		servo[intake] = 0;
+		wasOnLastTime = false;
 	}
 	else
 	{
@@ -87,8 +86,8 @@ void moveRakes(bool rakeChoice)
 	static bool wasOnLastTime = false;
 	if (wasOnLastTime)
 	{
-	servo[rakes] = 128;
-	wasOnLastTime = false;
+		servo[rakes] = 128;
+		wasOnLastTime = false;
 	}
 	else
 	{
@@ -104,41 +103,56 @@ void moveInsertion(bool insertChoice)
 	static bool wasOnLastTime = false;
 	if (wasOnLastTime)
 	{
-	servo[insertion] = -255;
-	wasOnLastTime = false;
+		servo[insertion] = 10;
+		wasOnLastTime = false;
 	}
 	else
 	{
-		servo [insertion] = 255;
+		servo [insertion] = 250;
 		wasOnLastTime = true;
 	}
 
 }
-void moveFaucet(bool faucetChoice)
+void moveFaucet(bool faucetRight, bool faucetLeft)
 {
-	if (!faucetChoice)
-		return;
-	else
-	{
-
+	if (!faucetRight && ! faucetLeft){
 		servo [faucet] = 127;
-		while (SensorValue[faucetTouch] != 1){}
+		return;
+	}
+	else if(faucetRight){
+		servo [faucet] = 255;
+		}else if(faucetLeft){
 		servo [faucet] = 0;
+	}
 }
 
-
-
+volatile bool flap_pressed=false;
+long last_flap_time=0;
+task joy()
+{
+	while(true)
+	{
+		getJoystickSettings(joystick);
+		hogCPU();
+		if(joy1Btn(4)
+			&&
+	    (!flap_pressed)
+	    && ((nSysTime-last_flap_time)>500)
+			) {
+				flap_pressed=true;
+				last_flap_time=nSysTime;
+			}
+		releaseCPU();
+	}
 }
-
 
 task main()
 {
 	//waitForStart();   // wait for start of tele-op phase
-
+	startTask(joy);
 	//set everything
 	while (true)
 	{
-		getJoystickSettings(joystick);
 
 		int rawLeftJoy=joystick.joy1_y1;
 		int rawRightJoy=joystick.joy1_y2;
@@ -147,9 +161,18 @@ task main()
 		moveAround(rawLeftJoy, rawRightJoy);
 		controlFans(joy1Btn(2));
 		moveBelt(joy1Btn(3));
-		moveRakes(joy1Btn(4));
-		moveInsertion(joy1Btn(6));
-		moveFaucet(joy1Btn(8));
+		moveRakes(joy1Btn(6));
+
+		if(flap_pressed) {
+			writeDebugStreamLine("flap pressed");
+
+			moveInsertion(true);
+			hogCPU();
+			flap_pressed=false;
+			releaseCPU();
+		}
+		moveFaucet(joy1Btn(8), joy1Btn(9));
+		sleep(10);
 
 	}
 
