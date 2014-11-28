@@ -54,8 +54,8 @@ void controlFans(bool fan){
 	}
 	static bool wasOnLastTime = false;
 	if(fan && !wasOnLastTime){
-		motor[FanL] = 60;
-		motor[FanR] = -60;
+		motor[FanL] = 100;
+		motor[FanR] = -100;
 		wasOnLastTime = true;
 	}
 	else{
@@ -113,15 +113,14 @@ void moveInsertion(bool insertChoice)
 	}
 
 }
-void moveFaucet(bool faucetRight, bool faucetLeft)
+void moveFaucet(bool faucetLeft, bool faucetRight)
 {
-	if (!faucetRight && ! faucetLeft){
+	if (!faucetRight && !faucetLeft){
 		servo [faucet] = 127;
-		return;
 	}
 	else if(faucetRight){
 		servo [faucet] = 255;
-		}else if(faucetLeft){
+	}else if(faucetLeft){
 		servo [faucet] = 0;
 	}
 }
@@ -136,12 +135,12 @@ task joy()
 		hogCPU();
 		if(joy1Btn(4)
 			&&
-	    (!flap_pressed)
-	    && ((nSysTime-last_flap_time)>500)
-			) {
-				flap_pressed=true;
-				last_flap_time=nSysTime;
-			}
+		(!flap_pressed)
+		&& ((nSysTime-last_flap_time)>500)
+		) {
+			flap_pressed=true;
+			last_flap_time=nSysTime;
+		}
 		releaseCPU();
 	}
 }
@@ -150,6 +149,7 @@ task main()
 {
 	//waitForStart();   // wait for start of tele-op phase
 	startTask(joy);
+	servo[insertion] = 10;
 	//set everything
 	while (true)
 	{
@@ -171,7 +171,7 @@ task main()
 			flap_pressed=false;
 			releaseCPU();
 		}
-		moveFaucet(joy1Btn(8), joy1Btn(9));
+		moveFaucet(joy1Btn(9), joy1Btn(10));
 		sleep(10);
 
 	}
