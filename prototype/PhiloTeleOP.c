@@ -13,10 +13,10 @@
 #pragma config(Motor,  mtr_S3_C1_2,     FanL,          tmotorTetrix, openLoop)
 #pragma config(Servo,  srvo_S1_C2_1,    belt,                 tServoContinuousRotation)
 #pragma config(Servo,  srvo_S1_C2_2,    rakes,                tServoContinuousRotation)
-#pragma config(Servo,  srvo_S1_C2_3,    flap,                 tServoStandard)
+#pragma config(Servo,  srvo_S1_C2_3,    servo3,               tServoStandard)
 #pragma config(Servo,  srvo_S1_C2_4,    faucet,               tServoStandard)
 #pragma config(Servo,  srvo_S1_C2_5,    servo5,               tServoNone)
-#pragma config(Servo,  srvo_S1_C2_6,    servo6,               tServoNone)
+#pragma config(Servo,  srvo_S1_C2_6,    flap,                 tServoStandard)
 #pragma config(Servo,  srvo_S2_C2_1,    servo7,               tServoNone)
 #pragma config(Servo,  srvo_S2_C2_2,    servo8,               tServoNone)
 #pragma config(Servo,  srvo_S2_C2_3,    servo9,               tServoNone)
@@ -77,16 +77,16 @@ void controlFans(){
 }
 void controlBelt()
 {
+	static bool wasOnLastTime = false;
 	if(flapDown){
-  	servo[belt] = 0;
+  	servo[belt] = 128;
+  	wasOnLastTime = true;
   	return;
   }
 	if(!BouncyBtn_checkAndClear(beltBtn))
 		return;
 
 	writeDebugStreamLine("belt pressed");
-
-	static bool wasOnLastTime = false;
 	if (wasOnLastTime)
 	{
 		servo[belt] = 0;
@@ -97,7 +97,7 @@ void controlBelt()
 		servo [belt] = 128;
 		wasOnLastTime = true;
 	}
-}
+} //johan
 
 void controlRakes()
 {
@@ -128,7 +128,7 @@ void controlFlap()
 	static bool wasOnLastTime = false;
 	if (wasOnLastTime)
 	{
-		servo[flap] = 10;
+		servo[flap] = 0;
 		flapDown = false;
 		wasOnLastTime = false;
 	}
@@ -169,9 +169,9 @@ void initializeRobot()
 {
 	// Place code here to sinitialize servos to starting positions.
 	// Sensors are automatically configured and setup by ROBOTC. They may need a brief time to stabilize.
-	BouncyBtn_init(fanBtn,true, 2); //on joy1, btn#2
+	BouncyBtn_init(fanBtn,false, 2); //on joy1, btn#2
 	BouncyBtn_init(beltBtn,true, 3); //on joy1, btn#3
-	BouncyBtn_init(flapBtn,true,4); //on joy1, btn#4
+	BouncyBtn_init(flapBtn,false,1); //on joy1, btn#4
 	BouncyBtn_init(rakeBtn,true,6); //on joy1, btn#6
 
 	servo[flap] = 10;
@@ -204,9 +204,9 @@ task main()
 		controlBelt();
 		controlRakes();
 
-		controlFaucet(joy1Btn(9), joy1Btn(10));
+		controlFaucet(joy2Btn(5), joy2Btn(6));
 
-		sleep(20);
+		sleep(10);
 
 	}
 

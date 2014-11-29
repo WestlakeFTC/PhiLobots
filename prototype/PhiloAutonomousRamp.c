@@ -19,17 +19,17 @@
 task main()
 {
 	//waitForStart();
- // straightMove(63);
-	startTask(gyro_loop);
-	while(gyro_loop_state!=READING) sleep(5);
+  straightMove(63);
+//	startTask(gyro_loop);
+//	while(gyro_loop_state!=READING) sleep(5);
 
-  sleep(50);
-  encoderObservedTurn(180);
-  sleep(5000);
-  encoderObservedTurn(-90);
+  //sleep(50);
+  //encoderObservedTurn(180);
+  sleep(1000);
+  encoderObservedTurn(90);
 
-  sleep(5000);
-  encoderObservedTurn(-90);  //encoderPredictionTurn(-90);
+  //sleep(5000);
+  //	encoderObservedTurn(-90);  //encoderPredictionTurn(-90);
   /*sleep(2000);
 	int goalPosition = determineGoalPosition();
 	displayCenteredTextLine(0, "Goal Position");       /* Display Sonar Sensor values */
