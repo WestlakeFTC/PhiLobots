@@ -1,6 +1,9 @@
 #pragma config(Hubs,  S1, HTMotor,  HTServo,  none,     none)
 #pragma config(Hubs,  S2, HTMotor,  HTServo,  none,     none)
 #pragma config(Hubs,  S3, HTMotor,  none,     none,     none)
+#pragma config(Sensor, S1,     ,               sensorI2CMuxController)
+#pragma config(Sensor, S2,     ,               sensorI2CMuxController)
+#pragma config(Sensor, S3,     ,               sensorI2CMuxController)
 #pragma config(Motor,  motorB,          l,             tmotorNXT, PIDControl, encoder)
 #pragma config(Motor,  mtr_S1_C1_1,     BackL,         tmotorTetrix, openLoop)
 #pragma config(Motor,  mtr_S1_C1_2,     FrontL,        tmotorTetrix, openLoop)
@@ -8,9 +11,9 @@
 #pragma config(Motor,  mtr_S2_C1_2,     FrontR,        tmotorTetrix, openLoop)
 #pragma config(Motor,  mtr_S3_C1_1,     FanR,          tmotorTetrix, openLoop)
 #pragma config(Motor,  mtr_S3_C1_2,     FanL,          tmotorTetrix, openLoop)
-#pragma config(Servo,  srvo_S1_C2_1,    intake,               tServoContinuousRotation)
+#pragma config(Servo,  srvo_S1_C2_1,    belt,                 tServoContinuousRotation)
 #pragma config(Servo,  srvo_S1_C2_2,    rakes,                tServoContinuousRotation)
-#pragma config(Servo,  srvo_S1_C2_3,    insertion,            tServoStandard)
+#pragma config(Servo,  srvo_S1_C2_3,    flap,                 tServoStandard)
 #pragma config(Servo,  srvo_S1_C2_4,    faucet,               tServoStandard)
 #pragma config(Servo,  srvo_S1_C2_5,    servo5,               tServoNone)
 #pragma config(Servo,  srvo_S1_C2_6,    servo6,               tServoNone)
@@ -31,6 +34,7 @@ TBouncyBtn flapBtn, rakeBtn, beltBtn, fanBtn;
 
 int leftJoy=0;
 int rightJoy=0;
+bool flapDown = false;
 
 void moveAround(int rawLeftJoy, int rawRightJoy){
 
@@ -73,19 +77,24 @@ void controlFans(){
 }
 void moveBelt()
 {
+	if(flapDown){
+  	servo[belt] = 0;
+  	return;
+  }
 	if(!BouncyBtn_checkAndClear(beltBtn))
 		return;
+
 	writeDebugStreamLine("belt pressed");
 
 	static bool wasOnLastTime = false;
 	if (wasOnLastTime)
 	{
-		servo[intake] = 0;
+		servo[belt] = 0;
 		wasOnLastTime = false;
 	}
 	else
 	{
-		servo [intake] = 128;
+		servo [belt] = 128;
 		wasOnLastTime = true;
 	}
 }
@@ -110,7 +119,7 @@ void moveRakes()
 
 }
 
-void moveInsertion()
+void moveFlap()
 {
 	if (!BouncyBtn_checkAndClear(flapBtn))
 		return;
@@ -119,12 +128,14 @@ void moveInsertion()
 	static bool wasOnLastTime = false;
 	if (wasOnLastTime)
 	{
-		servo[insertion] = 10;
+		servo[flap] = 10;
+		flapDown = false;
 		wasOnLastTime = false;
 	}
 	else
 	{
-		servo [insertion] = 250;
+		servo [flap] = 250;
+		flapDown = true;
 		wasOnLastTime = true;
 	}
 }
@@ -163,7 +174,7 @@ void initializeRobot()
 	BouncyBtn_init(flapBtn,true,4); //on joy1, btn#4
 	BouncyBtn_init(rakeBtn,true,6); //on joy1, btn#6
 
-	servo[insertion] = 10;
+	servo[flap] = 10;
 	return;
 }
 
@@ -174,6 +185,7 @@ task main()
 	//waitForStart();   // wait for start of tele-op phase
 
 	//set everything
+
 	while (true)
 	{
 		getJoystickSettings(joystick);
@@ -188,9 +200,9 @@ task main()
 
 		moveAround(rawLeftJoy, rawRightJoy);
 		controlFans();
+	  moveFlap();
 		moveBelt();
 		moveRakes();
-		moveInsertion();
 
 		moveFaucet(joy1Btn(9), joy1Btn(10));
 
