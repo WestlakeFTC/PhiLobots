@@ -174,7 +174,7 @@ void initializeRobot()
 	BouncyBtn_init(flapBtn,false,1); //on joy1, btn#4
 	BouncyBtn_init(rakeBtn,true,6); //on joy1, btn#6
 
-	servo[flap] = 10;
+	servo[flap] = 0;
 	return;
 }
 
