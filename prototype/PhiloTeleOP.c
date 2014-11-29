@@ -36,7 +36,7 @@ int leftJoy=0;
 int rightJoy=0;
 bool flapDown = false;
 
-void moveAround(int rawLeftJoy, int rawRightJoy){
+void controlDrive(int rawLeftJoy, int rawRightJoy){
 
 	//movement
 
@@ -75,7 +75,7 @@ void controlFans(){
 		wasOnLastTime = false;
 	}
 }
-void moveBelt()
+void controlBelt()
 {
 	if(flapDown){
   	servo[belt] = 0;
@@ -99,7 +99,7 @@ void moveBelt()
 	}
 }
 
-void moveRakes()
+void controlRakes()
 {
 	if (!BouncyBtn_checkAndClear(rakeBtn))
 		return;
@@ -119,7 +119,7 @@ void moveRakes()
 
 }
 
-void moveFlap()
+void controlFlap()
 {
 	if (!BouncyBtn_checkAndClear(flapBtn))
 		return;
@@ -140,7 +140,7 @@ void moveFlap()
 	}
 }
 
-void moveFaucet(bool faucetLeft, bool faucetRight)
+void controlFaucet(bool faucetLeft, bool faucetRight)
 {
 	if (!faucetRight && !faucetLeft){
 		servo [faucet] = 127;
@@ -198,13 +198,13 @@ task main()
 		int rawLeftJoy=joystick.joy1_y1;
 		int rawRightJoy=joystick.joy1_y2;
 
-		moveAround(rawLeftJoy, rawRightJoy);
+		controlDrive(rawLeftJoy, rawRightJoy);
 		controlFans();
-	  moveFlap();
-		moveBelt();
-		moveRakes();
+	  controlFlap();
+		controlBelt();
+		controlRakes();
 
-		moveFaucet(joy1Btn(9), joy1Btn(10));
+		controlFaucet(joy1Btn(9), joy1Btn(10));
 
 		sleep(20);
 
