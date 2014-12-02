@@ -75,8 +75,11 @@ void controlDrive(int rawLeftJoy, int rawRightJoy){
 
 void controlLift( int rawJoy){
 
-  //30 full joystick pushes to move lift from 0 to max position
-	const int lift_per_step=(MAX_LIFT)/30;
+  //80 full joystick pushes to move lift from 0 to max position
+  //this control the sensitivity and the less sensitive the joystick is
+  // the more accurate control can be, but the slower the lift
+	const int lift_per_step=(MAX_LIFT)/80;
+	if(abs(rawJoy)<5) return;
 	// fraction of the joystick movement
 	float raw=rawJoy/128.0;
 	// convert joystick movement to steps of the servo
@@ -90,6 +93,9 @@ void controlLift( int rawJoy){
 		current_lift=MAX_LIFT;
 
 	servo[lift] = current_lift;
+	writeDebugStreamLine("steps:%d, raw: %d, current lift: %d",
+		steps_to_move, rawJoy, current_lift);
+
 }
 
 void controlFans(){
@@ -203,9 +209,9 @@ void initializeRobot()
 {
 	// Place code here to sinitialize servos to starting positions.
 	// Sensors are automatically configured and setup by ROBOTC. They may need a brief time to stabilize.
-	BouncyBtn_init(fanBtn,false, 2); //on joy1, btn#2
+	BouncyBtn_init(fanBtn,false, 2); //on joy2, btn#2
 	BouncyBtn_init(beltBtn,true, 3); //on joy1, btn#3
-	BouncyBtn_init(flapBtn,false,1); //on joy1, btn#4
+	BouncyBtn_init(flapBtn,false,1); //on joy2, btn#4
 	BouncyBtn_init(rakeBtn,true,6); //on joy1, btn#6
 	servo[lift] = MIN_LIFT;
 	servo[flap] = 0;
