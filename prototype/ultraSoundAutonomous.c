@@ -1,30 +1,26 @@
-/*#pragma config(Hubs,  S1, HTMotor,  HTMotor,  none,     none)
-#pragma config(Hubs,  S2, HTMotor,  HTMotor,  none,     none)
-#pragma config(Sensor, S1,     ,               sensorI2CMuxController)
-#pragma config(Sensor, S2,     ,               sensorI2CMuxController)
-#pragma config(Sensor, S3,     Gyro,           sensorI2CCustom)
-#pragma config(Sensor, S4,     sonarSensor,    sensorSONAR)
-#pragma config(Motor,  mtr_S1_C1_1,     BackL,         tmotorTetrix, openLoop)
-#pragma config(Motor,  mtr_S1_C1_2,     FrontL,        tmotorTetrix, openLoop, encoder)
-#pragma config(Motor,  mtr_S1_C2_1,     motorF,        tmotorTetrix, openLoop)
-#pragma config(Motor,  mtr_S1_C2_2,     motorG,        tmotorTetrix, openLoop)
-#pragma config(Motor,  mtr_S2_C1_1,     BackR,         tmotorTetrix, openLoop)
-#pragma config(Motor,  mtr_S2_C1_2,     FrontR,        tmotorTetrix, openLoop, encoder)
-#pragma config(Motor,  mtr_S2_C2_1,     motorJ,        tmotorTetrix, openLoop)
-#pragma config(Motor,  mtr_S2_C2_2,     motorK,        tmotorTetrix, openLoop)*/
 
-int distance;
-int goalPosition;
+#define POSITION_1_3_DIVIDE 105  //threshold between position 1 and 3
+#define POSITION_1_MIN_DIST 90   //minium distance detected for position 1
+#define POSITION_3_MAX_DIST 140  //maxiumum distance detected for position 3
+/**
+ * This function uses a sonar sensor to detect distance to the center field structure
+ * The function waits specified time, then measures distance. Based on different reading
+ * from sonar sensor, we determine which position the CFS is placed.
+ * Position 1 should measure more distance than Position 3.
+ * Position 2 is undetectable by sonar sensor as the surface of the structure is not directly
+ * facing the sensor when this is measured.
+ */
+int determineGoalPosition(tSensors sonarSensor, long delayms){
+	int distance;
+	int goalPosition;
+	//wait for sonar sensor to measure distance.
+  sleep(delayms);
 
-
-int determineGoalPosition(){
-	hogCPU();
-	distance =  SensorValue(sonarSensor);
-	releaseCPU();
-	if(distance  < 105 && distance >90){
+	distance =  SensorValue[sonarSensor];
+	if(distance  < POSITION_1_3_DIVIDE && distance >POSITION_1_MIN_DIST){
 		goalPosition = 1;
 	}
-	else if(distance >105 && distance <140){
+	else if(distance >POSITION_1_3_DIVIDE && distance <POSITION_3_MAX_DIST){
 		goalPosition = 3;
 	}
 	else if(distance == 255){
@@ -36,16 +32,3 @@ int determineGoalPosition(){
 	return goalPosition;
 
 }
-
-/*task main()
-{
-	while(true){
-	  determineGoalPosition();
-		displayCenteredTextLine(0, "Goal Position");       /* Display Sonar Sensor values */
-  	/*displayCenteredBigTextLine(2, "%d", goalPosition);
-  	displayCenteredTextLine(4, "dist:%d", distance);
-
-  	sleep(5);
-	}
-
-}*/

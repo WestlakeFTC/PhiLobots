@@ -19,48 +19,34 @@
 task main()
 {
 	//waitForStart();
-  straightMove(63);
-//	startTask(gyro_loop);
-//	while(gyro_loop_state!=READING) sleep(5);
 
-  //sleep(50);
-  //encoderObservedTurn(180);
-  sleep(1000);
-  encoderObservedTurn(90);
-
-  //sleep(5000);
-  //	encoderObservedTurn(-90);  //encoderPredictionTurn(-90);
-  /*sleep(2000);
-	int goalPosition = determineGoalPosition();
-	displayCenteredTextLine(0, "Goal Position");       /* Display Sonar Sensor values */
-  /*displayCenteredBigTextLine(2, "%d", goalPosition);
-  displayCenteredTextLine(4, "dist:%d", distance);
-	sleep(5000);
-
-
+  //we only need 100ms or less to determine the center goal
+  //orientation.
+  int goalPosition = determineGoalPosition(sonarSensor, 100);
+	displayCenteredTextLine(0, "Goal Position: %d", goalPosition);       /* Display Sonar Sensor values */
   if(goalPosition == 1){
-		straightMove(30);
+  	straightMove(40);
+    sleep(100);
+		encoderObservedTurn(-90);
 		sleep(100);
-		gyroTurn(-90);
-		sleep(100);
-		straightMove(23);
-		sleep(100);
-		gyroTurn(-90);
-		sleep(100);
-		straightMove(48);
-		sleep(100);
+		straightMove(24);
   }
 	else if(goalPosition == 2){
-		straightMove(180);
-		gyroTurn(90);
+		straightMove(34);
+    sleep(100);
+		encoderObservedTurn(-30);
+		sleep(100);
+		straightMove(48);
 	}
-	else{
-		encoderTurn(45);
-		sleep(50);
-		straightMove(85);
-    sleep(50);
-		encoderTurn(-100);
-		sleep(50);
-		straightMove(36);
-	}*/
+	else if(goalPosition ==3){
+		straightMove(30);
+    sleep(100);
+	  encoderObservedTurn(-90);
+		sleep(100);
+		straightMove(19);
+    sleep(100);
+		encoderObservedTurn(90);
+		sleep(100);
+		straightMove(48);
+	}
 }
