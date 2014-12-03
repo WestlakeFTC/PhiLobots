@@ -1,7 +1,7 @@
 
 #define POSITION_1_3_DIVIDE 105  //threshold between position 1 and 3
 #define POSITION_1_MIN_DIST 90   //minium distance detected for position 1
-#define POSITION_3_MAX_DIST 140  //maxiumum distance detected for position 3
+#define POSITION_3_MAX_DIST 145  //maxiumum distance detected for position 3
 /**
  * This function uses a sonar sensor to detect distance to the center field structure
  * The function waits specified time, then measures distance. Based on different reading

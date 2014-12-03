@@ -23,29 +23,29 @@ task main()
   //we only need 100ms or less to determine the center goal
   //orientation.
   int goalPosition = determineGoalPosition(sonarSensor, 100);
-	displayCenteredTextLine(0, "Goal Position: %d", goalPosition);       /* Display Sonar Sensor values */
+	displayCenteredTextLine(0, "Goal: %d", goalPosition);/* Display Sonar Sensor values */
   if(goalPosition == 1){
   	straightMove(40);
     sleep(100);
-		encoderObservedTurn(-90);
+		encoderObservedTurn(-135);
 		sleep(100);
 		straightMove(24);
   }
 	else if(goalPosition == 2){
-		straightMove(34);
+		straightMove(32);
     sleep(100);
-		encoderObservedTurn(-30);
+		encoderObservedTurn(-50);
 		sleep(100);
 		straightMove(48);
 	}
 	else if(goalPosition ==3){
 		straightMove(30);
-    sleep(100);
+    sleep(500);
 	  encoderObservedTurn(-90);
 		sleep(100);
-		straightMove(19);
-    sleep(100);
-		encoderObservedTurn(90);
+		straightMove(12);
+    sleep(200);
+		encoderObservedTurn(100);
 		sleep(100);
 		straightMove(48);
 	}
