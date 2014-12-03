@@ -13,7 +13,7 @@
 #pragma config(Motor,  mtr_S3_C1_2,     FanL,          tmotorTetrix, openLoop)
 #pragma config(Servo,  srvo_S1_C2_1,    belt,                 tServoContinuousRotation)
 #pragma config(Servo,  srvo_S1_C2_2,    lift,                 tServoContinuousRotation)
-#pragma config(Servo,  srvo_S1_C2_3,    servo3,               tServoNone)
+#pragma config(Servo,  srvo_S1_C2_3,    grabber,              tServoStandard)
 #pragma config(Servo,  srvo_S1_C2_4,    faucet,               tServoStandard)
 #pragma config(Servo,  srvo_S1_C2_5,    rakes,                tServoStandard)
 #pragma config(Servo,  srvo_S1_C2_6,    flap,                 tServoStandard)
@@ -86,7 +86,6 @@ void controlLift( int rawJoy){
 	int steps_to_move = raw * lift_per_step;
 	int current_lift = ServoValue[lift];
 	current_lift += steps_to_move;
-
 	if(current_lift<MIN_LIFT)
 		current_lift=MIN_LIFT;
 	if(current_lift>MAX_LIFT)
@@ -193,6 +192,32 @@ void controlFaucet(bool faucetLeft, bool faucetRight)
 		servo [faucet] = 0;
 	}
 }
+#define GRABBER_RELEASE  255
+#define GRABBER_LATCH    0
+#define GRABBER_NEUTRAL  128
+
+void controlGoalGrabber()
+{
+	switch(joystick.joy1_TopHat)
+	{
+		case 0: //up
+		   servo[grabber]= GRABBER_LATCH;
+		   break;
+		case 4://down
+		   servo[grabber]=GRABBER_RELEASE;
+		   break;
+		case 2: //right
+		case 6: //left
+		   servo[grabber]=GRABBER_NEUTRAL;
+		   break;
+		   default:
+		   //do nothing for other cases
+	}
+	writeDebugStreamLine("Grabber Position:%d",
+		ServoValue[grabber]);
+
+}
+
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 //
@@ -215,6 +240,7 @@ void initializeRobot()
 	BouncyBtn_init(rakeBtn,true,6); //on joy1, btn#6
 	servo[lift] = MIN_LIFT;
 	servo[flap] = 0;
+	servo[grabber] = GRABBER_NEUTRAL;
 	return;
 }
 
@@ -247,7 +273,7 @@ task main()
 
 		controlFaucet(joy2Btn(5), joy2Btn(6));
 		controlLift(rawRightJoy2);
-
+    controlGoalGrabber();
 		sleep(10);
 
 	}
