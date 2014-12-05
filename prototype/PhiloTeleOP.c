@@ -4,7 +4,6 @@
 #pragma config(Sensor, S1,     ,               sensorI2CMuxController)
 #pragma config(Sensor, S2,     ,               sensorI2CMuxController)
 #pragma config(Sensor, S3,     ,               sensorI2CMuxController)
-#pragma config(Motor,  motorB,          l,             tmotorNXT, PIDControl, encoder)
 #pragma config(Motor,  mtr_S1_C1_1,     BackL,         tmotorTetrix, openLoop)
 #pragma config(Motor,  mtr_S1_C1_2,     FrontL,        tmotorTetrix, openLoop)
 #pragma config(Motor,  mtr_S2_C1_1,     BackR,         tmotorTetrix, openLoop)
@@ -12,7 +11,7 @@
 #pragma config(Motor,  mtr_S3_C1_1,     FanR,          tmotorTetrix, openLoop)
 #pragma config(Motor,  mtr_S3_C1_2,     FanL,          tmotorTetrix, openLoop)
 #pragma config(Servo,  srvo_S1_C2_1,    belt,                 tServoContinuousRotation)
-#pragma config(Servo,  srvo_S1_C2_2,    lift,                 tServoContinuousRotation)
+#pragma config(Servo,  srvo_S1_C2_2,    lift,                 tServoStandard)
 #pragma config(Servo,  srvo_S1_C2_3,    grabber,              tServoStandard)
 #pragma config(Servo,  srvo_S1_C2_4,    faucet,               tServoStandard)
 #pragma config(Servo,  srvo_S1_C2_5,    rakes,                tServoStandard)
@@ -70,7 +69,7 @@ void controlDrive(int rawLeftJoy, int rawRightJoy){
 // @rawJoy     raw reading of the joystick that controls the lift
 //
 //*******************q*******************************************
-#define MAX_LIFT 240  //highest position for lift servo
+#define MAX_LIFT 248  //highest position for lift servo
 #define MIN_LIFT 12   //lowest  position for lift servo
 
 void controlLift( int rawJoy){
