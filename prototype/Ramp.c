@@ -25,8 +25,7 @@ task main()
   straightMove(distanceOffRamp+72-56.9-9);
   sleep(500);
   encoderObservedTurn(90);
-  sleep(100);
-  int goalPosition = determineGoalPosition(sonarSensor, 100);
+  int goalPosition = determineGoalPosition(sonarSensor, 500);
 	displayCenteredTextLine(0, "Goal: %d", goalPosition);/* Display Sonar Sensor values */
   if(goalPosition == 1){
   	straightMove(40);
