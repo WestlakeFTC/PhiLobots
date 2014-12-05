@@ -3,6 +3,12 @@
 #define JOYSTICK_DRIVER_INCLDUDED
 #include "JoystickDriver.c"
 #endif
+/************************************************
+ *
+ * A java class like structure to handle buttons used
+ * as toggle buttons. Excessive spurious button presses
+ * are filtered out in the debounce method.
+ */
 typedef struct BJoyButtons
 {
 	bool onJoy1;     //on joy stick 1 or 2?

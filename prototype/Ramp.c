@@ -25,8 +25,11 @@ task main()
   straightMove(distanceOffRamp+72-56.9-9);
   sleep(500);
   encoderObservedTurn(90);
-  int goalPosition = determineGoalPosition(sonarSensor, 500);
-	displayCenteredTextLine(0, "Goal: %d", goalPosition);/* Display Sonar Sensor values */
+
+  //wait at least one second to let robot settle down
+  int goalPosition = determineGoalPosition(sonarSensor, 1000);
+
+  displayCenteredTextLine(0, "Goal: %d", goalPosition);/* Display Sonar Sensor values */
   if(goalPosition == 1){
   	straightMove(40);
     sleep(100);
