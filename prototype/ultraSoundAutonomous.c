@@ -1,13 +1,13 @@
-#define P1_MIN 126               //edge of robot to flat surface of center field structure
+#define P1_MIN 126.75            //edge of robot to flat surface of center field structure
                                  // for position 1
-#define P3_MIN 106               //edge of robot to flat surface of center field structure
+#define P3_MIN 106.68            //edge of robot to flat surface of center field structure
                                  //for position 3
 #define SENSOR_ERROR 2           // +-2cm, should be less than 10 for this to work as difference
                                  //between positions 1&3 is about 20cm
-#define SENSOR_TO_EDGE 22        // assume sensor mounted at the center, so 9 inchs from edge
+#define SENSOR_TO_EDGE 20        // assume sensor mounted at the center, so 9 inchs from edge
                                  //needs to be measured
-#define POSITION_1_3_DIVIDE 105  //threshold between position 1 and 3: close to
-                                 // P1_MIN-SENSOR_ERROR-SENSOR_TO_EDGE
+#define POSITION_1_3_DIVIDE 130  //threshold between position 1 and 3: close to
+                                 // P1_MIN-SENSOR_ERROR+SENSOR_TO_EDGE
 #define POSITION_3_MIN_DIST 90   //minium distance detected for position 3
 #define POSITION_1_MAX_DIST 145  //maxiumum distance detected for position 1
 /**

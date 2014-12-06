@@ -16,6 +16,7 @@
 
 #include "gyro-encoder_fused.c"
 #include "ultraSoundAutonomous.c"
+#include "JoystickDriver.c"
 
 int distanceOffRamp = 58;
 task main()

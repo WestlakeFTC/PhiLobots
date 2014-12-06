@@ -16,23 +16,30 @@
 
 #include "gyro-encoder_fused.c"
 #include "ultraSoundAutonomous.c"
+#include "JoystickDriver.c"
+
 task main()
 {
 	//waitForStart();
-
+  int distance=0;
   //we only need 100ms or less to determine the center goal
   //orientation.
   int goalPosition = determineGoalPosition(sonarSensor, 100);
-	displayCenteredTextLine(0, "Goal: %d", goalPosition);/* Display Sonar Sensor values */
+  distance = SensorValue[sonarSensor];
+	displayCenteredTextLine(0, "Goal: %d", goalPosition);
+	displayCenteredTextLine(1, "distance: %d", distance);
+	/* Display Sonar Sensor values */
+
   if(goalPosition == 1){
   	straightMove(40);
     sleep(100);
 		encoderObservedTurn(-135);
 		sleep(100);
+
 		straightMove(24);
   }
 	else if(goalPosition == 2){
-		straightMove(32);
+		straightMove(29);
     sleep(100);
 		encoderObservedTurn(-50);
 		sleep(100);
