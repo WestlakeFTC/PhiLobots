@@ -20,7 +20,7 @@
 
 task main()
 {
-	//waitForStart();
+	waitForStart();
   int distance=0;
   //we only need 100ms or less to determine the center goal
   //orientation.
@@ -31,7 +31,7 @@ task main()
 	/* Display Sonar Sensor values */
 
   if(goalPosition == 1){
-  	straightMove(40);
+  	straightMove(38);
     sleep(100);
 		encoderObservedTurn(-135);
 		sleep(100);
@@ -41,16 +41,16 @@ task main()
 	else if(goalPosition == 2){
 		straightMove(29);
     sleep(100);
-		encoderObservedTurn(-50);
+		encoderObservedTurn(-44);
 		sleep(100);
 		straightMove(48);
 	}
 	else if(goalPosition ==3){
-		straightMove(30);
+		straightMove(28);
     sleep(500);
 	  encoderObservedTurn(-90);
 		sleep(100);
-		straightMove(12);
+		straightMove(15);
     sleep(200);
 		encoderObservedTurn(100);
 		sleep(100);

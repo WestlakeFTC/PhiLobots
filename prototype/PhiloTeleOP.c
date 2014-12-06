@@ -247,7 +247,7 @@ task main()
 {
 	initializeRobot();
 	//Uncomment this for real competition
-	//waitForStart();   // wait for start of tele-op phase
+	waitForStart();   // wait for start of tele-op phase
 
 	//set everything
 

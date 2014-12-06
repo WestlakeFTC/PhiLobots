@@ -43,13 +43,13 @@ void turnFaucet(bool left, long duration )
 void turnOnFan(long duration)
 {
   	long start_time = nSysTime;
-		motor[FanL] = 100;
-		motor[FanR] = -100;
+		motor[FanL] = -100;
+		motor[FanR] = 100;
 		while (nSysTime-start_time<duration){};
 		motor[FanL]=0;
 		motor[FanR]=0;
 }
-#define MAX_LIFT 248  //highest position for lift servo
+#define MAX_LIFT 249  //highest position for lift servo
 #define MIN_LIFT 12   //lowest  position for lift servo
 #define MAX_TUBE_POSITION 90
 #define MIN_TUBE_POSITION 30
