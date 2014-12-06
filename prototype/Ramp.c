@@ -34,7 +34,7 @@ task main()
   if(goalPosition == 1){
   	straightMove(38);
     sleep(100);
-		encoderObservedTurn(-135);
+		encoderObservedTurn(135);
 		sleep(100);
 		straightMove(24);
   }

@@ -129,29 +129,29 @@ task main()
 	if(goalPosition == 1){
 		//is position 3 but detected as position 1, and
 		// handled same as position 1 started from parking lot
-		straightMove(40);
-		sleep(100);
+  	straightMove(38);
+    sleep(100);
 		encoderObservedTurn(-135);
 		sleep(100);
 		straightMove(24);
 	}
 	else if(goalPosition == 2){
 		//turn opposite direction as we did for parking lot
-		straightMove(32);
-		sleep(100);
-		encoderObservedTurn(50);
+		straightMove(29);
+    sleep(100);
+		encoderObservedTurn(44);
 		sleep(100);
 		straightMove(48);
 	}
 	else if(goalPosition ==3){
 		// is position 1 but detected as position 3,
 		//similar to position 3 started from parking lot, but oppsite turns
-		straightMove(30);
-		sleep(500);
-		encoderObservedTurn(90);
+		straightMove(28);
+    sleep(500);
+	  encoderObservedTurn(90);
 		sleep(100);
-		straightMove(12);
-		sleep(200);
+		straightMove(15);
+    sleep(200);
 		encoderObservedTurn(-100);
 		sleep(100);
 		straightMove(48);
