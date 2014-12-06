@@ -32,25 +32,25 @@ task main()
 
   displayCenteredTextLine(0, "Goal: %d", goalPosition);/* Display Sonar Sensor values */
   if(goalPosition == 1){
-  	straightMove(40);
+  	straightMove(38);
     sleep(100);
 		encoderObservedTurn(-135);
 		sleep(100);
 		straightMove(24);
   }
 	else if(goalPosition == 2){
-		straightMove(32);
+		straightMove(29);
     sleep(100);
-		encoderObservedTurn(50);
+		encoderObservedTurn(44);
 		sleep(100);
 		straightMove(48);
 	}
 	else if(goalPosition ==3){
-		straightMove(30);
+		straightMove(28);
     sleep(500);
 	  encoderObservedTurn(90);
 		sleep(100);
-		straightMove(12);
+		straightMove(15);
     sleep(200);
 		encoderObservedTurn(-100);
 		sleep(100);
