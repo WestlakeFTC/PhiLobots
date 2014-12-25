@@ -11,13 +11,13 @@
 #pragma config(Motor,  mtr_S3_C1_1,     FanR,          tmotorTetrix, openLoop)
 #pragma config(Motor,  mtr_S3_C1_2,     FanL,          tmotorTetrix, openLoop)
 #pragma config(Servo,  srvo_S1_C2_1,    servo1,               tServoContinuousRotation)
-#pragma config(Servo,  srvo_S1_C2_2,    servo2,               tServoStandard)
-#pragma config(Servo,  srvo_S1_C2_3,    trailer,              tServoStandard)
+#pragma config(Servo,  srvo_S1_C2_2,    trailerL,             tServoStandard)
+#pragma config(Servo,  srvo_S1_C2_3,    trailerR,             tServoStandard)
 #pragma config(Servo,  srvo_S1_C2_4,    faucet,               tServoStandard)
 #pragma config(Servo,  srvo_S1_C2_5,    rakes,                tServoStandard)
 #pragma config(Servo,  srvo_S1_C2_6,    flap,                 tServoStandard)
-#pragma config(Servo,  srvo_S3_C2_1,    belt,                 tServoNone)
-#pragma config(Servo,  srvo_S3_C2_2,    lift,                 tServoNone)
+#pragma config(Servo,  srvo_S3_C2_1,    belt,                 tServoStandard)
+#pragma config(Servo,  srvo_S3_C2_2,    lift,                 tServoStandard)
 #pragma config(Servo,  srvo_S3_C2_3,    servo9,               tServoNone)
 #pragma config(Servo,  srvo_S3_C2_4,    servo10,              tServoNone)
 #pragma config(Servo,  srvo_S3_C2_5,    servo11,              tServoNone)
@@ -191,29 +191,27 @@ void controlFaucet(bool faucetLeft, bool faucetRight)
 		servo [faucet] = 0;
 	}
 }
-#define GRABBER_RELEASE  230
-#define GRABBER_LATCH    20
-#define GRABBER_NEUTRAL  180
+#define GRABBER_UP  250
+#define GRABBER_DOWN    150
+
 
 void controlGoalGrabber()
 {
 	switch(joystick.joy1_TopHat)
 	{
 		case 0: //up
-		   servo[trailer]= GRABBER_LATCH;
+		   servo[trailerR] = GRABBER_UP;
+		   servo[trailerL] = 255-GRABBER_UP;
 		   break;
 		case 4://down
-		   servo[trailer]=GRABBER_RELEASE;
+		   servo[trailerR] = GRABBER_DOWN;
+		   servo[trailerL] = 255-GRABBER_DOWN;
 		   break;
-		case 2: //right
-		case 6: //left
-		   servo[trailer]=GRABBER_NEUTRAL;
-		   break;
-		   default:
+	  default:
 		   //do nothing for other cases
 	}
 	writeDebugStreamLine("Grabber Position:%d",
-		ServoValue[trailer]);
+		ServoValue[trailerR]);
 
 }
 
@@ -239,7 +237,8 @@ void initializeRobot()
 	//BouncyBtn_init(rakeBtn,true,6); //on joy1, btn#6
 	servo[lift] = MIN_LIFT;
 	servo[flap] = 0;
-	servo[trailer] = GRABBER_NEUTRAL;
+	servo[trailerR] = GRABBER_UP;
+	servo[trailerL] = 255-GRABBER_UP;
 	return;
 }
 

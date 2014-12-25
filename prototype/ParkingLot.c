@@ -18,10 +18,16 @@
 #include "ultraSoundAutonomous.c"
 #include "JoystickDriver.c"
 
+//fanon
+//grabgoal
+//
+
 task main()
 {
-	waitForStart();
+	//waitForStart();
   int distance=0;
+  straightMove(3);
+  sleep(1000);
   //we only need 100ms or less to determine the center goal
   //orientation.
   int goalPosition = determineGoalPosition(sonarSensor, 100);
