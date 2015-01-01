@@ -56,20 +56,41 @@ if(inches == 0){return;}
 	while(abs(nMotorEncoder[FrontL]) < countToTurn && abs(nMotorEncoder[FrontR])< countToTurn){}
 	allMotorsPowerStraight(0);
 }
+void swagger(bool right, int time, int domPower){
+
+	if(right){
+		motor[FrontR] = domPower;
+		motor[BackR] = domPower;
+		motor[FrontL] = -(domPower-20);
+		motor[BackL] = -(domPower-20);
+	}
+	else{
+		motor[FrontL] = -domPower;
+		motor[BackL] = -domPower;
+		motor[FrontR] = (domPower-25);
+		motor[BackR] = (domPower-25);
+	}
+	long timeStart =nSysTime;
+	while(nSysTime < timeStart + time){}
+		allMotorsPowerStraight(0);
+	}
+
 
 #define GRABBER_UP   100
 #define GRABBER_DOWN    20
 void wiggleMove()
 {
+	controlledStraightMove(-3,10);
 	encoderObservedTurn(15);
-	controlledStraightMove(-3,10);
+	controlledStraightMove(-2,10);
 	encoderObservedTurn(-15);
-	controlledStraightMove(-3,10);
+	controlledStraightMove(-2,10);
+
 }
 
 void grabGoal()
 {
-	controlledStraightMove(-5,10);
+
 	wiggleMove();
 
     servo[trailerR] = GRABBER_DOWN;

@@ -37,6 +37,7 @@ void allMotorsPowerRot(int power){
 	motor[BackR] = power;
 	motor[BackL] = power;
 }
+
 void allMotorsPowerStraight(int power){
 	motor[FrontR] = -power;
 	motor[FrontL] = power;
