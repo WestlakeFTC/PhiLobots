@@ -26,6 +26,8 @@ task main()
 {
 	//waitForStart();
   int distance=0;
+  straightMove(3*48);
+  /*
   straightMove(3);
   sleep(1000);
   //we only need 100ms or less to determine the center goal
@@ -35,7 +37,7 @@ task main()
 	displayCenteredTextLine(0, "Goal: %d", goalPosition);
 	displayCenteredTextLine(1, "distance: %d", distance);
 	/* Display Sonar Sensor values */
-
+	/*
   if(goalPosition == 1){
   	straightMove(38);
     sleep(100);
@@ -61,5 +63,5 @@ task main()
 		encoderObservedTurn(100);
 		sleep(100);
 		straightMove(48);
-	}
+	}*/
 }

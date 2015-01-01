@@ -191,8 +191,8 @@ void controlFaucet(bool faucetLeft, bool faucetRight)
 		servo [faucet] = 0;
 	}
 }
-#define GRABBER_UP  250
-#define GRABBER_DOWN    150
+#define GRABBER_UP  100
+#define GRABBER_DOWN    20
 
 
 void controlGoalGrabber()
@@ -202,16 +202,19 @@ void controlGoalGrabber()
 		case 0: //up
 		   servo[trailerR] = GRABBER_UP;
 		   servo[trailerL] = 255-GRABBER_UP;
+		   	writeDebugStreamLine("Grabber Position for up:%d",
+		ServoValue[trailerR]);
 		   break;
 		case 4://down
 		   servo[trailerR] = GRABBER_DOWN;
 		   servo[trailerL] = 255-GRABBER_DOWN;
+		   	writeDebugStreamLine("Grabber Position for down:%d",
+		ServoValue[trailerR]);
 		   break;
 	  default:
 		   //do nothing for other cases
 	}
-	writeDebugStreamLine("Grabber Position:%d",
-		ServoValue[trailerR]);
+
 
 }
 
@@ -239,6 +242,8 @@ void initializeRobot()
 	servo[flap] = 0;
 	servo[trailerR] = GRABBER_UP;
 	servo[trailerL] = 255-GRABBER_UP;
+	servoChangeRate[trailerL]=0;
+	servoChangeRate[trailerR]=0;
 	return;
 }
 

@@ -27,7 +27,7 @@ const float ki = 0.00;//to be tuned to eliminate offset
 const int cpr = 1120;
 const float COUNTS_PER_DEG=1242.0/90;
 const float ke = 126.6279;
-const int FULL_POWER = 60;
+const int FULL_POWER = 100;
 /**
 * Turn left for given degrees, negative means turn right
 */
@@ -176,13 +176,17 @@ void straightMove(int inches){
 	int countToTurn = (int)((cpr*inches)/(PI*wheelRad*2.0)+0.5);
 	if(countToTurn<0)countToTurn=-countToTurn;
 	int power = FULL_POWER;
-	writeDebugStreamLine("counts to move: %d, encoderLCount: %d, encoderRCount: %d, power: %d",countToTurn,
-	nMotorEncoder[FrontL],nMotorEncoder[FrontR], power);
+//	writeDebugStreamLine("counts to move: %d, encoderLCount: %d, encoderRCount: %d, time: %d",countToTurn,
+	//nMotorEncoder[FrontL],nMotorEncoder[FrontR], nSysTime);
 	if(inches < 0){
 		power = -power;
 	}
 	allMotorsPowerStraight(power);
-	while(abs(nMotorEncoder[FrontL]) < countToTurn && abs(nMotorEncoder[FrontR])< countToTurn){}
+	while(abs(nMotorEncoder[FrontL]) < countToTurn && abs(nMotorEncoder[FrontR])< countToTurn){
+	writeDebugStreamLine(" %d,%d,%d",
+	nMotorEncoder[FrontL],nMotorEncoder[FrontR], nSysTime);
+	sleep(5);
+	}
 	allMotorsPowerStraight(0);
 
 }

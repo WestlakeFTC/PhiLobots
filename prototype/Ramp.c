@@ -30,9 +30,9 @@
 void readyFaucet()
 {
 }
-void fansOn(int time)
+void fansOn(unsigned long time)
 {
-	int targetTime = nSysTime + time;
+	unsigned long targetTime = nSysTime + time;
 	while(nSysTime < targetTime)
 	{
 		motor[FanL] = -100;
@@ -56,24 +56,51 @@ if(inches == 0){return;}
 	while(abs(nMotorEncoder[FrontL]) < countToTurn && abs(nMotorEncoder[FrontR])< countToTurn){}
 	allMotorsPowerStraight(0);
 }
-
+#define GRABBER_UP   100
+#define GRABBER_DOWN    20
 void grabGoal()
 {
-	controlledStraightMove(5,25);
-	servo[trailerL] = 255;
-	servo[trailerR] = 0;
+	unsigned long start=nSysTime;
+	controlledStraightMove(-5,10);
+	while(nSysTime<start+2000){
+      servo[trailerR] = GRABBER_DOWN;
+      servo[trailerL] = 255-GRABBER_DOWN;
+  }
+  	writeDebugStreamLine("Grabber Position:%d",
+		ServoValue[trailerR]);
+
+
 }
 
-task main(){
-	//waitForStart();
-  sleep(1000);
+void initializeRobot()
+{
+	//servo[lift] = MIN_LIFT;
+	//servo[flap] = 0;
 
-  slowStraightMove(-22-36-22, 25);
+
+	servo[trailerR] = GRABBER_UP;
+	servo[trailerL] = 255-GRABBER_UP;
+	//move servos at maximium speed
+	servoChangeRate[trailerL]=0;
+	servoChangeRate[trailerR]=0;
+	//set to true during test to keep the grabber engaged
+	bSystemLeaveServosEnabledOnProgramStop=false;
+}
+task main(){
+  initializeRobot();
+//	waitForStart();
+
+   //controlledStraightMove(-22-36-22, 25);
   //we only need 100ms or less to determine the center goal
   //orientation.
-  //grabGoal();
-  sleep(3000);
-  slowStraightMove(-15,10);
+  controlledStraightMove(-12, 25);
+  sleep(1000);
+  grabGoal();
+  straightMove(12);
+    encoderObservedTurn(-40);
+
+  /*sleep(3000);
+  controlledStraightMove(-15,10);
   //readyFaucet();
   sleep(1000);
 
@@ -81,9 +108,9 @@ task main(){
   sleep(1000);
   encoderObservedTurn(-40);
   sleep(1000);
-  controlledStraightMove(110);
+  controlledStraightMove(110, 100);
   sleep(1000);
   encoderObservedTurn(-130);
-
+*/
 
 }
