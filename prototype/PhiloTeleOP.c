@@ -240,8 +240,8 @@ void initializeRobot()
 	//BouncyBtn_init(rakeBtn,true,6); //on joy1, btn#6
 	servo[lift] = MIN_LIFT;
 	servo[flap] = 0;
-	servo[trailerR] = GRABBER_UP;
-	servo[trailerL] = 255-GRABBER_UP;
+	//servo[trailerR] = GRABBER_UP;
+	//servo[trailerL] = 255-GRABBER_UP; keep goal
 	servoChangeRate[trailerL]=0;
 	servoChangeRate[trailerR]=0;
 	return;

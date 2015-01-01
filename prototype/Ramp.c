@@ -56,18 +56,27 @@ if(inches == 0){return;}
 	while(abs(nMotorEncoder[FrontL]) < countToTurn && abs(nMotorEncoder[FrontR])< countToTurn){}
 	allMotorsPowerStraight(0);
 }
+
 #define GRABBER_UP   100
 #define GRABBER_DOWN    20
+void wiggleMove()
+{
+	encoderObservedTurn(15);
+	controlledStraightMove(-3,10);
+	encoderObservedTurn(-15);
+	controlledStraightMove(-3,10);
+}
+
 void grabGoal()
 {
-	unsigned long start=nSysTime;
 	controlledStraightMove(-5,10);
-	while(nSysTime<start+2000){
-      servo[trailerR] = GRABBER_DOWN;
-      servo[trailerL] = 255-GRABBER_DOWN;
-  }
+	wiggleMove();
+
+    servo[trailerR] = GRABBER_DOWN;
+    servo[trailerL] = 255-GRABBER_DOWN;
+    sleep(200);
   	writeDebugStreamLine("Grabber Position:%d",
-		ServoValue[trailerR]);
+  	ServoValue[trailerR]);
 
 
 }
@@ -83,11 +92,12 @@ void initializeRobot()
 	//move servos at maximium speed
 	servoChangeRate[trailerL]=0;
 	servoChangeRate[trailerR]=0;
-	//set to true during test to keep the grabber engaged
+	//set to true during competition to keep the grabber engaged
 	bSystemLeaveServosEnabledOnProgramStop=false;
 }
 task main(){
   initializeRobot();
+  sleep(700);
 //	waitForStart();
 
    //controlledStraightMove(-22-36-22, 25);
@@ -97,7 +107,7 @@ task main(){
   sleep(1000);
   grabGoal();
   straightMove(12);
-    encoderObservedTurn(-40);
+  encoderObservedTurn(-40);
 
   /*sleep(3000);
   controlledStraightMove(-15,10);
