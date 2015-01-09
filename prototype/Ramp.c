@@ -61,10 +61,12 @@ if(inches == 0){return;}
 #define GRABBER_DOWN    20
 void wiggleMove()
 {
-	encoderObservedTurn(15);
-	controlledStraightMove(-3,10);
-	encoderObservedTurn(-15);
-	controlledStraightMove(-3,10);
+	controlledEncoderObservedTurn(15,25);
+	controlledStraightMove(-4,15);
+	controlledEncoderObservedTurn(-15,25);
+	controlledStraightMove(-4,15);
+
+
 }
 
 void grabGoal()
@@ -100,19 +102,23 @@ task main(){
   sleep(700);
 //	waitForStart();
 
-   //controlledStraightMove(-22-36-22, 25);
+  controlledStraightMove(-22-36-24-30, 100);
   //we only need 100ms or less to determine the center goal
   //orientation.
-  controlledStraightMove(-12, 25);
+  /*controlledStraightMove(-12, 25);
   sleep(1000);
   grabGoal();
-  straightMove(12);
+  sleep(1000);
   encoderObservedTurn(-40);
+  straightMove(5);
+  sleep(1000);
+  encoderObservedTurn(180);
+  straightMove(-95);
 
   /*sleep(3000);
   controlledStraightMove(-15,10);
   //readyFaucet();
-  sleep(1000);
+  sleep(1000);0
 
   //fansOn(4000);
   sleep(1000);
