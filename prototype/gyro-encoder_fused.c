@@ -16,6 +16,8 @@
 #define GYRO_PRECISION 2 //we do auto calibrate now,
 //but will use encoders to turn on/off calibration
 #include "hitechnic-gyro-task.c"
+#include "ultraSoundAutonomous.c"
+
 const int TURN_POWER=100;
 const int easing_zone =20;//to be tuned
 const int TOLERANCE=1;
@@ -36,6 +38,8 @@ void allMotorsPowerRot(int power){
 	motor[FrontL] = power;
 	motor[BackR] = power;
 	motor[BackL] = power;
+	motor[MidR] = power;
+	motor[MidL] = power;
 }
 
 void allMotorsPowerStraight(int power){
@@ -43,7 +47,75 @@ void allMotorsPowerStraight(int power){
 	motor[FrontL] = power;
 	motor[BackR] = -power;
 	motor[BackL] = power;
+	motor[MidR] = -power;
+	motor[MidL] = power;
 }
+void controlledStraightMove(int inches, int power){
+if(inches == 0){return;}
+	nMotorEncoder[FrontL] = 0;
+	nMotorEncoder[FrontR] = 0;
+	int countToTurn = (int)((cpr*inches)/(PI*wheelRad*2.0)+0.5);
+	if(countToTurn<0)countToTurn=-countToTurn;
+
+	if(inches < 0){
+		power = -power;
+	}
+	allMotorsPowerStraight(power);
+	while(abs(nMotorEncoder[FrontL]) < countToTurn && abs(nMotorEncoder[FrontR])< countToTurn){}
+	allMotorsPowerStraight(0);
+}
+int turnAndRecord(){
+	int leastValue = 0;
+	int sonarSensorF = 0;
+	nMotorEncoder[FrontR] = 0;
+	int encoderR = 0;
+	unsigned long startT = nSysTime;
+  allMotorsPowerRot(100);
+	while(nSysTime < startT + 700 ){
+		sonarSensorF = SensorValue[sonarSensor];
+				if(sonarSensorF !=255 && sonarSensorF < leastValue){
+					leastValue = sonarSensorF;
+					encoderR = nMotorEncoder[FrontR];
+				}
+	}
+	allMotorsPowerRot(0);
+	allMotorsPowerRot(-100);
+	while(nSysTime < startT + 700 ){
+	}
+	allMotorsPowerRot(0);
+	return encoderR;
+}
+void scanAndOrient(){
+	nMotorEncoder[FrontR] = 0;
+  int encoderR = turnAndRecord();
+  while( abs(nMotorEncoder[FrontR])< encoderR){
+	 allMotorsPowerRot(60);
+  }
+
+}
+void fansOn(unsigned long time)
+{
+	unsigned long targetTime = nSysTime + time;
+	while(nSysTime < targetTime)
+	{
+		motor[FanL] = -100;
+		motor[FanR] = 100;
+	}
+
+	motor[FanL] = 0;
+	motor[FanR] = 0;
+}
+bool lineUpGoal(){
+	if(SensorValue[sonarSensor] < 10){
+		fansOn(4000);
+		return true;
+	}else{
+	scanAndOrient();
+	controlledStraightMove(1.5, 10);
+	return false;
+}
+}
+
 //minus offset 16 degrees
 void gyroSimpleTurn(int degrees)
 {

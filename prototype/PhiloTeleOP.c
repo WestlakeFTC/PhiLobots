@@ -1,5 +1,5 @@
 #pragma config(Hubs,  S1, HTMotor,  HTServo,  none,     none)
-#pragma config(Hubs,  S2, HTMotor,  none,     none,     none)
+#pragma config(Hubs,  S2, HTMotor,  HTMotor,  none,     none)
 #pragma config(Hubs,  S3, HTMotor,  HTServo,  none,     none)
 #pragma config(Sensor, S1,     ,               sensorI2CMuxController)
 #pragma config(Sensor, S2,     ,               sensorI2CMuxController)
@@ -8,6 +8,8 @@
 #pragma config(Motor,  mtr_S1_C1_2,     FrontL,        tmotorTetrix, openLoop)
 #pragma config(Motor,  mtr_S2_C1_1,     BackR,         tmotorTetrix, openLoop)
 #pragma config(Motor,  mtr_S2_C1_2,     FrontR,        tmotorTetrix, openLoop)
+#pragma config(Motor,  mtr_S2_C2_1,     MidL,          tmotorTetrix, openLoop)
+#pragma config(Motor,  mtr_S2_C2_2,     MidR,          tmotorTetrix, openLoop)
 #pragma config(Motor,  mtr_S3_C1_1,     FanR,          tmotorTetrix, openLoop)
 #pragma config(Motor,  mtr_S3_C1_2,     FanL,          tmotorTetrix, openLoop)
 #pragma config(Servo,  srvo_S1_C2_1,    servo1,               tServoContinuousRotation)
@@ -61,6 +63,8 @@ void controlDrive(int rawLeftJoy, int rawRightJoy){
 	motor[FrontL] = leftJoy;
 	motor[BackR] = -rightJoy;
 	motor[BackL] = leftJoy;
+	motor[MidR] = -rightJoy;
+	motor[MidL] = leftJoy;
 
 }
 //**************************************************************
