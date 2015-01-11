@@ -4,6 +4,7 @@
 #pragma config(Sensor, S1,     ,               sensorI2CMuxController)
 #pragma config(Sensor, S2,     ,               sensorI2CMuxController)
 #pragma config(Sensor, S3,     ,               sensorI2CMuxController)
+#pragma config(Sensor, S4,     sonarSensor,    sensorSONAR)
 #pragma config(Motor,  mtr_S1_C1_1,     BackL,         tmotorTetrix, openLoop)
 #pragma config(Motor,  mtr_S1_C1_2,     FrontL,        tmotorTetrix, openLoop)
 #pragma config(Motor,  mtr_S2_C1_1,     BackR,         tmotorTetrix, openLoop)
@@ -18,8 +19,8 @@
 #pragma config(Servo,  srvo_S1_C2_4,    faucet,               tServoStandard)
 #pragma config(Servo,  srvo_S1_C2_5,    rakes,                tServoStandard)
 #pragma config(Servo,  srvo_S1_C2_6,    flap,                 tServoStandard)
-#pragma config(Servo,  srvo_S3_C2_1,    belt,                 tServoStandard)
-#pragma config(Servo,  srvo_S3_C2_2,    lift,                 tServoStandard)
+#pragma config(Servo,  srvo_S3_C2_1,    flapper1,             tServoStandard)
+#pragma config(Servo,  srvo_S3_C2_2,    flapper2,             tServoStandard)
 #pragma config(Servo,  srvo_S3_C2_3,    servo9,               tServoNone)
 #pragma config(Servo,  srvo_S3_C2_4,    servo10,              tServoNone)
 #pragma config(Servo,  srvo_S3_C2_5,    servo11,              tServoNone)
@@ -35,7 +36,7 @@
 // These are the toggle buttons to control different
 // subsystems as their names suggested
 //
-TBouncyBtn flapBtn, rakeBtn, beltBtn, fanBtn;
+TBouncyBtn flapBtn, rakeBtn, beltBtn, fanBtn, flapperBtn;
 
 bool flapDown = false;
 
@@ -87,8 +88,8 @@ void controlLift( int rawJoy){
 	float raw=rawJoy/128.0;
 	// convert joystick movement to steps of the servo
 	int steps_to_move = raw * lift_per_step;
-	int current_lift = ServoValue[lift];
-	current_lift += steps_to_move;
+//	int current_lift = ServoValue[lift];
+/*	current_lift += steps_to_move;
 	if(current_lift<MIN_LIFT)
 		current_lift=MIN_LIFT;
 	if(current_lift>MAX_LIFT)
@@ -97,7 +98,7 @@ void controlLift( int rawJoy){
 	servo[lift] = current_lift;
 	writeDebugStreamLine("steps:%d, raw: %d, current lift: %d",
 		steps_to_move, rawJoy, current_lift);
-
+*/
 }
 
 void controlFans(){
@@ -121,9 +122,9 @@ void controlFans(){
 }
 void controlBelt()
 {
-	static bool wasOnLastTime = false;
+/*	static bool wasOnLastTime = false;
 	if(flapDown){
-		servo[belt] = 128;
+//		servo[belt] = 128;
 		wasOnLastTime = true;
 		return;
 	}
@@ -140,7 +141,7 @@ void controlBelt()
 	{
 		servo [belt] = 128;
 		wasOnLastTime = true;
-	}
+	}*/
 } //johan
 
 void controlRakes()
@@ -241,14 +242,34 @@ void initializeRobot()
 	BouncyBtn_init(fanBtn,false, 2); //on joy2, btn#2
 	BouncyBtn_init(beltBtn,true, 3); //on joy1, btn#3
 	BouncyBtn_init(flapBtn,false,1); //on joy2, btn#4
+	BouncyBtn_init(flapperBtn,true,8);
 	//BouncyBtn_init(rakeBtn,true,6); //on joy1, btn#6
-	servo[lift] = MIN_LIFT;
+//	servo[lift] = MIN_LIFT;
 	servo[flap] = 0;
 	//servo[trailerR] = GRABBER_UP;
 	//servo[trailerL] = 255-GRABBER_UP; keep goal
 	servoChangeRate[trailerL]=0;
 	servoChangeRate[trailerR]=0;
 	return;
+}
+void flappersTurn()
+{
+	if(!BouncyBtn_checkAndClear(flapperBtn)){
+			return;
+		}
+		writeDebugStreamLine("flapper pressed");
+
+		static bool wasOnLastTime = false;
+		if(!wasOnLastTime){
+			servo[flapper1] =255;
+			servo[flapper2] = 255;
+			wasOnLastTime = true;
+		}
+		else{
+			servo[flapper1] =128;
+			servo[flapper2] = 128;
+			wasOnLastTime = false;
+		}
 }
 
 task main()
@@ -266,6 +287,7 @@ task main()
 		BouncyBtn_debounce(flapBtn);
 		BouncyBtn_debounce(fanBtn);
 		BouncyBtn_debounce(beltBtn);
+		BouncyBtn_debounce(flapperBtn);
 		//BouncyBtn_debounce(rakeBtn);
 
 		int rawLeftJoy=joystick.joy1_y1;
@@ -276,6 +298,7 @@ task main()
 		controlFans();
 		controlFlap();
 		controlBelt();
+		flappersTurn();
 		//controlRakes();
 
 		controlFaucet(joy2Btn(5), joy2Btn(6));

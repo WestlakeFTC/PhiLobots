@@ -15,9 +15,9 @@
 #pragma config(Servo,  srvo_S1_C2_3,    trailerR,             tServoStandard)
 #pragma config(Servo,  srvo_S1_C2_4,    faucet,               tServoStandard)
 #pragma config(Servo,  srvo_S1_C2_5,    rakes,                tServoStandard)
-#pragma config(Servo,  srvo_S1_C2_6,    flap,                 tServoStandard)
-#pragma config(Servo,  srvo_S3_C2_1,    belt,                 tServoStandard)
-#pragma config(Servo,  srvo_S3_C2_2,    lift,                 tServoStandard)
+#pragma config(Servo,  srvo_S1_C2_6,    servo6,               tServoNone)
+#pragma config(Servo,  srvo_S3_C2_1,    flappers1,            tServoContinuousRotation)
+#pragma config(Servo,  srvo_S3_C2_2,    flappers2,            tServoContinuousRotation)
 #pragma config(Servo,  srvo_S3_C2_3,    servo9,               tServoNone)
 #pragma config(Servo,  srvo_S3_C2_4,    servo10,              tServoNone)
 #pragma config(Servo,  srvo_S3_C2_5,    servo11,              tServoNone)
@@ -105,7 +105,7 @@ task main(){
   sleep(700);
 //	waitForStart();
 
-  controlledStraightMove(-22-36-24-30, 100);
+  straightMove(-82);
   //we only need 100ms or less to determine the center goal
   //orientation.
   /*controlledStraightMove(-12, 25);
