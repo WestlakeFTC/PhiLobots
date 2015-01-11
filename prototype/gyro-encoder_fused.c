@@ -286,6 +286,7 @@ int full_power =target>0? -TURN_POWER:TURN_POWER;
 		countToTurn, observedBrakingOffSetL,observedBrakingOffSetR,
 		beginningEncoderL, beginningEncoderR, full_power, (int)gHeading, nSysTime);
 	}
+
 	allMotorsPowerRot(0);
 	long stopTime=nSysTime;
 	int last_encoderL=beginningEncoderL;
@@ -306,7 +307,47 @@ int full_power =target>0? -TURN_POWER:TURN_POWER;
 	//observedBrakingOffSetR=abs(last_encoderR-beginningEncoderR);
 	//observedGyroOffSet=gHeading-target;
 }
+void controlledEncoderObservedTurn(int desired, int powerDesired){
+	if (desired < 0)
+	{
+		desired = abs(desired);
+		powerDesired = powerDesired * -1;
+	}
+	nMotorEncoder[FrontR] = 0;
+	nMotorEncoder[FrontL] = 0;
+	int countToTurn = abs((int)((desired * robotHalfWidth *cpr)/(360.0*wheelRad) +0.5));
+	int beginningEncoderR=0;
+	int beginningEncoderL=0;
 
+	allMotorsPowerRot(powerDesired);
+
+	while(abs(beginningEncoderR)< countToTurn-observedBrakingOffSetR &&
+		abs(beginningEncoderR) < countToTurn-observedBrakingOffSetL)
+	{
+		sleep(20);
+		beginningEncoderR = nMotorEncoder[FrontR];
+		beginningEncoderL = nMotorEncoder[FrontL];
+		writeDebugStreamLine("counts:%d-off:%d/%d, encoderL: %d, encoderR: %d, power: %d,heading:%d time: %d",
+		countToTurn, observedBrakingOffSetL,observedBrakingOffSetR,
+		beginningEncoderL, beginningEncoderR, powerDesired, (int)gHeading, nSysTime);
+	}
+
+	allMotorsPowerRot(0);
+	long stopTime=nSysTime;
+	int last_encoderL=beginningEncoderL;
+	int last_encoderR=beginningEncoderR;
+
+	do{
+    sleep(20);
+		last_encoderL=nMotorEncoder[FrontL];
+		last_encoderR=nMotorEncoder[FrontR];
+		writeDebugStreamLine("counts:%d-off:%d/%d, encoderL: %d, encoderR: %d, power: %d,heading:%d time: %d",
+		countToTurn, observedBrakingOffSetL, observedBrakingOffSetR,
+		last_encoderL, last_encoderR, 0, (int)gHeading, nSysTime);
+		sleep(20);
+	}while(nMotorEncoder[FrontL]!=last_encoderL ||
+		nMotorEncoder[FrontR]!=last_encoderR);
+}
 void encoderPredictionTurn(int target){
 	nMotorEncoder[FrontR] = 0;
 	nMotorEncoder[FrontL] = 0;
