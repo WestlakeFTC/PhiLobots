@@ -1,16 +1,13 @@
 #pragma config(Hubs,  S1, HTMotor,  HTServo,  none,     none)
 #pragma config(Hubs,  S2, HTMotor,  HTMotor,  none,     none)
 #pragma config(Hubs,  S3, HTMotor,  HTServo,  none,     none)
-#pragma config(Sensor, S1,     ,               sensorI2CMuxController)
-#pragma config(Sensor, S2,     ,               sensorI2CMuxController)
-#pragma config(Sensor, S3,     ,               sensorI2CMuxController)
 #pragma config(Sensor, S4,     sonarSensor,    sensorSONAR)
 #pragma config(Motor,  mtr_S1_C1_1,     BackL,         tmotorTetrix, openLoop)
 #pragma config(Motor,  mtr_S1_C1_2,     FrontL,        tmotorTetrix, openLoop)
 #pragma config(Motor,  mtr_S2_C1_1,     BackR,         tmotorTetrix, openLoop)
 #pragma config(Motor,  mtr_S2_C1_2,     FrontR,        tmotorTetrix, openLoop)
-#pragma config(Motor,  mtr_S2_C2_1,     MidL,          tmotorTetrix, openLoop)
-#pragma config(Motor,  mtr_S2_C2_2,     MidR,          tmotorTetrix, openLoop)
+#pragma config(Motor,  mtr_S2_C2_1,     MidR,          tmotorTetrix, openLoop)
+#pragma config(Motor,  mtr_S2_C2_2,     MidL,          tmotorTetrix, openLoop)
 #pragma config(Motor,  mtr_S3_C1_1,     FanR,          tmotorTetrix, openLoop)
 #pragma config(Motor,  mtr_S3_C1_2,     FanL,          tmotorTetrix, openLoop)
 #pragma config(Servo,  srvo_S1_C2_1,    servo1,               tServoContinuousRotation)
@@ -36,10 +33,10 @@
 // These are the toggle buttons to control different
 // subsystems as their names suggested
 //
-TBouncyBtn flapBtn, rakeBtn, beltBtn, fanBtn, flapperBtn;
+TBouncyBtn flapBtn, rakeBtn, beltBtn, fanBtn, flapperBtn, nitro;
 
 bool flapDown = false;
-
+int motorScale = 70;
 //*************************************************************
 //         Tank Drive Control for the west coast drive
 //
@@ -49,16 +46,18 @@ bool flapDown = false;
 //*************************************************************
 void controlDrive(int rawLeftJoy, int rawRightJoy){
 
-	int leftJoy=0;
+  int leftJoy=0;
 	int rightJoy=0;
-	if(abs(rawLeftJoy/128.0*100) > 5)
-		leftJoy=rawLeftJoy/128.0*100;
+
+  if(abs(rawLeftJoy/128.0*motorScale) > 5)
+		leftJoy=rawLeftJoy/128.0*motorScale;
 	else
 		leftJoy = 0;
-	if(abs(rawRightJoy/128.0*100) > 5)
-		rightJoy=rawRightJoy/128.0*100;
+	if(abs(rawRightJoy/128.0*motorScale) > 5)
+		rightJoy=rawRightJoy/128.0*motorScale;
 	else
 		rightJoy = 0;
+
 
 	motor[FrontR] =-rightJoy;
 	motor[FrontL] = leftJoy;
@@ -184,6 +183,22 @@ void controlFlap()
 		wasOnLastTime = true;
 	}
 }
+void nitroCheck(){
+	if(!BouncyBtn_checkAndClear(nitro)){
+		return;
+	}
+	writeDebugStreamLine("boost pressed");
+
+	static bool wasOnLastTime = false;
+	if(!wasOnLastTime){
+		motorScale = 100;
+		wasOnLastTime = true;
+	}
+	else{
+		motorScale = 30;
+		wasOnLastTime = false;
+	}
+}
 
 void controlFaucet(bool faucetLeft, bool faucetRight)
 {
@@ -242,7 +257,8 @@ void initializeRobot()
 	BouncyBtn_init(fanBtn,false, 2); //on joy2, btn#2
 	BouncyBtn_init(beltBtn,true, 3); //on joy1, btn#3
 	BouncyBtn_init(flapBtn,false,1); //on joy2, btn#4
-	BouncyBtn_init(flapperBtn,true,8);
+	BouncyBtn_init(flapperBtn,true,7);
+	BouncyBtn_init(nitro, true, 8);
 	//BouncyBtn_init(rakeBtn,true,6); //on joy1, btn#6
 //	servo[lift] = MIN_LIFT;
 	servo[flap] = 0;
@@ -289,6 +305,7 @@ task main()
 		BouncyBtn_debounce(beltBtn);
 		BouncyBtn_debounce(flapperBtn);
 		//BouncyBtn_debounce(rakeBtn);
+		BouncyBtn_debounce(nitro);
 
 		int rawLeftJoy=joystick.joy1_y1;
 		int rawRightJoy=joystick.joy1_y2;
@@ -299,6 +316,7 @@ task main()
 		controlFlap();
 		controlBelt();
 		flappersTurn();
+		nitroCheck();
 		//controlRakes();
 
 		controlFaucet(joy2Btn(5), joy2Btn(6));

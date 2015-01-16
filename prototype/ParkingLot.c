@@ -4,6 +4,7 @@
 #pragma config(Sensor, S1,     ,               sensorI2CMuxController)
 #pragma config(Sensor, S2,     ,               sensorI2CMuxController)
 #pragma config(Sensor, S3,     ,               sensorI2CMuxController)
+#pragma config(Sensor, S4,     sonarSensor,    sensorSONAR)
 #pragma config(Motor,  mtr_S1_C1_1,     BackL,         tmotorTetrix, openLoop)
 #pragma config(Motor,  mtr_S1_C1_2,     FrontL,        tmotorTetrix, openLoop)
 #pragma config(Motor,  mtr_S2_C1_1,     BackR,         tmotorTetrix, openLoop)
@@ -18,8 +19,8 @@
 #pragma config(Servo,  srvo_S1_C2_4,    faucet,               tServoStandard)
 #pragma config(Servo,  srvo_S1_C2_5,    rakes,                tServoStandard)
 #pragma config(Servo,  srvo_S1_C2_6,    flap,                 tServoStandard)
-#pragma config(Servo,  srvo_S3_C2_1,    belt,                 tServoStandard)
-#pragma config(Servo,  srvo_S3_C2_2,    lift,                 tServoStandard)
+#pragma config(Servo,  srvo_S3_C2_1,    flapper1,             tServoStandard)
+#pragma config(Servo,  srvo_S3_C2_2,    flapper2,             tServoStandard)
 #pragma config(Servo,  srvo_S3_C2_3,    servo9,               tServoNone)
 #pragma config(Servo,  srvo_S3_C2_4,    servo10,              tServoNone)
 #pragma config(Servo,  srvo_S3_C2_5,    servo11,              tServoNone)
@@ -36,10 +37,9 @@
 bool ballDropped = false;
 task main()
 {
-	//waitForStart();
+//	waitForStart();
   int distance=0;
-  straightMove(3*48);
-  /*
+
   straightMove(3);
   sleep(1000);
   //we only need 100ms or less to determine the center goal
@@ -49,7 +49,7 @@ task main()
 	displayCenteredTextLine(0, "Goal: %d", goalPosition);
 	displayCenteredTextLine(1, "distance: %d", distance);
 	/* Display Sonar Sensor values */
-	/*
+
   if(goalPosition == 1){
   	straightMove(38);
     sleep(100);
@@ -75,15 +75,15 @@ task main()
 		encoderObservedTurn(100);
 		sleep(100);
 		straightMove(48);
-	}*/
+	}
 
 	//dead reckoning crap here
 	//
 	//
 	//
 
-	while(!ballDropped){
+	/*while(!ballDropped){
 		ballDropped = lineUpGoal();
 		delay(1000);
-		}
+		}*/
 }

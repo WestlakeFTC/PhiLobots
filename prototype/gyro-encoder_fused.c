@@ -246,7 +246,7 @@ void straightMove(int inches){
 	if(inches == 0){return;}
 	nMotorEncoder[FrontL] = 0;
 	nMotorEncoder[FrontR] = 0;
-	int countToTurn = (int)((cpr*inches)/(PI*wheelRad*2.0)+0.5);
+	int countToTurn = (int)(((cpr*inches)/(PI*wheelRad*2.0)/2.6+0.5));
 	if(countToTurn<0)countToTurn=-countToTurn;
 	int power = FULL_POWER;
 //	writeDebugStreamLine("counts to move: %d, encoderLCount: %d, encoderRCount: %d, time: %d",countToTurn,
@@ -270,7 +270,7 @@ float observedGyroOffSet = 0;
 void encoderObservedTurn(int target){
 	nMotorEncoder[FrontR] = 0;
 	nMotorEncoder[FrontL] = 0;
-	int countToTurn = abs((int)((target * robotHalfWidth *cpr)/(360.0*wheelRad) +0.5));
+	int countToTurn = abs((int)((target * robotHalfWidth *cpr)/(360.0*wheelRad)/2.6 + 0.5));
 	int beginningEncoderR=0;
 	int beginningEncoderL=0;
 int full_power =target>0? -TURN_POWER:TURN_POWER;
