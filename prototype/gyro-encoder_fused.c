@@ -246,7 +246,7 @@ void straightMove(int inches){
 	if(inches == 0){return;}
 	nMotorEncoder[FrontL] = 0;
 	nMotorEncoder[FrontR] = 0;
-	int countToTurn = (int)(((cpr*inches)/(PI*wheelRad*2.0)/2.6+0.5));
+	int countToTurn = (int)((cpr*inches)/(PI*wheelRad*2.0)/2.6+0.5);
 	if(countToTurn<0)countToTurn=-countToTurn;
 	int power = FULL_POWER;
 //	writeDebugStreamLine("counts to move: %d, encoderLCount: %d, encoderRCount: %d, time: %d",countToTurn,
@@ -264,8 +264,8 @@ void straightMove(int inches){
 
 }
 
-int observedBrakingOffSetL=118;
-int observedBrakingOffSetR=100;
+int observedBrakingOffSetL=100;
+int observedBrakingOffSetR=120;
 float observedGyroOffSet = 0;
 void encoderObservedTurn(int target){
 	nMotorEncoder[FrontR] = 0;
@@ -303,8 +303,8 @@ int full_power =target>0? -TURN_POWER:TURN_POWER;
 	}while(nMotorEncoder[FrontL]!=last_encoderL ||
 		nMotorEncoder[FrontR]!=last_encoderR);
 
-	//observedBrakingOffSetL=abs(last_encoderL-beginningEncoderL);
-	//observedBrakingOffSetR=abs(last_encoderR-beginningEncoderR);
+//	observedBrakingOffSetL=abs(last_encoderL-beginningEncoderL);
+//	observedBrakingOffSetR=abs(last_encoderR-beginningEncoderR);
 	//observedGyroOffSet=gHeading-target;
 }
 void controlledEncoderObservedTurn(int desired, int powerDesired){

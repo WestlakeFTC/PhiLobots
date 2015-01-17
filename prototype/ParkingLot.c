@@ -1,16 +1,13 @@
 #pragma config(Hubs,  S1, HTMotor,  HTServo,  none,     none)
 #pragma config(Hubs,  S2, HTMotor,  HTMotor,  none,     none)
 #pragma config(Hubs,  S3, HTMotor,  HTServo,  none,     none)
-#pragma config(Sensor, S1,     ,               sensorI2CMuxController)
-#pragma config(Sensor, S2,     ,               sensorI2CMuxController)
-#pragma config(Sensor, S3,     ,               sensorI2CMuxController)
 #pragma config(Sensor, S4,     sonarSensor,    sensorSONAR)
 #pragma config(Motor,  mtr_S1_C1_1,     BackL,         tmotorTetrix, openLoop)
 #pragma config(Motor,  mtr_S1_C1_2,     FrontL,        tmotorTetrix, openLoop)
 #pragma config(Motor,  mtr_S2_C1_1,     BackR,         tmotorTetrix, openLoop)
 #pragma config(Motor,  mtr_S2_C1_2,     FrontR,        tmotorTetrix, openLoop)
-#pragma config(Motor,  mtr_S2_C2_1,     MidL,          tmotorTetrix, openLoop)
-#pragma config(Motor,  mtr_S2_C2_2,     MidR,          tmotorTetrix, openLoop)
+#pragma config(Motor,  mtr_S2_C2_1,     MidR,          tmotorTetrix, openLoop)
+#pragma config(Motor,  mtr_S2_C2_2,     MidL,          tmotorTetrix, openLoop)
 #pragma config(Motor,  mtr_S3_C1_1,     FanR,          tmotorTetrix, openLoop)
 #pragma config(Motor,  mtr_S3_C1_2,     FanL,          tmotorTetrix, openLoop)
 #pragma config(Servo,  srvo_S1_C2_1,    servo1,               tServoContinuousRotation)
@@ -51,17 +48,17 @@ task main()
 	/* Display Sonar Sensor values */
 
   if(goalPosition == 1){
-  	straightMove(38);
+  	//straightMove(38);
     sleep(100);
 		encoderObservedTurn(-135);
 		sleep(100);
 
-		straightMove(24);
+		//straightMove(24);
   }
 	else if(goalPosition == 2){
 		straightMove(29);
     sleep(100);
-		encoderObservedTurn(-44);
+		encoderObservedTurn(-4);
 		sleep(100);
 		straightMove(48);
 	}
