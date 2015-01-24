@@ -34,7 +34,7 @@ const float ki = 0.00; //to be tuned to eliminate offset
 const int cpr = 1120;  // encoder counts per rotation
 const float COUNTS_PER_DEG=1242.0/90; // Calc for turning
 const float ke = 126.6279;
-const int FULL_POWER = 100; //full motor power
+const int FULL_POWER = 80; //full motor power
 /**
 * Turn left for given degrees, negative means turn right
 */
@@ -246,6 +246,9 @@ int full_power =degrees>0? -TURN_POWER:TURN_POWER;
 	}
 
 }
+int observedBrakingOffSetL=180;
+int observedBrakingOffSetR=180;
+float observedGyroOffSet = 0;
 
 void straightMove(int inches){ //move straight with full power
 	if(inches == 0){return;}
@@ -254,23 +257,38 @@ void straightMove(int inches){ //move straight with full power
 	int countToTurn = (int)((cpr*inches)/(PI*wheelRad*2.0)/2.6+0.5);
 	if(countToTurn<0)countToTurn=-countToTurn;
 	int power = FULL_POWER;
-
+//	writeDebugStreamLine("counts to move: %d, encoderLCount: %d, encoderRCount: %d, time: %d",countToTurn,
+	//nMotorEncoder[FrontL],nMotorEncoder[FrontR], nSysTime);
 	if(inches < 0){
 		power = -power;
 	}
 	allMotorsPowerStraight(power);
-	while(abs(nMotorEncoder[FrontL]) < countToTurn && abs(nMotorEncoder[FrontR])< countToTurn){
+	while(abs(nMotorEncoder[FrontL]) < countToTurn-observedBrakingOffSetL
+		&& abs(nMotorEncoder[FrontR])< countToTurn-observedBrakingOffSetR){
 	writeDebugStreamLine(" %d,%d,%d",
 	nMotorEncoder[FrontL],nMotorEncoder[FrontR], nSysTime);
 	sleep(5);
 	}
 	allMotorsPowerStraight(0);
+	int	last_encoderL=nMotorEncoder[FrontL];
+	int	last_encoderR=nMotorEncoder[FrontR];
+
+	do{
+		last_encoderL=nMotorEncoder[FrontL];
+		last_encoderR=nMotorEncoder[FrontR];
+		writeDebugStreamLine("counts:%d-off:%d/%d, encoderL: %d, encoderR: %d, power: %d,heading:%d time: %d",
+		countToTurn, observedBrakingOffSetL, observedBrakingOffSetR,
+		last_encoderL, last_encoderR, 0, (int)gHeading, nSysTime);
+		sleep(20);
+	}while(nMotorEncoder[FrontL]!=last_encoderL ||
+		nMotorEncoder[FrontR]!=last_encoderR);
+
+		writeDebugStreamLine("counts:%d-off:%d/%d, encoderL: %d, encoderR: %d, power: %d,heading:%d time: %d",
+		countToTurn, observedBrakingOffSetL, observedBrakingOffSetR,
+		last_encoderL, last_encoderR, 0, (int)gHeading, nSysTime);
 
 }
 
-int observedBrakingOffSetL=100;
-int observedBrakingOffSetR=120;
-float observedGyroOffSet = 0;
 void encoderObservedTurn(int target){
 	nMotorEncoder[FrontR] = 0;
 	nMotorEncoder[FrontL] = 0;
@@ -281,7 +299,7 @@ int full_power =target>0? -TURN_POWER:TURN_POWER;
 	allMotorsPowerRot(full_power);
 
 	while(abs(beginningEncoderR)< countToTurn-observedBrakingOffSetR &&
-		abs(beginningEncoderR) < countToTurn-observedBrakingOffSetL)
+		abs(beginningEncoderL) < countToTurn-observedBrakingOffSetL)
 	{
 		sleep(20);
 		beginningEncoderR = nMotorEncoder[FrontR];
@@ -317,16 +335,17 @@ void controlledEncoderObservedTurn(int desired, int powerDesired){ //
 		desired = abs(desired);
 		powerDesired = powerDesired * -1;
 	}
+
 	nMotorEncoder[FrontR] = 0;
 	nMotorEncoder[FrontL] = 0;
-	int countToTurn = abs((int)((desired * robotHalfWidth *cpr)/(360.0*wheelRad) +0.5));
+	int countToTurn = abs((int)((desired * robotHalfWidth *cpr)/(360.0*wheelRad)/2.6 +0.5));
 	int beginningEncoderR=0;
 	int beginningEncoderL=0;
 
 	allMotorsPowerRot(powerDesired);
 
 	while(abs(beginningEncoderR)< countToTurn-observedBrakingOffSetR &&
-		abs(beginningEncoderR) < countToTurn-observedBrakingOffSetL)
+		abs(beginningEncoderL) < countToTurn-observedBrakingOffSetL)
 	{
 		sleep(20);
 		beginningEncoderR = nMotorEncoder[FrontR];
@@ -342,7 +361,6 @@ void controlledEncoderObservedTurn(int desired, int powerDesired){ //
 	int last_encoderR=beginningEncoderR;
 
 	do{
-    sleep(20);
 		last_encoderL=nMotorEncoder[FrontL];
 		last_encoderR=nMotorEncoder[FrontR];
 		writeDebugStreamLine("counts:%d-off:%d/%d, encoderL: %d, encoderR: %d, power: %d,heading:%d time: %d",
@@ -351,6 +369,12 @@ void controlledEncoderObservedTurn(int desired, int powerDesired){ //
 		sleep(20);
 	}while(nMotorEncoder[FrontL]!=last_encoderL ||
 		nMotorEncoder[FrontR]!=last_encoderR);
+
+		writeDebugStreamLine("counts:%d-off:%d/%d, encoderL: %d, encoderR: %d, power: %d,heading:%d time: %d",
+		countToTurn, observedBrakingOffSetL, observedBrakingOffSetR,
+		last_encoderL, last_encoderR, 0, (int)gHeading, nSysTime);
+
+
 }
 void encoderPredictionTurn(int target){ // turn with previous offset
 	nMotorEncoder[FrontR] = 0;
