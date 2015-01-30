@@ -34,7 +34,7 @@
 // These are the toggle buttons to control different
 // subsystems as their names suggested
 //
-TBouncyBtn flapBtn, rakeBtn, beltBtn, fanBtn, flapperBtn, nitro;
+TBouncyBtn flapBtn, rakeBtn, fanBtn, flapperBtn, nitro;
 
 bool flapDown = false;
 int motorScale = 70;
@@ -124,29 +124,7 @@ void controlFans(){
 		wasOnLastTime = false;
 	}
 }
-void controlBelt()
-{
-/*	static bool wasOnLastTime = false;
-	if(flapDown){
-//		servo[belt] = 128;
-		wasOnLastTime = true;
-		return;
-	}
-	if(!BouncyBtn_checkAndClear(beltBtn))
-		return;
 
-	writeDebugStreamLine("belt pressed");
-	if (wasOnLastTime)
-	{
-		servo[belt] = 0;
-		wasOnLastTime = false;
-	}
-	else
-	{
-		servo [belt] = 128;
-		wasOnLastTime = true;
-	}*/
-} //johan
 
 void controlRakes()
 {
@@ -244,24 +222,27 @@ void controlGoalGrabber()
 }
 
 
-/////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////
 //
 //                                    initializeRobot
 //
-// Prior to the start of tele-op mode, you may want to perform some initialization on your robot
+// Prior to the start of tele-op mode, you may want to perform some
+// initialization on your robot
 // and the variables within your program.
 //
-// In most cases, you may not have to add any code to this function and it will remain "empty".
+// In most cases, you may not have to add any code to this function
+// and it will remain "empty".
 //
-/////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////
 
 void initializeRobot()
 {
 	// Place code here to sinitialize servos to starting positions.
-	// Sensors are automatically configured and setup by ROBOTC. They may need a brief time to stabilize.
+	// Sensors are automatically configured and setup by ROBOTC.
+  // They may need a brief time to stabilize.
 	BouncyBtn_init(fanBtn,false, 2); //on joy2, btn#2
-	BouncyBtn_init(beltBtn,true, 3); //on joy1, btn#3
 	BouncyBtn_init(flapBtn,false,1); //on joy2, btn#4
+	// and so on ...
 	BouncyBtn_init(flapperBtn,true,7);
 	BouncyBtn_init(nitro, true, 8);
 	//BouncyBtn_init(rakeBtn,true,6); //on joy1, btn#6
@@ -307,7 +288,6 @@ task main()
 
 		BouncyBtn_debounce(flapBtn);
 		BouncyBtn_debounce(fanBtn);
-		BouncyBtn_debounce(beltBtn);
 		BouncyBtn_debounce(flapperBtn);
 		//BouncyBtn_debounce(rakeBtn);
 		BouncyBtn_debounce(nitro);
@@ -319,7 +299,6 @@ task main()
 		controlDrive(rawLeftJoy, rawRightJoy);
 		controlFans();
 		controlFlap();
-		controlBelt();
 		flappersTurn();
 		nitroCheck();
 		//controlRakes();

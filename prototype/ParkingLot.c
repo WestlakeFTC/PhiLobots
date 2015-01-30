@@ -39,7 +39,7 @@
 //
 task main()
 {
-//	waitForStart();
+	waitForStart();
   int distance=0;
 
   straightMove(-3);
@@ -78,13 +78,4 @@ task main()
 		straightMove(-48);
 	}
 
-	//dead reckoning crap here
-	//
-	//
-	//
-
-	/*while(!ballDropped){
-		ballDropped = lineUpGoal();
-		delay(1000);
-		}*/
 }
