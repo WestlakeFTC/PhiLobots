@@ -78,6 +78,7 @@ void controlDrive(int rawLeftJoy, int rawRightJoy){
 #define MIN_LIFT 12   //lowest  position for lift servo
 
 void controlLift( int rawJoy){
+	rawJoy = -rawJoy;
 
   //80 full joystick pushes to move lift from 0 to max position
   //this control the sensitivity and the less sensitive the joystick is
@@ -86,7 +87,7 @@ void controlLift( int rawJoy){
 	if(abs(rawJoy)<5){
 		//this might be needed for continuous rotation servo
 	  //but we did not have it last time
-		//servo[lift]=127;
+		servo[lift]=127;
 		return;
 	}
 	// fraction of the joystick movement

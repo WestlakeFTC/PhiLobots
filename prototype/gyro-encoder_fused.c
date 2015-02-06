@@ -5,7 +5,6 @@
 /////////////////////////////////////////////////////////////////////////////////
 
 
-#include "ultraSoundAutonomous.c" // sonar Sensor functionality
 /**
 * Robot characteristics. these are constant, only change when robot
 *is re-designed
@@ -21,13 +20,13 @@ const int wheelRad = 2;
 const int cpr = 1120;
 // gear ratio of the drive train, turns of wheels
 // for each revolution of motor output shaft
-const float gear_ratio = 2.6;
+const float gear_ratio = 1.0;
 // full power level for moving forward
 const int FULL_POWER_FORWARD = 80;
 // full power level for turning left
 const int FULL_POWER_LEFT_TURN = 80;
-
-
+//dont let the motors stall too long! Max millis for motors to stall
+const int maxStallTime = 300;
 
 int inchesToCounts(float inches)
 {
@@ -66,6 +65,24 @@ void allMotorsPowerStraight(int power){
 	motor[MidL] = power;
 }
 
+unsigned long stallTime =0 ;
+bool isStalling(int lastEncoderL, int lastEncoderR, unsigned int dt)
+{
+ 	 if(lastEncoderL == nMotorEncoder[FrontL] &&
+			lastEncoderR == nMotorEncoder[FrontR])
+		{
+			stallTime += dt;
+			if(stallTime > maxStallTime){
+				playImmediateTone(1000, 100);
+			  writeDebugStreamLine("Drive stalled");
+				return true;
+			}
+		}else{
+				stallTime = 0;
+		}
+		return false;
+}
+
 int observedBrakingOffSetL=180;
 int observedBrakingOffSetR=180;
 
@@ -80,29 +97,35 @@ void controlledStraightMove(float inches, int power){
 	}
 
 	allMotorsPowerStraight(power);
+	int lastEncoderL = 0;
+	int lastEncoderR = 0;
+
 	while(abs(nMotorEncoder[FrontL]) < countToTurn
 		&& abs(nMotorEncoder[FrontR])< countToTurn){
 		writeDebugStreamLine(" %d,%d,%d",
 		nMotorEncoder[FrontL],nMotorEncoder[FrontR], nSysTime);
 		sleep(20);
+		if(isStalling(lastEncoderL,lastEncoderR, 20)){
+			break;
+		}
+		lastEncoderL = nMotorEncoder[FrontL];
+		lastEncoderR = nMotorEncoder[FrontR];
+
 	}
 	allMotorsPowerStraight(0);
-	int	last_encoderL=nMotorEncoder[FrontL];
-	int	last_encoderR=nMotorEncoder[FrontR];
-
 	do{
-		last_encoderL=nMotorEncoder[FrontL];
-		last_encoderR=nMotorEncoder[FrontR];
+		lastEncoderL=nMotorEncoder[FrontL];
+		lastEncoderR=nMotorEncoder[FrontR];
 		writeDebugStreamLine("counts:%d-off:%d/%d, encoderL: %d, encoderR: %d, power: %d, time: %d",
 		countToTurn, observedBrakingOffSetL, observedBrakingOffSetR,
-		last_encoderL, last_encoderR, 0,  nSysTime);
+		lastEncoderL, lastEncoderR, 0,  nSysTime);
 		sleep(20);
-	}while(nMotorEncoder[FrontL]!=last_encoderL ||
-		nMotorEncoder[FrontR]!=last_encoderR);
+	}while(nMotorEncoder[FrontL]!=lastEncoderL ||
+		nMotorEncoder[FrontR]!=lastEncoderR);
 
 	writeDebugStreamLine("counts:%d-off:%d/%d, encoderL: %d, encoderR: %d, power: %d, time: %d",
 	countToTurn, observedBrakingOffSetL, observedBrakingOffSetR,
-	last_encoderL, last_encoderR, 0, nSysTime);
+	lastEncoderL, lastEncoderR, 0, nSysTime);
 
 }
 
@@ -114,35 +137,36 @@ void controlledEncoderObservedTurn(int target, int powerDesired){
 	nMotorEncoder[FrontR] = 0;
 	nMotorEncoder[FrontL] = 0;
 	int countToTurn = degreesToCounts(target);
-	int beginningEncoderR=0;
-	int beginningEncoderL=0;
+	int lastEncoderR=0;
+	int lastEncoderL=0;
 int power=target<0? -powerDesired:powerDesired;
 	allMotorsPowerRot(power);
 
-	while(abs(beginningEncoderR)< countToTurn-observedBrakingOffSetR &&
-		abs(beginningEncoderL) < countToTurn-observedBrakingOffSetL)
+	while(abs(lastEncoderR)< countToTurn-observedBrakingOffSetR &&
+		abs(lastEncoderL) < countToTurn-observedBrakingOffSetL)
 	{
 		sleep(20);
-		beginningEncoderR = nMotorEncoder[FrontR];
-		beginningEncoderL = nMotorEncoder[FrontL];
+	  if(isStalling(lastEncoderL,lastEncoderR, 20)){
+			break;
+		}
+		lastEncoderR = nMotorEncoder[FrontR];
+		lastEncoderL = nMotorEncoder[FrontL];
 		writeDebugStreamLine("counts:%d-off:%d/%d, encoderL: %d, encoderR: %d, power: %d, time: %d",
 		countToTurn, observedBrakingOffSetL,observedBrakingOffSetR,
-		beginningEncoderL, beginningEncoderR, power, nSysTime);
+		lastEncoderL, lastEncoderR, power, nSysTime);
 	}
 
 	allMotorsPowerRot(0);
-	int last_encoderL=beginningEncoderL;
-	int last_encoderR=beginningEncoderR;
 
 	do{
-		last_encoderL=nMotorEncoder[FrontL];
-		last_encoderR=nMotorEncoder[FrontR];
+		lastEncoderL=nMotorEncoder[FrontL];
+		lastEncoderR=nMotorEncoder[FrontR];
 		writeDebugStreamLine("counts:%d-off:%d/%d, encoderL: %d, encoderR: %d, power: %d, time: %d",
 		countToTurn, observedBrakingOffSetL, observedBrakingOffSetR,
-		last_encoderL, last_encoderR, 0,  nSysTime);
+		lastEncoderL, lastEncoderR, 0,  nSysTime);
 		sleep(20);
-	}while(nMotorEncoder[FrontL]!=last_encoderL ||
-		nMotorEncoder[FrontR]!=last_encoderR);
+	}while(nMotorEncoder[FrontL]!=lastEncoderL ||
+		nMotorEncoder[FrontR]!=lastEncoderR);
 
 	//	observedBrakingOffSetL=abs(last_encoderL-beginningEncoderL);
 	//	observedBrakingOffSetR=abs(last_encoderR-beginningEncoderR);

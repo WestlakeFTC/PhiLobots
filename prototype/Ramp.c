@@ -67,10 +67,10 @@ void swagger(bool right, int time, int domPower){
 #define GRABBER_DOWN    20
 void wiggleMove()
 {
-	controlledEncoderObservedTurn(15,25);
-	controlledStraightMove(-4,15);
-	controlledEncoderObservedTurn(-15,25);
-	controlledStraightMove(-4,15);
+	controlledEncoderObservedTurn(-30,25);
+	controlledStraightMove(-5,20);
+	controlledEncoderObservedTurn(30,25);
+	controlledStraightMove(-8,20);
 }
 
 void grabGoal()
@@ -106,9 +106,24 @@ task main(){
   sleep(700);
 //	waitForStart();
 
-  straightMove(-48);
+//  straightMove(24);
+  controlledStraightMove(-62,70);
   sleep(1000);
+  controlledEncoderObservedTurn(20,40);
+  sleep(1000);
+	controlledStraightMove(-15,30);
+	sleep(1000);
+	grabGoal();
+	sleep(1000);
+	encoderObservedTurn(-170);
+	sleep(1000);
+	straightMove(-100);
 
+
+
+	//encoderObservedTurn(90);
+//	sleep(5000);
+	//controlledStraightMove(20,20);
   //sleep(1000);
   //straightMove(10);
   //sleep(1000);
@@ -142,6 +157,4 @@ task main(){
   controlledStraightMove(110, 100);
   sleep(1000);
   encoderObservedTurn(-130);
-*/
-
-}
+*/}
