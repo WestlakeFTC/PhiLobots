@@ -43,6 +43,11 @@ void fansOn(unsigned long time)
 	motor[FanL] = 0;
 	motor[FanR] = 0;
 }
+void liftGoUp(int height)
+{
+	int position = ((height-18*2.54)/(122-18*2.54)*(32-224))+224;
+	servo[lift]=position;
+}
 void swagger(bool right, int time, int domPower){
 
 	if(right){
@@ -89,7 +94,7 @@ void grabGoal()
 
 void initializeRobot()
 {
-	//servo[lift] = MIN_LIFT;
+	//servo[lift] = 224;
 	//servo[flap] = 0;
 
 
@@ -99,24 +104,29 @@ void initializeRobot()
 	servoChangeRate[trailerL]=0;
 	servoChangeRate[trailerR]=0;
 	//set to true during competition to keep the grabber engaged
-	bSystemLeaveServosEnabledOnProgramStop=false;
+	bSystemLeaveServosEnabledOnProgramStop=true;
 }
 task main(){
   initializeRobot();
   sleep(700);
 //	waitForStart();
-
+//liftGoUp(90);
+  //sleep(10000);
 //  straightMove(24);
-  controlledStraightMove(-62,70);
-  sleep(1000);
-  controlledEncoderObservedTurn(20,40);
-  sleep(1000);
+
+
+  controlledStraightMove(-66,25);
+
+  controlledEncoderObservedTurn(25,40);
+
+  liftGoUp(70);
+  sleep(5000);
 	controlledStraightMove(-15,30);
-	sleep(1000);
+
 	grabGoal();
-	sleep(1000);
-	encoderObservedTurn(-170);
-	sleep(1000);
+
+	encoderObservedTurn(-180);
+
 	straightMove(-100);
 
 
