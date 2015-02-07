@@ -16,19 +16,17 @@
 #include "hitechnic-gyro-drv2.h"
 //#define TESTING
 
-typedef enum{
-	INIT,
-	CALIBRATION,
-	READING,
-	STOPPED,
-}GYRO_LOOP_STATE;
+#define	GYRO_INIT 0
+#define	GYRO_CALIBRATION 2
+#define	GYRO_READING 4
+#define	GYRO_STOPPED 8
 
 volatile float gHeading = 0;//in  degrees
 volatile float gRot = 0;//in degrees per second
 
 
 
-volatile GYRO_LOOP_STATE gyro_loop_state;
+volatile int gyro_loop_state;
 float gyro_heading()
 {
 	float heading=0;
@@ -45,17 +43,17 @@ task gyro_loop () {
   unsigned long prevTime,currTime;
 	// Create struct to hold sensor data
 	tHTGYRO gyroSensor;
-	while(gyro_loop_state!=STOPPED) {
+	while(gyro_loop_state!=GYRO_STOPPED) {
 		switch(gyro_loop_state)
 		{
-		case INIT:
+		case GYRO_INIT:
 			// Initialise and configure struct and port
 			hogCPU();
 			initSensor(&gyroSensor, S3);
-			gyro_loop_state=CALIBRATION;
+			gyro_loop_state=GYRO_CALIBRATION;
 			releaseCPU();
 			break;
-		case CALIBRATION:
+		case GYRO_CALIBRATION:
 			sleep(1000);//let it settle down
 #ifdef TESTING
 			eraseDisplay();
@@ -77,11 +75,11 @@ task gyro_loop () {
 #endif
 			gHeading=0.0;
 			prevTime =nSysTime;
-			gyro_loop_state=READING;
+			gyro_loop_state=GYRO_READING;
 			releaseCPU();
 			break;
-		case READING:
-			while(gyro_loop_state==READING){
+		case GYRO_READING:
+			while(gyro_loop_state==GYRO_READING){
 				clearTimer(T2);
 				hogCPU();
 				// Read the current rotational speed
@@ -111,7 +109,7 @@ task gyro_loop () {
 				displayTextLine(6, "Press enter");
 				displayTextLine(7, "to recalibrate");
 #endif
-				while(time1[T2]<dt && gyro_loop_state==READING){
+				while(time1[T2]<dt && gyro_loop_state==GYRO_READING){
 					sleep(1);
 				}
 			}
@@ -140,11 +138,11 @@ task main()
 	{
 		if(getXbuttonValue(xButtonEnter))
 		{
-			gyro_loop_state = CALIBRATION;
+			gyro_loop_state = GYRO_CALIBRATION;
 			sleep(2000);
 		}else if(getXbuttonValue(xButtonLeft))
 		{
-			gyro_loop_state = STOPPED;
+			gyro_loop_state = GYRO_STOPPED;
 			while(gyro_loop_state!=STOPPED)
 				sleep(2000);
 			stopTask(gyro_loop);
