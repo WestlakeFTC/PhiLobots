@@ -2,7 +2,8 @@
 * This file defines a west-coast drive with six motors.
 *  And methods to control the drive.
 */
-
+#ifndef __WEST_COASTER_H__
+#define __WEST_COASTER_H__
 /**
 * Robot characteristics. these are constant, only change when robot is re-designed
 */
@@ -429,3 +430,5 @@ void WestCoaster_pidGyroTurn(WestCoaster& wc, int degrees)
 	WestCoaster_fullStop(wc);
 }
 #endif //GYRO_PID
+
+#endif //WEST_COASTER_H
