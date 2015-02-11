@@ -106,7 +106,8 @@ void initializeRobot()
 	//set to true during competition to keep the grabber engaged
 	bSystemLeaveServosEnabledOnProgramStop=true;
 }
-task main(){
+task main()
+{
   initializeRobot();
   sleep(700);
 //	waitForStart();
@@ -124,7 +125,7 @@ task main(){
 	controlledStraightMove(-15,30);
 
 	grabGoal();
-
+	sleep(2000);
 	encoderObservedTurn(-180);
 
 	straightMove(-100);
