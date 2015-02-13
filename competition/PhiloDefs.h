@@ -8,10 +8,10 @@
 
 //lift servo positions
 #define LIFT_TOP           32
-#define LIFT_BOTTOM        224
-//highest position for lift servo is at bottom
+#define LIFT_BOTTOM        200
+//highest position for lift servo
 #define MAX_LIFT           LIFT_BOTTOM
-//lowest  position for lift servo is at top
+//lowest  position for lift servo
 #define MIN_LIFT           LIFT_TOP
 //lift top and bottom height in cm measured from floor
 #define LIFT_TOP_HEIGHT    122

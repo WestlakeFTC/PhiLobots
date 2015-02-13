@@ -312,7 +312,7 @@ void flappersTurnRev()
 				servo[flapper2] = 0;
 				servo[flapper3] = 0;
 				wasOnLastTime = true;
-				forwardFlap =false;
+				forwardFlap =false;}
 			else{
 				servo[flapper1] =128;
 				servo[flapper2] = 128;
@@ -328,7 +328,7 @@ void flappersTurnRev()
 			forwardFlap =true;
 		}
   }
-}
+
 
 task main()
 {
