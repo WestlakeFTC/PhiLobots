@@ -1,6 +1,9 @@
 #pragma config(Hubs,  S1, HTMotor,  HTMotor,  none,     none)
 #pragma config(Hubs,  S2, HTMotor,  HTServo,  none,     none)
 #pragma config(Hubs,  S3, HTMotor,  HTServo,  HTServo,  none)
+#pragma config(Sensor, S1,     ,               sensorI2CMuxController)
+#pragma config(Sensor, S2,     ,               sensorI2CMuxController)
+#pragma config(Sensor, S3,     ,               sensorI2CMuxController)
 #pragma config(Sensor, S4,     HTMUX,          sensorI2CCustomFastSkipStates9V)
 #pragma config(Motor,  mtr_S1_C1_1,     BackL,         tmotorTetrix, openLoop)
 #pragma config(Motor,  mtr_S1_C1_2,     FrontL,        tmotorTetrix, openLoop, encoder)
@@ -23,8 +26,8 @@
 #pragma config(Servo,  srvo_S3_C2_5,    flap,                 tServoStandard)
 #pragma config(Servo,  srvo_S3_C2_6,    faucet,               tServoStandard)
 #pragma config(Servo,  srvo_S3_C3_1,    flapper3,             tServoStandard)
-#pragma config(Servo,  srvo_S3_C3_2,    servo14,              tServoNone)
-#pragma config(Servo,  srvo_S3_C3_3,    servo15,              tServoNone)
+#pragma config(Servo,  srvo_S3_C3_2,    spout,                tServoStandard)
+#pragma config(Servo,  srvo_S3_C3_3,    hingeFaucet,          tServoStandard)
 #pragma config(Servo,  srvo_S3_C3_4,    servo16,              tServoNone)
 #pragma config(Servo,  srvo_S3_C3_5,    servo17,              tServoNone)
 #pragma config(Servo,  srvo_S3_C3_6,    servo18,              tServoNone)
@@ -37,10 +40,22 @@
 WestCoaster g_wcDrive;
 void readyFaucet()
 {
+	servo[hingeFaucet] = 230;
+	servo[spout] = 255;
 }
 void fansOn(unsigned long time)
 {
-	unsigned long targetTime = nSysTime + time;
+	unsigned long targetTime = nSysTime + 500;
+
+while(nSysTime < targetTime)
+	{
+		motor[FanL] = -100;
+		motor[FanR] = 100;
+	}
+	servo[flapper1] =FLAPPER_FORWARD;
+	servo[flapper2] = FLAPPER_FORWARD;
+	servo[flapper3] = FLAPPER_FORWARD;
+	targetTime=nSysTime+time;
 	while(nSysTime < targetTime)
 	{
 		motor[FanL] = -100;
@@ -49,6 +64,9 @@ void fansOn(unsigned long time)
 
 	motor[FanL] = 0;
 	motor[FanR] = 0;
+	servo[flapper1] =FLAPPER_STOP;
+	servo[flapper2] = FLAPPER_STOP;
+	servo[flapper3] = FLAPPER_STOP;
 }
 void liftGoUp(int height)
 {
@@ -82,10 +100,10 @@ void swagger(bool right, unsigned int time, int domPower){
 
 void wiggleMove()
 {
-	WestCoaster_controlledEncoderObservedTurn(g_wcDrive,-30,25);
-	WestCoaster_controlledStraightMove(g_wcDrive, -5,20);
-	WestCoaster_controlledEncoderObservedTurn(g_wcDrive,30,25);
-	WestCoaster_controlledStraightMove(g_wcDrive, -8,20);
+	WestCoaster_controlledEncoderObservedTurn(g_wcDrive,-40,15);
+	WestCoaster_controlledStraightMove(g_wcDrive, -5,30);
+	WestCoaster_controlledEncoderObservedTurn(g_wcDrive,40,25);
+	WestCoaster_controlledStraightMove(g_wcDrive, -7,30);
 }
 
 void grabGoal()
@@ -111,6 +129,11 @@ void initializeRobot()
 
 	servo[trailerR] = GRABBER_UP;
 	servo[trailerL] = 255-GRABBER_UP;
+	servo[flapper1] =FLAPPER_STOP;
+	servo[flapper2] = FLAPPER_STOP;
+	servo[flapper3] = FLAPPER_STOP;
+	servo[spout]= 127;
+	servo[hingeFaucet]=0;
 	//move servos at maximium speed
 	servoChangeRate[trailerL]=0;
 	servoChangeRate[trailerR]=0;
@@ -122,21 +145,32 @@ void initializeRobot()
 task main(){
   initializeRobot();
 //	waitForStart();
+  sleep(1000);
 
-  WestCoaster_controlledStraightMove(g_wcDrive, -66, 25);
-  sleep(1000);
-  //WestCoaster_controlledEncoderObservedTurn(g_wcDrive,25,70);
-  sleep(1000);
-	liftGoUp(70);
-	sleep(5000);
-	WestCoaster_controlledStraightMove(g_wcDrive, -15,50);
+
+
+ // WestCoaster_controlledStraightMove(g_wcDrive, -76, 50);
+ // WestCoaster_controlledEncoderObservedTurn(g_wcDrive,75,75);
+  WestCoaster_controlledStraightMove(g_wcDrive, -50, 25);
+
+  WestCoaster_controlledEncoderObservedTurn(g_wcDrive,15,70);
+
+	//liftGoUp(65);
+	//sleep(3000);
+	WestCoaster_controlledStraightMove(g_wcDrive, -10,50);
 	//sleep(1000);
+
 
 	grabGoal();
 	sleep(1000);
+	//readyFaucet();
+
+	//fansOn(3000);
+
+
 	WestCoaster_encoderObservedTurn(g_wcDrive,-180);
 	//sleep(1000);
-	WestCoaster_straightMove(g_wcDrive,-100);
+	WestCoaster_straightMove(g_wcDrive,-80);
 
 
 

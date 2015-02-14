@@ -19,15 +19,15 @@
 #pragma config(Servo,  srvo_S2_C2_4,    servo4,               tServoNone)
 #pragma config(Servo,  srvo_S2_C2_5,    servo5,               tServoNone)
 #pragma config(Servo,  srvo_S2_C2_6,    servo6,               tServoNone)
-#pragma config(Servo,  srvo_S3_C2_1,    trailerR,             tServoStandard)
-#pragma config(Servo,  srvo_S3_C2_2,    trailerL,             tServoStandard)
+#pragma config(Servo,  srvo_S3_C2_1,    trailerL,             tServoStandard)
+#pragma config(Servo,  srvo_S3_C2_2,    trailerR,             tServoStandard)
 #pragma config(Servo,  srvo_S3_C2_3,    lift,                 tServoStandard)
-#pragma config(Servo,  srvo_S3_C2_4,    hingeFaucet,          tServoStandard)
+#pragma config(Servo,  srvo_S3_C2_4,    rakes,                tServoStandard)
 #pragma config(Servo,  srvo_S3_C2_5,    flap,                 tServoStandard)
 #pragma config(Servo,  srvo_S3_C2_6,    faucet,               tServoStandard)
 #pragma config(Servo,  srvo_S3_C3_1,    flapper3,             tServoStandard)
-#pragma config(Servo,  srvo_S3_C3_2,    servo14,              tServoNone)
-#pragma config(Servo,  srvo_S3_C3_3,    servo15,              tServoNone)
+#pragma config(Servo,  srvo_S3_C3_2,    spout,                tServoStandard)
+#pragma config(Servo,  srvo_S3_C3_3,    hingeFaucet,          tServoStandard)
 #pragma config(Servo,  srvo_S3_C3_4,    servo16,              tServoNone)
 #pragma config(Servo,  srvo_S3_C3_5,    servo17,              tServoNone)
 #pragma config(Servo,  srvo_S3_C3_6,    servo18,              tServoNone)
@@ -196,11 +196,11 @@ void hingeFaucetOn(){
 
 	static bool wasOnLastTime = false;
 	if(!wasOnLastTime){
-		servo[hingeFaucet] = 240;
+		servo[hingeFaucet] = 230;
 		wasOnLastTime = true;
 	}
 	else{
-		servo[hingeFaucet] = 80;
+		servo[hingeFaucet] = 0;
 		wasOnLastTime = false;
 	}
 }
@@ -232,7 +232,7 @@ void initializeRobot()
 	servo[flap] = 0;
 	servo[trailerR] = GRABBER_UP;
 	servo[trailerL] = 255-GRABBER_UP; //keep goal
-	servo[hingeFaucet]=80;
+	servo[hingeFaucet]=0;
 	servoChangeRate[trailerL]=0;
 	servoChangeRate[trailerR]=0;
 	return;

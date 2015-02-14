@@ -3,8 +3,8 @@
 
 
 //grabber servo positions
-#define GRABBER_UP      100
-#define GRABBER_DOWN    20
+#define GRABBER_UP      200
+#define GRABBER_DOWN    80
 
 //lift servo positions
 #define LIFT_TOP           32

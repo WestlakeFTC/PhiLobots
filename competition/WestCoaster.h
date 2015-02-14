@@ -17,7 +17,7 @@ const int wheelRad = 2;
 const int cpr = 1120;
 // gear ratio of the drive train, turns of wheels
 // for each revolution of motor output shaft
-const float gear_ratio = 1.0;//2.6;
+const float gear_ratio = 2.6;
 
 //We use ratio of power applied to left to that applied to right
 // to synchronize left and right motors, that is,  minimize encoder
@@ -119,6 +119,8 @@ void WestCoaster_init(WestCoaster& wc, tMotor fl, tMotor fr,
 */
 void WestCoaster_distributePower(WestCoaster& wc, int powerLeft, int powerRight, bool rotation)
 {
+	wc.last_powerLeft = powerLeft;
+	wc.last_powerRight = powerRight;
 	if(rotation) powerRight=-powerRight;
 	motor[wc.frontR] = -powerRight;
 	motor[wc.frontL] = powerLeft;
@@ -126,8 +128,6 @@ void WestCoaster_distributePower(WestCoaster& wc, int powerLeft, int powerRight,
 	motor[wc.backL] = powerLeft;
 	motor[wc.midR] = -powerRight;
 	motor[wc.midL] = powerLeft;
-	wc.last_powerLeft = powerLeft;
-	wc.last_powerRight = powerRight;
 }
 
 void WestCoaster_allMotorsPowerStraight(WestCoaster& wc,int power){
@@ -150,6 +150,9 @@ void WestCoaster_waitForEncoderCounts(WestCoaster& wc, int leftTarget, int right
 	int last_encoderR=nMotorEncoder[wc.encoderR];
 	WestCoaster_resetSyncPID();
 	int total_power=(wc.last_powerRight+wc.last_powerRight);
+		writeDebugStreamLine("**targets (L/R):%d/%d, encoderL: %d, encoderR: %d, total_powe:%d time: %d",
+		leftTarget,rightTarget, last_encoderL, last_encoderR, total_power, nSysTime);
+
 	while(abs(last_encoderR)< rightTarget &&
 		abs(last_encoderL) <  leftTarget)
 	{
@@ -158,8 +161,8 @@ void WestCoaster_waitForEncoderCounts(WestCoaster& wc, int leftTarget, int right
 		last_encoderR = nMotorEncoder[wc.encoderR];
 		last_encoderL = nMotorEncoder[wc.encoderL];
 		if(sync)WestCoaster_pidMotorSync(wc, total_power, rotation);
-		writeDebugStreamLine("targets (L/R):%d/%d, encoderL: %d, encoderR: %d, time: %d",
-		leftTarget,rightTarget, last_encoderL, last_encoderR, nSysTime);
+		writeDebugStreamLine("targets (L/R):%d/%d, encoderL: %d, encoderR: %d, total_powe:%d time: %d",
+		leftTarget,rightTarget, last_encoderL, last_encoderR, total_power, nSysTime);
 	}
   return ;
 }
@@ -233,8 +236,8 @@ void WestCoaster_forwardFullSpeed(WestCoaster& wc, float inches){
 * To tune them, just run the robot and use debug messge output from WestCoaster_fullStop
 * to calculate the braking offset.
 */
-int observedBrakingOffSetL=180;
-int observedBrakingOffSetR=180;
+int observedBrakingOffSetL=70;
+int observedBrakingOffSetR=40;
 
 void WestCoaster_observedStraightMove(WestCoaster& wc, float inches){
 	nMotorEncoder[wc.encoderL] = 0;
@@ -317,7 +320,7 @@ float WestCoaster_getRotPos(WestCoaster& wc)
 #include "trcdefs.h"
 #include "dbgtrace.h"
 #include "pidctl.h"
-#define KP_TURN -0.1 //power ratio offset per encoder counter difference
+#define KP_TURN -0.05 //power ratio offset per encoder counter difference
 #define KI_TURN 0.0
 #define KD_TURN 0.0
 // encoder PID stablize direction to make sure
@@ -365,9 +368,9 @@ void WestCoaster_pidMotorSync(WestCoaster& wc, int total_power, bool rotation)
   {
   	total_power=MAX_TOTAL_POWER;
   }
-  if(total_power>-MAX_TOTAL_POWER)
+  if(total_power<-MAX_TOTAL_POWER)
   {
-  	total_power=MAX_TOTAL_POWER;
+  	total_power=-MAX_TOTAL_POWER;
   }
   wc.nextMotorSyncTick += motor_sync_interval;
 	float ratio=1.0+PIDCtrlOutput(g_encoder_turn_pid, WestCoaster_getRotPos(wc));
