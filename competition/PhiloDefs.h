@@ -16,6 +16,11 @@
 //lift top and bottom height in cm measured from floor
 #define LIFT_TOP_HEIGHT    122
 #define LIFT_BOTTOM_HEIGHT (18*2.54)
+//lift position for 60CM goal.
+//This should be close to 60
+#define LIFT_FOR_60CM 70
+#define LIFT_FOR_90CM 100
+#define LIFT_FOR_120CM 130
 
 //flapper servo positions
 #define FLAPPER_FORWARD     255

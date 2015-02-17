@@ -27,7 +27,7 @@ const float gear_ratio = 2.6;
 //Limit power offset to -50% to 50%
 const float max_power_ratio_offset = 0.5;
 const float min_power_ratio_offset = -0.5;
-// The real ration of power_left/power_right=1+ration_offset.
+// The real ratio of power_left/power_right=1+ratio_offset.
 // Because the highest power applied to right side will be
 // totalpower/(2+min_power_ratio_offset), and the highest
 // power applied to left will be totalpower*(1+max_power_ratio_offset)
@@ -131,6 +131,7 @@ void WestCoaster_distributePower(WestCoaster& wc, int powerLeft, int powerRight,
 }
 
 void WestCoaster_allMotorsPowerStraight(WestCoaster& wc,int power){
+
 	WestCoaster_distributePower(wc,power, power, false);
 }
 
@@ -139,6 +140,12 @@ void WestCoaster_allMotorsPowerStraight(WestCoaster& wc,int power){
 */
 void WestCoaster_allMotorsPowerRot(WestCoaster& wc, int power){
 	WestCoaster_distributePower(wc,power, power, true);
+}
+void WestCoaster_resetStates(WestCoaster& wc)
+{
+	nMotorEncoder[wc.encoderL] = 0;
+	nMotorEncoder[wc.encoderR] = 0;
+	wc.nextStallCheckTick=nSysTime+stall_check_interval;
 }
 
 void WestCoaster_pidMotorSync(WestCoaster& wc, int total_power, bool rotation);
@@ -190,15 +197,48 @@ void WestCoaster_fullStop(WestCoaster& wc)
 	}while(nMotorEncoder[wc.encoderL]!=last_encoderL ||
 		nMotorEncoder[wc.encoderR]!=last_encoderR);
 }
+void WestCoaster_rampUpSpeed(WestCoaster& wc, int counts, int power){
+
+   int current_power=0;
+    int power_step=5;
+/*    if(current_power>0&&current_power<10)
+    	current_power=10;
+    if(current_power<0&&current_power>-10)
+    	current_power=-10;*/
+    if(power<0)
+    	power_step=-5;
+    int last_encoderL=nMotorEncoder[wc.encoderL];
+  	int last_encoderR=nMotorEncoder[wc.encoderR];
+
+		while(abs(last_encoderR)< counts &&
+		abs(last_encoderL) <  counts
+         && abs(current_power)<abs(power))
+	{
+		current_power+=power_step;
+	  WestCoaster_allMotorsPowerStraight(wc, current_power);
+		if(WestCoaster_isStalling(wc)) break;
+		last_encoderR = nMotorEncoder[wc.encoderR];
+		last_encoderL = nMotorEncoder[wc.encoderL];
+				writeDebugStreamLine("**targets (L/R):%d/%d, encoderL: %d, encoderR: %d, total_powe:%d time: %d",
+		counts,counts, last_encoderL, last_encoderR, current_power, nSysTime);
+
+		sleep(control_loop_interval);
+	}
+  return ;
+
+}
 
 void WestCoaster_controlledStraightMove(WestCoaster& wc, float inches, int power){
-	nMotorEncoder[wc.encoderL] = 0;
-	nMotorEncoder[wc.encoderR] = 0;
+	WestCoaster_resetStates(wc);
 	int countToMove = inchesToCounts(inches);
 	if(countToMove==0) return;
 	if(inches < 0){
 		power = -power;
 	}
+	int ramp_up_counts=inchesToCounts(24);
+	if(ramp_up_counts>countToMove/2)
+		ramp_up_counts=countToMove/2;
+	WestCoaster_rampUpSpeed(wc, ramp_up_counts, power);
 	WestCoaster_allMotorsPowerStraight(wc, power);
 	WestCoaster_waitForEncoderCounts(wc, countToMove, countToMove, false, true);
 	WestCoaster_fullStop(wc);
@@ -215,8 +255,7 @@ void WestCoaster_straightMove(WestCoaster& wc, float inches){
  */
 
 void WestCoaster_forwardFullSpeed(WestCoaster& wc, float inches){
-	nMotorEncoder[wc.encoderL] = 0;
-	nMotorEncoder[wc.encoderR] = 0;
+	WestCoaster_resetStates(wc);
 	int countToMove = inchesToCounts(inches);
 	if(countToMove==0) return;
 	int power=100;
@@ -236,12 +275,11 @@ void WestCoaster_forwardFullSpeed(WestCoaster& wc, float inches){
 * To tune them, just run the robot and use debug messge output from WestCoaster_fullStop
 * to calculate the braking offset.
 */
-int observedBrakingOffSetL=70;
-int observedBrakingOffSetR=40;
+int observedBrakingOffSetL=0;
+int observedBrakingOffSetR=0;
 
 void WestCoaster_observedStraightMove(WestCoaster& wc, float inches){
-	nMotorEncoder[wc.encoderL] = 0;
-	nMotorEncoder[wc.encoderR] = 0;
+	WestCoaster_resetStates(wc);
 	int countToMove = inchesToCounts(inches);
 	if(countToMove==0)return;
 	int power = FULL_POWER_FORWARD;
@@ -263,9 +301,8 @@ void WestCoaster_controlledEncoderObservedTurn(WestCoaster& wc, int desired, int
 	{
 		powerDesired = powerDesired * -1;
 	}
-	nMotorEncoder[wc.encoderR] = 0;
-	nMotorEncoder[wc.encoderL] = 0;
-	wc.nextStallCheckTick=nSysTime+stall_check_interval;
+	WestCoaster_resetStates(wc);
+
 	int countToTurn = degreesToCounts(desired);
 
 	WestCoaster_allMotorsPowerRot(wc, powerDesired);
@@ -288,6 +325,8 @@ bool WestCoaster_isStalling(WestCoaster& wc)
 	  	|| (abs(wc.last_powerLeft)<=MIN_STALL_POWER &&
 	       abs(wc.last_powerRight)<=MIN_STALL_POWER))
 	       return false;
+ 			writeDebugStreamLine("time: %d, stall_check: %d", nSysTime, wc.nextStallCheckTick);
+
 	  wc.nextStallCheckTick = nSysTime+stall_check_interval;
 		if(wc.last_encoderRight ==nMotorEncoder[wc.encoderR]&&
 			wc.last_encoderLeft == nMotorEncoder[wc.encoderL])
@@ -320,7 +359,7 @@ float WestCoaster_getRotPos(WestCoaster& wc)
 #include "trcdefs.h"
 #include "dbgtrace.h"
 #include "pidctl.h"
-#define KP_TURN -0.05 //power ratio offset per encoder counter difference
+#define KP_TURN -0.0 //power ratio offset per encoder counter difference
 #define KI_TURN 0.0
 #define KD_TURN 0.0
 // encoder PID stablize direction to make sure
@@ -393,9 +432,9 @@ void WestCoaster_resetSyncPID()
 void WestCoaster_pidStraightMove(WestCoaster& wc, float inches)
 {
 	if(inches == 0){return;}
-	nMotorEncoder[wc.encoderL] = 0;
-	nMotorEncoder[wc.encoderR] = 0;
+
 	int countToMove = inchesToCounts(inches);
+	WestCoaster_resetStates(wc);
  	//	writeDebugStreamLine("counts to move: %d, encoderLCount: %d, encoderRCount: %d, time: %d",countToTurn,
 	//nMotorEncoder[wc.encoderL],nMotorEncoder[wc.encoderR], nSysTime);
 	PIDCtrlReset(g_encoder_forward_pid);
@@ -435,6 +474,7 @@ void WestCoaster_pidGyroTurn(WestCoaster& wc, int degrees)
 {
 	if(!gyro_pid_inited)
 	{
+		  gyro_pid_inited=true;
 		  startTask(gyro_loop);
       while(gyro_loop_state!=GYRO_READING) sleep(5);
  			PIDCtrlInit(g_gyro_turn_pid,
@@ -447,11 +487,8 @@ void WestCoaster_pidGyroTurn(WestCoaster& wc, int degrees)
 		    0.0 //initial power
 		  );
       sleep(500);
-
 	}
-	nMotorEncoder[wc.encoderR] = 0;
-	nMotorEncoder[wc.encoderL] = 0;
-  wc.nextStallCheckTick=nSysTime+stall_check_interval;
+	WestCoaster_resetStates(wc);
 
 	hogCPU();
 	float current_heading=gHeading;

@@ -41,6 +41,7 @@ WestCoaster g_wcDrive;
 void readyFaucet()
 {
 	servo[hingeFaucet] = 230;
+	sleep(4000);
 	servo[spout] = 255;
 }
 void fansOn(unsigned long time)
@@ -75,6 +76,7 @@ void liftGoUp(int height)
 	                *(LIFT_TOP-LIFT_BOTTOM)
 	                + LIFT_BOTTOM;
 	servo[lift]=position;
+	sleep(5000);
 }
 
 void swagger(bool right, unsigned int time, int domPower){
@@ -100,16 +102,19 @@ void swagger(bool right, unsigned int time, int domPower){
 
 void wiggleMove()
 {
-	WestCoaster_controlledEncoderObservedTurn(g_wcDrive,-40,15);
+	WestCoaster_controlledEncoderObservedTurn(g_wcDrive,-20,25);
 	WestCoaster_controlledStraightMove(g_wcDrive, -5,30);
 	WestCoaster_controlledEncoderObservedTurn(g_wcDrive,40,25);
-	WestCoaster_controlledStraightMove(g_wcDrive, -7,30);
+	WestCoaster_controlledStraightMove(g_wcDrive, -5,30);
+	WestCoaster_controlledEncoderObservedTurn(g_wcDrive,-20,25);
+	WestCoaster_controlledStraightMove(g_wcDrive, -5,30);
+
 }
 
 void grabGoal()
 {
 
-	wiggleMove();
+	  wiggleMove();
 
     servo[trailerR] = GRABBER_DOWN;
     servo[trailerL] = 255-GRABBER_DOWN;
@@ -141,73 +146,33 @@ void initializeRobot()
 	bSystemLeaveServosEnabledOnProgramStop=true;
 
 }
+#define ALIGN_FAUCET_TO_CENTER 50 //milliseconds to align faucet
+#define OFF_RAMP_DIST 58 //platform and ramp measure 58 inches long
+#define GOAL_CENTER_TO_EDGE 11.6/2
+#define FAUCET_EXTEND_BACK_CENTER GOAL_CENTER_TO_EDGE+0.5 //measure from the center of the drop to the edge of robot
 
 task main(){
   initializeRobot();
 //	waitForStart();
-  sleep(1000);
+  /*sleep(1000);
+
+	//back off the ramp, 56.9 inches from edge of field to front of bot
+	//back of bot is 56.9+18=74.9 inches from edge of field
+	// center of 60cm goal is 4.5*24=108 inches from edge
+	//so need to move 108-74.9 to the center
+	// then subtract the goal and robot faucet extents
+	// and half-inch safety margin*/
+	/*OFF_RAMP_DIST
+					+108 - 74.9
+					-FAUCET_EXTEND_BACK_CENTER
+					-0.5;*/
+
+  float distance_to_60cm =75;
 
 
-
- // WestCoaster_controlledStraightMove(g_wcDrive, -76, 50);
- // WestCoaster_controlledEncoderObservedTurn(g_wcDrive,75,75);
-  WestCoaster_controlledStraightMove(g_wcDrive, -50, 25);
-
-  WestCoaster_controlledEncoderObservedTurn(g_wcDrive,15,70);
-
-	//liftGoUp(65);
-	//sleep(3000);
-	WestCoaster_controlledStraightMove(g_wcDrive, -10,50);
-	//sleep(1000);
-
-
+  WestCoaster_controlledStraightMove(g_wcDrive, -distance_to_60cm, 30);
 	grabGoal();
-	sleep(1000);
-	//readyFaucet();
-
-	//fansOn(3000);
-
-
-	WestCoaster_encoderObservedTurn(g_wcDrive,-180);
-	//sleep(1000);
-	WestCoaster_straightMove(g_wcDrive,-80);
-
-
-
-	//WestCoaster_encoderObservedTurn(g_wcDrive,(90);
-//	sleep(5000);
-	//controlledStraightMove(20,20);
-  //sleep(1000);
-  //WestCoaster_straightMove(g_wcDrive,(10);
-  //sleep(1000);
-  //WestCoaster_controlledEncoderObservedTurn(g_wcDrive,(-180, 80);
-  //sleep(1000);
-  //WestCoaster_controlledEncoderObservedTurn(g_wcDrive,(90, 80);
-  //we only need 100ms or less to determine the center goal
-  //orientation.
-  /*WestCoaster_controlledStraightMove(g_wcDrive, -12, 25);
-
-  sleep(1000);
-  wiggleMove();
-  sleep(500);
-  grabGoal();
-  sleep(1000);
-  WestCoaster_encoderObservedTurn(g_wcDrive,(-40);
-  WestCoaster_straightMove(g_wcDrive,(5);
-  sleep(1000);
-  WestCoaster_encoderObservedTurn(g_wcDrive,(180);
-  WestCoaster_straightMove(g_wcDrive,(-95);
-
-  sleep(3000);
-  WestCoaster_controlledStraightMove(g_wcDrive, -15,10);
-  //readyFaucet();
-  sleep(1000);
-
-  //fansOn(4000);
-  sleep(1000);
-  WestCoaster_encoderObservedTurn(g_wcDrive,(-40);
-  sleep(1000);
-  controlledStraightMove(110, 100);
-  sleep(1000);
-  WestCoaster_encoderObservedTurn(g_wcDrive,(-130);
-*/}
+	liftGoUp(LIFT_FOR_60CM);
+  readyFaucet();
+	fansOn(3000);
+}

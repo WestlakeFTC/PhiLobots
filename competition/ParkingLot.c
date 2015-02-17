@@ -92,7 +92,25 @@ void kickFromGoal()
 //get very close to the center goal using encoders
 void closeToCenterGoal(int goalPosition)
 {
-	//TODO
+  	//assume robot edge lined up with edge of first tile
+   // and center lined up with the center line of field
+ if(goalPosition == 1){
+  	WestCoaster_straightMove(g_wcDrive,-24);
+		WestCoaster_encoderObservedTurn(g_wcDrive,-90);
+  	WestCoaster_straightMove(g_wcDrive,-26);
+		WestCoaster_encoderObservedTurn(g_wcDrive,90);
+  	WestCoaster_straightMove(g_wcDrive,-33);
+		WestCoaster_encoderObservedTurn(g_wcDrive,90);
+  }
+else if(goalPosition == 2){
+	  WestCoaster_encoderObservedTurn(g_wcDrive,-45);
+		WestCoaster_straightMove(g_wcDrive,-1.414*24);
+		WestCoaster_encoderObservedTurn(g_wcDrive,90);
+		WestCoaster_straightMove(g_wcDrive,-10);
+	}
+	else if(goalPosition ==3){
+			WestCoaster_straightMove(g_wcDrive,-28);
+	}
 }
 
 //drop ball to
