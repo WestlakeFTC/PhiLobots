@@ -170,7 +170,7 @@ task main(){
   float distance_to_60cm =70;
 
 
- //WestCoaster_controlledStraightMove(g_wcDrive, -distance_to_60cm, 30);
+  WestCoaster_controlledStraightMove(g_wcDrive, -distance_to_60cm, 30);
 
  //WestCoaster_controlledStraightMove(g_wcDrive, -7, 30);
 	//grabGoal();
