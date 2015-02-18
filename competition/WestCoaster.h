@@ -86,6 +86,8 @@ typedef struct wc
 	unsigned long nextMotorSyncTick;
 	int last_encoderLeft;
 	int last_encoderRight;
+	int encoderMovedLeft;
+	int encoderMovedRight;
 	int last_powerLeft;
 	int last_powerRight;
 } WestCoaster;
@@ -149,7 +151,7 @@ void WestCoaster_resetStates(WestCoaster& wc)
 }
 
 void WestCoaster_pidMotorSync(WestCoaster& wc, int total_power, bool rotation);
-
+#define ENCODER_THRESH 1000
 void WestCoaster_waitForEncoderCounts(WestCoaster& wc, int leftTarget, int rightTarget,
        bool rotation, bool sync)
 {
@@ -160,16 +162,29 @@ void WestCoaster_waitForEncoderCounts(WestCoaster& wc, int leftTarget, int right
 		writeDebugStreamLine("**targets (L/R):%d/%d, encoderL: %d, encoderR: %d, total_powe:%d time: %d",
 		leftTarget,rightTarget, last_encoderL, last_encoderR, total_power, nSysTime);
 
-	while(abs(last_encoderR)< rightTarget &&
-		abs(last_encoderL) <  leftTarget)
+	while(abs(wc.encoderMovedRight)< rightTarget &&
+		abs(wc.encoderMovedLeft) <  leftTarget)
 	{
 		sleep(control_loop_interval);//must be smaller than sync interval
 		if(WestCoaster_isStalling(wc)) break;
-		last_encoderR = nMotorEncoder[wc.encoderR];
-		last_encoderL = nMotorEncoder[wc.encoderL];
+		int current_encoder=nMotorEncoder[wc.encoderR];
+		if(abs(last_encoderR-current_encoder)<ENCODER_THRESH)
+		{
+			wc.encoderMovedRight+=current_encoder-last_encoderR;
+		}
+		last_encoderR=current_encoder;
+
+		current_encoder = nMotorEncoder[wc.encoderL];
+		if(abs(last_encoderL-current_encoder)<ENCODER_THRESH)
+		{
+			wc.encoderMovedLeft+=current_encoder-last_encoderL;
+		}
+		last_encoderL=current_encoder;
+
 		if(sync)WestCoaster_pidMotorSync(wc, total_power, rotation);
-		writeDebugStreamLine("targets (L/R):%d/%d, encoderL: %d, encoderR: %d, total_powe:%d time: %d",
-		leftTarget,rightTarget, last_encoderL, last_encoderR, total_power, nSysTime);
+		writeDebugStreamLine("targets (L/R):%d/%d, moved: %d/%d encoder: %d/%d, total_powe:%d time: %d",
+		leftTarget,rightTarget, wc.encoderMovedLeft, wc.encoderMovedRight, last_encoderL,
+		last_encoderR, total_power, nSysTime);
 	}
   return ;
 }
@@ -238,7 +253,7 @@ void WestCoaster_controlledStraightMove(WestCoaster& wc, float inches, int power
 	int ramp_up_counts=inchesToCounts(24);
 	if(ramp_up_counts>countToMove/2)
 		ramp_up_counts=countToMove/2;
-	WestCoaster_rampUpSpeed(wc, ramp_up_counts, power);
+  WestCoaster_rampUpSpeed(wc, ramp_up_counts, power);
 	WestCoaster_allMotorsPowerStraight(wc, power);
 	WestCoaster_waitForEncoderCounts(wc, countToMove, countToMove, false, true);
 	WestCoaster_fullStop(wc);

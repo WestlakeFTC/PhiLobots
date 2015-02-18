@@ -154,7 +154,7 @@ void initializeRobot()
 task main(){
   initializeRobot();
 //	waitForStart();
-  /*sleep(1000);
+  sleep(1000);
 
 	//back off the ramp, 56.9 inches from edge of field to front of bot
 	//back of bot is 56.9+18=74.9 inches from edge of field
@@ -167,12 +167,25 @@ task main(){
 					-FAUCET_EXTEND_BACK_CENTER
 					-0.5;*/
 
-  float distance_to_60cm =75;
+  float distance_to_60cm =70;
 
 
-  WestCoaster_controlledStraightMove(g_wcDrive, -distance_to_60cm, 30);
+ //WestCoaster_controlledStraightMove(g_wcDrive, -distance_to_60cm, 30);
+
+ //WestCoaster_controlledStraightMove(g_wcDrive, -7, 30);
+	//grabGoal();
+  liftGoUp(LIFT_FOR_90CM);
+  //readyFaucet();
+	//fansOn(3000);
+	sleep(10000);
+
+/*	WestCoaster_controlledEncoderObservedTurn (g_wcDrive, -150, 50);
+	sleep(1000);
+	WestCoaster_controlledStraightMove(g_wcDrive, 4, 30);
+	WestCoaster_controlledEncoderObservedTurn (g_wcDrive, 130, 50);
+	WestCoaster_controlledEncoderObservedTurn (g_wcDrive, -30, 50);
 	grabGoal();
-	liftGoUp(LIFT_FOR_60CM);
-  readyFaucet();
-	fansOn(3000);
+	WestCoaster_controlledStraightMove(g_wcDrive, 120, 50);*/
+
+
 }
