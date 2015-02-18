@@ -1,6 +1,8 @@
 #ifndef _PHILO_DEFS_H_
 #define _PHILO_DEFS_H_
 
+//We use MPU6050 for gyro PID
+#define MPU_PID
 
 //grabber servo positions
 #define GRABBER_UP      200

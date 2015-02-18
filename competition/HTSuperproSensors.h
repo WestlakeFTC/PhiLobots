@@ -1,6 +1,6 @@
 #ifndef _HTSUPERPRO_SENSORS_H_
 #define _HTSUPERPRO_SENSORS_H_
-
+//modified superpro drive
 #include "htspb_drv.h"
 #define BYTES_PER_FRAME 6
 short getShort(ubyte byte1, ubyte byte2)
@@ -108,13 +108,15 @@ short SuperSensors_getYaw()
 // This loop only gets gyro readings from superpro
 // It's designed for cases fast gyro yaw reading is needed, e.g. control robot
 // heading in autonomous period.
-// Reading from superpro using I2C with fastest configuration (sensorI2CCustomFastSkipStates9V),
+// Reading from superpro using I2C with fastest configuration
+// (sensorI2CCustomFastSkipStates9V),
 // each call to drive API HTSPBreadIO takes about 2ms.
 // We need 2 bytes for yaw and 1 byte parity, so 6 ms delay. Fortunately
-// MPU is fast. so 6ms delay might be the bottleneck of the chain and total delay is about 6ms
-// this should be good for controlling robot. But if we read all 3 components of the MPU measurements:
-// pitch, roll, yaw, each 2 bytes, plus parity byte, then we will have 14ms delay, which is
-// boderline for robot control.
+// MPU is fast. so 6ms delay might be the bottleneck of the chain and total
+// delay is about 6ms. That should be good for controlling robot.
+// But if we read all 3 components of
+// the MPU measurements: pitch, roll, yaw, each 2 bytes, plus parity byte,
+// then we will have 14ms delay, which is boderline for robot control.
 //////////////////////////////////////////////////////////////
 //needs be at leat 2 for Arduino DUE
 // at least 1 for NANO
@@ -128,7 +130,8 @@ task htsuperpro_loop_yaw() {
 	bool insync =false;
 	while(true) {
 		if(!insync){
- 		//this sets S0 to 0, serving as synchronizing bit for beginning of transfer
+ 		//this sets S0 to 0, serving as synchronizing bit for beginning
+		//of transfer
 			HTSPBSetStrobe(superSensors.sPort,0x0);//3ms
 			//this is the data request to ask remote to get ready for next frame
 			//of data
@@ -193,7 +196,8 @@ task htsuperpro_loop() {
 	bool insync =false;
 	while(true) {
 		if(!insync){
- 		//this sets S0 to 0, serving as synchronizing bit for beginning of transfer
+ 		//this sets S0 to 0, serving as synchronizing bit for
+		// beginning of transfer
 			HTSPBSetStrobe(superSensors.sPort,0x0);
 			//this is the data request to ask remote to get ready for next frame
 			//of data
@@ -242,7 +246,8 @@ task htsuperpro_loop() {
 		superSensors.roll = getShort(inputdata[4],inputdata[5]);
 		releaseCPU();
 		numOfDataBytes+=6;
-		writeDebugStreamLine("got %d bytes in %ld ms", numOfDataBytes, nSysTime-lasttime);
+		writeDebugStreamLine("got %d bytes in %ld ms",
+		                  numOfDataBytes, nSysTime-lasttime);
 		sleep(DELAY_READ);
 	}
 }

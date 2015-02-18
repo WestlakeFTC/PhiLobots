@@ -11,10 +11,13 @@
  * \brief HiTechnic SuperPro Prototype Board custom driver
  *
  * based on hitechnic-superpro.h 10/10/2011 V0.1 by Gustav Jansson.
- * \Author Michael Huang
+ *
+ *////////////////////////////
+ /* \Author Michael Huang, team 9048
  * \date 11/9/2014
  * Changes:
- *   Added strobe control
+ *   Added strobe control, HTSPB_STROBE and HTSPBSetStrobe(),
+ *   see below
  */
 
 #pragma systemFile
@@ -30,6 +33,7 @@
 #define HTSPB_DIGIN    0x0A      /*!< Address of digital inputs */
 #define HTSPB_DIGOUT   0x0B      /*!< Address of digital outputs */
 #define HTSPB_DIGCTRL  0x0C      /*!< Controls direction of digital ports */
+//Added
 #define HTSPB_STROBE   0x0E      /*!< Address of strobe outputs, bits 6-0 */
 #define HTSPB_LED      0x0F      /*!< Address of on-board led outputs, bits 1-0 */
 #define HTSPB_O0MODE   0x10      /*!< Address of analog output 0 mode*/
@@ -118,6 +122,7 @@ bool HTSPBsetupIO(tSensors link, ubyte mask) {
  * Set the strobe bits s0-s3
  * @param mask bits for s0-s3
  * @return true if no error occured, false if it did
+ * Added by Michael Huang, team 9048
  */
 bool HTSPBSetStrobe(tSensors link, ubyte mask) {
   memset(HTSPB_I2CRequest, 0, sizeof(tByteArray));

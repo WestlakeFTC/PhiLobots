@@ -385,7 +385,7 @@ float WestCoaster_getRotPos(WestCoaster& wc)
 #include "trcdefs.h"
 #include "dbgtrace.h"
 #include "pidctl.h"
-#define KP_TURN -0.02 //power ratio offset per encoder counter difference
+#define KP_TURN 0.0//-0.02 //power ratio offset per encoder counter difference
 #define KI_TURN 0.0
 #define KD_TURN 0.0
 // encoder PID stablize direction to make sure
@@ -486,7 +486,7 @@ void WestCoaster_pidStraightMove(WestCoaster& wc, float inches)
 	}
 	WestCoaster_fullStop(wc);
 }
-#define GYRO_PID
+//#define GYRO_PID
 #ifdef GYRO_PID
 #include "hitechnic-gyro-task.h"
 #define KP_GYRO_TURN -5.0 //power per degree difference
@@ -546,5 +546,86 @@ void WestCoaster_pidGyroTurn(WestCoaster& wc, int degrees)
 	WestCoaster_fullStop(wc);
 }
 #endif //GYRO_PID
+
+#ifdef MPU_PID
+#include "HTSuperproSensors.h"
+#define KP_MPU_TURN 5.0 //power per degree difference
+#define KI_MPU_TURN 0.0
+#define KD_MPU_TURN 0.0
+// encoder PID stablize direction to make sure
+// robot going straight, minimizing encoder counter differences
+// between left and right motors
+PIDCTRL g_mpu_turn_pid;
+static bool mpu_pid_inited =false;
+void WestCoaster_initMPUPID(tSensors superpro)
+{
+		if(!mpu_pid_inited)
+	{
+		  mpu_pid_inited=true;
+		  SuperSensors_init_task_yaw(superpro);
+ 			PIDCtrlInit(g_mpu_turn_pid,
+		    KP_MPU_TURN,
+		    KI_MPU_TURN,
+		    KD_MPU_TURN,
+		    1.0, //Tolerance for degrees
+		    400, //settling time for mismatch
+		    PIDCTRLO_ABS_SETPT, //setpoint will be absolute value (not relative to current measurement)
+		    0.0 //initial power
+		  );
+	}
+}
+void WestCoaster_pidMPUTurn(WestCoaster& wc, int degrees)
+{
+	WestCoaster_resetStates(wc);
+	TOrientation orient;
+	SuperSensors_getOrientation(orient);
+
+	float current_heading=0.01*orient.yaw;
+	int degrees_turned=0;
+	PIDCtrlReset(g_mpu_turn_pid);
+	//NOTE: mpu heading increases going right, opposite from HT gryo
+	//NOTE: make sure positive power turns right, otherwise reverse sign of Kp.
+  PIDCtrlSetPowerLimits(g_mpu_turn_pid, -FULL_POWER_LEFT, FULL_POWER_LEFT);
+
+  PIDCtrlSetTarget(g_mpu_turn_pid, degrees, degrees_turned);
+  unsigned long next_pid_tick=nSysTime;
+  WestCoaster_resetSyncPID();
+  int powerAvg=0;
+  float prev_heading=current_heading;
+  while(true){
+
+    WestCoaster_measureEncoders(wc);
+
+  	SuperSensors_getOrientation(orient);
+    current_heading=0.01*orient.yaw;
+    //need normalize
+    float delta=current_heading-prev_heading;
+    //MPU yaw reading increase clockwise, not counter clockwise
+    if(delta>180)//cross 180 from negative to positive)
+    {
+    		delta=360-delta;
+    }
+    if(delta<-180)//crosee 180 from positive to negative
+    {
+    	delta+=360;
+    }
+    degrees_turned+=delta;
+    prev_heading=current_heading;
+
+  	if(next_pid_tick<=nSysTime){
+  		  next_pid_tick += rot_control_interval;
+  	    powerAvg=PIDCtrlOutput(g_mpu_turn_pid, degrees_turned);
+  	    if(PIDCtrlIsOnTarget(g_mpu_turn_pid))//we are at  target, stop
+  		    break;
+  	}
+    WestCoaster_pidMotorSync(wc, 2*powerAvg, true);
+		if(WestCoaster_isStalling(wc))
+			break;
+		sleep(control_loop_interval);//must be smaller than sync interval
+	}
+	WestCoaster_fullStop(wc);
+}
+#endif //MPU_PID
+
 
 #endif //WEST_COASTER_H
