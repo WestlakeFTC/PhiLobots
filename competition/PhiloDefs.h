@@ -6,7 +6,7 @@
 
 //grabber servo positions
 #define GRABBER_UP      200
-#define GRABBER_DOWN    80
+#define GRABBER_DOWN    60
 
 //lift servo positions
 #define LIFT_TOP           32
@@ -29,8 +29,13 @@
 #define FLAPPER_STOP        127
 #define FLAPPER_REV         0
 
+//Sprout
+#define SPROUT_OUT 45
+#define SPROUT_IN 160
 //sensors
 #define USE_HT_SENSOR_MUX
-#define CENTER_GOAL_SONAR   msensor_S4_3
+#define CENTER_GOAL_SONAR   msensor_S4_1
 
+#define HEADING_TOLERANCE 5
+#define MOTOR_DEADBAND 20
 #endif//_PHILO_DEFS_H_

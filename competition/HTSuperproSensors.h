@@ -3,6 +3,7 @@
 //modified superpro drive
 #include "htspb_drv.h"
 #define BYTES_PER_FRAME 6
+
 short getShort(ubyte byte1, ubyte byte2)
 {
 	short ret=(byte2<<8);
@@ -26,7 +27,7 @@ typedef struct htsupersensors
 }TSuperSensors;
 
 volatile TSuperSensors superSensors;
-
+volatile bool super_health=false;
 
 void SuperSensors_getOrientation(TOrientation& o)
 {
@@ -123,6 +124,7 @@ short SuperSensors_getYaw()
 #define DELAY_READ 2
 task htsuperpro_loop_yaw() {
 	static const int BYTES_TO_READ = 2;
+	static const int monitor_period = 1000;
 	ubyte inputdata[BYTES_TO_READ]={0,0};
 
 	long lasttime=nSysTime;
@@ -183,7 +185,19 @@ task htsuperpro_loop_yaw() {
 		releaseCPU();
 		//writeDebugStreamLine("yaw:%d",superSensors.yaw);
 		numOfDataBytes+=3;
-	  writeDebugStreamLine("got %d bytes in %lu ms", numOfDataBytes, nSysTime-lasttime);
+		if(nSysTime-lasttime>monitor_period)
+		{
+			if(numOfDataBytes<(monitor_period*3/20))//at most 20 ms cycle time
+			{
+     	  writeDebugStreamLine("got %d bytes in %lu ms", numOfDataBytes, monitor_period);
+				super_health=false;
+			}else
+			{
+				super_health=true;
+			}
+			lasttime=nSysTime;
+			numOfDataBytes=0;
+		}
 		sleep(DELAY_READ);
 	}
 }

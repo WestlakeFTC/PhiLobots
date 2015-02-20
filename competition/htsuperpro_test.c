@@ -8,6 +8,8 @@ task main()
 
 #ifdef SUPERPRO_TEST_TASK
 	SuperSensors_init_task_yaw(S2);
+	while(!super_health)
+		sleep(20);
 	TOrientation orient;
 	while(true)
 	{
@@ -15,7 +17,7 @@ task main()
 		displayTextLine(1, "y: %f", 0.01*orient.yaw);
 		displayTextLine(2, "p: %f", 0.01*orient.pitch);
 		displayTextLine(3, "r: %f", 0.01*orient.roll);
-		writeDebugStreamLine("yaw in main:%d",orient.yaw);
+		writeDebugStreamLine("yaw in main:%d",0.01*orient.yaw);
 		sleep(20);
 	}
 #else

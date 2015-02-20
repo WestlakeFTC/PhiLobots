@@ -96,26 +96,32 @@ int determineGoalPosition(sonar_sensor_t sonarSensor, long delayms){
 int scanForGoal(WestCoaster& wc, sonar_sensor_t sonarSensor, int search_angle)
 {
 	static const int ANGLE_STEPS=15;
-	static const int SCAN_POWER=20;
+	static const int SCAN_POWER=25;
 	static const bool USE_MPU=false;
 	int new_dist = readDist(sonarSensor);
   int distance;
   int degrees_turned=0;
   do{
   	distance=new_dist;
+  	writeDebugStreamLine("distance:%d, degrees_turned:%d turning positive",
+  	    distance, degrees_turned);
+
   	if(USE_MPU){
   		  WestCoaster_pidMPUTurn(wc, ANGLE_STEPS);
   	}else
   	{
   	    WestCoaster_controlledEncoderObservedTurn(wc, ANGLE_STEPS, SCAN_POWER);
     }
-  	new_dist =readDist(sonarSensor);
   	degrees_turned+=ANGLE_STEPS;
+    sleep(50);
+  	new_dist =readDist(sonarSensor);
   }while(new_dist<distance && degrees_turned<search_angle);
 
   do
   {
   	distance=new_dist;
+  	writeDebugStreamLine("distance:%d, degrees_turned:%d turning positive",
+  	                  distance, degrees_turned);
   	if(USE_MPU){
   		  WestCoaster_pidMPUTurn(wc, ANGLE_STEPS);
   	}else
@@ -123,6 +129,7 @@ int scanForGoal(WestCoaster& wc, sonar_sensor_t sonarSensor, int search_angle)
   	    WestCoaster_controlledEncoderObservedTurn(wc, -ANGLE_STEPS, SCAN_POWER);
     }
   	degrees_turned-=ANGLE_STEPS;
+  	sleep(50);
   	new_dist=readDist(sonarSensor);
   }while(new_dist<distance && degrees_turned>(-search_angle));
 
@@ -150,17 +157,17 @@ int scanForGoal(WestCoaster& wc, sonar_sensor_t sonarSensor, int search_angle)
  */
 
 bool driveToGoal(WestCoaster& wc, sonar_sensor_t sonarSensor,
-                int target_distance, int search_angle)
+                float target_distance, int search_angle)
 {
 	//TODO: make sure our drive is accurate enough to handle threshold
 	// otherwise we need put some tolerance
-  static const int DIST_TOLERANCE = 0;
-  static const int MOVE_POWER = 25;
-	int distance=scanForGoal(wc, sonarSensor, search_angle);
+  static const int DIST_TOLERANCE = 0.5;
+  static const int MOVE_POWER = -25;
+	float distance=scanForGoal(wc, sonarSensor, search_angle)/2.54;
 
 	while(distance>target_distance+DIST_TOLERANCE){
 		WestCoaster_controlledStraightMove(wc, distance-DIST_TOLERANCE-target_distance, MOVE_POWER);
-		distance=scanForGoal(wc, sonarSensor, search_angle);
+		distance=scanForGoal(wc, sonarSensor, search_angle)/2.54;
 	}
 	return true;
 }
