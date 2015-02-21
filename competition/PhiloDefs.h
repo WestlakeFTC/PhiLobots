@@ -30,12 +30,19 @@
 #define FLAPPER_REV         0
 
 //Sprout
-#define SPROUT_IN 45
-#define SPROUT_OUT 160
+#define SPOUT_OUT 45
+#define SPOUT_IN 160
 //sensors
 #define USE_HT_SENSOR_MUX
 #define CENTER_GOAL_SONAR   msensor_S4_1
 
 #define HEADING_TOLERANCE 5
 #define MOTOR_DEADBAND 15
+
+#define ROLLER_FOLDER_DOWN 160
+#define HINGE_FAUCET_FLIP 153
+#define ROLLER_FOLDER_UP 45
+
+
+
 #endif//_PHILO_DEFS_H_

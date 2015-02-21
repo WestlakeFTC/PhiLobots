@@ -164,7 +164,11 @@ bool driveToGoal(WestCoaster& wc, sonar_sensor_t sonarSensor,
   static const int DIST_TOLERANCE = 0.5;
   static const int MOVE_POWER = -25;
 	float distance=scanForGoal(wc, sonarSensor, search_angle)/2.54;
-
+  while (distance>200/2.54)
+  {
+  			WestCoaster_controlledStraightMove(wc, 12, MOVE_POWER);
+  			distance=scanForGoal(wc, sonarSensor, search_angle)/2.54;
+  }
 	while(distance>target_distance+DIST_TOLERANCE){
 		WestCoaster_controlledStraightMove(wc, distance-DIST_TOLERANCE-target_distance, MOVE_POWER);
 		distance=scanForGoal(wc, sonarSensor, search_angle)/2.54;

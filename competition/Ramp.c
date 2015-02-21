@@ -99,7 +99,7 @@ void initializeRobot()
 	servo[flapper1] =FLAPPER_STOP;
 	servo[flapper2] = FLAPPER_STOP;
 	servo[flapper3] = FLAPPER_STOP;
-	servo[spout]= SPROUT_OUT;
+	servo[spout]= SPOUT_IN;
 	servo[foldRoller] = 45;//14
 	servo[roller] = 127;
 	servo[hingeFaucet] = 0;
@@ -118,11 +118,12 @@ void initializeRobot()
 
 task main(){
    initializeRobot();
-   sleep(1000);
-   servo[foldRoller] = 160;
-   servo[hingeFaucet] = 153;
+   waitForStart();
+   //sleep(1000);
+   servo[foldRoller] = ROLLER_FOLDER_DOWN;
+   servo[hingeFaucet] = HINGE_FAUCET_FLIP;
    sleep(200);
-   servo[foldRoller] = 45;
+   servo[foldRoller] = ROLLER_FOLDER_UP;
    sleep(100);
  // WestCoaster_pidMPUTurn(g_wcDrive,90);
 
@@ -157,7 +158,6 @@ task main(){
 
 //	grabGoal();
   sleep(5000);
-//  liftGoUp(LIFT_FOR_60CM,5000);
   readyFaucet();
   sleep(1000);
 	//fansOn(3000);

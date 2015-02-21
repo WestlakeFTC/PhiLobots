@@ -7,7 +7,7 @@ void liftGoUp(int height, int wait);
 void readyFaucet()
 {
 	liftGoUp(LIFT_FOR_60CM,5000);
-	servo[spout] = SPROUT_IN;
+	servo[spout] = SPOUT_OUT;
 }
 void fansOn(unsigned long time)
 {
