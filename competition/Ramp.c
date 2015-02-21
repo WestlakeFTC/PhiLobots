@@ -118,8 +118,8 @@ void initializeRobot()
 
 task main(){
    initializeRobot();
-   waitForStart();
-   //sleep(1000);
+  // waitForStart();
+   sleep(1000);
    //initialize
    servo[foldRoller] = ROLLER_FOLDER_DOWN;
    servo[hingeFaucet] = HINGE_FAUCET_FLIP;

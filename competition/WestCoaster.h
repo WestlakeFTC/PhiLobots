@@ -581,7 +581,11 @@ void WestCoaster_initMPUPID(tSensors superpro)
 		  	waited+=20;
 		  	if(waited>1000)
 		  	{
-		  		writeDebugStreamLine("super sensors not running!");
+		  		writeDebugStreamLine("super sensors not running, play SOS!");
+		  		      playImmediateTone(1000, 50);
+		  		      sleep(50);
+                playImmediateTone(1000, 50);
+
 		  		break;
 		  	}
 		  }
