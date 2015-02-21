@@ -120,11 +120,17 @@ task main(){
    initializeRobot();
    waitForStart();
    //sleep(1000);
+   //initialize
    servo[foldRoller] = ROLLER_FOLDER_DOWN;
    servo[hingeFaucet] = HINGE_FAUCET_FLIP;
    sleep(200);
    servo[foldRoller] = ROLLER_FOLDER_UP;
    sleep(100);
+
+
+   //===============
+   // TESTING
+   //
  // WestCoaster_pidMPUTurn(g_wcDrive,90);
 
   /*WestCoaster_controlledEncoderObservedTurn(g_wcDrive,90,75);
@@ -136,8 +142,7 @@ task main(){
   WestCoaster_controlledEncoderObservedTurn(g_wcDrive,-180,75);
 */
   //	WestCoaster_controlledEncoderObservedTurn(g_wcDrive,60,35);
-
-	//waitForStart();
+//=======================================================================
 
 	//back off the ramp, 56.9 inches from edge of field to front of bot
 	//back of bot is 56.9+18=74.9 inches from edge of field
@@ -151,24 +156,18 @@ task main(){
 					-0.5;*/
 
   float distance_to_60cm =60;
+//do down the ramp
+
+ WestCoaster_controlledStraightMove(g_wcDrive, -48, 40);
 
 
-// WestCoaster_controlledStraightMove(g_wcDrive, -48, 40);
-
-
-//	grabGoal();
-  sleep(5000);
-  readyFaucet();
-  sleep(1000);
-	//fansOn(3000);
-
-//	WestCoaster_controlledEncoderObservedTurn (g_wcDrive, -150, 50);
-	//sleep(1000);
-	/*WestCoaster_controlledStraightMove(g_wcDrive, 4, 30);
-	WestCoaster_controlledEncoderObservedTurn (g_wcDrive, 130, 50);
-	WestCoaster_controlledEncoderObservedTurn (g_wcDrive, -30, 50);
 	grabGoal();
-	WestCoaster_controlledStraightMove(g_wcDrive, 120, 50);*/
+	//drop the little one
+  readyFaucet();
+
+  //go grab another on
+  //
+	//fansOn(3000);
 
 
 }
