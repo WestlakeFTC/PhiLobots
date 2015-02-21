@@ -99,13 +99,16 @@ void initializeRobot()
 	servo[flapper1] =FLAPPER_STOP;
 	servo[flapper2] = FLAPPER_STOP;
 	servo[flapper3] = FLAPPER_STOP;
-	servo[spout]= SPROUT_IN;
-	servo[hingeFaucet]=0;
+	servo[spout]= SPROUT_OUT;
+	servo[foldRoller] = 45;//14
+	servo[roller] = 127;
+	servo[hingeFaucet] = 0;
+	servo[lift] = LIFT_BOTTOM;
 	//move servos at maximium speed
 	servoChangeRate[trailerL]=0;
 	servoChangeRate[trailerR]=0;
 	//set to true during competition to keep the grabber engaged
-	bSystemLeaveServosEnabledOnProgramStop=true;
+	bSystemLeaveServosEnabledOnProgramStop=false;
 
 }
 #define ALIGN_FAUCET_TO_CENTER 50 //milliseconds to align faucet
@@ -114,9 +117,14 @@ void initializeRobot()
 #define FAUCET_EXTEND_BACK_CENTER GOAL_CENTER_TO_EDGE+0.5 //measure from the center of the drop to the edge of robot
 
 task main(){
-  initializeRobot();
- sleep(2000);
-  WestCoaster_pidMPUTurn(g_wcDrive,90);
+   initializeRobot();
+   sleep(1000);
+   servo[foldRoller] = 160;
+   servo[hingeFaucet] = 153;
+   sleep(200);
+   servo[foldRoller] = 45;
+   sleep(100);
+ // WestCoaster_pidMPUTurn(g_wcDrive,90);
 
   /*WestCoaster_controlledEncoderObservedTurn(g_wcDrive,90,75);
   sleep(1500);
@@ -128,7 +136,7 @@ task main(){
 */
   //	WestCoaster_controlledEncoderObservedTurn(g_wcDrive,60,35);
 
-//	waitForStart();
+	//waitForStart();
 
 	//back off the ramp, 56.9 inches from edge of field to front of bot
 	//back of bot is 56.9+18=74.9 inches from edge of field
@@ -144,16 +152,18 @@ task main(){
   float distance_to_60cm =60;
 
 
- //WestCoaster_controlledStraightMove(g_wcDrive, -distance_to_60cm, 100);
+// WestCoaster_controlledStraightMove(g_wcDrive, -48, 40);
 
 
 //	grabGoal();
-/*  liftGoUp(LIFT_FOR_90CM, 5000);
+  sleep(5000);
+//  liftGoUp(LIFT_FOR_60CM,5000);
   readyFaucet();
-	fansOn(3000);
-*/
+  sleep(1000);
+	//fansOn(3000);
+
 //	WestCoaster_controlledEncoderObservedTurn (g_wcDrive, -150, 50);
-	sleep(1000);
+	//sleep(1000);
 	/*WestCoaster_controlledStraightMove(g_wcDrive, 4, 30);
 	WestCoaster_controlledEncoderObservedTurn (g_wcDrive, 130, 50);
 	WestCoaster_controlledEncoderObservedTurn (g_wcDrive, -30, 50);

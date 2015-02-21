@@ -201,11 +201,11 @@ void hingeFaucetOn(){
 
 	static bool wasOnLastTime = false;
 	if(!wasOnLastTime){
-		servo[hingeFaucet] = 230;
+		servo[hingeFaucet] = 153;
 		wasOnLastTime = true;
 	}
 	else{
-		servo[hingeFaucet] = 0;
+		servo[hingeFaucet] = 70;
 		wasOnLastTime = false;
 	}
 }
@@ -235,11 +235,11 @@ void foldRollerOn(){
 
 	static bool wasRollerOnLastTime = false;
 	if(!wasRollerOnLastTime){
-		servo[foldRoller] = 14 ;
+		servo[foldRoller] = 45 ;
 		wasRollerOnLastTime = true;
 	}
 	else{
-		servo[foldRoller] = 135;
+		servo[foldRoller] = 160;
 		wasRollerOnLastTime = false;
 	}
 }
@@ -259,6 +259,8 @@ void spoutOn(){
 		servo[spout] = 160;
 		wasSpoutOnLastTime = false;
 	}
+		writeDebugStreamLine("spout value:%d", ServoValue[spout]);
+
 }
 ////////////////////////////////////////////////////////////////////
 //
@@ -367,8 +369,9 @@ void controlFlappers()
 task main()
 {
 	initializeRobot();
+	sleep(1000);
 	//Uncomment this for real competition
-	waitForStart();   // wait for start of tele-op phase
+//	waitForStart();   // wait for start of tele-op phase
 
 	//set everything
 

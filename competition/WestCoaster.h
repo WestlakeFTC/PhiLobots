@@ -387,7 +387,7 @@ float WestCoaster_getRotPos(WestCoaster& wc)
 #include "trcdefs.h"
 #include "dbgtrace.h"
 #include "pidctl.h"
-#define KP_TURN 0.0//-0.02 //power ratio offset per encoder counter difference
+#define KP_TURN 0.002 //power ratio offset per encoder counter difference
 #define KI_TURN 0.0
 #define KD_TURN 0.0
 // encoder PID stablize direction to make sure
@@ -551,7 +551,7 @@ void WestCoaster_pidGyroTurn(WestCoaster& wc, int degrees)
 
 #ifdef MPU_PID
 #include "HTSuperproSensors.h"
-#define KP_MPU_TURN 0.3 //power per degree difference
+#define KP_MPU_TURN -0.35 //power per degree difference
 #define KI_MPU_TURN 0.0
 #define KD_MPU_TURN 0.0
 // encoder PID stablize direction to make sure
@@ -630,12 +630,15 @@ void WestCoaster_pidMPUTurn(WestCoaster& wc, int degrees)
   	if(next_pid_tick<=nSysTime){
   		  next_pid_tick += rot_control_interval;
   	    powerAvg=PIDCtrlOutput(g_mpu_turn_pid, degrees_turned);
+  	        writeDebugStreamLine("current_heading: %f, delta: %f, turned: %f, power from PID:%d",
+                     current_heading, delta, degrees_turned, powerAvg);
+
   	    if(abs(powerAvg)<MOTOR_DEADBAND)
   	    {
   	        if(powerAvg<0)
   	        {
   	    	      powerAvg=-MOTOR_DEADBAND;
-  	    	  }else
+  	    	  }else if(powerAvg>0)
   	    	  {
   	    	  	  powerAvg=MOTOR_DEADBAND;
   	    	  }

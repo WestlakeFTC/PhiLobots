@@ -3,11 +3,11 @@
 /**
  * Common utilities used for autonomous
  */
+void liftGoUp(int height, int wait);
 void readyFaucet()
 {
-	servo[hingeFaucet] = 230;
-	sleep(4000);
-	servo[spout] = 255;
+	liftGoUp(LIFT_FOR_60CM,5000);
+	servo[spout] = SPROUT_IN;
 }
 void fansOn(unsigned long time)
 {
@@ -41,6 +41,7 @@ void liftGoUp(int height, int wait)
 	                /(LIFT_TOP_HEIGHT-LIFT_BOTTOM_HEIGHT)
 	                *(LIFT_TOP-LIFT_BOTTOM)
 	                + LIFT_BOTTOM;
+	writeDebugStreamLine("position: %d", position);
 	servo[lift]=position;
 	sleep(wait);
 }

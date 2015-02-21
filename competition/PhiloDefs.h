@@ -5,12 +5,12 @@
 #define MPU_PID
 
 //grabber servo positions
-#define GRABBER_UP      200
+#define GRABBER_UP      180
 #define GRABBER_DOWN    60
 
 //lift servo positions
-#define LIFT_TOP           32
-#define LIFT_BOTTOM        200
+#define LIFT_TOP           22
+#define LIFT_BOTTOM        240
 //highest position for lift servo
 #define MAX_LIFT           LIFT_BOTTOM
 //lowest  position for lift servo
@@ -20,9 +20,9 @@
 #define LIFT_BOTTOM_HEIGHT (18*2.54)
 //lift position for 60CM goal.
 //This should be close to 60
-#define LIFT_FOR_60CM 70
-#define LIFT_FOR_90CM 100
-#define LIFT_FOR_120CM 130
+#define LIFT_FOR_60CM 64
+#define LIFT_FOR_90CM 94
+#define LIFT_FOR_120CM 124
 
 //flapper servo positions
 #define FLAPPER_FORWARD     255
@@ -30,12 +30,12 @@
 #define FLAPPER_REV         0
 
 //Sprout
-#define SPROUT_OUT 45
-#define SPROUT_IN 160
+#define SPROUT_IN 45
+#define SPROUT_OUT 160
 //sensors
 #define USE_HT_SENSOR_MUX
 #define CENTER_GOAL_SONAR   msensor_S4_1
 
 #define HEADING_TOLERANCE 5
-#define MOTOR_DEADBAND 20
+#define MOTOR_DEADBAND 15
 #endif//_PHILO_DEFS_H_
