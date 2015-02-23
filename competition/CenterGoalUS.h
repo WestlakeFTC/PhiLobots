@@ -101,21 +101,7 @@ int scanForGoal(WestCoaster& wc, sonar_sensor_t sonarSensor, int search_angle)
 	int new_dist = readDist(sonarSensor);
   int distance;
   int degrees_turned=0;
-  do{
-  	distance=new_dist;
-  	writeDebugStreamLine("distance:%d, degrees_turned:%d turning positive",
-  	    distance, degrees_turned);
 
-  	if(USE_MPU){
-  		  WestCoaster_pidMPUTurn(wc, ANGLE_STEPS);
-  	}else
-  	{
-  	    WestCoaster_controlledEncoderObservedTurn(wc, ANGLE_STEPS, SCAN_POWER);
-    }
-  	degrees_turned+=ANGLE_STEPS;
-    sleep(50);
-  	new_dist =readDist(sonarSensor);
-  }while(new_dist<distance && degrees_turned<search_angle);
 
   do
   {
@@ -132,10 +118,26 @@ int scanForGoal(WestCoaster& wc, sonar_sensor_t sonarSensor, int search_angle)
   	sleep(50);
   	new_dist=readDist(sonarSensor);
   }while(new_dist<distance && degrees_turned>(-search_angle));
+  do{
+  	distance=new_dist;
+  	writeDebugStreamLine("distance:%d, degrees_turned:%d turning positive",
+  	    distance, degrees_turned);
 
+  	if(USE_MPU){
+  		  WestCoaster_pidMPUTurn(wc, ANGLE_STEPS);
+  	}else
+  	{
+  	    WestCoaster_controlledEncoderObservedTurn(wc, ANGLE_STEPS, SCAN_POWER);
+    }
+  	degrees_turned+=ANGLE_STEPS;
+    sleep(50);
+  	new_dist =readDist(sonarSensor);
+  }while(new_dist<distance && degrees_turned<search_angle);
    if(new_dist>distance)
-     WestCoaster_controlledEncoderObservedTurn(wc, ANGLE_STEPS, SCAN_POWER);
+     WestCoaster_controlledEncoderObservedTurn(wc, -ANGLE_STEPS, SCAN_POWER);
    return readDist(sonarSensor);
+
+
 }
 /**
  * This function drives robot to center goal to get ready for

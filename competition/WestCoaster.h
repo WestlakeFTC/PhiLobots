@@ -710,7 +710,13 @@ void WestCoaster_bigBangMPUTurn(WestCoaster& wc, int degrees, int power)
 	}
 	WestCoaster_fullStop(wc);
 }
-
+void deadReck(WestCoaster& wc, int time){
+	long startTime = nSysTime;
+	WestCoaster_allMotorsPowerStraight(wc, -75);
+	while(nSysTime < startTime + time){sleep(10);}
+	WestCoaster_allMotorsPowerStraight(wc, 0);
+	sleep(500);
+}
 
 #endif //MPU_PID
 

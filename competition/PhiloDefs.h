@@ -9,8 +9,8 @@
 #define GRABBER_DOWN    60
 
 //lift servo positions
-#define LIFT_TOP           22
-#define LIFT_BOTTOM        240
+#define LIFT_TOP           80
+#define LIFT_BOTTOM        200
 //highest position for lift servo
 #define MAX_LIFT           LIFT_BOTTOM
 //lowest  position for lift servo
@@ -39,9 +39,9 @@
 #define HEADING_TOLERANCE 5
 #define MOTOR_DEADBAND 15
 
-#define ROLLER_FOLDER_DOWN 160
+#define ROLLER_FOLDER_DOWN 245
 #define HINGE_FAUCET_FLIP 153
-#define ROLLER_FOLDER_UP 45
+#define ROLLER_FOLDER_UP 70
 
 
 

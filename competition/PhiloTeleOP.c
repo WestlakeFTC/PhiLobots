@@ -97,7 +97,7 @@ void controlLift( int rawJoy){
 	//80 full joystick pushes to move lift from 0 to max position
 	//this control the sensitivity and the less sensitive the joystick is
 	// the more accurate control can be, but the slower the lift
-	const int lift_per_step=(MAX_LIFT-MIN_LIFT)/80;
+	const int lift_per_step=(MAX_LIFT-MIN_LIFT)/10;
 	if(abs(rawJoy)<5){
 		//this might be needed for continuous rotation servo
 		//but we did not have it last time
@@ -109,14 +109,14 @@ void controlLift( int rawJoy){
 	// convert joystick movement to steps of the servo
 	int steps_to_move = raw * lift_per_step;
 	int current_lift = ServoValue[lift];
+	writeDebugStreamLine("steps:%d, raw: %d, current lift: %d",
+	steps_to_move, rawJoy, current_lift);
 	current_lift += steps_to_move;
 	if(current_lift<MIN_LIFT)
 		current_lift=MIN_LIFT;
 	if(current_lift>MAX_LIFT)
 		current_lift=MAX_LIFT;
 	servo[lift] = current_lift;
-	writeDebugStreamLine("steps:%d, raw: %d, current lift: %d",
-	steps_to_move, rawJoy, current_lift);
 
 }
 
@@ -235,11 +235,11 @@ void foldRollerOn(){
 
 	static bool wasRollerOnLastTime = false;
 	if(!wasRollerOnLastTime){
-		servo[foldRoller] = 45 ;
+		servo[foldRoller] = 70;
 		wasRollerOnLastTime = true;
 	}
 	else{
-		servo[foldRoller] = 160;
+		servo[foldRoller] = 245;
 		wasRollerOnLastTime = false;
 	}
 }
@@ -295,7 +295,10 @@ void initializeRobot()
 	servo[trailerL] = 255-GRABBER_UP; //keep goal
 	servo[hingeFaucet]=0;
 	servo[roller] = 127;
-	servo[foldRoller] = 14;
+  servo[flapper1] =FLAPPER_STOP;
+	servo[flapper2] = FLAPPER_STOP;
+	servo[flapper3] = FLAPPER_STOP;
+	servo[foldRoller] = 70;
 	servo[spout]=160;
 	servoChangeRate[trailerL]=0;
 	servoChangeRate[trailerR]=0;
@@ -369,9 +372,8 @@ void controlFlappers()
 task main()
 {
 	initializeRobot();
-	sleep(1000);
 	//Uncomment this for real competition
-//	waitForStart();   // wait for start of tele-op phase
+	waitForStart();   // wait for start of tele-op phase
 
 	//set everything
 

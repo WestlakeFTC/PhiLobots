@@ -79,6 +79,7 @@ void grabGoal()
 
 	  //you know what, we could re-use the center goal method
     // that is so cool!
+
     driveToGoal(g_wcDrive, CENTER_GOAL_SONAR, 15/2.54, 30);
 	  wiggleMove();
     servo[trailerR] = GRABBER_DOWN;
@@ -100,7 +101,7 @@ void initializeRobot()
 	servo[flapper2] = FLAPPER_STOP;
 	servo[flapper3] = FLAPPER_STOP;
 	servo[spout]= SPOUT_IN;
-	servo[foldRoller] = 45;//14
+	servo[foldRoller] = 70;//14
 	servo[roller] = 127;
 	servo[hingeFaucet] = 0;
 	servo[lift] = LIFT_BOTTOM;
@@ -118,14 +119,14 @@ void initializeRobot()
 
 task main(){
    initializeRobot();
-  // waitForStart();
+//servo[lift] = LIFT_BOTTOM;
+//sleep(5000);
+   waitForStart();
    sleep(1000);
-   //initialize
    servo[foldRoller] = ROLLER_FOLDER_DOWN;
-   servo[hingeFaucet] = HINGE_FAUCET_FLIP;
-   sleep(200);
+   sleep(1000);
    servo[foldRoller] = ROLLER_FOLDER_UP;
-   sleep(100);
+   sleep(1000);
 
 
    //===============
@@ -155,19 +156,26 @@ task main(){
 					-FAUCET_EXTEND_BACK_CENTER
 					-0.5;*/
 
-  float distance_to_60cm =60;
+  float distance_to_60cm =-60;
 //do down the ramp
 
- WestCoaster_controlledStraightMove(g_wcDrive, -48, 40);
+deadReck(g_wcDrive, 1300);
+ sleep(1000);
 
-
-	grabGoal();
+/*sleep(1000);
 	//drop the little one
   readyFaucet();
-
+  sleep(1000);
+  servo[hingeFaucet] = HINGE_FAUCET_FLIP;
+  sleep(3000);
+WestCoaster_pidMPUTurn(g_wcDrive,30);
+  sleep(1000);
+	//deadReck
+  sleep(1000);
+  servo[spout] = SPOUT_OUT;
   //go grab another on
   //
 	//fansOn(3000);
 
-
+*/
 }
