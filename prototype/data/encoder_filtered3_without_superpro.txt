@@ -1,0 +1,959 @@
+Left/Right RawEncoder 0/0
+**targets (L/R):823/823, encoderL: 0, encoderR: 0, total_powe:-5 time: 1119303
+Left/Right RawEncoder 0/0
+**targets (L/R):823/823, encoderL: 0, encoderR: 0, total_powe:-10 time: 1119325
+Left/Right RawEncoder 0/9
+**targets (L/R):823/823, encoderL: 0, encoderR: 9, total_powe:-15 time: 1119348
+Left/Right RawEncoder -14/9
+**targets (L/R):823/823, encoderL: -14, encoderR: 9, total_powe:-20 time: 1119371
+Left/Right RawEncoder -14/25
+**targets (L/R):823/823, encoderL: -14, encoderR: 25, total_powe:-25 time: 1119393
+Left/Right RawEncoder -44/46
+**targets (L/R):823/823, encoderL: -44, encoderR: 46, total_powe:-30 time: 1119417
+Left/Right RawEncoder -44/69
+**targets (L/R):823/823, encoderL: -44, encoderR: 69, total_powe:-35 time: 1119439
+**targets (L/R):5655/5655, encoderL: -44, encoderR: 69, total_powe:-70 time: 1119442
+Left/Right RawEncoder -44/88
+powerLeft: -35, powerRight: -35, mismatch: 44
+targets (L/R):5655/5655, encoder: -44/88, total_powe:-70 time: 1119466
+Left/Right RawEncoder -102/108
+powerLeft: -35, powerRight: -35, mismatch: 6
+targets (L/R):5655/5655, encoder: -102/108, total_powe:-70 time: 1119491
+Left/Right RawEncoder -155/155
+targets (L/R):5655/5655, encoder: -155/155, total_powe:-70 time: 1119512
+Left/Right RawEncoder -220/183
+targets (L/R):5655/5655, encoder: -220/183, total_powe:-70 time: 1119535
+Left/Right RawEncoder -220/210
+targets (L/R):5655/5655, encoder: -220/210, total_powe:-70 time: 1119556
+Left/Right RawEncoder -289/273
+powerLeft: -35, powerRight: -35, mismatch: -16
+targets (L/R):5655/5655, encoder: -289/273, total_powe:-70 time: 1119585
+Left/Right RawEncoder -358/304
+targets (L/R):5655/5655, encoder: -358/304, total_powe:-70 time: 1119608
+Left/Right RawEncoder -358/340
+targets (L/R):5655/5655, encoder: -358/340, total_powe:-70 time: 1119629
+Left/Right RawEncoder -448/384
+targets (L/R):5655/5655, encoder: -448/384, total_powe:-70 time: 1119651
+Left/Right RawEncoder -448/433
+targets (L/R):5655/5655, encoder: -448/433, total_powe:-70 time: 1119676
+Left/Right RawEncoder -529/466
+time: 1119698, stall_check: 1119681
+powerLeft: -35, powerRight: -35, mismatch: -63
+targets (L/R):5655/5655, encoder: -529/466, total_powe:-70 time: 1119700
+Left/Right RawEncoder -529/537
+targets (L/R):5655/5655, encoder: -529/537, total_powe:-70 time: 1119722
+Left/Right RawEncoder -610/573
+targets (L/R):5655/5655, encoder: -610/573, total_powe:-70 time: 1119743
+Left/Right RawEncoder -691/609
+targets (L/R):5655/5655, encoder: -691/609, total_powe:-70 time: 1119765
+Left/Right RawEncoder -691/647
+powerLeft: -35, powerRight: -35, mismatch: -44
+targets (L/R):5655/5655, encoder: -691/647, total_powe:-70 time: 1119791
+Left/Right RawEncoder -775/718
+targets (L/R):5655/5655, encoder: -775/718, total_powe:-70 time: 1119813
+Left/Right RawEncoder -853/751
+targets (L/R):5655/5655, encoder: -853/751, total_powe:-70 time: 1119837
+Left/Right RawEncoder -853/792
+targets (L/R):5655/5655, encoder: -853/792, total_powe:-70 time: 1119859
+Left/Right RawEncoder -956/843
+powerLeft: -35, powerRight: -35, mismatch: -113
+targets (L/R):5655/5655, encoder: -956/843, total_powe:-70 time: 1119884
+Left/Right RawEncoder -956/879
+targets (L/R):5655/5655, encoder: -956/879, total_powe:-70 time: 1119906
+Left/Right RawEncoder -1034/954
+targets (L/R):5655/5655, encoder: -1034/954, total_powe:-70 time: 1119927
+Left/Right RawEncoder -1034/994
+targets (L/R):5655/5655, encoder: -1034/994, total_powe:-70 time: 1119949
+Left/Right RawEncoder -1116/1032
+targets (L/R):5655/5655, encoder: -1116/1032, total_powe:-70 time: 1119971
+ -1286/1228
+targets (L/R):5655/5655, encoder: -1286/122 -1389/1228
+powerLeft: -35, powerRight: -35, mismatch: -161
+targets (L/R):5655/5655, encoder: -1389/1228, total_powe:-70 time: 1120086
+Left/Right RawEncoder -1389/1323
+time: 1120108, stall_check: 1120098
+targets (L/R):5655/5655, encoder: -1389/1323, total_powe:-70 time: 1120111
+Left/Right RawEncoder -1486/1359
+targets (L/R):5655/5655, encoder: -1486/1359, total_powe:-70 time: 1120133
+Left/Right RawEncoder -1568/1395
+targets (L/R):5655/5655, encoder: -1568/1395, total_powe:-70 time: 1120155
+Left/Right RawEncoder -1568/1432
+targets (L/R):5655/5655, encoder: -1568/1432, total_powe:-70 time: 1120178
+Left/Right RawEncoder -1650/1511
+powerLeft: -35, powerRight: -35, mismatch: -139
+targets (L/R):5655/5655, encoder: -1650/1511, total_powe:-70 time: 1120201
+Left/Right RawEncoder -1650/1547
+targets (L/R):5655/5655, encoder: -1650/1547, total_powe:-70 time: 1120222
+Left/Right RawEncoder -1733/1584
+targets (L/R):5655/5655, encoder: -1733/1584, total_powe:-70 time: 1120244
+Left/Right RawEncoder -1814/1615
+targets (L/R):5655/5655, encoder: -1814/1615, total_powe:-70 time: 1120266
+Left/Right RawEncoder -1814/1659
+powerLeft: -35, powerRight: -35, mismatch: -155
+targets (L/R):5655/5655, encoder: -1814/1659, total_powe:-70 time: 1120291
+Left/Right RawEncoder -1932/1707
+targets (L/R):5655/5655, encoder: -1932/1707, total_powe:-70 time: 1120314
+Left/Right RawEncoder -1932/1756
+targets (L/R):5655/5655, encoder: -1932/1756, total_powe:-70 time: 1120337
+Left/Right RawEncoder -2016/1833
+targets (L/R):5655/5655, encoder: -2016/1833, total_powe:-70 time: 1120360
+Left/Right RawEncoder -2016/1870
+powerLeft: -35, powerRight: -35, mismatch: -146
+targets (L/R):5655/5655, encoder: -2016/1870, total_powe:-70 time: 1120383
+Left/Right RawEncoder -2101/1905
+targets (L/R):5655/5655, encoder: -2101/1905, total_powe:-70 time: 1120405
+Left/Right RawEncoder -2178/1938
+targets (L/R):5655/5655, encoder: -2178/1938, total_powe:-70 time: 1120427
+Left/Right RawEncoder -2178/2011
+targets (L/R):5655/5655, encoder: -2178/2011, total_powe:-70 time: 1120449
+Left/Right RawEncoder -2256/2048
+targets (L/R):5655/5655, encoder: -2256/2048, total_powe:-70 time: 1120471
+Left/Right RawEncoder -2256/2094
+powerLeft: -35, powerRight: -35, mismatch: -162
+targets (L/R):5655/5655, encoder: -2256/2094, total_powe:-70 time: 1120499
+Left/Right RawEncoder -2354/2144
+time: 1120521, stall_check: 1120509
+targets (L/R):5655/5655, encoder: -2354/2144, total_powe:-70 time: 1120522
+Left/Right RawEncoder -2448/2181
+targets (L/R):5655/5655, encoder: -2448/2181, total_powe:-70 time: 1120544
+Left/Right RawEncoder -2448/2219
+targets (L/R):5655/5655, encoder: -2448/2219, total_powe:-70 time: 1120565
+Left/Right RawEncoder -2534/2292
+powerLeft: -35, powerRight: -35, mismatch: -242
+targets (L/R):5655/5655, encoder: -2534/2292, total_powe:-70 time: 1120588
+Left/Right RawEncoder -2613/2326
+targets (L/R):5655/5655, encoder: -2613/2326, total_powe:-70 time: 1120611
+Left/Right RawEncoder -2613/2360
+targets (L/R):5655/5655, encoder: -2613/2360, total_powe:-70 time: 1120633
+Left/Right RawEncoder -2690/2431
+targets (L/R):5655/5655, encoder: -2690/2431, total_powe:-70 time: 1120654
+Left/Right RawEncoder -2690/2468
+targets (L/R):5655/5655, encoder: -2690/2468, total_powe:-70 time: 1120676
+Left/Right RawEncoder -2776/2513
+powerLeft: -35, powerRight: -35, mismatch: -263
+targets (L/R):5655/5655, encoder: -2776/2513, total_powe:-70 time: 1120702
+Left/Right RawEncoder -2776/2563
+targets (L/R):5655/5655, encoder: -2776/2563, total_powe:-70 time: 1120726
+Left/Right RawEncoder -2884/2599
+targets (L/R):5655/5655, encoder: -2884/2599, total_powe:-70 time: 1120747
+Left/Right RawEncoder -2964/2634
+targets (L/R):5655/5655, encoder: -2964/2634, total_powe:-70 time: 1120768
+Left/Right RawEncoder -2964/2673
+powerLeft: -35, powerRight: -35, mismatch: -291
+targets (L/R):5655/5655, encoder: -2964/2673, total_powe:-70 time: 1120792
+Left/Right RawEncoder -3048/2748
+targets (L/R):5655/5 -3578/3213
+targets (L/R):5655/5655, encoder: -3578/321 -3662/3317
+powerLeft: -35, powerRight: -35, mismatch: -345
+targets (L/R):5655/5655, encoder: -3662/3317, total_powe:-70 time: 1121098
+Left/Right RawEncoder -3741/3358
+targets (L/R):5655/5655, encoder: -3741/3358, total_powe:-70 time: 1121121
+Left/Right RawEncoder -3841/3407
+targets (L/R):5655/5655, encoder: -3841/3407, total_powe:-70 time: 1121145 -3841/3443
+targets (L/R):5655/5655, encoder: -3841/3443, total_powe:-70 time: 1121166
+Left/Right RawEncoder -3921/3481
+powerLeft: -35, powerRight: -35, mismatch: -440
+targets (L/R):5655/5655, encoder: -3921/3481, total_powe:-70 time: 1121189
+Left/Right RawEncoder -3921/3556
+targets (L/R):5655/5655, encoder: -3921/3556, total_powe:-70 time: 1121211
+Left/Right RawEncoder -4006/3593
+targets (L/R):5655/5655, encoder: -4006/3593, total_powe:-70 time: 1121235
+Left/Right RawEncoder -4095/3630
+targets (L/R):5655/5655, encoder: -4095/3630, total_powe:-70 time: 1121256
+Left/Right RawEncoder -4095/3666
+powerLeft: -35, powerRight: -35, mismatch: -429
+targets (L/R):5655/5655, encoder: -4095/3666, total_powe:-70 time: 1121284
+Left/Right RawEncoder -4180/3742
+targets (L/R):5655/5655, encoder: -4180/3742, total_powe:-70 time: 1121306
+Left/Right RawEncoder -4180/3796
+targets (L/R):5655/5655, encoder: -4180/3796, total_powe:-70 time: 1121329
+Left/Right RawEncoder -4288/3796
+time: 1121352, stall_check: 1121332
+targets (L/R):5655/5655, encoder: -4288/3796, total_powe:-70 time: 1121352
+Left/Right RawEncoder -4288/3884
+targets (L/R):5655/5655, encoder: -4288/3884, total_powe:-70 time: 1121374
+Left/Right RawEncoder -4380/3920
+powerLeft: -35, powerRight: -35, mismatch: -460
+targets (L/R):5655/5655, encoder: -4380/3920, total_powe:-70 time: 1121398
+Left/Right RawEncoder -4459/3955
+targets (L/R):5655/5655, encoder: -4459/3955, total_powe:-70 time: 1121419
+Left/Right RawEncoder -4459/3995
+targets (L/R):5655/5655, encoder: -4459/3995, total_powe:-70 time: 1121441
+Left/Right RawEncoder -4543/4069
+targets (L/R):5655/5655, encoder: -4543/4069, total_powe:-70 time: 1121463
+Left/Right RawEncoder -4543/4108
+powerLeft: -35, powerRight: -35, mismatch: -435
+targets (L/R):5655/5655, encoder: -4543/4108, total_powe:-70 time: 1121490
+Left/Right RawEncoder -4633/4145
+targets (L/R):5655/5655, encoder: -4633/4145, total_powe:-70 time: 1121514
+Left/Right RawEncoder -4708/4176
+targets (L/R):5655/5655, encoder: -4708/4176, total_powe:-70 time: 1121536
+Left/Right RawEncoder -4708/4216
+targets (L/R):5655/5655, encoder: -4708/4216, total_powe:-70 time: 1121558
+Left/Right RawEncoder -4816/4304
+powerLeft: -35, powerRight: -35, mismatch: -512
+targets (L/R):5655/5655, encoder: -4816/4304, total_powe:-70 time: 1121584
+Left/Right RawEncoder -4896/4341
+targets (L/R):5655/5655, encoder: -4896/4341, total_powe:-70 time: 1121607
+Left/Right RawEncoder -4896/4377
+targets (L/R):5655/5655, encoder: -4896/4377, total_powe:-70 time: 1121631
+Left/Right RawEncoder -4980/4448
+targets (L/R):5655/5655, encoder: -4980/4448, total_powe:-70 time: 1121653
+Left/Right RawEncoder -4980/4482
+targets (L/R):5655/5655, encoder: -4980/4482, total_powe:-70 time: 1121675
+Left/Right RawEncoder -5064/4520
+powerLeft: -35, powerRight: -35, mismatch: -544
+targets (L/R):5655/5655, encoder: -5064/4520, total_powe:-70 time: 1121699
+Left/Right RawEncoder -5150/4559
+targets (L/R):5655/5655, encoder: -5150/4559, total_powe:-70 time: 1121721
+Left/Right RawEncoder -5150/4593
+targets (L/R):5655/5655, encoder: -5150/4593, total_powe:-70 time: 1121743
+Left/Right RawEncoder -5245/4637
+time: 1121766, stall_check: 1121752
+targets (L/R):5655/5655, encoder: -5245/4637, total_powe:-70 time: 1121766
+Left/Right RawEncoder -5245/4722
+powerLeft: -35, powerRight: -35, mismatch: -523
+targets (L/R):5655/5655, encoder: -5245/4722, total_powe:-70 time: 1121790
+Left/Right RawEncoder -5335/4760
+targets (L/R):5655/5655, encoder: -5335/4760, total_powe:-70 time: 1121814
+Left/Right RawEncoder -5417/4793
+targets (L/R):5655/5655, encoder: -5417/4793, total_powe:-70 time: 1121838
+Left/Right RawEncoder -5417/4867
+targets (L/R):5655/5655, encoder: -5417/4867, total_powe:-70 time: 1121860
+Left/Right RawEncoder -5499/4903
+powerLeft: -35, powerRight: -35, mismatch: -596
+targets (L/R):5655/5655, encoder: -5499/4903, total_powe:-70 time: 1121886
+Left/Right RawEncoder -5583/4942
+targets (L/R):5655/5655, encoder: -5583/4942, total_powe:-70 time: 1121909
+Left/Right RawEncoder -5583/5012
+targets (L/R):5655/5655, encoder: -5583/5012, total_powe:-70 time: 1121932
+Left/Right RawEncoder -5664/5051
+targets (L/R):5655/5655, encoder: -5664/5051, total_powe:-70 time: 1121954
+encoderL: -5664, encoderR: 5051, time: 1121957
+encoderL: -5664, encoderR: 5105, time: 1121979
+encoderL: -5782, encoderR: 5138, time: 1121999
+encoderL: -5782, encoderR: 5147, time: 1122020
+encoderL: -5838, encoderR: 5150, time: 1122040
+encoderL: -5844, encoderR: 5150, time: 1122060
+Left/Right RawEncoder 0/0
+**targets (L/R):823/823, encoderL: 0, encoderR: 0, total_powe:-5 time: 1126220
+Left/Right RawEncoder 0/0
+**targets (L/R):823/823, encoderL: 0, encoderR: 0, total_powe:-10 time: 1126243
+Left/Right RawEncoder -2/5
+**targets (L/R):823/823, encoderL: -2, encoderR: 5, total_powe:-15 time: 1126266
+Left/Right RawEncoder -2/5
+**targets (L/R):823/823, encoderL: -2, encoderR: 5, total_powe:-20 time: 1126289
+Left/Right RawEncoder -23/21
+**targets (L/R):823/823, encoderL: -23, encoderR: 21, total_powe:-25 time: 1126309
+Left/Right RawEncoder -23/44
+**targets (L/R):823/823, encoderL: -23, encoderR: 44, total_powe:-30 time: 1126333
+Left/Right RawEncoder -23/75
+**targets (L/R):823/823, encoderL: -23, encoderR: 75, total_powe:-35 time: 1126354
+**targets (L/R):5655/5655, encoderL: -23, encoderR: 75, total_powe:-70 time: 1126357
+Left/Right RawEncoder -75/108
+powerLeft: -35, powerRight: -35, mismatch: 33
+targets (L/R):5655/5655, encoder: -75/108, total_powe:-70 time: 1126382
+Left/Right RawEncoder -131/133
+powerLeft: -35, powerRight: -35, mismatch: 2
+targets (L/R):5655/5655, encoder: -131/133, total_powe:-70 time: 1126406
+Left/Right RawEncoder -131/174
+targets (L/R):5655/5655, encoder: -131/174, total_powe:-70 time: 1126430
+Left/Right RawEncoder -189/203
+targets (L/R):5655/5655, encoder: -189/203, total_powe:-70 time: 1126452
+Left/Right RawEncoder -254/236
+targets (L/R):5655/5655, encoder: -254/236, total_powe:-70 time: 1126473
+Left/Right RawEncoder -254/265
+powerLeft: -35, powerRight: -35, mismatch: 11
+targets (L/R):5655/5655, encoder: -254/265, total_powe:-70 time: 1126498
+Left/Right RawEncoder -317/330
+targets (L/R):5655/5655, encoder: -317/330, total_powe:-70 time: 1126521
+Left/Right RawEncoder -317/365
+targets (L/R):5655/5655, encoder: -317/365, total_powe:-70 time: 1126543
+Left/Right RawEncoder -396/408
+targets (L/R):5655/5655, encoder: -396/408, total_powe:-70 time: 1126564
+Left/Right RawEncoder -396/458
+targets (L/R):5655/5655, encoder: -396/458, total_powe:-70 time: 1126585
+Left/Right RawEncoder -504/492
+time: 1126607, stall_check: 1126597
+powerLeft: -35, powerRight: -35, mismatch: -12
+targets (L/R):5655/5655, encoder: -504/492, total_powe:-70 time: 1126610
+Left/Right RawEncoder -580/527
+targets (L/R):5655/5655, encoder: -580/527, total_powe:-70 time: 1126633
+Left/Right RawEncoder -580/562
+targets (L/R):5655/5655, encoder: -580/562, total_powe:-70 time: 1126654
+Left/Right RawEncoder -658/635
+targets (L/R):5655/5655, encoder: -658/635, total_powe:-70 time: 1126676
+Left/Right RawEncoder -742/670
+powerLeft: -35, powerRight: -35, mismatch: -72
+targets (L/R):5655/5655, encoder: -742/670, total_powe:-70 time: 1126703
+Left/Right RawEncoder -742/704
+targets (L/R):5655/5655, encoder: -742/704, total_powe:-70 time: 1126723
+Left/Right RawEncoder -827/741
+targets (L/R):5655/5655, encoder: -827/741, total_powe:-70 time: 1126746
+Left/Right RawEncoder -827/817
+targets (L/R):5655/5655, encoder: -827/817, total_powe:-70 time: 1126768
+Left/Right RawEncoder -924/817
+targets (L/R):5655/5655, encoder: -924/817, total_powe:-70 time: 1126788
+Left/Right RawEncoder -924/870
+powerLeft: -35, powerRight: -35, mismatch: -54
+targets (L/R):5655/5655, encoder: -924/870, total_powe:-70 time: 1126811
+Left/Right RawEncoder -1014/940
+targets (L/R):5655/5655, encoder: -1014/940, total_powe:-70 time: 1126833
+Left/Right RawEncoder -1096/977
+targets (L/R):5655/5655, encoder: -1096/977, total_powe:-70 time: 1126855
+Left/Right RawEncoder -1096/1012
+targets (L/R):5655/5655, encoder: -1096/1012, total_powe:-70 time: 1126878
+Left/Right RawEncoder -1181/1050
+powerLeft: -35, powerRight: -35, mismatch: -131
+targets (L/R):5655/5655, encoder: -1181/1050, total_powe:-70 time: 1126903
+Left/Right RawEncoder -1181/1122
+targets (L/R):5655/5655, encoder: -1181/1122, total_powe:-70 time: 1126924
+Left/Right RawEncoder -1263/1158
+targets (L/R):5655/5655, encoder: -1263/1158, total_powe:-70 time: 1126948
+Left/Right RawEncoder -1348/1194
+targets (L/R):5655/5655, encoder: -1348/1194, total_powe:-70 time: 1126969
+Left/Right RawEncoder -1348/1236
+targets (L/R):5655/5655, encoder: -1348/1236, total_powe:-70 time: 1126991
+Left/Right RawEncoder -1459/1288
+time: 1127012, stall_check: 1127008
+powerLeft: -35, powerRight: -35, mismatch: -171
+targets (L/R):5655/5655, encoder: -1459/1288, total_powe:-70 time: 1127016
+Left/Right RawEncoder -1459/1325
+targets (L/R):5655/5655, encoder: -1459/1325, total_powe:-70 time: 1127039
+Left/Right RawEncoder -1546/1405
+targets (L/R):5655/5655, encoder: -1546/1405, total_powe:-70 time: 1127061
+Left/Right RawEncoder -1546/1445
+targets (L/R):5655/5655, encoder: -1546/1445, total_powe:-70 time: 1127083
+Left/Right RawEncoder -1632/1480
+powerLeft: -35, powerRight: -35, mismatch: -152
+targets (L/R):5655/5655, encoder: -1632/1480, total_powe:-70 time: 1127108
+ -1799/1673
+powerLeft: -35, powerRight: -35, mismatch: ight RawEncoder -2000/1768
+targets (L/R):5655/5655, encoder: -2000/1768, total_powe:-70 time: 1127246
+Left/Right RawEncoder -2000/1801
+targets (L/R):5655/5655, encoder: -2000/1801, total_powe:-70 time: 1127270
+Left/Right RawEncoder -2078/1872
+targets (L/R):5655/5655, encoder: -2078/1872, total_powe:-70 time: 1127292
+Left/Right RawEncoder -2078/190755, encoder: -2163/1947, total_powe:-70 time: 1127338
+Left/Right RawEncoder -2253/1986
+targets (L/R):5655/5655, encoder: -2253/1986, total_powe:-70 time: 1127360
+Left/Right RawEncoder -2253/2058
+targets (L/R):5655/5655, encoder: -2253/2058, total_powe:-70 time: 1127383
+Left/Right RawEncoder -2335/2104
+powerLeft: -35, powerRight: -35, mismatch: -231
+targets (L/R):5655/5655, encoder: -2335/2104, total_powe:-70 time: 1127408
+Left/Right RawEncoder -2335/2156
+time: 1127431, stall_check: 1127413
+targets (L/R):5655/5655, encoder: -2335/2156, total_powe:-70 time: 1127432
+Left/Right RawEncoder -2448/2193
+targets (L/R):5655/5655, encoder: -2448/2193, total_powe:-70 time: 1127454
+Left/Right RawEncoder -2529/2228
+targets (L/R):5655/5655, encoder: -2529/2228, total_powe:-70 time: 1127475
+Left/Right RawEncoder -2529/2266
+powerLeft: -35, powerRight: -35, mismatch: -263
+targets (L/R):5655/5655, encoder: -2529/2266, total_powe:-70 time: 1127500
+Left/Right RawEncoder -2612/2338
+targets (L/R):5655/5655, encoder: -2612/2338, total_powe:-70 time: 1127523
+ -2695/2410
+targets (L/R):5655/5655, encoder: -2695/2410, total_powe:-70 time: 1127567
+Left/Right RawEncoder -2780/2449
+targets (L/R):5655/5655, encoder: -2780/2449, total_powe:-70 time: 1127589
+Left/Right RawEncoder -2780/2487
+powerLeft: -35, powerRight: -35, mismatch: -293
+targets (L/R):5655/5655, encoder: -2780/2487, total_powe:-70 time: 1127617
+Left/Right RawEncoder -2880/2579
+targets (L/R):5655/5655, encoder: -2880/2579, total_powe:-70 time: 1127639
+Left/Right RawEncoder -2880/2617
+targets (L/R):5655/5655, encoder: -2880/2617, total_powe:-70 time: 1127662
+Left/Right RawEncoder -2974/2653
+targets (L/R):5655/5655, encoder: -2974/2653, total_powe:-70 time: 1127685
+Left/Right RawEncoder -3056/2689
+powerLeft: -35, powerRight: -35, mismatch: -367
+targets (L/R):5655/5655, encoder: -3056/2689, total_powe:-70 time: 1127709
+Left/Right RawEncoder -3056/2766
+targets (L/R):5655/5655, encoder: -3056/2766, total_powe:-70 time: 1127731
+Left/Right RawEncoder -3142/2805
+targets (L/R):5655/5655, encoder: -3142/2805, total_powe:-70 time: 1127754
+Left/Right RawEncoder -3226/2839
+targets (L/R):5655/5655, encoder: -3226/2839, total_powe:-70 time: 1127777
+Left/Right RawEncoder -3226/2878
+powerLeft: -35, powerRight: -35, mismatch: -348
+targets (L/R):5655/5655, encoder: -3226/2878, total_powe:-70 time: 1127803
+Left/Right RawEncoder -3314/2957
+targets (L/R):5655/5655, encoder: -3314/2957, total_powe:-70 time: 1127824
+Left/Right RawEncoder -3314/2957
+time: 1127845, stall_check: 1127832
+targets (L/R):5655/5655, encoder: -3314/2957, total_powe:-70 time: 1127846
+Left/Right RawEncoder -3420/3047
+targets (L/R):5655/5655, encoder: -3420/3047, total_powe:-70 time: 1127867
+Left/Right RawEncoder -3420/3088
+targets (L/R):5655/5655, encoder: -3420/3088, total_powe:-70 time: 1127891
+Left/Right RawEncoder -3509/3126
+powerLeft: -35, powerRight: -35, mismatch: -383
+targets (L/R):5655/5655, encoder: -3509/3126, total_powe:-70 time: 1127915
+Left/Right RawEncoder -3588/3164
+targets (L/R):5655/5655, encoder: -3588/3164, total_powe:-70 time: 1127938
+Left/Right RawEncoder -3588/3234
+targets (L/R):5655/5655, encoder: -3588/3234, total_powe:-70 time: 1127960
+Left/Right RawEncoder -3670/3273
+targets (L/R):5655/5655, encoder: -3670/3273, total_powe:-70 time: 1127983
+Left/Right RawEncoder -3758/3313
+powerLeft: -35, powerRight: -35, mismatch: -445
+targets (L/R):5655/5655, encoder: -3758/3313, total_powe:-70 time: 1128008
+Left/Right RawEncoder -3758/3351
+targets (L/R):5655/5655, encoder: -3758/3351, total_powe:-70 time: 1128032
+Left/Right RawEncoders (L/R):5655/5655, encoder: -4124/3711, total_powe:-70 time: 1128190
+Left/Right RawEncoder -4209/3747
+powerLeft: -35, powerRight: -35, mismatch: -462
+targets (L/R):5655/5655, encoder: -4209/3747, total_powe:-70 time: 1128214
+Left/Right RawEncoder -4301/3783
+targets (L/R):5655/5655, encoder: -4301/3783, total_powe:-70 time: 1128237
+Left/Right RawEncoder -4301/3838
+time: 1128259, stall_check: 1128246
+targets (L/R):5655/5655, encoder: -4301/3838, total_powe:-70 time: 1128259
+Left/Right RawEncoder -4301/3888
+targets (L/R):5655/5655, encoder: -4301/3888, total_powe:-70 time: 1128282
+Left/Right RawEncoder -4411/3926
+powerLeft: -35, powerRight: -35, mismatch: -485
+targets (L/R):5655/5655, encoder: -4411/3926, total_powe:-70 time: 1128305
+Left/Right RawEncoder -4492/3963
+targets (L/R):5655/5655, encoder: -4492/3963, total_powe:-70 time: 1128327
+Left/Right RawEncoder -4492/4040
+targets (L/R):5655/5655, encoder: -4492/4040, total_powe:-70 time: 1128349
+Left/Right RawEncoder -4575/4069
+targets (L/R):5655/5655, encoder: -4575/4069, total_powe:-70 time: 1128372
+Left/Right RawEncoder -4660/4107
+powerLeft: -35, powerRight: -35, mismatch: -553
+targets (L/R):5655/5655, encoder: -4660/4107, total_powe:-70 time: 1128399
+Left/Right RawEncoder -4660/4146
+targets (L/R):5655/5655, encoder: -4660/4146, total_powe:-70 time: 1128420
+Left/Right RawEncoder -4749/4222
+targets (L/R):5655/5655, encoder: -4749/4222, total_powe:-70 time: 1128442
+Left/Right RawEncoder -4749/4266
+targets (L/R):5655/5655, encoder: -4749/4266, total_powe:-70 time: 1128463
+Left/Right RawEncoder -4846/4314
+targets (L/R):5655/5655, encoder: -4846/4314, total_powe:-70 time: 1128484
+Left/Right RawEncoder -4846/4351
+powerLeft: -35, powerRight: -35, mismatch: -495
+targets (L/R):5655/5655, encoder: -4846/4351, total_powe:-70 time: 1128510
+Left/Right RawEncoder -4939/4387
+targets (L/R):5655/5655, encoder: -4939/4387, total_powe:-70 time: 1128532
+Left/Right RawEncoder -5021/4422
+targets (L/R):5655/5655, encoder: -5021/4422, total_powe:-70 time: 1128554
+Left/Right RawEncoder -5021/4497
+targets (L/R):5655/5655, encoder: -5021/4497, total_powe:-70 time: 1128575
+Left/Right RawEncoder -5105/4534
+powerLeft: -35, powerRight: -35, mismatch: -571
+targets (L/R):5655/5655, encoder: -5105/4534, total_powe:-70 time: 1128599
+Left/Right RawEncoder -5194/4571
+targets (L/R):5655/5655, encoder: -5194/4571, total_powe:-70 time: 1128622
+Left/Right RawEncoder -5194/4607
+targets (L/R):5655/5655, encoder: -5194/4607, total_powe:-70 time: 1128644
+Left/Right RawEncoder -5273/4644
+time: 1128668, stall_check: 1128659
+targets (L/R):5655/5655, encoder: -5273/4644, total_powe:-70 time: 1128669
+Left/Right RawEncoder -5273/4687
+targets (L/R):5655/5655, encoder: -5273/4687, total_powe:-70 time: 1128690
+Left/Right RawEncoder -5376/4740
+powerLeft: -35, powerRight: -35, mismatch: -636
+targets (L/R):5655/5655, encoder: -5376/4740, total_powe:-70 time: 1128713
+Left/Right RawEncoder -5376/4816
+targets (L/R):5655/5655, encoder: -5376/4816, total_powe:-70 time: 1128735
+Left/Right RawEncoder -5458/4854
+targets (L/R):5655/5655, encoder: -5458/4854, total_powe:-70 time: 1128757
+Left/Right RawEncoder -5544/4889
+targets (L/R):5655/5655, encoder: -5544/4889, total_powe:-70 time: 1128778
+Left/Right RawEncoder -5544/4927
+powerLeft: -35, powerRight: -35, mismatch: -617
+targets (L/R):5655/5655, encoder: -5544/4927, total_powe:-70 time: 1128801
+Left/Right RawEncoder -5632/5003
+targets (L/R):5655/5655, encoder: -5632/5003, total_powe:-70 time: 1128824
+Left/Right RawEncoder -5632/5043
+targets (L/R):5655/5655, encoder: -5632/5043, total_powe:-70 time: 1128846
+Left/Right RawEncoder -5719/5078
+targets (L/R):5655/5655, encoder: -5719/5078, total_powe:-70 time: 1128868
+encoderL: -5719, encoderR: 5078, time: 1128871
+encoderL: -5824, encoderR: 5124, time: 1128892
+encoderL: -5824, encoderR: 5184, time: 1128912
+encoderL: -5824, encoderR: 5221, time: 1128932
+encoderL: -5870, encoderR: 5250, time: 1128952
+encoderL: -5882, encoderR: 5259, time: 1128973
+encoderL: -5882, encoderR: 5260, time: 1128994
+Left/Right RawEncoder 0/0
+**targets (L/R):823/823, encoderL: 0, encoderR: 0, total_powe:-5 time: 1133117
+Left/Right RawEncoder 0/4
+**targets (L/R):823/823, encoderL: 0, encoderR: 4, total_powe:-10 time: 1133139
+Left/Right RawEncoder -4/4
+**targets (L/R):823/823, encoderL: -4, encoderR: 4, total_powe:-15 time: 1133162
+Left/Right RawEncoder -4/14
+**targets (L/R):823/823, encoderL: -4, encoderR: 14, total_powe:-20 time: 1133185
+Left/Right RawEncoder -28/26
+**targets (L/R):823/823, encoderL: -28, encoderR: 26, total_powe:-25 time: 1133208
+Left/Right RawEncoder -28/47
+**targets (L/R):823/823, encoderL: -28, encoderR: 47, total_powe:-30 time: 1133232
+Left/Right RawEncoder -28/47
+**targets (L/R):823/823, encoderL: -28, encoderR: 47, total_powe:-35 time: 1133255
+**targets (L/R):5655/5655, encoderL: -28, encoderR: 47, total_powe:-70 time: 1133256
+Left/Right RawEncoder -95/89
+powerLeft: -35, powerRight: -35, mismatch: -6
+targets (L/R):5655/5655, encoder: -95/89, total_powe:-70 time: 1133279
+Left/Right RawEncoder -95/110
+powerLeft: -35, powerRight: -35, mismatch: 15
+targets (L/R):5655/5655, encoder: -95/110, total_powe:-70 time: 1133303
+Left/Right RawEncoder -153/136
+targets (L/R):5655/5655, encoder: -153/136, total_powe:-70 time: 1133326
+Left/Right RawEncoder -211/164
+targets (L/R):5655/5655, encoder: -211/164, total_powe:-70 time: 1133349
+Left/Right RawEncoder -211/226
+targets (L/R):5655/5655, encoder: -211/226, total_powe:-70 time: 1133370
+Left/Right RawEncoder -269/261
+targets (L/R):5655/5655, encoder: -269/261, total_powe:-70 time: 1133392
+Left/Right RawEncoder -340/295
+powerLeft: -35, powerRight: -35, mismatch: -45
+targets (L/R):5655/5655, encoder: -340/295, total_powe:-70 time: 1133418
+Left/Right RawEncoder -340/332
+targets (L/R):5655/5655, encoder: -340/332, total_powe:-70 time: 1133440
+Left/Right RawEncoder -420/369
+targets (L/R):5655/5655, encoder: -420/369, total_powe:-70 time: 1133462
+Left/Right RawEncoder -420/420
+targets (L/R):5655/5655, encoder: -420/420, total_powe:-70 time: 1133486
+Left/Right RawEncoder -520/492
+time: 1133507, stall_check: 1133494
+powerLeft: -35, powerRight: -35, mismatch: -28
+targets (L/R):5655/5655, encoder: -520/492, total_powe:-70 time: 1133510
+Left/Right RawEncoder -598/528
+targets (L/R):5655/5655, encoder: -598/528, total_powe:-70 time: 1133534
+Left/Right RawEncoder -598/564
+targets (L/R):5655/5655, encoder: -598/564, total_powe:-70 time: 1133558
+Left/Right RawEncoder -677/635
+targets (L/R):5655/5655, encoder: -677/635, total_powe:-70 time: 1133581
+Left/Right RawEncoder -677/674
+powerLeft: -35, powerRight: -35, mismatch: -3
+targets (L/R):5655/5655, encoder: -677/674, total_powe:-70 time: 1133606
+Left/Right RawEncoder -763/711
+targets (L/R):5655/5655, encoder: -763/711, total_powe:-70 time: 1133628
+Left/Right RawEncoder -843/781
+targets (L/R):5655/5655, encoder: -843/781, total_powe:-70 time: 1133649
+Left/Right RawEncoder -843/781
+targets (L/R):5655/5655, encoder: -843/781, total_powe:-70 time: 1133671
+Left/Right RawEncoder -950/832
+powerLeft: -35, powerRight: -35, mismatch: -118
+targets (L/R):5655/5655, encoder: -950/832, total_powe:-70 time: 1133694
+Left/Right RawEncoder -950/880
+targets (L/R):5655/5655, encoder: -950/880, total_powe:-70 time: 1133715
+Left/Right RawEncoder -1036/957
+targets (L/R):5655/5655, encoder: -1036/957, total_powe:-70 time: 1133737
+Left/Right RawEncoder -1036/994
+targets (L/R):5655/5655, encoder: -1036/994, total_powe:-70 time: 1133761
+Left/Right RawEncoder -1120/1029
+targets (L/R):5655/5655, encoder: -1120/1029, total_powe:-70 time: 1133781
+Left/Right RawEncoder -1199/1060
+powerLeft: -35, powerRight: -35, mismatch: -139
+targets (L/R):5655/5655, encoder: -1199/1060, total_powe:-70 time: 1133806
+Left/Right RawEncoder -1199/1137
+targets (L/R):5655/5655, encoder: -1199/1137, total_powe:-70 time: 1133828
+Left/Right RawEncoder -1287/1177
+targets (L/R):5655/5655, encoder: -1287/1177, total_powe:-70 time: 1133853
+Left/Right RawEncoder -1370/1212
+targets (L/R):5655/5655, encoder: -1370/1212, total_powe:-70 time: 1133877
+Left/Right RawEncoder -1370/1264
+powerLeft: -35, powerRight: -35, mismatch: -106
+targets (L/R):5655/5655, encoder: -1370/1264, total_powe:-70 time: 1133902
+Left/Right RawEncoder -1476/1309
+time: 1133925, stall_check: 1133907
+targets (L/R):5655/5655, encoder: -1476/1309, total_powe:-70 time: 1133926
+Left/Right RawEncoder -1476/1382
+targets (L/R):5655/5655, encoder: -1476/1382, total_powe:-70 time: 1133946
+Left/Right RawEncoder -1564/1421
+targets (L/R):5655/5655, encoder: -1564/1421, total_powe:-70 time: 1133969
+Left/Right RawEncoder -1650/1462
+targets (L/R):5655/5655, encoder: -1650/1462, total_powe:-70 time: 1133991
+Left/Right RawEncoder -1650/1501
+powerLeft: -35, powerRight: -35, mismatch: -149
+targets (L/R):5655/5655, encoder: -1650/1501, total_powe:-70 time: 1134017
+tal_powe:-70 time: 1134113
+Left/Right RawEncoder -1920/ -2010/1865
+targets (L/R):5655/5655, encoder: -2010/1865, total_powe:-70 time: 1134181
+Left/Right RawEncoder -2095/1901
+powerLeft: -35, powerRight: -35, mismatch: -194
+targets (L/R):5655/5655, encoder: -2095/1901, total_powe:-70 time: 1134205
+Left/Right RawEncoder -2181/1938
+targets (L/R):5655/5655, encoder: -2181/1938, total_powe:-70 time: 1134228
+Left/Right RawEncoder -2181/1975
+targets (L/R):5655/5655, encoder: -2181/1975, total_powe:-70 time: 1134251
+Left/Right RawEncoder -2266/2054
+targets (L/R):5655/5655, encoder: -2266/2054, total_powe:-70 time: 1134272
+Left/Right RawEncoder -2266/2092
+powerLeft: -35, powerRight: -35, mismatch: -174
+targets (L/R):5655/5655, encoder: -2266/2092, total_powe:-70 time: 1134296
+Left/Right RawEncoder -2353/2143
+targets (L/R):5655/5655, encoder: -2353/2143, total_powe:-70 time: 1134320
+Left/Right RawEncoder -2353/2187
+time: 1134342, stall_check: 1134325
+targets (L/R):5655/5655, encoder: -2353/2187, total_powe:-70 time: 1134343
+Left/Right RawEncoder -2460/2222
+targets (L/R):5655/5655, encoder: -2460/2222, total_powe:-70 time: 1134366
+Left/Right RawEncoder -2543/2261
+targets (L/R):5655/5655, encoder: -2543/2261, total_powe:-70 time: 1134388
+Left/Right RawEncoder -2543/2335
+powerLeft: -35, powerRight: -35, mismatch: -208
+targets (L/R):5655/5655, encoder: -2543/2335, total_powe:-70 time: 1134413
+Left/Right RawEncoder -2625/2372
+targets (L/R):5655/5655, encoder: -2625/2372, total_powe:-70 time: 1134435
+Left/Right RawEncoder -2706/2408
+targets (L/R):5655/5655, encoder: -2706/2408, total_powe:-70 time: 1134459
+Left/Right RawEncoder -2706/2474
+targets (L/R):5655/5655, encoder: -2706/2474, total_powe:-70 time: 1134481
+Left/Right RawEncoder -2783/2514
+powerLeft: -35, powerRight: -35, mismatch: -269
+targets (L/R):5655/5655, encoder: -2783/2514, total_powe:-70 time: 1134506
+Left/Right RawEncoder -2783/2569
+targets (L/R):5655/5655, encoder: -2783/2569, total_powe:-70 time: 1134529
+Left/Right RawEncoder -2894/2615
+targets (L/R):5655/5655, encoder: -2894/2615, total_powe:-70 time: 1134551
+Left/Right RawEncoder -2983/2654
+targets (L/R):5655/5655, encoder: -2983/2654, total_powe:-70 time: 1134574
+Left/Right RawEncoder -2983/2690
+powerLeft: -35, powerRight: -35, mismatch: -293
+targets (L/R):5655/5655, encoder: -2983/2690, total_powe:-70 time: 1134598
+Left/Right RawEncoder -3063/2761
+targets (L/R):5655/5655, encoder: -3063/2761, total_powe:-70 time: 1134621
+Left/Right RawEncoder -3063/2800
+targets (L/R):5655/5655, encoder: -3063/2800, total_powe:-70 time: 1134643
+Left/Right RawEncoder -3149/2840
+targets (L/R):5655/5655, encoder: -3149/2840, total_powe:-70 time: 1134665
+Left/Right RawEncoder -3235/2878
+targets (L/R):5655/5655, encoder: -3235/2878, total_powe:-70 time: 1134687
+Left/Right RawEncoder -3235/2918
+powerLeft: -35, powerRight: -35, mismatch: -317
+targets (L/R):5655/5655, encoder: -3235/2918, total_powe:-70 time: 1134712
+Left/Right RawEncoder -3324/2957
+targets (L/R):5655/5655, encoder: -3324/2957, total_powe:-70 time: 1134734
+Left/Right RawEncoder -3324/3049
+time: 1134756, stall_check: 1134743
+targets (L/R):5655/5655, encoder: -3324/3049, total_powe:-70 time: 1134756
+Left/Right RawEncoder -3426/3086
+targets (L/R):5655/5655, encoder: -3426/3086, total_powe:-70 time: 1134779
+Left/Right RawEncoder -3511/3123
+powerLeft: -35, powerRight: -35, mismatch: -388
+targets (L/R):5655/5655, encoder: -3511/3123, total_powe:-70 time: 1134804
+Left/Right RawEncoder -3511/3163
+targets (L/R):5655/5655, encoder: -3511/3163, total_powe:-70 time: 1134826
+Left/Right RawEncoder -3586/3233
+targets (L/R):5655/5655, encoder: -3586/3233, total_powe:-70 time: 1134847
+Left/Right RawEncoder -3586/3271
+targets (L/R):5655/5655, encoder: -3586/3271, total_powe:-70 time: 1134871
+Left/Right RawEncoder -3670/3308
+powerLeft: -35, powerRight: -35, mismatch: -362
+targets (L/R):5655/5655, encoder: -3670/3308, total_powe:-70 time: 1134895
+Left/Right RawEncoder -3752/3343
+targets (L/R):5655/51135055
+Left/Right RawEncoder -4107/3698
+targets (L/R):5655/5655, encoder: -4107/3698, total_powe:-70 time: 1135076
+Left/Right RawEncoder -4107/3737
+powerLeft: -35, powerRight: -35, mismatch: -370
+targets (L/R):5655/5655, encoder: -4107/3737, total_powe:-70 time: 1135100
+Left/Right RawEncoder -4193/3775
+targets (L/R):5655/5655, encoder: -4193/3775, total_powe:-70 time: 1135123
+Left/Right RawEncoder -4291/3810
+targets (L/R):5655/5655, encoder: -4291/3810, total_powe:-70 time: 1135145
+Left/Right RawEncoder -4291/3870
+time: 1135166, stall_check: 1135156
+targets (L/R):5655/5655, encoder: -4291/3870, total_powe:-70 time: 1135169
+Left/Right RawEncoder -4398/3913
+targets (L/R):5655/5655, encoder: -4398/3913, total_powe:-70 time: 1135191
+Left/Right RawEncoder -4398/3953
+powerLeft: -35, powerRight: -35, mismatch: -445
+targets (L/R):5655/5655, encoder: -4398/3953, total_powe:-70 time: 1135216
+Left/Right RawEncoder -4478/4029
+targets (L/R):5655/5655, encoder: -4478/4029, total_powe:-70 time: 1135239
+Left/Right RawEncoder -4562/4068
+targets (L/R):5655/5655, encoder: -4562/4068, total_powe:-70 time: 1135262
+Left/Right RawEncoder -4562/4105
+targets (L/R):5655/5655, encoder: -4562/4105, total_powe:-70 time: 1135286
+Left/Right RawEncoder -4648/4140
+powerLeft: -35, powerRight: -35, mismatch: -508
+targets (L/R):5655/5655, encoder: -4648/4140, total_powe:-70 time: 1135309
+Left/Right RawEncoder -4648/4219
+targets (L/R):5655/5655, encoder: -4648/4219, total_powe:-70 time: 1135332
+Left/Right RawEncoder -4732/4257
+targets (L/R):5655/5655, encoder: -4732/4257, total_powe:-70 time: 1135353
+Left/Right RawEncoder -4732/4307
+targets (L/R):5655/5655, encoder: -4732/4307, total_powe:-70 time: 1135379
+Left/Right RawEncoder -4836/4350
+powerLeft: -35, powerRight: -35, mismatch: -486
+targets (L/R):5655/5655, encoder: -4836/4350, total_powe:-70 time: 1135403
+Left/Right RawEncoder -4917/4384
+targets (L/R):5655/5655, encoder: -4917/4384, total_powe:-70 time: 1135425
+Left/Right RawEncoder -4917/4456
+targets (L/R):5655/5655, encoder: -4917/4456, total_powe:-70 time: 1135447
+Left/Right RawEncoder -5003/4493
+targets (L/R):5655/5655, encoder: -5003/4493, total_powe:-70 time: 1135468
+Left/Right RawEncoder -5084/4531
+targets (L/R):5655/5655, encoder: -5084/4531, total_powe:-70 time: 1135491
+Left/Right RawEncoder -5084/4571
+powerLeft: -35, powerRight: -35, mismatch: -513
+targets (L/R):5655/5655, encoder: -5084/4571, total_powe:-70 time: 1135516
+Left/Right RawEncoder -5170/4645
+targets (L/R):5655/5655, encoder: -5170/4645, total_powe:-70 time: 1135537
+Left/Right RawEncoder -5170/4679
+targets (L/R):5655/5655, encoder: -5170/4679, total_powe:-70 time: 1135559
+Left/Right RawEncoder -5249/4726
+time: 1135581, stall_check: 1135568
+targets (L/R):5655/5655, encoder: -5249/4726, total_powe:-70 time: 1135583
+Left/Right RawEncoder -5249/4771
+powerLeft: -35, powerRight: -35, mismatch: -478
+targets (L/R):5655/5655, encoder: -5249/4771, total_powe:-70 time: 1135609
+Left/Right RawEncoder -5352/4810
+targets (L/R):5655/5655, encoder: -5352/4810, total_powe:-70 time: 1135631
+Left/Right RawEncoder -5437/4849
+targets (L/R):5655/5655, encoder: -5437/4849, total_powe:-70 time: 1135652
+Left/Right RawEncoder -5437/4924
+targets (L/R):5655/5655, encoder: -5437/4924, total_powe:-70 time: 1135673
+Left/Right RawEncoder -5520/4960
+powerLeft: -35, powerRight: -35, mismatch: -560
+targets (L/R):5655/5655, encoder: -5520/4960, total_powe:-70 time: 1135699
+Left/Right RawEncoder -5598/4994
+targets (L/R):5655/5655, encoder: -5598/4994, total_powe:-70 time: 1135721
+Left/Right RawEncoder -5598/5031
+targets (L/R):5655/5655, encoder: -5598/5031, total_powe:-70 time: 1135742
+Left/Right RawEncoder -5677/5106
+targets (L/R):5655/5655, encoder: -5677/5106, total_powe:-70 time: 1135764
+encoderL: -5677, encoderR: 5106, time: 1135767
+encoderL: -5677, encoderR: 5154, time: 1135788
+encoderL: -5780, encoderR: 5180, time: 1135809
+encoderL: -5780, encoderR: 5187, time: 1135830
+encoderL: -5815, encoderR: 5189, time: 1135850
+encoderL: -5819, encoderR: 5190, time: 1135870
+Left/Right RawEncoder 0/0
+**targets (L/R):823/823, encoderL: 0, encoderR: 0, total_powe:-5 time: 1186730
+Left/Right RawEncoder 0/6
+**targets (L/R):823/823, encoderL: 0, encoderR: 6, total_powe:-10 time: 1186752
+Left/Right RawEncoder 0/6
+**targets (L/R):823/823, encoderL: 0, encoderR: 6, total_powe:-15 time: 1186774
+Left/Right RawEncoder -11/18
+**targets (L/R):823/823, encoderL: -11, encoderR: 18, total_powe:-20 time: 1186795
+Left/Right RawEncoder -11/35
+**targets (L/R):823/823, encoderL: -11, encoderR: 35, total_powe:-25 time: 1186818
+Left/Right RawEncoder -11/58
+**targets (L/R):823/823, encoderL: -11, encoderR: 58, total_powe:-30 time: 1186841
+Left/Right RawEncoder -54/58
+**targets (L/R):823/823, encoderL: -54, encoderR: 58, total_powe:-35 time: 1186863
+**targets (L/R):5655/5655, encoderL: -54, encoderR: 58, total_powe:-70 time: 1186866
+Left/Right RawEncoder -54/93
+powerLeft: -35, powerRight: -35, mismatch: 39
+targets (L/R):5655/5655, encoder: -54/93, total_powe:-70 time: 1186889
+Left/Right RawEncoder -112/138
+powerLeft: -35, powerRight: -35, mismatch: 26
+targets (L/R):5655/5655, encoder: -112/138, total_powe:-70 time: 1186912
+Left/Right RawEncoder -168/161
+targets (L/R):5655/5655, encoder: -168/161, total_powe:-70 time: 1186936
+Left/Right RawEncoder -168/190
+targets (L/R):5655/5655, encoder: -168/190, total_powe:-70 time: 1186958
+Left/Right RawEncoder -235/222
+targets (L/R):5655/5655, encoder: -235/222, total_powe:-70 time: 1186978
+Left/Right RawEncoder -235/283
+targets (L/R):5655/5655, encoder: -235/283, total_powe:-70 time: 1187002
+Left/Right RawEncoder -304/315
+powerLeft: -35, powerRight: -35, mismatch: 11
+targets (L/R):5655/5655, encoder: -304/315, total_powe:-70 time: 1187028
+Left/Right RawEncoder -372/373
+targets (L/R):5655/5655, encoder: -372/373, total_powe:-70 time: 1187051
+Left/Right RawEncoder -372/373
+targets (L/R):5655/5655, encoder: -372/373, total_powe:-70 time: 1187072
+Left/Right RawEncoder -464/424
+targets (L/R):5655/5655, encoder: -464/424, total_powe:-70 time: 1187094
+Left/Right RawEncoder -464/503
+time: 1187115, stall_check: 1187106
+powerLeft: -35, powerRight: -35, mismatch: 39
+targets (L/R):5655/5655, encoder: -464/503, total_powe:-70 time: 1187120
+Left/Right RawEncoder -541/537
+targets (L/R):5655/5655, encoder: -541/537, total_powe:-70 time: 1187142
+Left/Right RawEncoder -620/573
+targets (L/R):5655/5655, encoder: -620/573, total_powe:-70 time: 1187162
+Left/Right RawEncoder -620/610
+targets (L/R):5655/5655, encoder: -620/610, total_powe:-70 time: 1187184
+Left/Right RawEncoder -703/686
+powerLeft: -35, powerRight: -35, mismatch: -17
+targets (L/R):5655/5655, encoder: -703/686, total_powe:-70 time: 1187211
+Left/Right RawEncoder -784/721
+targets (L/R):5655/5655, encoder: -784/721, total_powe:-70 time: 1187234
+Left/Right RawEncoder -784/758
+targets (L/R):5655/5655, encoder: -784/758, total_powe:-70 time: 1187256
+Left/Right RawEncoder -866/797
+targets (L/R):5655/5655, encoder: -866/797, total_powe:-70 time: 1187281
+Left/Right RawEncoder -866/843
+powerLeft: -35, powerRight: -35, mismatch: -23
+targets (L/R):5655/5655, encoder: -866/843, total_powe:-70 time: 1187305
+Left/Right RawEncoder -969/924
+targets (L/R):5655/5655, encoder: -969/924, total_powe:-70 time: 1187326
+Left/Right RawEncoder -1048/959
+targets (L/R):5655/5655, encoder: -1048/959, total_powe:-70 time: 1187349
+Left/Right RawEncoder -1048/992
+targets (L/R):5655/5655, encoder: -1048/992, total_powe:-70 time: 1187372
+Left/Right RawEncoder -1130/1032
+targets (L/R):5655/5655, encoder: -1130/1032, total_powe:-70 time: 1187393
+Left/Right RawEncoder -1130/1111
+powerLeft: -35, powerRight: -35, mismatch: -19
+targets (L/R):5655/5655, encoder: -1130/1111, total_powe:-70 time: 1187418
+Left/Right RawEncoder -1214/1146
+targets (L/R):5655/5655, encoder: -1214/1146, total_powe:-70 time: 1187441
+Left/Right RawEncoder -1297/1183
+targets (L/R):5655/5655, encoder: -1297/1183, total_powe:-70 time: 1187461
+Left/Right RawEncoder -1297/1222
+targets (L/R):5655/5655, encoder: -1297/1222, total_powe:-70 time: 1187483
+ -1655/1511
+powerLeft: -35, powerRight: -35, mismatch:  -1743/1665
+targets (L/R):5655/5655, encoder: -1743/1665, total_powe:-70 time: 1187688
+Left/Right RawEncoder -1830/1716
+powerLeft: -35, powerRight: -35, mismatch: -114
+targets (L/R):5655/5655, encoder: -1830/1716, total_powe:-70 time: 1187714
+Left/Right RawEncoder -1830/1758
+targets (L/R):5655/5655, encoder: -1830/1758, total_powe:-70 time: 1187735 -1949/1844
+targets (L/R):5655/5655, encoder: -1949/1844, total_powe:-70 time: 1187780
+Left/Right RawEncoder -2035/1883
+targets (L/R):5655/5655, encoder: -2035/1883, total_powe:-70 time: 1187802
+Left/Right RawEncoder -2119/1922
+powerLeft: -35, powerRight: -35, mismatch: -197
+targets (L/R):5655/5655, encoder: -2119/1922, total_powe:-70 time: 1187827
+Left/Right RawEncoder -2119/1995
+targets (L/R):5655/5655, encoder: -2119/1995, total_powe:-70 time: 1187849
+Left/Right RawEncoder -2205/2034
+targets (L/R):5655/5655, encoder: -2205/2034, total_powe:-70 time: 1187874
+Left/Right RawEncoder -2284/2068
+targets (L/R):5655/5655, encoder: -2284/2068, total_powe:-70 time: 1187895
+Left/Right RawEncoder -2284/2108
+powerLeft: -35, powerRight: -35, mismatch: -176
+targets (L/R):5655/5655, encoder: -2284/2108, total_powe:-70 time: 1187923
+Left/Right RawEncoder -2390/2161
+time: 1187948, stall_check: 1187928
+targets (L/R):5655/5655, encoder: -2390/2161, total_powe:-70 time: 1187948
+Left/Right RawEncoder -2390/2243
+targets (L/R):5655/5655, encoder: -2390/2243, total_powe:-70 time: 1187971
+Left/Right RawEncoder -2475/2281
+targets (L/R):5655/5655, encoder: -2475/2281, total_powe:-70 time: 1187993
+Left/Right RawEncoder -2559/2316
+powerLeft: -35, powerRight: -35, mismatch: -243
+targets (L/R):5655/5655, encoder: -2559/2316, total_powe:-70 time: 1188019
+Left/Right RawEncoder -2559/2389
+targets (L/R):5655/5655, encoder: -2559/2389, total_powe:-70 time: 1188041
+Left/Right RawEncoder -2641/2428
+targets (L/R):5655/5655, encoder: -2641/2428, total_powe:-70 time: 1188063
+Left/Right RawEncoder -2641/2468
+targets (L/R):5655/5655, encoder: -2641/2468, total_powe:-70 time: 1188085
+Left/Right RawEncoder -2729/2507
+powerLeft: -35, powerRight: -35, mismatch: -222
+targets (L/R):5655/5655, encoder: -2729/2507, total_powe:-70 time: 1188108
+Left/Right RawEncoder -2810/2541
+targets (L/R):5655/5655, encoder: -2810/2541, total_powe:-70 time: 1188132
+Left/Right RawEncoder -2810/2591
+targets (L/R):5655/5655, encoder: -2810/2591, total_powe:-70 time: 1188154
+Left/Right RawEncoder -2918/2634
+targets (L/R):5655/5655, encoder: -2918/2634, total_powe:-70 time: 1188176
+Left/Right RawEncoder -2918/2671
+targets (L/R):5655/5655, encoder: -2918/2671, total_powe:-70 time: 1188198
+Left/Right RawEncoder -3004/2747
+powerLeft: -35, powerRight: -35, mismatch: -257
+targets (L/R):5655/5655, encoder: -3004/2747, total_powe:-70 time: 1188222
+Left/Right RawEncoder -3084/2785
+targets (L/R):5655/5655, encoder: -3084/2785, total_powe:-70 time: 1188245
+Left/Right RawEncoder -3084/2820
+targets (L/R):5655/5655, encoder: -3084/2820, total_powe:-70 time: 1188268
+Left/Right RawEncoder -3166/2895
+targets (L/R):5655/5655, encoder: -3166/2895, total_powe:-70 time: 1188291
+Left/Right RawEncoder -3166/2933
+powerLeft: -35, powerRight: -35, mismatch: -233
+targets (L/R):5655/5655, encoder: -3166/2933, total_powe:-70 time: 1188318
+Left/Right RawEncoder -3252/2973
+targets (L/R):5655/5655, encoder: -3252/2973, total_powe:-70 time: 1188340
+Left/Right RawEncoder -3360/3025
+time: 1188362, stall_check: 1188348
+targets (L/R):5655/5655, encoder: -3360/3025, total_powe:-70 time: 1188363
+Left/Right RawEncoder -3360/3067
+targets (L/R):5655/5655, encoder: -3360/3067, total_powe:-70 time: 1188386
+Left/Right RawEncoder -3446/3105
+powerLeft: -35, powerRight: -35, mismatch: -341
+targets (L/R):5655/5655, encoder: -3446/3105, total_powe:-70 time: 1188409
+Left/Right RawEncoder -3446/3176
+targets (L/R):5655/5655, encoder: -3446/3176, total_powe:-70 time: 1188432
+Left/Right RawEncoder -3529/3215
+targets (L/R):5655/5655, encoder: -3529/32ight RawEncoder -4055/3684
+targets (L/R):5655/5655, enc1188684
+Left/Right RawEncoder -4139/3718
+powerLeft: -35, powerRight: -35, mismatch: -421
+targets (L/R):5655/5655, encoder: -4139/3718, total_powe:-70 time: 1188709
+Left/Right RawEncoder -4139/3789
+targets (L/R):5655/5655, encoder: -4139/3789, total_powe:-70 time: 1188734
+Left/Right RawEncoder -4219/3825
+targets (L/R):5655/5655, encoder: -4219/3825, total_powe:-70 time: 1188758
+Left/Right RawEncoder -4219/3892
+time: 1188778, stall_check: 1188763
+targets (L/R):5655/5655, encoder: -4219/3892, total_powe:-70 time: 1188780
+Left/Right RawEncoder -4340/3933
+targets (L/R):5655/5655, encoder: -4340/3933, total_powe:-70 time: 1188803
+Left/Right RawEncoder -4422/3968
+powerLeft: -35, powerRight: -35, mismatch: -454
+targets (L/R):5655/5655, encoder: -4422/3968, total_powe:-70 time: 1188827
+Left/Right RawEncoder -4422/4003
+targets (L/R):5655/5655, encoder: -4422/4003, total_powe:-70 time: 1188850
+Left/Right RawEncoder -4505/4080
+targets (L/R):5655/5655, encoder: -4505/4080, total_powe:-70 time: 1188874
+Left/Right RawEncoder -4505/4119
+targets (L/R):5655/5655, encoder: -4505/4119, total_powe:-70 time: 1188896
+Left/Right RawEncoder -4592/4155
+powerLeft: -35, powerRight: -35, mismatch: -437
+targets (L/R):5655/5655, encoder: -4592/4155, total_powe:-70 time: 1188922
+Left/Right RawEncoder -4678/4193
+targets (L/R):5655/5655, encoder: -4678/4193, total_powe:-70 time: 1188944
+Left/Right RawEncoder -4678/4264
+targets (L/R):5655/5655, encoder: -4678/4264, total_powe:-70 time: 1188965
+Left/Right RawEncoder -4762/4264
+targets (L/R):5655/5655, encoder: -4762/4264, total_powe:-70 time: 1188988
+Left/Right RawEncoder -4762/4316
+powerLeft: -35, powerRight: -35, mismatch: -446
+targets (L/R):5655/5655, encoder: -4762/4316, total_powe:-70 time: 1189012
+Left/Right RawEncoder -4865/4397
+targets (L/R):5655/5655, encoder: -4865/4397, total_powe:-70 time: 1189032
+Left/Right RawEncoder -4943/4432
+targets (L/R):5655/5655, encoder: -4943/4432, total_powe:-70 time: 1189056
+Left/Right RawEncoder -4943/4465
+targets (L/R):5655/5655, encoder: -4943/4465, total_powe:-70 time: 1189080
+Left/Right RawEncoder -5025/4533
+targets (L/R):5655/5655, encoder: -5025/4533, total_powe:-70 time: 1189102
+Left/Right RawEncoder -5106/4567
+powerLeft: -35, powerRight: -35, mismatch: -539
+targets (L/R):5655/5655, encoder: -5106/4567, total_powe:-70 time: 1189126
+Left/Right RawEncoder -5106/4605
+targets (L/R):5655/5655, encoder: -5106/4605, total_powe:-70 time: 1189148
+Left/Right RawEncoder -5193/4681
+targets (L/R):5655/5655, encoder: -5193/4681, total_powe:-70 time: 1189172
+Left/Right RawEncoder -5193/4730
+time: 1189193, stall_check: 1189179
+targets (L/R):5655/5655, encoder: -5193/4730, total_powe:-70 time: 1189193
+Left/Right RawEncoder -5300/4773
+powerLeft: -35, powerRight: -35, mismatch: -527
+targets (L/R):5655/5655, encoder: -5300/4773, total_powe:-70 time: 1189217
+Left/Right RawEncoder -5300/4810
+targets (L/R):5655/5655, encoder: -5300/4810, total_powe:-70 time: 1189239
+Left/Right RawEncoder -5383/4846
+targets (L/R):5655/5655, encoder: -5383/4846, total_powe:-70 time: 1189261
+Left/Right RawEncoder -5467/4883
+targets (L/R):5655/5655, encoder: -5467/4883, total_powe:-70 time: 1189284
+Left/Right RawEncoder -5467/4958
+powerLeft: -35, powerRight: -35, mismatch: -509
+targets (L/R):5655/5655, encoder: -5467/4958, total_powe:-70 time: 1189308
+Left/Right RawEncoder -5552/4995
+targets (L/R):5655/5655, encoder: -5552/4995, total_powe:-70 time: 1189330
+Left/Right RawEncoder -5636/5030
+targets (L/R):5655/5655, encoder: -5636/5030, total_powe:-70 time: 1189353
+Left/Right RawEncoder -5636/5067
+targets (L/R):5655/5655, encoder: -5636/5067, total_powe:-70 time: 1189375
+Left/Right RawEncoder -5720/5103
+targets (L/R):5655/5655, encoder: -5720/5103, total_powe:-70 time: 1189398
+encoderL: -5720, encoderR: 5103, time: 1189400
+encoderL: -5720, encoderR: 5157, time: 1189421
+encoderL: -5841, encoderR: 5219, time: 1189441
+encoderL: -5841, encoderR: 5249, time: 1189461
+encoderL: -5856, encoderR: 5258, time: 1189482
+encoderL: -5856, encoderR: 5261, time: 1189502
+encoderL: -5858, encoderR: 5261, time: 1189523

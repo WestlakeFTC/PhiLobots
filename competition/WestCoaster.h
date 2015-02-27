@@ -4,6 +4,8 @@
 */
 #ifndef __WEST_COASTER_H__
 #define __WEST_COASTER_H__
+#include "HTSuperproSensors.h"
+
 /**
 * Robot characteristics. these are constant, only change when robot is re-designed
 */
@@ -46,7 +48,7 @@ const int FULL_POWER_LEFT = MAX_TOTAL_POWER/2;
 //Position and rotation control interval.
 //We do not need control at very high frequency.
 const unsigned long pos_control_interval = 200; //ms
-const unsigned long rot_control_interval = 100; //ms
+const unsigned long rot_control_interval = 200; //ms
 
 //AndyMark Neverest motors can tolerate more than 2 min stalling
 //we will check every other position control loop
@@ -54,13 +56,14 @@ const unsigned int stall_check_interval=2*pos_control_interval;
 //We need sync motors faster than position control
 const unsigned int motor_sync_interval = pos_control_interval/2;
 //outermost control loop interval. This should be the smallest.
-const unsigned int control_loop_interval = motor_sync_interval/5;
+const unsigned int control_loop_interval = motor_sync_interval/2;
+const float clicks_per_inch = cpr/(PI*wheelRad*2.0*gear_ratio);
 /**
  * converts inches in straigt distance to encoder counts.
  */
 int inchesToCounts(float inches)
 {
-	return abs((int)((cpr*inches)/(PI*wheelRad*2.0)/gear_ratio+0.5));
+	return abs((int)(clicks_per_inch*inches+0.5));
 }
 /**
  * converts rotation degrees to encoder counts
@@ -85,11 +88,15 @@ typedef struct wc
 	unsigned long nextStallCheckTick;
 	unsigned long nextMotorSyncTick;
 	int last_encoderLeft;
+	int last_encoderRight;
 	int last_deltaL;
 	int last_deltaR;
-	int last_encoderRight;
-	int encoderMovedLeft;
-	int encoderMovedRight;
+	float encoderTheta;
+	float mpuTheta;
+	float mpuThetaChange;
+	float global_heading;
+	float x_inches;
+	float y_inches;
 	int last_powerLeft;
 	int last_powerRight;
 } WestCoaster;
@@ -152,40 +159,54 @@ void WestCoaster_resetStates(WestCoaster& wc)
 	wc.nextStallCheckTick=nSysTime+stall_check_interval;
 	wc.last_encoderLeft=nMotorEncoder[wc.encoderL];
 	wc.last_encoderRight=nMotorEncoder[wc.encoderR];
-	wc.encoderMovedLeft=0;
-	wc.encoderMovedRight=0;
 	wc.last_deltaL=0;
 	wc.last_deltaR=0;
-}
+	wc.encoderTheta=0;
+	wc.x_inches=0;
+	wc.y_inches=0;
+	wc.mpuTheta=0;
+#ifdef MPU_PID
+	TOrientation orient;
+	SuperSensors_getOrientation(orient);
+	wc.global_heading=orient.yaw*0.01;
+	wc.mpuThetaChange=0;
+#endif
+	}
 
 void WestCoaster_pidMotorSync(WestCoaster& wc, int total_power, bool rotation);
 #define ENCODER_THRESH 800
-
-void WestCoaster_measureEncoders(WestCoaster& wc)
+#define ENCODER_FILRER 0.1
+void WestCoaster_measureEncoders(WestCoaster& wc, bool allowDrop)
 {
 		int current_encoder=nMotorEncoder[wc.encoderR];
-		if(abs(wc.last_encoderRight-current_encoder)>ENCODER_THRESH||
-			abs(current_encoder)<abs(wc.last_encoderRight))
+		if(abs(wc.last_encoderRight-current_encoder)>ENCODER_THRESH
+			     || (!allowDrop&&abs(wc.last_encoderRight)>abs(current_encoder)) )
 		{
-			writeDebugStreamLine("*****Bogus encoder right, assuming same speed");
+			writeDebugStreamLine("*****Bogus encoder right jump, assume average speed");
+			playImmediateTone(1000,200);
+  		wc.last_encoderRight+=wc.last_deltaR;
 		}else
 		{
-			wc.last_deltaR=abs(wc.last_encoderRight-current_encoder);
+			wc.last_deltaR=ENCODER_FILRER*(current_encoder-wc.last_encoderRight)
+			                 +(1-ENCODER_FILRER)*wc.last_deltaR; //moving average for speed
+  		wc.last_encoderRight=current_encoder;//resync the filtered encoder with raw
 		}
-		wc.encoderMovedRight+=wc.last_deltaR;
-		wc.last_encoderRight=current_encoder;
+    int rawRight=current_encoder;
 
 		current_encoder = nMotorEncoder[wc.encoderL];
+		writeDebugStreamLine("Left/Right RawEncoder %d/%d", current_encoder, rawRight);
 		if(abs(wc.last_encoderLeft-current_encoder)>ENCODER_THRESH
-			||abs(current_encoder)<abs(wc.last_encoderLeft))
+			       || (!allowDrop&&abs(wc.last_encoderLeft)>abs(current_encoder)) )
 		{
-			writeDebugStreamLine("*****Bogus encoder left, assuming same speed");
+			writeDebugStreamLine("*****Bogus encoder left jump, assume average speed");
+			playImmediateTone(1000,200);
+  	  wc.last_encoderLeft+=wc.last_deltaL;
 		}else
 		{
-			wc.last_deltaL=abs(wc.last_encoderLeft-current_encoder);
+			wc.last_deltaL=ENCODER_FILRER*(current_encoder-wc.last_encoderLeft)
+			             +(1-ENCODER_FILRER)*wc.last_deltaL;
+	  	wc.last_encoderLeft=current_encoder;//resync the filtered with raw
 		}
-		wc.encoderMovedLeft+=wc.last_deltaL;
-		wc.last_encoderLeft=current_encoder;
 }
 void WestCoaster_waitForEncoderCounts(WestCoaster& wc, int leftTarget, int rightTarget,
        bool rotation, bool sync)
@@ -195,15 +216,15 @@ void WestCoaster_waitForEncoderCounts(WestCoaster& wc, int leftTarget, int right
 	writeDebugStreamLine("**targets (L/R):%d/%d, encoderL: %d, encoderR: %d, total_powe:%d time: %d",
 		leftTarget,rightTarget, wc.last_encoderLeft, wc.last_encoderRight, total_power, nSysTime);
 
-	while(wc.encoderMovedRight < rightTarget &&
-		wc.encoderMovedLeft <  leftTarget)
+	while(abs(wc.last_encoderRight) < rightTarget &&
+		abs(wc.last_encoderLeft) <  leftTarget)
 	{
 		sleep(control_loop_interval);//must be smaller than sync interval
-		WestCoaster_measureEncoders(wc);
+		WestCoaster_measureEncoders(wc, false);
 		if(WestCoaster_isStalling(wc)) break;
 		if(sync)WestCoaster_pidMotorSync(wc, total_power, rotation);
-		writeDebugStreamLine("targets (L/R):%d/%d, moved: %d/%d encoder: %d/%d, total_powe:%d time: %d",
-		leftTarget,rightTarget, wc.encoderMovedLeft, wc.encoderMovedRight, wc.last_encoderLeft,
+		writeDebugStreamLine("targets (L/R):%d/%d, encoder: %d/%d, total_powe:%d time: %d",
+		leftTarget,rightTarget, wc.last_encoderLeft,
 		wc.last_encoderRight, total_power, nSysTime);
 	}
   return ;
@@ -237,18 +258,20 @@ void WestCoaster_rampUpSpeed(WestCoaster& wc, int counts, int power){
     int power_step=5;
     if(power<0)
     	power_step=-5;
-		while(wc.encoderMovedLeft< counts &&
-		abs(wc.encoderMovedRight) <  counts
+		while(abs(wc.last_encoderLeft)< counts &&
+		abs(wc.last_encoderRight) <  counts
          && abs(current_power)<abs(power))
 	{
 		current_power+=power_step;
 	  WestCoaster_allMotorsPowerStraight(wc, current_power);
+
 		sleep(control_loop_interval);
-		WestCoaster_measureEncoders(wc);
+
+		WestCoaster_measureEncoders(wc, false);
 		if(WestCoaster_isStalling(wc))
 			 break;
 	  writeDebugStreamLine("**targets (L/R):%d/%d, encoderL: %d, encoderR: %d, total_powe:%d time: %d",
-		       counts,counts, wc.encoderMovedLeft, wc.encoderMovedRight, current_power, nSysTime);
+		       counts,counts, wc.last_encoderLeft, wc.last_encoderRight, current_power, nSysTime);
 	}
   return ;
 
@@ -300,8 +323,8 @@ void WestCoaster_forwardFullSpeed(WestCoaster& wc, float inches){
 * To tune them, just run the robot and use debug messge output from WestCoaster_fullStop
 * to calculate the braking offset.
 */
-int observedBrakingOffSetL=63;
-int observedBrakingOffSetR=46;
+int observedBrakingOffSetL=0;
+int observedBrakingOffSetR=0;
 
 void WestCoaster_observedStraightMove(WestCoaster& wc, float inches){
 	WestCoaster_resetStates(wc);
@@ -355,8 +378,8 @@ bool WestCoaster_isStalling(WestCoaster& wc)
  			writeDebugStreamLine("time: %d, stall_check: %d", nSysTime, wc.nextStallCheckTick);
 
 	  wc.nextStallCheckTick = nSysTime+stall_check_interval;
-		if(prev_encoder_left == wc.encoderMovedLeft&&
-			prev_encoder_right == wc.encoderMovedRight)
+		if(prev_encoder_left == wc.last_encoderLeft&&
+			prev_encoder_right == wc.last_encoderRight)
 		{
 			writeDebugStreamLine("Drive stalled: power L/R: %d/%d",
 			         wc.last_powerLeft, wc.last_powerRight);
@@ -365,20 +388,20 @@ bool WestCoaster_isStalling(WestCoaster& wc)
 
 			return true;
 		}
-		prev_encoder_right = wc.encoderMovedRight;
-		prev_encoder_left = wc.encoderMovedLeft;
+		prev_encoder_right = wc.last_encoderRight;
+		prev_encoder_left = wc.last_encoderLeft;
 		return false;
 }
 //average encoder counts of left and right sides
 // since action started
 float WestCoaster_getYPos(WestCoaster& wc)
 {
-	return (wc.encoderMovedRight+wc.encoderMovedLeft)/2.0;
+	return (abs(wc.last_encoderRight)+abs(wc.last_encoderLeft))/2.0;
 }
 
 float WestCoaster_getRotPos(WestCoaster& wc)
 {
-	return wc.encoderMovedRight-wc.encoderMovedLeft;
+	return abs(wc.last_encoderRight)-abs(wc.last_encoderLeft);
 }
 //==========================================================
 // Experimental PID controllers
@@ -387,7 +410,7 @@ float WestCoaster_getRotPos(WestCoaster& wc)
 #include "trcdefs.h"
 #include "dbgtrace.h"
 #include "pidctl.h"
-#define KP_TURN 0.002 //power ratio offset per encoder counter difference
+#define KP_TURN 0.0//0.002 //power ratio offset per encoder counter difference
 #define KI_TURN 0.0
 #define KD_TURN 0.0
 // encoder PID stablize direction to make sure
@@ -421,8 +444,6 @@ void WestCoaster_initPID()
     0.0 //initial power output
     );
 }
-
-
 
 void WestCoaster_pidMotorSync(WestCoaster& wc, int total_power, bool rotation)
 {
@@ -474,7 +495,7 @@ void WestCoaster_pidStraightMove(WestCoaster& wc, float inches)
   wc.nextStallCheckTick=nSysTime+stall_check_interval;
   int powerAvg;
   while(true){
-  	WestCoaster_measureEncoders(wc);
+  	WestCoaster_measureEncoders(wc, true);
   	if(next_pos_tick<=nSysTime){
   		  next_pos_tick += pos_control_interval;
   	    powerAvg=PIDCtrlOutput(g_encoder_forward_pid, WestCoaster_getYPos(wc));
@@ -550,10 +571,15 @@ void WestCoaster_pidGyroTurn(WestCoaster& wc, int degrees)
 #endif //GYRO_PID
 
 #ifdef MPU_PID
-#include "HTSuperproSensors.h"
-#define KP_MPU_TURN -0.35 //power per degree difference
+/*
+#define KP_MPU_TURN -0.2//-0.35 //power per degree difference
 #define KI_MPU_TURN 0.0
-#define KD_MPU_TURN 0.0
+#define KD_MPU_TURN -0.05
+*/
+#define KP_MPU_TURN -0.2//-0.35 //power per degree difference
+#define KI_MPU_TURN 0.0
+#define KD_MPU_TURN -0.05
+
 // encoder PID stablize direction to make sure
 // robot going straight, minimizing encoder counter differences
 // between left and right motors
@@ -579,11 +605,11 @@ void WestCoaster_initMPUPID(tSensors superpro)
 		  {
 		  	sleep(20);
 		  	waited+=20;
-		  	if(waited>1000)
+		  	if(waited>2000)
 		  	{
 		  		writeDebugStreamLine("super sensors not running, play SOS!");
 		  		      playImmediateTone(1000, 50);
-		  		      sleep(50);
+		  		      sleep(500);
                 playImmediateTone(1000, 50);
 
 		  		break;
@@ -591,6 +617,52 @@ void WestCoaster_initMPUPID(tSensors superpro)
 		  }
 	}
 }
+
+void WestCoaster_measureMPU(WestCoaster& wc)
+{
+		TOrientation orient;
+	  SuperSensors_getOrientation(orient);
+    float current_heading=0.01*orient.yaw;
+
+    //need normalize
+    float delta=current_heading-wc.global_heading;
+    //MPU yaw reading increase clockwise, not counter clockwise
+    if(delta>180)//cross 180 from negative to positive)
+    {
+    		delta=360-delta;
+    }
+    if(delta<-180)//crosee 180 from positive to negative
+    {
+    	delta+=360;
+    }
+    wc.mpuTheta+=delta;
+    wc.mpuThetaChange=delta;
+    wc.global_heading=current_heading;
+}
+
+void WestCoaster_MPUOdometer(WestCoaster& wc)
+{
+	WestCoaster_measureEncoders(wc, false);
+	float left_inches=wc.last_deltaL/clicks_per_inch;
+	float right_inches=-wc.last_deltaR/clicks_per_inch;
+	float avg_inches= (left_inches+right_inches)/2.0;
+
+	wc.encoderTheta+=(left_inches-right_inches)/(2*robotHalfWidth);
+
+  WestCoaster_measureMPU(wc);
+  float theta=wc.mpuTheta;
+  if(!super_health)
+  {
+  	theta=wc.encoderTheta;
+  }
+
+  if (theta < -PI) { theta += 2*PI; }
+  else { if (theta > PI) theta -= 2*PI; }
+
+  wc.x_inches += (float)(avg_inches * sin(theta));
+  wc.y_inches += (float)(avg_inches * cos(theta));
+}
+
 void WestCoaster_pidMPUTurn(WestCoaster& wc, int degrees)
 {
 	WestCoaster_resetStates(wc);
@@ -609,9 +681,11 @@ void WestCoaster_pidMPUTurn(WestCoaster& wc, int degrees)
   WestCoaster_resetSyncPID();
   int powerAvg=0;
   float prev_heading=current_heading;
+  bool settling=false;
+  unsigned long settle_start;
   while(true){
 
-    WestCoaster_measureEncoders(wc);
+    WestCoaster_measureEncoders(wc, true);//could oscillating
 
   	SuperSensors_getOrientation(orient);
     current_heading=0.01*orient.yaw;
@@ -642,10 +716,28 @@ void WestCoaster_pidMPUTurn(WestCoaster& wc, int degrees)
   	        if(powerAvg<0)
   	        {
   	    	      powerAvg=-MOTOR_DEADBAND;
+  	    	      settling=false;
   	    	  }else if(powerAvg>0)
   	    	  {
   	    	  	  powerAvg=MOTOR_DEADBAND;
+   	    	      settling=false;
+
+  	    	  }else
+  	    	  {
+  	    	  	if(!settling)
+  	    	  	{
+  	    	  		settling=true;
+  	    	  		settle_start=nSysTime;
+  	    	  	}else
+  	    	  	{
+  	    	  		if(nSysTime-settle_start>1000)
+  	    	  			break;
+  	    	  	}
+
   	    	  }
+  	    }else
+  	    {
+  	    	settling=false;
   	    }
 
     writeDebugStreamLine("current_heading: %f, delta: %f, turned: %f, power:%d",
@@ -679,7 +771,7 @@ void WestCoaster_bigBangMPUTurn(WestCoaster& wc, int degrees, int power)
   float prev_heading=current_heading;
   while(true){
 
-    WestCoaster_measureEncoders(wc);
+    WestCoaster_measureEncoders(wc, false);
 
   	SuperSensors_getOrientation(orient);
     current_heading=0.01*orient.yaw;
@@ -717,6 +809,42 @@ void deadReck(WestCoaster& wc, int time){
 	WestCoaster_allMotorsPowerStraight(wc, 0);
 	sleep(500);
 }
+/* ----------------------------------------------------------------------- */
+/* stasis detector      */
+/* ----------------------------------------------------------------------- */
+
+#define NOT_TURNING .005
+#define ARE_TURNING .010
+#define STASIS_ERR 60
+
+/* stasis detector globals */
+
+int stasis_err;         /* number of times imu and wheels very different */
+int stasis_alarm;       /* signal too many stasis errors */
+                        /* this is read by escape() in escape.c */
+
+/* ----------------------------------------------------------------------- */
+
+int stasis(float wheel_drv, float imu_drv)
+{
+
+        if ((imu_drv < NOT_TURNING) && (wheel_drv > ARE_TURNING)) {
+                stasis_err++;
+        } else {
+                if (stasis_err) stasis_err--;
+                else stasis_alarm = 0;
+        }
+
+        if (stasis_err > stasis_err) {
+                stasis_alarm = 1;
+                stasis_err = 0;
+        }
+
+        return 0;
+}
+
+/* ----------------------------------------------------------------------- */
+
 
 #endif //MPU_PID
 

@@ -1,7 +1,7 @@
 #pragma config(Hubs,  S1, HTMotor,  HTMotor,  HTMotor,  HTServo)
 #pragma config(Hubs,  S3, HTMotor,  HTServo,  HTServo,  HTServo)
 #pragma config(Sensor, S2,     HTSPB,          sensorI2CCustomFastSkipStates9V)
-#pragma config(Sensor, S4,     HTMUX,          sensorI2CCustomFastSkipStates9V)
+#pragma config(Sensor, S4,     HTMUX,          sensorSONAR)
 #pragma config(Motor,  mtr_S1_C1_1,     BackL,         tmotorTetrix, openLoop)
 #pragma config(Motor,  mtr_S1_C1_2,     FrontL,        tmotorTetrix, openLoop, encoder)
 #pragma config(Motor,  mtr_S1_C2_1,     MidR,          tmotorTetrix, openLoop, encoder)
@@ -64,6 +64,6 @@ void initializeRobot()
 task main()
 {
 	initializeRobot();
-  driveToGoal(g_wcDrive, CENTER_GOAL_SONAR, 10/2.54, 30);
+  driveToGoal(g_wcDrive, CENTER_GOAL_SONAR, 20, 30);
   //did we find the center goal?
 }

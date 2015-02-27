@@ -1,0 +1,251 @@
+super sensors not running, play SOS!
+Left/Right RawEncoder 0/0
+**targets (L/R):823/823, encoderL: 0, encoderR: 0, total_powe:-5 time: 1438621
+Left/Right RawEncoder 0/0
+**targets (L/R):823/823, encoderL: 0, encoderR: 0, total_powe:-10 time: 1438643
+Left/Right RawEncoder 0/9
+**targets (L/R):823/823, encoderL: 0, encoderR: 9, total_powe:-15 time: 1438664
+Left/Right RawEncoder -15/18
+**targets (L/R):823/823, encoderL: -15, encoderR: 18, total_powe:-20 time: 1438689
+Left/Right RawEncoder -15/30
+**targets (L/R):823/823, encoderL: -15, encoderR: 30, total_powe:-25 time: 1438712
+Left/Right RawEncoder -15/53
+**targets (L/R):823/823, encoderL: -15, encoderR: 53, total_powe:-30 time: 1438735
+Left/Right RawEncoder -57/53
+**targets (L/R):823/823, encoderL: -57, encoderR: 53, total_powe:-35 time: 1438757
+**targets (L/R):5655/5655, encoderL: -57, encoderR: 53, total_powe:-70 time: 1438760
+Left/Right RawEncoder -57/81
+powerLeft: -35, powerRight: -35, mismatch: 24
+targets (L/R):5655/5655, encoder: -57/81, total_powe:-70 time: 1438784
+Left/Right RawEncoder -115/124
+powerLeft: -35, powerRight: -35, mismatch: 9
+targets (L/R):5655/5655, encoder: -115/124, total_powe:-70 time: 1438810
+Left/Right RawEncoder -175/149
+powerLeft: -35, powerRight: -35, mismatch: -26
+targets (L/R):5655/5655, encoder: -175/149, total_powe:-70 time: 1438835
+Left/Right RawEncoder -175/209
+powerLeft: -35, powerRight: -35, mismatch: 34
+targets (L/R):5655/5655, encoder: -175/209, total_powe:-70 time: 1438860
+Left/Right RawEncoder -244/245
+powerLeft: -35, powerRight: -35, mismatch: 1
+targets (L/R):5655/5655, encoder: -244/245, total_powe:-70 time: 1438886
+Left/Right RawEncoder -309/279
+powerLeft: -35, powerRight: -35, mismatch: -30
+targets (L/R):5655/5655, encoder: -309/279, total_powe:-70 time: 1438910
+Left/Right RawEncoder -309/350
+powerLeft: -35, powerRight: -35, mismatch: 41
+targets (L/R):5655/5655, encoder: -309/350, total_powe:-70 time: 1438935
+Left/Right RawEncoder -383/384
+powerLeft: -35, powerRight: -35, mismatch: 1
+targets (L/R):5655/5655, encoder: -383/384, total_powe:-70 time: 1438958
+Left/Right RawEncoder -383/435
+powerLeft: -35, powerRight: -35, mismatch: 52
+targets (L/R):5655/5655, encoder: -383/435, total_powe:-70 time: 1438984
+Left/Right RawEncoder -489/479
+time: 1439007, stall_check: 1438999
+powerLeft: -35, powerRight: -35, mismatch: -10
+targets (L/R):5655/5655, encoder: -489/479, total_powe:-70 time: 1439010
+Left/Right RawEncoder -568/548
+powerLeft: -35, powerRight: -35, mismatch: -20
+targets (L/R):5655/5655, encoder: -568/548, total_powe:-70 time: 1439033
+Left/Right RawEncoder -647/582
+powerLeft: -35, powerRight: -35, mismatch: -65
+targets (L/R):5655/5655, encoder: -647/582, total_powe:-70 time: 1439059
+Left/Right RawEncoder -647/617
+powerLeft: -35, powerRight: -35, mismatch: -30
+targets (L/R):5655/5655, encoder: -647/617, total_powe:-70 time: 1439084
+Left/Right RawEncoder -728/690
+powerLeft: -35, powerRight: -35, mismatch: -38
+targets (L/R):5655/5655, encoder: -728/690, total_powe:-70 time: 1439109
+Left/Right RawEncoder -812/727
+powerLeft: -35, powerRight: -35, mismatch: -85
+targets (L/R):5655/5655, encoder: -812/727, total_powe:-70 time: 1439133
+Left/Right RawEncoder -812/764
+powerLeft: -35, powerRight: -35, mismatch: -48
+targets (L/R):5655/5655, encoder: -812/764, total_powe:-70 time: 1439158
+r -1262/1164
+powerLeft: -35, powerRight: -35, mismatch: -1458/1335
+time: 1439419, stall_check: 1439407
+targets (L/R):5655/5655, encoder: -1458/1335, total_powe:-70 time: 1439420
+Left/Right RawEncoder -1458/1375
+targets (L/R):5655/5655, encoder: -1458/1375, total_powe:-70 time: 1439443
+Left/Right RawEncoder -1546/1412
+powerLeft: -35, powerRight: -35, mismatch: -134
+targets (L/R):5655/5655, encoder: -1546/1412, total_powe:-70 time: 1439467
+Left/Right RawEncoder -1623/1477
+targets (L/R):5655/5655, encoder: -1623/1477, total_powe:-70 time: 1439489
+Left/Right RawEncoder -1623/1515
+targets (L/R):5655/5655, encoder: -1623/1515, total_powe:-70 time: 1439511
+Left/Right RawEncoder -1706/1550
+targets (L/R):5655/5655, encoder: -1706/1550, total_powe:-70 timEncoder -1786/1587
+powerLeft: -35, powerRight: -35, mismatch: -199
+targets (L/R):5655/5655, encoder: -1786/1587, total_powe:-70 time: 1439561
+Left/Right RawEncoder -1786/1659
+targets (L/R):5655/5655, encoder: -1786/1659, total_powe:-70 time: 1439583
+Left/Right RawEncoder -1868/1712
+targets (L/R):5655/5655, encoder: -1868/1712, total_powe:-70 time: 1439605
+Left/Right RawEncoder -1868/1759
+targets (L/R):5655/5655, encoder: -1868/1759, total_powe:-70 time: 1439630
+Left/Right RawEncoder -1989/1808
+powerLeft: -35, powerRight: -35, mismatch: -181
+targets (L/R):5655/5655, encoder: -1989/1808, total_powe:-70 time: 1439654
+Left/Right RawEncoder -2072/1844
+targets (L/R):5655/5655, encoder: -2072/1844,ets (L/R):5655/5655, encoder: -2152/1953, total_powe:-70 time: 1439722
+Left/Right RawEncoder -2232/1988
+powerLeft: -35, powerRight: -35, mismatch: -244
+targets (L/R):5655/5655, encoder: -2232/1988, total_powe:-70 time: 1439748
+Left/Right RawEncoder -2232/2026
+targets (L/R):5655/5655, encoder: -2232/2026, total_powe:-70 time: 1439772
+Left/Right RawEncoder -2319/2097
+targets (L/R):5655/5655, encoder: -2319/2097, total_powe:-70 time: 1439795
+Left/Right RawEncoder -2319/2149
+targets (L/R):5655/5655, encoder: -2319/2149, total_powe:-70 time: 1439817
+Left/Right RawEncoder -2430/2192
+time: 1439838, stall_check: 1439820
+targets (L/R):5655/5655, encoder: -2430/2192, total_powe:-70 time: 1439839
+Left/encoder: -2596/2341, total_powe:-70 time: 1439912
+Left/Right RawEncoder -2596/2376
+targets (L/R):5655/5655, encoder: -2596/2376, total_powe:-70 time: 1439935
+Left/Right RawEncoder -2678/2413
+powerLeft: -35, powerRight: -35, mismatch: -265
+targets (L/R):5655/5655, encoder: -2678/2413, total_powe:-70 time: 1439961
+Left/Right RawEncoder -2756/2483
+tar5, encoder: -2756/2522, total_powe:-70 time: 1440006
+Left/Right RawEncoder -2843/2576
+targets (L/R):5655/5655, encoder: -2843/2576, total_powe:-70 time: 1440028
+Left/Right RawEncoder -2843/2615
+powerLeft: -35, powerRight: -35, mismatch: -228
+targets (L/R):5655/5655, encoder: -2843/2615, total_powe:-70 time: 1440054
+Left/Right RawEncoder -2947/2651
+total_powe:-70 time: 1440142
+Left/Right RawEncoder -3199/2839
+powerLeft: -35, powerRight: -35, mismatch: -360
+targets (L/R):5655/5655, encoder: -3199/2839, total_powe:-70 time: 1440169
+Left/Right RawEncoder -3199/2913
+targets (L/R):5655/5655, encoder: -3199/2913, total_powe:-70 time: 1440191
+Left/Right RawEncoder -2517/2950
+targets (L/R):5655/5655,2950, total_powe:-70 time: 1440214
+Left/Right RawEncoder -2517/3002
+targets (L/R):5655/5655, encoder: -2517/3002, total_powe:-70 time: 1440237
+Left/Right RawEncoder -3389/3047
+*****Bogus encoder left jump, assume average speed
+time: 1440260, stall_check: 1440239
+powerLeft: -35, powerRight: -35, mismatch: 552
+targets (L/R):5655/5655, encoder: -2495/3047, total_powe:-70 time: 1440262
+Left/Right RawEncoder -3475/3085
+*****Bogus encoder left jump, assume average speed
+targets (L/R):5655/5655, encoder: -2473/3085, total_powe:-70 time: 1440285
+Left/Right RawEncoder -3475/3121
+*****Bogus encoder left jump, assume average speed
+targets (L/R):5655/5655, encoder: -2451/3121, total_powe:-70 time: 1440307
+Left/Right RawEncoder -3556/3189
+*****Bogus encoder left jump, assume average speed
+targetsL/R):5655/5655, encoder: -2099/3943, total_powe:-70 timL/R):5655/5655, encoder: -2033/4050, total_powe:-70 time: 1440763
+Left/Right RawEncoder -4590/4117
+*****Bogus encoder left jump, assume average speed
+targets (L/R):5655/5655, encoder: -2011/4117, total_powe:-70 time: 1440786
+Left/Right RawEncoder -4674/4155
+*****Bogus encoder left jump, assume average speed
+targets (L/R):5655/5655, encoder: -1989/4L/R):5655/5655, encoder: -1945/4230, total_powe:-70 time: 1440856
+Left/Right RawEncoder -4760/4284
+*****Bogus encoder left jump, assume average speed
+targets (L/R):5655/5655, encoder: -1923/4284, total_powe:-70 time: 1440880
+Left/Right RawEncoder -4873/4365
+*****Bogus encoder left jump, assume average speed
+targets (L/R):5655/5655, encoder: -1901/4der -4873/4404
+*****Bogus encoder left jump, assume average speed
+targets (L/R):5655/5655, encoder: -1879/4404, total_powe:-70 time: 1440924
+Left/Right RawEncoder -4964/4442
+*****Bogus encoder left jump, assume average speed
+powerLeft: -35, powerRight: -35, mismatch: 2585
+targets (L/R):5655/5655, encoder: -1857/4442, total_powe:-70 time: 1440949
+Le total_powe:-70 time: 1440972
+Left/Right RawEncoder -5048/4556
+*****Bogus encoder left jump, assume average speed
+targets (L/R):5655/5655, encoder: -1813/4556, total_powe:-70 time: 1440994
+Left/Right RawEncoder -5133/4595
+*****Bogus encoder left jump, assume average speed
+targets (L/R):5655/5655, encoder: -1791/4595, total_powe:-70 time: 1441016
+Lesume average speed
+targets (L/R):5655/5655, encoder: -1769/4631, total_powe:-70 time: 1441040
+Left/Right RawEncoder -5218/4669
+*****Bogus encoder left jump, assume average speed
+powerLeft: -35, powerRight: -35, mismatch: 2922
+targets (L/R):5655/5655, encoder: -1747/4669, total_powe:-70 time: 1441065
+Left/Right RawEncoder -5324/4722
+*****Bogus encoder left jump, assume average speed
+time: 1441087, stall_check: 1441065
+targets (L/R):5655/5655, encoder: -1725/4722, total_powe:-70 time: 1441087
+Left/Right RawEncoder -5324/4763
+*****Bogus encoder left jump, assume average speed
+targets (L/R):5655/5655, encoder: -1703/4763, total_powe:-70 time: 1441111
+Left/Right RawEncoder -5404/4836
+*****Bogus encoder left jump, assume average speed
+targets (L/R):5655/5655, encoder: -1681/4836, total_powe:-70 time: 1441133
+Left/Right RawEncoder -5404/4874
+*****Bogus encoder left jump, assume average speed
+powerLeft: -35, powerRight: -35, mismatch: 3215
+targets (L/R):5655/5655, encoder: -1659/4874, total_powe:-70 time: 1441157
+Left/Right RawEncoder -5491/4912
+*****Bogus encoder left jump, assume average speed
+targets (L/R):5655/5655, encoder: -1637/4912, total_powe:-70 time: 1441179
+Left/Right RawEncoder -5577/4950
+*****Bogus encoder left jump, assume average speed
+targets (L/R):5655/5655, encoder: -1615/4950, total_powe:-70 time: 1441201
+Left/Right RawEncoder -5577/5026
+*****Bogus encoder left jump, assume average speed
+targets (L/R):5655/5655, encoder: -1593/5026, total_powe:-70 time: 1441222
+Left/Right RawEncoder -5660/5063
+*****Bogus encoder left jump, assume average speed
+targets (L/R):5655/5655, encoder: -1571/5063, total_powe:-70 time: 1441244
+Left/Right RawEncoder -5738/5098
+*****Bogus encoder left jump, assume average speed
+powerLeft: -35, powerRight: -35, mismatch: 3549
+targets (L/R):5655/5655, encoder: -1549/5098, total_powe:-70 time: 1441268
+Left/Right RawEncoder -5738/5147
+*****Bogus encoder left jump, assume average speed
+targets (L/R):5655/5655, encoder: -1527/5147, total_powe:-70 time: 1441293
+Left/Right RawEncoder -5850/5190
+*****Bogus encoder left jump, assume average speed
+targets (L/R):5655/5655, encoder: -1505/5190, total_powe:-70 time: 1441316
+Left/Right RawEncoder -5850/5228
+*****Bogus encoder left jump, assume average speed
+targets (L/R):5655/5655, encoder: -1483/5228, total_powe:-70 time: 1441339
+Left/Right RawEncoder -5936/5308
+*****Bogus encoder left jump, assume average speed
+powerLeft: -35, powerRight: -35, mismatch: 3847
+targets (L/R):5655/5655, encoder: -1461/5308, total_powe:-70 time: 1441364
+Left/Right RawEncoder -6020/5346
+*****Bogus encoder left jump, assume average speed
+targets (L/R):5655/5655, encoder: -1439/5346, total_powe:-70 time: 1441386
+Left/Right RawEncoder -6020/5379
+*****Bogus encoder left jump, assume average speed
+targets (L/R):5655/5655, encoder: -1417/5379, total_powe:-70 time: 1441408
+Left/Right RawEncoder -6094/5446
+*****Bogus encoder left jump, assume average speed
+targets (L/R):5655/5655, encoder: -1395/5446, total_powe:-70 time: 1441431
+Left/Right RawEncoder -6171/5483
+*****Bogus encoder left jump, assume average speed
+powerLeft: -35, powerRight: -35, mismatch: 4110
+targets (L/R):5655/5655, encoder: -1373/5483, total_powe:-70 time: 1441455
+Left/Right RawEncoder -6171/5517
+*****Bogus encoder left jump, assume average speed
+targets (L/R):5655/5655, encoder: -1351/5517, total_powe:-70 time: 1441479
+Left/Right RawEncoder -6272/5571
+*****Bogus encoder left jump, assume average speed
+time: 1441501, stall_check: 1441487
+targets (L/R):5655/5655, encoder: -1329/5571, total_powe:-70 time: 1441503
+Left/Right RawEncoder -6272/5649
+*****Bogus encoder left jump, assume average speed
+targets (L/R):5655/5655, encoder: -1307/5649, total_powe:-70 time: 1441527
+Left/Right RawEncoder -6355/5683
+*****Bogus encoder left jump, assume average speed
+powerLeft: -35, powerRight: -35, mismatch: 4398
+targets (L/R):5655/5655, encoder: -1285/5683, total_powe:-70 time: 1441550
+encoderL: -6355, encoderR: 5683, time: 1441554
+encoderL: -6446, encoderR: 5718, time: 1441575
+encoderL: -6446, encoderR: 5775, time: 1441596
+encoderL: -6500, encoderR: 5812, time: 1441616
+encoderL: -6500, encoderR: 5841, time: 1441637
+encoderL: -6514, encoderR: 5851, time: 1441657
+encoderL: -6514, encoderR: 5853, time: 1441677

@@ -33,10 +33,10 @@
 #define SPOUT_OUT 45
 #define SPOUT_IN 160
 //sensors
-#define USE_HT_SENSOR_MUX
-#define CENTER_GOAL_SONAR   msensor_S4_1
+//#define USE_HT_SENSOR_MUX
+#define CENTER_GOAL_SONAR   S4//msensor_S4_1
 
-#define HEADING_TOLERANCE 5
+#define HEADING_TOLERANCE 2
 #define MOTOR_DEADBAND 15
 
 #define ROLLER_FOLDER_DOWN 245

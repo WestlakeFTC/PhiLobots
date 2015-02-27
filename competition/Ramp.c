@@ -1,7 +1,7 @@
 #pragma config(Hubs,  S1, HTMotor,  HTMotor,  HTMotor,  HTServo)
 #pragma config(Hubs,  S3, HTMotor,  HTServo,  HTServo,  HTServo)
 #pragma config(Sensor, S2,     HTSPB,          sensorI2CCustomFastSkipStates9V)
-#pragma config(Sensor, S4,     HTMUX,          sensorI2CCustomFastSkipStates9V)
+#pragma config(Sensor, S4,     HTMUX,          sensorSONAR)
 #pragma config(Motor,  mtr_S1_C1_1,     BackL,         tmotorTetrix, openLoop)
 #pragma config(Motor,  mtr_S1_C1_2,     FrontL,        tmotorTetrix, openLoop, encoder)
 #pragma config(Motor,  mtr_S1_C2_1,     MidR,          tmotorTetrix, openLoop, encoder)
@@ -66,12 +66,12 @@ void swagger(bool right, unsigned int time, int domPower){
 
 void wiggleMove()
 {
-	WestCoaster_controlledEncoderObservedTurn(g_wcDrive,-30,35);
-	WestCoaster_controlledStraightMove(g_wcDrive, -6,20);
-	WestCoaster_controlledEncoderObservedTurn(g_wcDrive,60,35);
-	WestCoaster_controlledStraightMove(g_wcDrive, -6,20);
-	WestCoaster_controlledEncoderObservedTurn(g_wcDrive,-30,35);
-	WestCoaster_controlledStraightMove(g_wcDrive, -6,20);
+	WestCoaster_controlledEncoderObservedTurn(g_wcDrive,-15,35);
+	WestCoaster_controlledStraightMove(g_wcDrive, -7,20);
+	WestCoaster_controlledEncoderObservedTurn(g_wcDrive,30,35);
+	WestCoaster_controlledStraightMove(g_wcDrive, -7,20);
+	WestCoaster_controlledEncoderObservedTurn(g_wcDrive,-15,35);
+	WestCoaster_controlledStraightMove(g_wcDrive, -7,20);
 }
 
 void grabGoal()
@@ -80,7 +80,7 @@ void grabGoal()
 	  //you know what, we could re-use the center goal method
     // that is so cool!
 
-    driveToGoal(g_wcDrive, CENTER_GOAL_SONAR, 15/2.54, 30);
+    //driveToGoal(g_wcDrive, CENTER_GOAL_SONAR, 25/2.54, 30);
 	  wiggleMove();
     servo[trailerR] = GRABBER_DOWN;
     servo[trailerL] = 255-GRABBER_DOWN;
@@ -104,7 +104,6 @@ void initializeRobot()
 	servo[foldRoller] = 70;//14
 	servo[roller] = 127;
 	servo[hingeFaucet] = 0;
-	servo[lift] = LIFT_BOTTOM;
 	//move servos at maximium speed
 	servoChangeRate[trailerL]=0;
 	servoChangeRate[trailerR]=0;
@@ -118,25 +117,31 @@ void initializeRobot()
 #define FAUCET_EXTEND_BACK_CENTER GOAL_CENTER_TO_EDGE+0.5 //measure from the center of the drop to the edge of robot
 
 task main(){
-   initializeRobot();
+  initializeRobot();
 //servo[lift] = LIFT_BOTTOM;
 //sleep(5000);
-   waitForStart();
-   sleep(1000);
+ //  waitForStart();
+  /* sleep(1000);
    servo[foldRoller] = ROLLER_FOLDER_DOWN;
    sleep(1000);
    servo[foldRoller] = ROLLER_FOLDER_UP;
    sleep(1000);
-
+*/
 
    //===============
    // TESTING
    //
- // WestCoaster_pidMPUTurn(g_wcDrive,90);
-
-  /*WestCoaster_controlledEncoderObservedTurn(g_wcDrive,90,75);
-  sleep(1500);
-    WestCoaster_controlledEncoderObservedTurn(g_wcDrive,-90,75);
+ /*  WestCoaster_pidMPUTurn(g_wcDrive,90);
+   sleep(2000);
+   WestCoaster_pidMPUTurn(g_wcDrive,-90);
+   sleep(2000);
+   WestCoaster_pidMPUTurn(g_wcDrive,20);
+   sleep(2000);
+   WestCoaster_pidMPUTurn(g_wcDrive,-20);
+*/
+ // WestCoaster_controlledEncoderObservedTurn(g_wcDrive,90,35);
+  //sleep(1500);
+ /*   WestCoaster_controlledEncoderObservedTurn(g_wcDrive,-90,75);
  sleep(1500);
     WestCoaster_controlledEncoderObservedTurn(g_wcDrive,180,75);
     sleep(1500);
@@ -156,12 +161,13 @@ task main(){
 					-FAUCET_EXTEND_BACK_CENTER
 					-0.5;*/
 
-  float distance_to_60cm =-60;
+  float distance_to_60cm =-70;
 //do down the ramp
-
-deadReck(g_wcDrive, 1300);
- sleep(1000);
-
+      //sleep(1000);
+      WestCoaster_controlledStraightMove(g_wcDrive, distance_to_60cm, 35);
+      sleep(1000);
+      //grabGoal();
+			sleep(1000);
 /*sleep(1000);
 	//drop the little one
   readyFaucet();
