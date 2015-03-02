@@ -5,7 +5,6 @@ counts to turn: 1241, encoderLCount: 15, encoderRCount: 13, power: 100, time: 19
 counts to turn: 1241, encoderLCount: 27, encoderRCount: 26, power: 100, time: 1947637
 counts to turn: 1241, encoderLCount: 72, encoderRCount: 62, power: 100, time: 1947660
 counts to turn: 1241, encoderLCount: 122, encoderRCount: 109, power: 100, time: 1947681
-counts to turn: 1241, encoderLCount: 1200, encoderRCount: 1392, power: 100, time: 1948522
 counts to turn: 1241, encoderLCount: 148, encoderRCount: 154, power: 100, time: 1947702
 counts to turn: 1241, encoderLCount: 195, encoderRCount: 177, power: 100, time: 1947723
 counts to turn: 1241, encoderLCount: 219, encoderRCount: 231, power: 100, time: 1947743

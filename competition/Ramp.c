@@ -1,7 +1,7 @@
 #pragma config(Hubs,  S1, HTMotor,  HTMotor,  HTMotor,  HTServo)
 #pragma config(Hubs,  S3, HTMotor,  HTServo,  HTServo,  HTServo)
 #pragma config(Sensor, S2,     HTSPB,          sensorI2CCustomFastSkipStates9V)
-#pragma config(Sensor, S4,     HTMUX,          sensorSONAR)
+#pragma config(Sensor, S4,     HTMUX,          sensorI2CCustomFastSkipStates9V)
 #pragma config(Motor,  mtr_S1_C1_1,     BackL,         tmotorTetrix, openLoop)
 #pragma config(Motor,  mtr_S1_C1_2,     FrontL,        tmotorTetrix, openLoop, encoder)
 #pragma config(Motor,  mtr_S1_C2_1,     MidR,          tmotorTetrix, openLoop, encoder)
@@ -93,7 +93,7 @@ void initializeRobot()
 {
 	servo[lift] = LIFT_BOTTOM;
 
-  WestCoaster_init(g_wcDrive,FrontL, FrontR, MidL, MidR, BackL, BackR, FrontL, FrontR);
+  WestCoaster_init(g_wcDrive, FrontL, FrontR, MidL, MidR, BackL, BackR, FrontL, FrontR);
   WestCoaster_initMPUPID(S2);
 	servo[trailerR] = GRABBER_UP;
 	servo[trailerL] = 255-GRABBER_UP;
@@ -118,8 +118,6 @@ void initializeRobot()
 
 task main(){
   initializeRobot();
-//servo[lift] = LIFT_BOTTOM;
-//sleep(5000);
  //  waitForStart();
   /* sleep(1000);
    servo[foldRoller] = ROLLER_FOLDER_DOWN;
@@ -129,16 +127,30 @@ task main(){
 */
 
    //===============
-   // TESTING
+   // TESTS
    //
- /*  WestCoaster_pidMPUTurn(g_wcDrive,90);
-   sleep(2000);
-   WestCoaster_pidMPUTurn(g_wcDrive,-90);
-   sleep(2000);
-   WestCoaster_pidMPUTurn(g_wcDrive,20);
-   sleep(2000);
-   WestCoaster_pidMPUTurn(g_wcDrive,-20);
+
+
+/**
+ *            ***Turn and move with MPU with speed ramp up***
+ **
+WestCoaster_turnWithMPU(g_wcDrive, -90,20);
+sleep(2000);
+WestCoaster_turnWithMPU(g_wcDrive, 90,20);
+sleep(2000);
+WestCoaster_turnWithMPU(g_wcDrive, -20,20);
+sleep(2000);
+WestCoaster_turnWithMPU(g_wcDrive, 20,20);
 */
+WestCoaster_moveStraightWithMPU(g_wcDrive, -160,50);
+sleep(2000);
+WestCoaster_moveStraightWithMPU(g_wcDrive, 160,50);
+sleep(2000);
+WestCoaster_moveStraightWithMPU(g_wcDrive, -20,50);
+sleep(2000);
+WestCoaster_moveStraightWithMPU(g_wcDrive, 60,50);
+
+
  // WestCoaster_controlledEncoderObservedTurn(g_wcDrive,90,35);
   //sleep(1500);
  /*   WestCoaster_controlledEncoderObservedTurn(g_wcDrive,-90,75);
@@ -161,10 +173,10 @@ task main(){
 					-FAUCET_EXTEND_BACK_CENTER
 					-0.5;*/
 
-  float distance_to_60cm =-70;
-//do down the ramp
+  float distance_to_60cm =-72;
+//go down the ramp
       //sleep(1000);
-      WestCoaster_controlledStraightMove(g_wcDrive, distance_to_60cm, 35);
+    //  WestCoaster_controlledStraightMove(g_wcDrive, distance_to_60cm, 35);
       sleep(1000);
       //grabGoal();
 			sleep(1000);

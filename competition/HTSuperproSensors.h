@@ -132,6 +132,7 @@ task htsuperpro_loop_yaw() {
 	bool insync =false;
 	while(true) {
 		if(!insync){
+			super_health=false;
  		//this sets S0 to 0, serving as synchronizing bit for beginning
 		//of transfer
 			HTSPBSetStrobe(superSensors.sPort,0x0);//3ms

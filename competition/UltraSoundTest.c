@@ -8,7 +8,7 @@ task main()
 		sleep(200);
 
 #ifdef USE_HT_SENSOR_MUX
-		int distL= USreadDist(msensor_S4_1);
+		int distL= readDist(CENTER_GOAL_SONAR);
 		int distR = USreadDist (msensor_S4_2);
 #else
 		int distL=SensorValue[sonarSensorL];
