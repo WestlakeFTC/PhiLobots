@@ -213,11 +213,13 @@ bool initSensor(tHTGYROPtr htgyroPtr, tMUXSensor muxsensor)
   htgyroPtr->I2CData.type = sensorI2CCustom;
   htgyroPtr->smux = true;
   htgyroPtr->smuxport = muxsensor;
-
+//!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+  ///This is a bug because I2CData.port is not init'd
+//!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
   // Ensure the sensor is configured correctly
-  if (SensorType[htgyroPtr->I2CData.port] != htgyroPtr->I2CData.type)
+/*  if (SensorType[htgyroPtr->I2CData.port] != htgyroPtr->I2CData.type)
     SensorType[htgyroPtr->I2CData.port] = htgyroPtr->I2CData.type;
-
+*/
   return HTSMUXsetAnalogueActive(muxsensor);
 }
 
