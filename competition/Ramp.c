@@ -66,42 +66,48 @@ void swagger(bool right, unsigned int time, int domPower){
 
 void wiggleMove()
 {
-	WestCoaster_controlledEncoderObservedTurn(g_wcDrive,-15,35);
+	/*WestCoaster_controlledEncoderObservedTurn(g_wcDrive,-15,35);
 	WestCoaster_controlledStraightMove(g_wcDrive, -7,20);
 	WestCoaster_controlledEncoderObservedTurn(g_wcDrive,30,35);
 	WestCoaster_controlledStraightMove(g_wcDrive, -7,20);
 	WestCoaster_controlledEncoderObservedTurn(g_wcDrive,-15,35);
+	WestCoaster_controlledSturtraightMove(g_wcDrive, -7,20);*/
+	WestCoaster_turnWithMPU(g_wcDrive,-5,30);
+	WestCoaster_controlledStraightMove(g_wcDrive, -7,25);
+	WestCoaster_turnWithMPU(g_wcDrive,25,30);
+	WestCoaster_controlledStraightMove(g_wcDrive, -7,25);
+	WestCoaster_turnWithMPU(g_wcDrive,-5,30);
 	WestCoaster_controlledStraightMove(g_wcDrive, -7,20);
 }
 
 void grabGoal()
 {
 
-	  //you know what, we could re-use the center goal method
-    // that is so cool!
+	//you know what, we could re-use the center goal method
+	// that is so cool!
 
-    //driveToGoal(g_wcDrive, CENTER_GOAL_SONAR, 25/2.54, 30);
-	  wiggleMove();
-    servo[trailerR] = GRABBER_DOWN;
-    servo[trailerL] = 255-GRABBER_DOWN;
-    sleep(200);
-  	writeDebugStreamLine("Grabber Position:%d",
-  	ServoValue[trailerR]);
+	//driveToGoal(g_wcDrive, CENTER_GOAL_SONAR, 25/2.54, 30);
+	wiggleMove();
+	servo[trailerR] = GRABBER_DOWN;
+	servo[trailerL] = 255-GRABBER_DOWN;
+	sleep(200);
+	writeDebugStreamLine("Grabber Position:%d",
+	ServoValue[trailerR]);
 }
 
 void initializeRobot()
 {
 	servo[lift] = LIFT_BOTTOM;
 
-  WestCoaster_init(g_wcDrive, FrontL, FrontR, MidL, MidR, BackL, BackR, FrontL, FrontR);
-  WestCoaster_initMPUPID(S2);
+	WestCoaster_init(g_wcDrive, FrontL, FrontR, MidL, MidR, BackL, BackR, FrontL, FrontR);
+	WestCoaster_initMPUPID(S2);
 	servo[trailerR] = GRABBER_UP;
 	servo[trailerL] = 255-GRABBER_UP;
 	servo[flapper1] =FLAPPER_STOP;
 	servo[flapper2] = FLAPPER_STOP;
 	servo[flapper3] = FLAPPER_STOP;
 	servo[spout]= SPOUT_IN;
-	servo[foldRoller] = 70;//14
+	//servo[foldRoller] = 70;//14
 	servo[roller] = 127;
 	servo[hingeFaucet] = 0;
 	//move servos at maximium speed
@@ -117,50 +123,54 @@ void initializeRobot()
 #define FAUCET_EXTEND_BACK_CENTER GOAL_CENTER_TO_EDGE+0.5 //measure from the center of the drop to the edge of robot
 
 task main(){
-  initializeRobot();
- //  waitForStart();
-  /* sleep(1000);
-   servo[foldRoller] = ROLLER_FOLDER_DOWN;
-   sleep(1000);
-   servo[foldRoller] = ROLLER_FOLDER_UP;
-   sleep(1000);
-*/
+	initializeRobot();
+	//  waitForStart();
+	/* sleep(1000);
+	servo[foldRoller] = ROLLER_FOLDER_DOWN;
+	sleep(1000);
+	servo[foldRoller] = ROLLER_FOLDER_UP;
+	sleep(1000);
+	*/
 
-   //===============
-   // TESTS
-   //
-
-
-/**
- *            ***Turn and move with MPU with speed ramp up***
- **
-WestCoaster_turnWithMPU(g_wcDrive, -90,20);
-sleep(2000);
-WestCoaster_turnWithMPU(g_wcDrive, 90,20);
-sleep(2000);
-WestCoaster_turnWithMPU(g_wcDrive, -20,20);
-sleep(2000);
-WestCoaster_turnWithMPU(g_wcDrive, 20,20);
-*/
-WestCoaster_moveStraightWithMPU(g_wcDrive, -160,50);
-sleep(2000);
-WestCoaster_moveStraightWithMPU(g_wcDrive, 160,50);
-sleep(2000);
-WestCoaster_moveStraightWithMPU(g_wcDrive, -20,50);
-sleep(2000);
-WestCoaster_moveStraightWithMPU(g_wcDrive, 60,50);
+	//===============
+	// TESTS
+	//
 
 
- // WestCoaster_controlledEncoderObservedTurn(g_wcDrive,90,35);
-  //sleep(1500);
- /*   WestCoaster_controlledEncoderObservedTurn(g_wcDrive,-90,75);
- sleep(1500);
-    WestCoaster_controlledEncoderObservedTurn(g_wcDrive,180,75);
-    sleep(1500);
-  WestCoaster_controlledEncoderObservedTurn(g_wcDrive,-180,75);
-*/
-  //	WestCoaster_controlledEncoderObservedTurn(g_wcDrive,60,35);
-//=======================================================================
+	/**
+	*            ***Turn and move with MPU with speed ramp up***
+	***/
+	/*
+	WestCoaster_turnWithMPU(g_wcDrive, -90,70);
+	sleep(2000);
+	WestCoaster_turnWithMPU(g_wcDrive, 90,70);
+	sleep(2000);
+	WestCoaster_turnWithMPU(g_wcDrive, -20,70);
+	sleep(2000);
+	WestCoaster_turnWithMPU(g_wcDrive, 20,70);
+	*/
+	/*WestCoaster_moveStraightWithMPU(g_wcDrive, -6,20);
+	WestCoaster_moveStraightWithMPU(g_wcDrive, -40,5);
+	WestCoaster_moveStraightWithMPU(g_wcDrive, -25,30);
+	*/
+	//sleep(2000);
+	//WestCoaster_moveStraightWithMPU(g_wcDrive, 48,50);
+  //sleep(2000);
+/*	WestCoaster_moveStraightWithMPU(g_wcDrive, -20,50);
+	sleep(2000);
+	WestCoaster_moveStraightWithMPU(g_wcDrive, 60,50);
+	*/
+
+	// WestCoaster_controlledEncoderObservedTurn(g_wcDrive,90,35);
+	//sleep(1500);
+	/*   WestCoaster_controlledEncoderObservedTurn(g_wcDrive,-90,75);
+	sleep(1500);
+	WestCoaster_controlledEncoderObservedTurn(g_wcDrive,180,75);
+	sleep(1500);
+	WestCoaster_controlledEncoderObservedTurn(g_wcDrive,-180,75);
+	*/
+	//	WestCoaster_controlledEncoderObservedTurn(g_wcDrive,60,35);
+	//=======================================================================
 
 	//back off the ramp, 56.9 inches from edge of field to front of bot
 	//back of bot is 56.9+18=74.9 inches from edge of field
@@ -169,31 +179,31 @@ WestCoaster_moveStraightWithMPU(g_wcDrive, 60,50);
 	// then subtract the goal and robot faucet extents
 	// and half-inch safety margin*/
 	/*OFF_RAMP_DIST
-					+108 - 74.9
-					-FAUCET_EXTEND_BACK_CENTER
-					-0.5;*/
+	+108 - 74.9
+	-FAUCET_EXTEND_BACK_CENTER
+	-0.5;*/
 
-  float distance_to_60cm =-72;
-//go down the ramp
-      //sleep(1000);
-    //  WestCoaster_controlledStraightMove(g_wcDrive, distance_to_60cm, 35);
-      sleep(1000);
-      //grabGoal();
-			sleep(1000);
-/*sleep(1000);
+	float distance_to_60cm =-72;
+	//go down the ramp
+	//sleep(1000);
+	 // WestCoaster_controlledStraightMove(g_wcDrive, distance_to_60cm, 15);
+	sleep(1000);
+	grabGoal();
+	sleep(1000);
+	/*sleep(1000);
 	//drop the little one
-  readyFaucet();
-  sleep(1000);
-  servo[hingeFaucet] = HINGE_FAUCET_FLIP;
-  sleep(3000);
-WestCoaster_pidMPUTurn(g_wcDrive,30);
-  sleep(1000);
+	readyFaucet();
+	sleep(1000);
+	servo[hingeFaucet] = HINGE_FAUCET_FLIP;
+	sleep(3000);
+	WestCoaster_pidMPUTurn(g_wcDrive,30);
+	sleep(1000);
 	//deadReck
-  sleep(1000);
-  servo[spout] = SPOUT_OUT;
-  //go grab another on
-  //
+	sleep(1000);
+	servo[spout] = SPOUT_OUT;
+	//go grab another on
+	//
 	//fansOn(3000);
 
-*/
+	*/
 }

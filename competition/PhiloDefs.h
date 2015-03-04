@@ -40,8 +40,8 @@
 #define HEADING_TOLERANCE 2
 #define DISTANCE_TOLERANCE 0.5
 
-#define POWER_ADJUST_FACTOR 2
-#define SPEED_TARGET 20 //inches per second
+#define POWER_ADJUST_FACTOR 1.5
+#define SPEED_TARGET 40 //inches per second
 
 #define MOTOR_DEADBAND 15
 
