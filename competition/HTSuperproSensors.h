@@ -127,7 +127,7 @@ task htsuperpro_loop_yaw() {
 	static const int monitor_period = 1000;
 	ubyte inputdata[BYTES_TO_READ]={0,0};
 
-	long lasttime=nSysTime;
+	unsigned long lasttime=nSysTime;
 	int numOfDataBytes=0;
 	bool insync =false;
 	while(true) {
@@ -178,7 +178,7 @@ task htsuperpro_loop_yaw() {
 		}
 		//writeDebugStreamLine("parity: %d my parity byte %d", parity, myparity);
 
-		insync= (parity==myparity);
+		insync = (parity==myparity);
 		if(!insync) continue;
 
 		hogCPU();
@@ -186,7 +186,7 @@ task htsuperpro_loop_yaw() {
 		releaseCPU();
 		//writeDebugStreamLine("yaw:%d",superSensors.yaw);
 		numOfDataBytes+=3;
-		if(nSysTime-lasttime>monitor_period)
+		if(nSysTime-lasttime>monitor_period )
 		{
 			if(numOfDataBytes<(monitor_period*3/20))//at most 20 ms cycle time
 			{
@@ -198,6 +198,11 @@ task htsuperpro_loop_yaw() {
 			}
 			lasttime=nSysTime;
 			numOfDataBytes=0;
+		}else if(nSysTime<lasttime)
+		{//system time started over
+			lasttime=nSysTime;
+			numOfDataBytes=0;
+			super_health=true;
 		}
 		sleep(DELAY_READ);
 	}

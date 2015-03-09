@@ -1,30 +1,26 @@
-#pragma config(Hubs,  S1, HTMotor,  HTMotor,  HTMotor,  HTServo)
+#pragma config(Hubs,  S1, HTMotor,  HTMotor,  HTMotor,  none)
 #pragma config(Hubs,  S3, HTMotor,  HTServo,  HTServo,  HTServo)
+#pragma config(Sensor, S1,     ,               sensorI2CMuxController)
 #pragma config(Sensor, S2,     HTSPB,          sensorI2CCustomFastSkipStates9V)
+#pragma config(Sensor, S3,     ,               sensorI2CMuxController)
 #pragma config(Sensor, S4,     HTMUX,          sensorI2CCustomFastSkipStates9V)
-#pragma config(Motor,  mtr_S1_C1_1,     BackL,         tmotorTetrix, openLoop)
+#pragma config(Motor,  mtr_S1_C1_1,     BackL,         tmotorTetrix, openLoop, encoder)
 #pragma config(Motor,  mtr_S1_C1_2,     FrontL,        tmotorTetrix, openLoop, encoder)
-#pragma config(Motor,  mtr_S1_C2_1,     MidR,          tmotorTetrix, openLoop, encoder)
-#pragma config(Motor,  mtr_S1_C2_2,     MidL,          tmotorTetrix, openLoop, encoder)
-#pragma config(Motor,  mtr_S1_C3_1,     BackR,         tmotorTetrix, openLoop)
+#pragma config(Motor,  mtr_S1_C2_1,     motorF,        tmotorTetrix, openLoop)
+#pragma config(Motor,  mtr_S1_C2_2,     Flapper,       tmotorTetrix, openLoop)
+#pragma config(Motor,  mtr_S1_C3_1,     BackR,         tmotorTetrix, openLoop, encoder)
 #pragma config(Motor,  mtr_S1_C3_2,     FrontR,        tmotorTetrix, openLoop, encoder)
 #pragma config(Motor,  mtr_S3_C1_1,     FanR,          tmotorTetrix, openLoop)
 #pragma config(Motor,  mtr_S3_C1_2,     FanL,          tmotorTetrix, openLoop)
-#pragma config(Servo,  srvo_S1_C4_1,    flapper1,             tServoStandard)
-#pragma config(Servo,  srvo_S1_C4_2,    flapper2,             tServoStandard)
-#pragma config(Servo,  srvo_S1_C4_3,    servo3,               tServoNone)
-#pragma config(Servo,  srvo_S1_C4_4,    servo4,               tServoNone)
-#pragma config(Servo,  srvo_S1_C4_5,    servo5,               tServoNone)
-#pragma config(Servo,  srvo_S1_C4_6,    servo6,               tServoNone)
 #pragma config(Servo,  srvo_S3_C2_1,    trailerR,             tServoStandard)
 #pragma config(Servo,  srvo_S3_C2_2,    trailerL,             tServoStandard)
 #pragma config(Servo,  srvo_S3_C2_3,    lift,                 tServoStandard)
 #pragma config(Servo,  srvo_S3_C2_4,    rakes,                tServoStandard)
 #pragma config(Servo,  srvo_S3_C2_5,    flap,                 tServoStandard)
-#pragma config(Servo,  srvo_S3_C2_6,    faucet,               tServoStandard)
-#pragma config(Servo,  srvo_S3_C3_1,    flapper3,             tServoStandard)
+#pragma config(Servo,  srvo_S3_C2_6,    servo12,              tServoNone)
+#pragma config(Servo,  srvo_S3_C3_1,    servo13,              tServoNone)
 #pragma config(Servo,  srvo_S3_C3_2,    spout,                tServoStandard)
-#pragma config(Servo,  srvo_S3_C3_3,    hingeFaucet,          tServoStandard)
+#pragma config(Servo,  srvo_S3_C3_3,    faucet,               tServoStandard)
 #pragma config(Servo,  srvo_S3_C3_4,    servo16,              tServoNone)
 #pragma config(Servo,  srvo_S3_C3_5,    servo17,              tServoNone)
 #pragma config(Servo,  srvo_S3_C3_6,    servo18,              tServoNone)
@@ -43,53 +39,24 @@
 #include "JoystickDriver.c"
 WestCoaster g_wcDrive;
 
-void swagger(bool right, unsigned int time, int domPower){
-
-	if(right){
-		motor[FrontR] = domPower;
-		motor[BackR] = domPower;
-		motor[FrontL] = -(domPower-20);
-		motor[BackL] = -(domPower-20);
-	}
-	else{
-		motor[FrontL] = -domPower;
-		motor[BackL] = -domPower;
-		motor[FrontR] = (domPower-25);
-		motor[BackR] = (domPower-25);
-	}
-	unsigned long timeStart =nSysTime;
-	while(nSysTime < timeStart + time){};
-
-	WestCoaster_allMotorsPowerStraight(g_wcDrive, 0);
-
-}
 
 void wiggleMove()
 {
-	/*WestCoaster_controlledEncoderObservedTurn(g_wcDrive,-15,35);
-	WestCoaster_controlledStraightMove(g_wcDrive, -7,20);
-	WestCoaster_controlledEncoderObservedTurn(g_wcDrive,30,35);
-	WestCoaster_controlledStraightMove(g_wcDrive, -7,20);
-	WestCoaster_controlledEncoderObservedTurn(g_wcDrive,-15,35);
-	WestCoaster_controlledSturtraightMove(g_wcDrive, -7,20);*/
+
 	WestCoaster_turnWithMPU(g_wcDrive,-5,30);
 	WestCoaster_controlledStraightMove(g_wcDrive, -7,25);
-	WestCoaster_turnWithMPU(g_wcDrive,25,30);
+	WestCoaster_turnWithMPU(g_wcDrive,20,30);
 	WestCoaster_controlledStraightMove(g_wcDrive, -7,25);
-	WestCoaster_turnWithMPU(g_wcDrive,-5,30);
-	WestCoaster_controlledStraightMove(g_wcDrive, -7,20);
+	WestCoaster_turnWithMPU(g_wcDrive,-7,30);
+	WestCoaster_controlledStraightMove(g_wcDrive, -8,20);
 }
 
 void grabGoal()
 {
 
-	//you know what, we could re-use the center goal method
-	// that is so cool!
-
-	//driveToGoal(g_wcDrive, CENTER_GOAL_SONAR, 25/2.54, 30);
+	//alignToGoal(g_wcDrive, CENTER_GOAL_SONAR, 25, 30);
 	wiggleMove();
-	servo[trailerR] = GRABBER_DOWN;
-	servo[trailerL] = 255-GRABBER_DOWN;
+	goalGrabberDown();
 	sleep(200);
 	writeDebugStreamLine("Grabber Position:%d",
 	ServoValue[trailerR]);
@@ -99,17 +66,14 @@ void initializeRobot()
 {
 	servo[lift] = LIFT_BOTTOM;
 
-	WestCoaster_init(g_wcDrive, FrontL, FrontR, MidL, MidR, BackL, BackR, FrontL, FrontR);
+	WestCoaster_init(g_wcDrive, FrontL, FrontR, BackL, BackR, FrontL, FrontR);
 	WestCoaster_initMPUPID(S2);
-	servo[trailerR] = GRABBER_UP;
-	servo[trailerL] = 255-GRABBER_UP;
-	servo[flapper1] =FLAPPER_STOP;
-	servo[flapper2] = FLAPPER_STOP;
-	servo[flapper3] = FLAPPER_STOP;
-	servo[spout]= SPOUT_IN;
+	goalGrabberUp();
+	motor [Flapper] = FLAPPER_STOP;
+	pinClosed();
 	//servo[foldRoller] = 70;//14
 	servo[roller] = 127;
-	servo[hingeFaucet] = 0;
+	servo[faucet] = 0;
 	//move servos at maximium speed
 	servoChangeRate[trailerL]=0;
 	servoChangeRate[trailerR]=0;
@@ -125,12 +89,12 @@ void initializeRobot()
 task main(){
 	initializeRobot();
 	//  waitForStart();
-	/* sleep(1000);
+	sleep(1000);
 	servo[foldRoller] = ROLLER_FOLDER_DOWN;
 	sleep(1000);
 	servo[foldRoller] = ROLLER_FOLDER_UP;
 	sleep(1000);
-	*/
+
 
 	//===============
 	// TESTS
@@ -149,12 +113,9 @@ task main(){
 	sleep(2000);
 	WestCoaster_turnWithMPU(g_wcDrive, 20,70);
 	*/
-	/*WestCoaster_moveStraightWithMPU(g_wcDrive, -6,20);
-	WestCoaster_moveStraightWithMPU(g_wcDrive, -40,5);
-	WestCoaster_moveStraightWithMPU(g_wcDrive, -25,30);
-	*/
+
 	//sleep(2000);
-	//WestCoaster_moveStraightWithMPU(g_wcDrive, 48,50);
+//WestCoaster_moveStraightWithMPU(g_wcDrive, -64,40);
   //sleep(2000);
 /*	WestCoaster_moveStraightWithMPU(g_wcDrive, -20,50);
 	sleep(2000);
@@ -172,38 +133,46 @@ task main(){
 	//	WestCoaster_controlledEncoderObservedTurn(g_wcDrive,60,35);
 	//=======================================================================
 
-	//back off the ramp, 56.9 inches from edge of field to front of bot
-	//back of bot is 56.9+18=74.9 inches from edge of field
-	// center of 60cm goal is 4.5*24=108 inches from edge
-	//so need to move 108-74.9 to the center
-	// then subtract the goal and robot faucet extents
-	// and half-inch safety margin*/
-	/*OFF_RAMP_DIST
-	+108 - 74.9
-	-FAUCET_EXTEND_BACK_CENTER
-	-0.5;*/
-
-	float distance_to_60cm =-72;
 	//go down the ramp
-	//sleep(1000);
-	 // WestCoaster_controlledStraightMove(g_wcDrive, distance_to_60cm, 15);
+//		WestCoaster_moveStraightWithMPU(g_wcDrive, -6,15);
+//	WestCoaster_moveStraightWithMPU(g_wcDrive, -57, 40); //from ramp
+	//WestCoaster_moveStraightWithMPU(g_wcDrive, -25,30);
+
 	sleep(1000);
 	grabGoal();
 	sleep(1000);
-	/*sleep(1000);
 	//drop the little one
 	readyFaucet();
+	sleep(500);
+	servo[faucet] = HINGE_FAUCET_FLIP;
+	sleep(2000);
+	pinOpen();
+	sleep(500);
+	WestCoaster_moveStraightWithMPU(g_wcDrive,4,40);
+	sleep(500);
+	WestCoaster_turnWithMPU(g_wcDrive,-105,40);
 	sleep(1000);
-	servo[hingeFaucet] = HINGE_FAUCET_FLIP;
-	sleep(3000);
-	WestCoaster_pidMPUTurn(g_wcDrive,30);
-	sleep(1000);
+	WestCoaster_moveStraightWithMPU(g_wcDrive,-25,40);
+	sleep(500);
+	goalGrabberUp();
+	sleep(500);
+	WestCoaster_moveStraightWithMPU(g_wcDrive,25,40);
+	sleep(500);
+	WestCoaster_turnWithMPU(g_wcDrive,105,40);
+	sleep(500);
+	liftGoUp(LIFT_FOR_90CM, 4000);
+	sleep(500);
+	WestCoaster_moveStraightWithMPU(g_wcDrive,-10,40);
+	sleep(500);
+	grabGoal();
+	sleep(500);
+	fansOn(5000);
 	//deadReck
 	sleep(1000);
-	servo[spout] = SPOUT_OUT;
+	/*pinOpen();*/
 	//go grab another on
 	//
 	//fansOn(3000);
 
-	*/
+
 }

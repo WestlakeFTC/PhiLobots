@@ -1,0 +1,332 @@
+Left/Right RawEncoder 0/0, filtered: 0/0
+encoders(L/R): 0/0, x_pos: 0.000000, y_pos:0.000000, target: -45.000000, enc_targ: 1542
+current_heading: -66.689995, delta: -2.352704, turned(m/e): -134.799973/-134.799973, power L/R:-5/-5
+reducing left power
+799973/-134.799973, power L/R:-4/-5
+reducing left powereading: -52.430000, delta: -1.200612, turned(m/e): -120.539993/-120.539993, power L/R:-4/-5
+reducing left power
+Left/Right RawEncoder -33/41, filtered: -33/41
+encoders(L/R): -33/41, x_pos: 0.938285, y_pos:0.117559, target: -45.000000, enc_targ: 1542
+current_heading: -24.039999, delta: 0.495499, turned(m/e): -92.149994/-92.149994, power L/R:-4/-5
+re20, turned(m/e): -115.269997/-115.269997, power L/R:-4/-5
+reducing left power
+Left/Right RawEncoder -50/62, filtered: -50/62
+encoders(L/R): -50/62, x_pos: 1.449249, y_pos:0.178910, target: -45.000000, enc_targ: 1542
+current_heading: -2.980000, delta: 0.771086, turned(m/e): -71.090004/-71.090004, power L/R:-4/-5
+reducing left power
+Left/Right RawEnc1/-59.790001, power L/R:-8/-10
+reducing left power
+Left/Right RawEncoder -61/101, filtered: -61/101
+encoders(L/R): -61/101, x_pos: 2.003113, y_pos:-0.071563, target: -45.000000, enc_targ: 1542
+current_heading: 41.180000, delta: 0.573515, turned(m/e): -26.929996/-26.929996, power L/R:-8/-10
+reducing left power
+Left/Right RawEncoder -69/101, filteredr L/R:-8/-10
+reducing left power
+Left/Right RawEncoder -84/106, filtered: -84/106
+encoders(L/R): -84/106, x_pos: 2.292170, y_pos:-0.128643, target: -45.000000, enc_targ: 1542
+current_heading: -33.669998, delta: -1.746551, turned(m/e): -101.779991/-101.779991, power L/R:-8/-10
+reducing left power
+Left/Right RawEncoder -93/112, filtered: -93/112
+enco-45.000000, enc_targ: 1542
+current_heading: 60.730000, delta: 1.647591, turned(m/e): -7.379999/-7.379999, power L/R:-8/-10
+reducing left power
+Left/Right RawEncoder -97/113, filtered: -97/113
+encoders(L/R): -97/113, x_pos: 2.321954, y_pos:-0.418530, target: -45.000000, enc_targ: 1542
+current_heading: 66.790001, delta: 0.105767, turned(m/e): -1.3199, filtered: -97/116
+encoders(L/R): -97/116, x_pos: 2.365674, y_pos:-0.416721, target: -45.000000, enc_targ: 1542
+current_heading: -24.260000, delta: -1.589122, turned(m/e): -92.369995/-92.369995, power L/R:-12/-15
+reducing left power
+Left/Right RawEncoder -102/121, filtered: -102/121
+encoders(L/R): -102/121, x_pos: 2.476702, y_pos:-0.322128, target
+reducing left power
+Left/Right RawEncoder -110/125, filtered: -110/125
+encoders(L/R): -110/125, x_pos: 2.506314, y_pos:-0.494637, target: -45.000000, enc_targ: 1542
+current_heading: 58.369999, delta: 2.106438, turned(m/e): -9.740000/-9.740000, power L/R:-12/-15
+reducing left power
+Left/Right RawEncoder -116/129, filtered: -116/129
+encoders(L/R): -r L/R:-12/-15
+reducing left power
+Left/Right RawEncoder -123/137, filtered: -123/137
+encoders(L/R): -123/137, x_pos: 2.728519, y_pos:-0.559599, target: -45.000000, enc_targ: 1542
+current_heading: -43.259998, delta: -1.816888, turned(m/e): -111.370003/-111.370003, power L/R:-12/-15
+reducing left power
+Left/Right RawEncoder -131/141, filtered: -131/1power L/R:-16/-20
+reducing left power
+Left/Right RawEncoder -147/155, filtered: -147/155
+encoders(L/R): -147/155, x_pos: 3.013508, y_pos:-0.964841, target: -45.000000, enc_targ: 1542
+current_heading: 53.430000, delta: 1.417906, turned(m/e): -14.679996/-14.679996, power L/R:-16/-20
+reducing left power
+Left/Right RawEncoder -147/161, filtered: -147/1
+reducing left power
+Left/Right RawEncoder -160/170, filtered: -160/170
+encoders(L/R): -160/170, x_pos: 3.218570, y_pos:-1.191497, target: -45.000000, enc_targ: 1542
+current_heading: 41.790001, delta: 1.882163, turned(m/e): -26.320004/-26.320004, power L/R:-16/-20
+reducing left power
+Left/Right RawEncoder -171/182, filtered: -171/182
+encoders(L/R): -171/182, x_pos: 3.467132, y_pos:-1.416800, target: -45.000000, enc_targ: 1542
+current_heading: 20.299999, delta: -0.375071, turned(m/e): -47.810005/-47.810005, power L/R:-16/-20
+reducing left power
+Left/Right RawEncoder -184/197, filtered: -184/197
+encoders(L/R): -184/197, x_pos: 3.796490, y_pos:-1.175305, target: -45.000000, enc_targ: 1542
+currereducing left power
+Left/Right RawEncoder -203/221, filtered: -203/221
+encoders(L/R): -203/221 power
+Left/Right RawEncoder -380/406, filtered: -380/4Right RawEncoder -438/465, filtered: -438/465
+encoders(L/R): -438/465, x_pos: 9.191778, y_pos:-3.869425, target: -45.000000, enc_targ: 1542
+current_heading: 6.380000, delta: -0.594285, turned(m/e): -61.730026/-61.730026, power L/R:-29/-35
+reducing left power
+Left/Right RawEncoder -479/489, filtered: -479/489
+encoders(L/R): -479/489, x_pos: 10.13939: -479/521
+encoders(L/R): -479/521, x_pos: 10.578051, y_pos:-3.739884, target: -45.000000, enc_targ: 1542
+current_heading: -41.869999, delta: -0.380307, turned(m/e): -109.980019/-109.980019, power L/R:-29/-35
+reducing left power
+Left/Right RawEncoder -511/540, filtered: -511/540
+encoders(L/R): -511/540, x_pos: 11.311882, y_pos:-3.618004, target: -40000, delta: 0.184132, turned(m/e): -99.430016/-99.430016, power L/R:-29/-35
+reducing left power
+Left/Right RawEncoder -543/573, filtered: -543/573
+encoders(L/R): -543/573, x_pos: 12.256362, y_pos:-3.700635, target: -45.000000, enc_targ: 1542
+current_heading: -16.889999, delta: 0.251851, turned(m/e): -85.000023/-85.000023, power L/R:-29/-35
+reducin5.480000, delta: -0.673523, turned(m/e): -123.590027/-123.590027, power L/R:-29/-35
+reducing left power
+Left/Right RawEncoder -610/651, filtered: -610/651
+encoders(L/R): -610/651, x_pos: 14.210009, y_pos:-3.131844, target: -45.000000, enc_targ: 1542
+current_heading: -23.689999, delta: 0.554840, turned(m/e): -91.800034/-91.800034, power L/R:-33/-40
+ -752/778, filtered: -752/778
+encoders(L/R): -752/778, x_pos: 17.027178, y_pos:-3.484293, target: -45.000000, enc_targ: 1542
+current_heading: 38.980000, delta: 0.981050, turned(m/e): -29.130028/-29.130028, power L/R:-33/-40
+reducing left power
+Left/Right RawEncoder -752/835, filtered: -752/835
+encoders(L/R): -752/835, x_pos: 17.137711, y_pos:-4.30856, target: -45.000000, enc_targ: 1542
+current_heading: -58.160000, delta: -2.070484, turned(m/e): -126.270035/-126.270035, power L/R:-33/-40
+reducing left power
+Left/Right RawEncoder -864/942, filtered: -864/942
+encoders(L/R): -864/942, x_pos: 19.794315, y_pos:-4.073244, target: -45.000000, enc_targ: 1542
+current_heading: 8.760000, delta: 1.167974ower L/R:-37/-45
+reducing left power
+Left/Right RawEncoder -1043/1130, filtered: -1043/1130
+encoders(L/R): -1043/1130, x_pos: 23.987156, y_pos:-2.794530, target: -45.000000, enc_targ: 1542
+current_heading: 7.200000, delta: 1.280897, turned(m/e): -60.910049/-60.910049, power L/R:-37/-45
+reducing left power
+Left/Right RawEncoder -1134/1221, filtered:awEncoder -1210/1299, filtered: -1210/1299
+***mpu lost, using previous heading
+encoders(L/R): -1210/1299, x_pos: 27.419167, y_pos:-6.006201, target: -45.000000, enc_targ: 1542
+current_heading: 39.129997, delta: 0.576133, turned(m/e): -28.980051/-28.980051, power L/R:-37/-45
+reducing left power
+Left/Right RawEncoder -1306/1390, filtered: -1306/1390
+t power
+Left/Right RawEncoder -1392/1437, filtered: -1392/1437
+***mpu lost, using previous heading
+encoders(L/R): -1392/1437, x_pos: 31.901381, y_pos:-5.145819, target: -45.000000, enc_targ: 1542
+current_heading: -18.389999, delta: 0.428129, turned(m/e): -86.500061/-86.500061, power L/R:-37/-45
+reducing left power
+Left/Right RawEncoder -1392/1546,  power
+Left/Right RawEncoder -1510/1607, filtered: -1510/1607
+***mpu lost, using previous heading
+encoders(L/R): -1510/1607, x_pos: 34.295624, y_pos:-5.428382, target: -45.000000, enc_targ: 1542
+current_heading: -51.799999, delta: -2.010270, turned(m/e): -119.910042/-119.910042, power L/R:-37/-45
+reducing left power
+Left/Right RawEncoder -1598/1701): -1598/1701, x_pos: 36.793171, y_pos:-4.528715, target: -45.000000, enc_targ: 1542
+current_heading: -41.700001, delta: 0.176278, turned(m/e): -109.810051/-109.810051, power L/R:-37/-45
+reducing left power
+Left/Right RawEncoder -1690/1751, filtered: -1690/1751
+***mpu lost, using previous heading
+encoders(L/R): -1690/1751, x_pos: 38.089306, y_pos:-awEncoder -1780/1846, filtered: -1780/1846
+***mpu lost, using previous heading
+encoders(L/R): **mpu lost, using previous heading
+encoders(L/R): -2653*mpu lost, using previous heading
+encoders(L/R): -2829/2901, x_pos: 57.967464, y_pos:-22.240068, target: -45.000000, enc_targ: 1542
+current_heading: -51.840000, delta: -1.627345, turned(m/e): -119.950058/-119.950058, power L/R:-37/-45
+reducing left power
+Left/Right RawEncoder -2829/2982, filtered: -2829/2982
+***mpu lost, using previous heading
+encou lost, using previous heading
+encoders(L/R): -2914/3028, x_pos: 60.055672, y_pos:-23.926716, target: -45.000000, enc_targ: 1542
+current_heading: 39.779999, delta: 1.072330, turned(m/e): -28.330059/-28.330059, power L/R:-37/-45
+reducing left power
+Left/Right RawEncoder -2993/3121, filtered: -2993/3121
+***mpu lost, using previous heading
+encoders(L/mpu lost, using previous heading
+encoders(L/R): -3089/3166, x_pos: 63.747574, y_pos:-21.260864, target: -45.000000, enc_targ: 1542
+current_heading: -62.239998, delta: -0.143466, turned(m/e): -130.350067/-130.350067, power L/R:-37/-45
+reducing left power
+Left/Right RawEncoder -3166/3239, filtered: -3166/3239
+***mpu lost, using previous heading
+encod**mpu lost, using previous heading
+encoders(L/R): -3244/3317, x_pos: 67.399666, y_pos:-18.724241, target: -45.000000, enc_targ: 1542
+current_heading: -51.809998, delta: 0.173137, turned(m/e): -119.920059/-119.920059, power L/R:-37/-45
+reducing left power
+Left/Right RawEncoder -3244/3393, filtered: -3244/3393
+***mpu lost, using previous heading
+encoders(L/R): -3244/3393, x_pos: 68.216309, y_pos:-17.974613, target: -45.000000, enc_targ: 1542
+current_heading: -64.439995, delta: -0.220435, turned(m/e): -132.550064/-132.550064, power L/R:-37/-45
+reducing left power
+Left/Right RawEncoder -3315/3430, filtered: -3315/3430
+***mpu lost, using previous heading
+encoders(L/R): -3315/3430, x_pos: 69.605653/3497, x_pos: 71.571747, y_pos:-18.608183, target: -45.000000, enc_targ: 1542
+current_heading: -25.059999, delta: -0.546113, turned(m/e): -93.170059/-93.170059, power L/R:-37/-45
+reducing left power
+Left/Right RawEncoder -3473/3543, filtered: -3473/3543
+***mpu lost, using previous heading
+encoders(L/R): -3473/3543, x_pos: 73.521332, y_pos:-18.97441, filtered: -3535/3621
+***mpu lost, using previous heading
+encoders(L/R): -3535/3621, x_pos: 75.241074, y_pos:-17.873354, target: -45.000000, enc_targ: 1542
+current_heading: -54.520000, delta: -0.755204, turned(m/e): -122.630058/-122.630058, power L/R:-37/-45
+reducing left power
+Left/Right RawEncoder -3535/3704, filtered: -3535/3704
+***mpu lost, using previous heading
+encoders(L/R): -3535/3704, x_pos: 75.356689, y_pos:-19.078455, target: -45.000000, enc_targ: 1542
+current_heading: 62.629997, delta: 2.044653, turned(m/e): -5.480065/-5.480065, power L/R:-37/-45
+reducing left power
+Left/Right RawEncoder -3607/3741, filtered: -3607/3741
+***mpu lost, using previous heading
+encoders(L/R): -3607/3/Right RawEncoder -3670/3802, filtered: -3670/3802
+***mpu lost, using previous heading
+encoders(L/R): -3670/3802, x_pos: 78.179405, y_pos:-17.187761, target: -45.000000, enc_targ: 1542
+current_heading: -57.079998, delta: -0.051313, turned(m/e): -125.190063/-125.190063, power L/R:-37/-45
+reducing left power
+Left/Right RawEncoder -3726/3847, filteredwer
+Left/Right RawEncoder -3747/3859, filtered: -3747/3859
+***mpu lost, using previous heading
+encoders(L/R): -3747/3859, x_pos: 79.341904, y_pos:-16.674458, target: -45.000000, enc_targ: 1542
+current_heading: 59.629997, delta: 2.159147, turned(m/e): -8.480076/-8.480076, power L/R:-37/-45
+reducing left power
+Left/Right RawEncoder -3747/3881, filter45.000000, enc_targ: 1542
+current_heading: 29.170000, delta: -0.531627, turned(m/e): -38.940075/-38.940075, power L/R:-37/-45
+reducing left power
+Left/Right RawEncoder -3782/3909, filtered: -3782/3909
+***mpu lost, using previous heading
+encoders(L/R): -3782/3909, x_pos: 80.333885, y_pos:-16.455177, target: -45.000000, enc_targ: 1542
+current_heading-37/-45
+reducing left power
+Left/Right RawEncoder -3816/3926, filtered: -3816/3926
+***mpu lost64/4114, filtered: -4064/4114
+***mpu lost, using previog previous heading
+encoders(L/R): -4093/4160, x_pos: 84.488342, y_pos:-20.588007, target: -45.000000, enc_targ: 1542
+current_heading: 68.470001, delta: 0.000000, turned(m/e): 0.359951/0.359951, power L/R:-45/-45
+Left/Right RawEncoder -4134/4176, filtered: -4134/4176
+***mpu lost, using previous heading
+encoders(L/R): -4134/4176, x_pos: 84.674522, y_R): -4134/4194, x_pos: 84.935257, y_pos:-21.367525, target: -45.000000, enc_targ: 1542
+current_heading: -28.619999, delta: -1.462411, turned(m/e): -96.730049/-96.730049, power L/R:-37/-45
+reducing left power
+Left/Right RawEncoder -4169/4198, filtered: -4169/4198
+***mpu lost, using previous heading
+encoders(L/R): -4169/4198, x_pos: 85.023262, y_pos: heading
+encoders(L/R): -4190/4199, x_pos: 85.304947, y_pos:-21.775822, target: -45.000000, enc_targ: 1542
+current_heading: -50.509998, delta: -1.914975, turned(m/e): -118.620041/-118.620041, power L/R:-37/-45
+reducing left power
+Left/Right RawEncoder -4206/4199, filtered: -4206/4199
+***mpu lost, using previous heading
+encoders(L/R): -4206/4199, x_ -4221/4199, x_pos: 85.722046, y_pos:-21.772062, target: -45.000000, enc_targ: 1542
+current_heading: -45.899998, delta: -0.793078, turned(m/e): -114.010040/-114.010040, power L/R:-37/-45
+reducing left power
+*****Bogus encoder right jump, assume average speed
+Left/Right RawEncoder -4225/9348, filtered: -4225/4214
+***mpu lost, using previous heading
+/4199
+***mpu lost, using previous heading
+encoders(L/R): -4225/4199, x_pos: 85.698593, y_pos:-21.840324, target: -45.000000, enc_targ: 1542
+current_heading: 34.579998, delta: -0.195128, turned(m/e): -33.530041/-33.530041, power L/R:-37/-45
+reducing left power
+Left/Right RawEncoder -4225/4199, filtered: -4225/4199
+***mpu lost, using previous heading199
+***mpu lost, using previous heading
+encoders(L/R): -4225/4199, x_pos: 85.698593, y_pos:-21.840324, target: -45.000000, enc_targ: 1542
+current_heading: -46.129997, delta: -1.233250, turned(m/e): -114.240036/-114.240036, power L/R:-37/-45
+reducing left power
+got 144 bytes in 1000 ms
+Left/Right RawEncoder -4226/4199, filtered: -4226/4199
+***mpu lo7/4199, filtered: -4227/4199
+***mpu lost, using previous heading
+encoders(L/R): -4227/4199, x_pos: 85.711342, y_pos:-21.844616, target: -45.000000, enc_targ: 1542
+current_heading: -65.830002, delta: -2.183407, turned(m/e): -133.940033/-133.940033, power L/R:-37/-45
+reducing left power
+Left/Right RawEncoder -4227/4199, filtered: -4227/4199
+***mpu lot/Right RawEncoder -4227/4199, filtered: -4227/4199
+***mpu lost, using previous heading
+encoders(L/R): -4227/4199, x_pos: 85.711342, y_pos:-21.844616, target: -45.000000, enc_targ: 1542
+current_heading: 45.709999, delta: 1.717055, turned(m/e): -22.400036/-22.400036, power L/R:-37/-45
+reducing left power
+Left/Right RawEncoder -4227/4199, filtered: -4227/4199
+***mpu lost, using previous heading
+encoders(L/R): -4227/4199, x_pos: 85.711342, y_pos:-21.844616, target: -45.000000, enc_targ: 1542
+current_heading: 48.610001, delta: 0.050615, turned(m/e): -19.500034/-19.500034, power L/R:-37/-45
+reducing left power
+Left/Right RawEncoder -4227/4199, filtered: -4227/4199
+***mpu lost, using previous head -4227/4199, filtered: -4227/4199
+***mpu lost, using previous heading
+encoders(L/R): -4227/4199, x_pos: 85.711342, y_pos:-21.844616, target: -45.000000, enc_targ: 1542
+current_heading: 13.070000, delta: 1.002517, turned(m/e): -55.040031/-55.040031, power L/R:-37/-45
+reducing left power
+Left/Right RawEncoder -4227/4199, filtered: -4227/4199
+***mpu lft/Right RawEncoder -4227/4199, filtered: -4227/4199
+***mpu lost, using previous heading
+encoders(L/R): -4227/4199, x_pos: 85.711342, y_pos:-21.844616, target: -45.000000, enc_targ: 1542
+current_heading: 12.059999, delta: -0.408756, turned(m/e): -56.050034/-56.050034, power L/R:-37/-45
+reducing left power
+Left/Right RawEncoder -4227/4199, filtered:98, delta: -0.985762, turned(m/e): -112.530029/-112.530029, power L/R:-37/-45
+reducing left po342, y_pos:-21.844616, target: -45.000000, enc_targ: 1542
+current_heading: -57.549999, delta: -2.090032, turned(m/e): -125.660034/-125.660034, power L/R:-37/-45
+reducing left power
+Left/Right RawEncoder -4227/4199, filtered: -4227/4199
+***mpu lost, using previous heading
+encoders(L/R): -4227/4199, x_pos: 85.711342, y_pos:-21.844616, target: -45.000000, enc_targ: 1542
+current_heading: 22.199999, delta: 1.391900, turned(m/e): -45.910023/-45.910023, power L/R:-37/-45
+reducing left power
+Left/Right RawEncoder -4227/4199, filtered: -4227/4199
+***mpu lost, using previous heading
+encoders(L/R): -4227/4199, x_pos: 85.711342, y_pos:-21.844616, target: -45.000000, enc_targ: 1542
+current_heading: -32.130001, delta: -0.948237, turned(m/e): -100.240021/-100.240021, power L/R:-37/-45
+reducing left power
+Left/Right RawEncoder -4227/4199, filtered: -4227/4199
+***mpu lost, using previous heading
+encoders(L/R): -4227/4199, x_pos: 85.711342, y_pos:-21.844616, target: -45.000000, enc_targ: 1542
+current_heading: 53.309998, delta: 1.491209, turned(m/e): -14.800023/-14.800023, power L/R:-37/-45
+reducing left power
+Left/Right RawEncoder -4227/4199, filtered: -4227/4199
+***mpu lost, using previous heading
+encoders(L/R): -4227/4199, x_pos: 85.711342, y_pos:-21.844616, target: -45.000000, enc_targ: 1542
+current_heading: 9.910000, delta: -0.757473, turned(m/e): -58.200024/-58.200024, power L/R:-37/-45
+reducing left power
+Left/Right RawEncoder -4227/4199, filtered: -4227/4199
+***mpu lost, using previous heading
+encoders(L/R): -4227/4199, x_pos: 85.711342, y_pos:-21.844616, target: -45.000000, enc_targ: 1542
+current_heading: -50.969997, delta: -1.062557, turned(m/e): -119.080025/-119.080025, power L/R:-37/-45
+reducing left power
+Left/Right RawEncoder -4227/4199, filtered: -4227/4199
+***mpu lost, using previous heading
+encoders(L/R): -4227/4199, x_pos: 85.711342, y_pos:-21.844616, target: -45.000000, enc_targ: 1542
+current_heading: -25.139999, delta: 0.450819, turned(m/e): -93.250031/-93.250031, power L/R:-37/-45
+reducing left power
+Left/Right RawEncoder -4227/4199, filtered: -4227/4199
+***mpu lost, using previous heading
+encoders(L/R): -4227/4199, x_pos: 85.711342, y_pos:-21.844616, target: -45.000000, enc_targ: 1542
+current_heading: 57.989998, delta: 1.450892, turned(m/e): -10.120038/-10.120038, power L/R:-37/-45
+reducing left power
+Left/Right RawEncoder -4227/4199, filtered: -4227/4199
+***mpu lost, using previous heading
+encoders(L/R): -4227/4199, x_pos: 85.711342, y_pos:-21.844616, target: -45.000000, enc_targ: 1542
+current_heading: 37.079998, delta: -0.364948, turned(m/e): -31.030041/-31.030041, power L/R:-37/-45
+reducing left power
+Left/Right RawEncoder -4227/4199, filtered: -4227/4199
+***mpu lost, using previous heading
+encoders(L/R): -4227/4199, x_pos: 85.711342, y_pos:-21.844616, target: -45.000000, enc_targ: 1542
+current_heading: -60.449997, delta: -1.702220, turned(m/e): -128.560028/-128.560028, power L/R:-37/-45
+reducing left power
+Left/Right RawEncoder -4227/4199, filtered: -4227/4199
+***mpu lost, using previous heading
+encoders(L/R): -4227/4199, x_pos: 85.711342, y_pos:-21.844616, target: -45.000000, enc_targ: 1542
+current_heading: 48.860001, delta: 1.907820, turned(m/e): -19.250027/-19.250027, power L/R:-37/-45
+reducing left power
+Left/Right RawEncoder -4227/4199, filtered: -4227/4199
+***mpu lost, using previous heading
+encoders(L/R): -4227/4199, x_pos: 85.711342, y_pos:-21.844616, target: -45.000000, enc_targ: 1542
+current_heading: -21.219999, delta: -1.223127, turned(m/e): -89.330025/-89.330025, power L/R:-37/-45
+reducing left power
+Left/Right RawEncoder -4227/4199, filtered: -4227/4199
+***mpu lost, using previous heading
+encoders(L/R): -4227/4199, x_pos: 85.711342, y_pos:-21.844616, target: -45.000000, enc_targ: 1542
+current_heading: 47.329998, delta: 1.196423, turned(m/e): -20.780031/-20.780031, power L/R:-37/-45
+reducing left power
+Drive stalled: power L/R: -37/-45
+encoderL: -4227, encoderR: 4199, time: 2520150
+got 144 bytes in 1000 ms
