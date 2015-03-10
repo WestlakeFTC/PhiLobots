@@ -259,8 +259,9 @@ void grabGoal()
 	//you know what, we could re-use the center goal method
 	// that is so cool!
    //moveForward(150,40);
-  WestCoaster_controlledStraightMove(g_wcDrive,-50,40);
-	//alignToGoal(g_wcDrive, CENTER_GOAL_SONAR, 15, 30);
+//WestCoaster_moveStraightWithMPU(g_wcDrive, -150, 40);
+  //WestCoaster_controlledStraightMove(g_wcDrive,-50,40);
+	alignToGoal(g_wcDrive, CENTER_GOAL_SONAR, 5, 15);
 	//wiggleMove();
 	sleep(5000);
 
@@ -268,7 +269,7 @@ void grabGoal()
 
 void initializeRobot()
 {
-	WestCoaster_init(g_wcDrive,FrontL, FrontR, MidL, MidR, BackL, BackR, BackL, BackR);
+	WestCoaster_init(g_wcDrive,FrontL, FrontR,  BackL, BackR, BackL, BackR);
 	WestCoaster_initMPUPID(S2);
 	/*startTask(gyro_loop);
 	while(gyro_loop_state!=GYRO_READING)
@@ -302,15 +303,23 @@ task main(){
 	/**
 	*            ***Turn and move with MPU with speed ramp up***
 	**
-	WestCoaster_turnWithMPU(g_wcDrive, -90,30);
+	WestCoaster_turnWithMPU(g_wcDrive, -15,40);
 	sleep(2000);
-	WestCoaster_turnWithMPU(g_wcDrive, 90,30);
+	WestCoaster_turnWithMPU(g_wcDrive, -15,40);
 	sleep(2000);
-	WestCoaster_turnWithMPU(g_wcDrive, -20,30);
+	WestCoaster_turnWithMPU(g_wcDrive, 15,40);
 	sleep(2000);
-	WestCoaster_turnWithMPU(g_wcDrive, 20,30);
+	WestCoaster_turnWithMPU(g_wcDrive, 15,40);
+	sleep(2000);
+		WestCoaster_turnWithMPU(g_wcDrive, 15,40);
+	sleep(2000);
+	WestCoaster_turnWithMPU(g_wcDrive, 15,40);
+	sleep(2000);
+	WestCoaster_turnWithMPU(g_wcDrive, -15,40);
+	sleep(2000);
+	WestCoaster_turnWithMPU(g_wcDrive, -15,40);
 	//*/
-//	WestCoaster_moveStraightWithMPU(g_wcDrive, -20*6*6/5*6/5.5,40);
+//	WestCoaster_moveStraightWithMPU(g_wcDrive, 20*6*6/5*6/5.5,20);
 //		WestCoaster_moveWithMPU(g_wcDrive, -5*6*6/5*6/5.5,70, 60, 6);
 	//sleep(2000);
 	//WestCoaster_moveStraightWithMPU(g_wcDrive, -160,50);

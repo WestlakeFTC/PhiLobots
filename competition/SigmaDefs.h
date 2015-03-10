@@ -43,7 +43,7 @@
 #define POWER_ADJUST_FACTOR 4
 #define SPEED_TARGET 20 //inches per second
 
-#define MOTOR_DEADBAND 15
+#define MOTOR_DEADBAND 20
 #define MIN_STALL_POWER 40
 
 #define ROLLER_FOLDER_DOWN 245

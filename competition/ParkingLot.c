@@ -78,14 +78,19 @@ void kickFromParking(int goalPosition)
     //sleep(100);
 		WestCoaster_turnWithMPU(g_wcDrive,-100, 100); //MPU turn
 		//sleep(100);
-		WestCoaster_moveStraightWithMPU(g_wcDrive,-24, 70);
+		WestCoaster_forwardFullSpeed(g_wcDrive,-24);
+	  WestCoaster_forwardFullSpeed(g_wcDrive,10);
+	  WestCoaster_forwardFullSpeed(g_wcDrive,-15);
+
   }
 	else if(goalPosition == 2){
 		WestCoaster_moveStraightWithMPU(g_wcDrive,-29,70);
     //sleep(100);
 		WestCoaster_turnWithMPU(g_wcDrive,-70, 70);//
 		//sleep(100);
-		WestCoaster_moveStraightWithMPU(g_wcDrive,-48,70);
+		WestCoaster_forwardFullSpeed(g_wcDrive,-48);
+		WestCoaster_forwardFullSpeed(g_wcDrive,10);
+	  WestCoaster_forwardFullSpeed(g_wcDrive,-15);
 	}
 	else if(goalPosition ==3){
 		WestCoaster_moveStraightWithMPU(g_wcDrive,-28,70);
@@ -96,7 +101,9 @@ void kickFromParking(int goalPosition)
     sleep(200);
 		WestCoaster_turnWithMPU(g_wcDrive,100, 70);//
 		sleep(100);
-		WestCoaster_moveStraightWithMPU(g_wcDrive,-48,70);
+		WestCoaster_forwardFullSpeed(g_wcDrive,-48);
+		WestCoaster_forwardFullSpeed(g_wcDrive,10);
+	  WestCoaster_forwardFullSpeed(g_wcDrive,-15);
 	}
 }
 void kickFromGoal()
@@ -104,17 +111,24 @@ void kickFromGoal()
 
 	WestCoaster_moveStraightWithMPU(g_wcDrive,10,70);
 	WestCoaster_measureMPU(g_wcDrive);
-	int messed = g_wcDrive.global_heading;
+	int messed = angleDifference(initHeading, g_wcDrive.global_heading);
+
 	//sleep(600);
 
-	WestCoaster_turnWithMPU(g_wcDrive,70+initHeading-messed, 70, false);
+	WestCoaster_turnWithMPU(g_wcDrive,70-messed, 70, false);
 	//sleep(600);
 	WestCoaster_moveStraightWithMPU(g_wcDrive,-15,70);
 	//sleep(600);
 	WestCoaster_turnWithMPU(g_wcDrive,-65,70);
 	//sleep(600);
-	WestCoaster_moveStraightWithMPU(g_wcDrive,-40,70);
-	//sleep(1000);
+  WestCoaster_forwardFullSpeed(g_wcDrive, -40);
+  //lower down the lift
+	liftGoUp(LIFT_FOR_90CM, 7000);
+	//going back and forth one more time
+  WestCoaster_forwardFullSpeed(g_wcDrive, 20);
+  WestCoaster_forwardFullSpeed(g_wcDrive, -30);
+
+  //sleep(1000);
 }
 //get very close to the center goal using encoders
 void closeToCenterGoal(int goalPosition)
@@ -149,7 +163,7 @@ void deposit()
 	sleep(200);
 	fansOn(4000);
 }
-
+const int headingToGoal[3] ={90, 45, 0};
 task main()
 {
 	initializeRobot();
@@ -162,6 +176,18 @@ task main()
   //we only need 100ms or less to determine the center goal
   //orientation.
   int goalPosition = determineGoalPosition(CENTER_GOAL_SONAR, 100);
+  //
+  //need correct "initHeading" based on goal position
+  //
+  initHeading +=headingToGoal[goalPosition];
+  //make sure it is -180 to 180, consistent with MPU
+  if(initHeading>180){
+  	initHeading -=360;
+  }
+  if(initHeading<-180)
+  {
+  	initHeading+=360;
+  }
 
 #ifndef 	KICK_AND_GOAL
   kickFromParking(goalPosition);
@@ -178,5 +204,6 @@ task main()
 	deposit();
 	//go to kickstand
 	kickFromGoal();
+
 #endif
 }

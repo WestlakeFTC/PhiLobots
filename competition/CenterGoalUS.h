@@ -97,18 +97,23 @@ int determineGoalPosition(sonar_sensor_t sonarSensor, long delayms){
 int scanForGoal(WestCoaster& wc, sonar_sensor_t sonarSensor,
        int search_angle, int target_distance_cm, bool scanning=false)
 {
-	static const int ANGLE_STEPS=15;
-	static const int SCAN_POWER=60;
+	static const int ANGLE_STEPS=5;
+	static const int SCAN_POWER=40;
+	int min_dist = 255;
+	int min_angle = 0;
 	sleep(WAITFORSONAR);
 	int new_dist = readDist(sonarSensor);
 	if(new_dist<=target_distance_cm&&!scanning) return new_dist;
 
   int distance;
   int degrees_turned=0;
-  int negative_limit = -search_angle;
   do
   {
   	distance=new_dist;
+  	if(distance<min_dist){
+  		min_dist=distance;
+  		min_angle=degrees_turned;
+  	}
   	writeDebugStreamLine("distance:%d, degrees_turned:%d turning negative",
   	                  distance, degrees_turned);
 	  WestCoaster_turnWithMPU(wc, -ANGLE_STEPS, SCAN_POWER);
@@ -119,13 +124,13 @@ int scanForGoal(WestCoaster& wc, sonar_sensor_t sonarSensor,
 
   }while( (new_dist<distance || distance==255 )&& degrees_turned>(-search_angle));
 
-  if(new_dist>=distance){
-  	negative_limit = degrees_turned + ANGLE_STEPS;
-  }else{
-    negative_limit = degrees_turned;
-  }
   do{
   	distance=new_dist;
+  	if(distance<min_dist){
+  		min_dist=distance;
+  		min_angle=degrees_turned;
+  	}
+
   	writeDebugStreamLine("distance:%d, degrees_turned:%d turning positive",
   	    distance, degrees_turned);
 
@@ -135,15 +140,13 @@ int scanForGoal(WestCoaster& wc, sonar_sensor_t sonarSensor,
   	new_dist =readDist(sonarSensor);
   	if(new_dist<=target_distance_cm&&!scanning) return new_dist;
   }while((new_dist<distance || distance==255) && degrees_turned<search_angle);
-   if(new_dist>distance && degrees_turned > negative_limit){
-     WestCoaster_turnWithMPU(wc, -ANGLE_STEPS, SCAN_POWER);
-     degrees_turned-=ANGLE_STEPS;
-   }
-   sleep(WAITFORSONAR);
-   new_dist=readDist(sonarSensor);
-   if(new_dist==255&&distance==255){
-     //did not found goal, rotating back
-      WestCoaster_turnWithMPU(wc, -degrees_turned, SCAN_POWER);
+   if(new_dist>=min_dist){
+     // rotating back to original or min distance
+      int count=(degrees_turned-min_angle)/ANGLE_STEPS;
+      int step = -(degrees_turned-min_angle)/count;
+      count=abs(count);
+      for(int i=0;i<count;i++)
+          WestCoaster_turnWithMPU(wc, step, SCAN_POWER);
    }
    return new_dist;
 
@@ -196,10 +199,13 @@ bool alignToGoal(WestCoaster& wc, sonar_sensor_t sonarSensor,
 {
 	//TODO: make sure our drive is accurate enough to handle threshold
 	// otherwise we need put some tolerance
-  static const int DIST_TOLERANCE = 5;
+  static const int DIST_TOLERANCE = 10;
   static const int MOVE_POWER = -25;
 	int distance=scanForGoal(wc, sonarSensor, search_angle, target_distance_cm);
 	if(distance>60) {
+				writeDebugStreamLine("distance:%d (cm)",
+  	                  distance);
+
 		playSound(soundBeepBeep);
 		return false;//beyond our accuracy
 	}
