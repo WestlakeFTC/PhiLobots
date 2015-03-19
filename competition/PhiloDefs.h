@@ -1,25 +1,20 @@
 #ifndef _PHILO_DEFS_H_
 #define _PHILO_DEFS_H_
 
-//We use MPU6050 for gyro PID
+//We use MPU6050 for gyro
 #define MPU_PID
+#define TRACE_ENABLED
 
-void goalGrabberUp() {
-		servo[trailerR] = 200;
-		servo[trailerL] = 75;
-}
-
-void goalGrabberDown() {
-		servo[trailerR] = 75;
-		servo[trailerL] = 150;
-}
 //lift servo positions
-#define LIFT_TOP           35
-#define LIFT_BOTTOM        200
+#define LIFT_TOP          20
+//35
+#define LIFT_BOTTOM        226
 
 #define LIFT_FOR_30CM LIFT_BOTTOM
-#define LIFT_FOR_60CM 165
-#define LIFT_FOR_90CM 100
+#define LIFT_FOR_60CM 180
+//165
+#define LIFT_FOR_90CM 117
+//100
 #define LIFT_FOR_120CM LIFT_TOP
 
 //highest position for lift servo
@@ -27,15 +22,18 @@ void goalGrabberDown() {
 //lowest  position for lift servo
 #define MIN_LIFT           LIFT_TOP
 //lift top and bottom height in cm measured from floor
-#define LIFT_TOP_HEIGHT    122
+#define LIFT_TOP_HEIGHT    124
 #define LIFT_BOTTOM_HEIGHT (18*2.54)
 
 
 //flapper servo positions
 #define FLAPPER_FORWARD     255
-#define FLAPPER_STOP        127
+#define FLAPPER_STOP        126
 #define FLAPPER_REV         0
 
+#define ROLLER_FORWARD     255
+#define ROLLER_STOP        126
+#define ROLLER_REV         0
 ///sensors
 #define USE_HT_SENSOR_MUX
 #define CENTER_GOAL_SONAR   msensor_S4_1
@@ -49,31 +47,15 @@ void goalGrabberDown() {
 
 #define MOTOR_DEADBAND 30
 #define MIN_STALL_POWER 40
-
+//servos
 #define ROLLER_FOLDER_DOWN 245
 #define HINGE_FAUCET_FLIP 153
 #define ROLLER_FOLDER_UP 110
 
-
 #define FAUCET_INITIAL	0
 #define FAUCET_DEPLOYED	160
 
-void faucetInitial() {
-	servo[faucet] = FAUCET_INITIAL;
-}
-
-void faucetDeployed() {
-	servo[faucet] = FAUCET_DEPLOYED;
-}
-
-
-#define PIN_CLOSED 150
+#define PIN_CLOSED 160
 #define PIN_OPEN 50
-void pinOpen(){
-	servo[spout]=PIN_OPEN;
-	}
-void pinClosed(){
-	servo[spout]=PIN_CLOSED;
-}
 
 #endif//_PHILO_DEFS_H_

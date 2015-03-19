@@ -94,7 +94,7 @@ short SuperSensors_getYaw()
 		//writeDebugStreamLine("Parity got:expected %d:%d", myparity, parity);
 
 	}while(!insync);
-	short yaw = getShort(inputdata[0],inputdata[1]);
+	short yaw = -getShort(inputdata[0],inputdata[1]);
 	dt=nSysTime-lasttime;
 
 
@@ -182,7 +182,7 @@ task htsuperpro_loop_yaw() {
 		if(!insync) continue;
 
 		hogCPU();
-		superSensors.yaw = getShort(inputdata[0],inputdata[1]);
+		superSensors.yaw = -getShort(inputdata[0],inputdata[1]);
 		releaseCPU();
 		//writeDebugStreamLine("yaw:%d",superSensors.yaw);
 		numOfDataBytes+=3;
@@ -190,7 +190,9 @@ task htsuperpro_loop_yaw() {
 		{
 			if(numOfDataBytes<(monitor_period*3/20))//at most 20 ms cycle time
 			{
+#ifdef TRACE_ENABLED
      	  writeDebugStreamLine("got %d bytes in %lu ms", numOfDataBytes, monitor_period);
+#endif
 				super_health=false;
 			}else
 			{

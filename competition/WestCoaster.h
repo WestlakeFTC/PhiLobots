@@ -192,7 +192,9 @@ void WestCoaster_measureEncoders(WestCoaster& wc, bool allowDrop)
 		|| (!allowDrop && abs(wc.last_encoderRight)>abs(current_encoder)
                    && abs(wc.last_powerLeft)>MIN_STALL_POWER ) )
 	{
+#ifdef TRACE_ENABLED
 		writeDebugStreamLine("*****Bogus encoder right jump, assume average speed");
+#endif
 		bad_countinous_right++;
 		wc.last_encoderRight+=wc.last_deltaR_f;
 		wc.last_deltaR=wc.last_deltaR_f;
@@ -213,7 +215,9 @@ void WestCoaster_measureEncoders(WestCoaster& wc, bool allowDrop)
 		|| (!allowDrop && abs(wc.last_encoderLeft)>abs(current_encoder)
                    && abs(wc.last_powerLeft)>MIN_STALL_POWER) )
 	{
+#ifdef TRACE_ENABLED
 		writeDebugStreamLine("*****Bogus encoder left jump, assume average speed");
+#endif
 		bad_countinous_left++;
 		if(bad_countinous_left>5)
 			playSound(soundLowBuzzShort);
@@ -227,29 +231,34 @@ void WestCoaster_measureEncoders(WestCoaster& wc, bool allowDrop)
 		+ (1.0 - ENCODER_FILRER)*wc.last_deltaL_f;
 		wc.last_encoderLeft=current_encoder;//resync the filtered with raw
 	}
+#ifdef TRACE_ENABLED
 		writeDebugStreamLine("Left/Right RawEncoder %d/%d, filtered: %d/%d",
 		      current_encoder, rawRight,wc.last_encoderLeft, wc.last_encoderRight );
-
+#endif
 }
 void WestCoaster_waitForEncoderCounts(WestCoaster& wc, int leftTarget, int rightTarget,
 bool rotation, bool sync)
 {
 	if(sync)WestCoaster_resetSyncPID();
 	int total_power=(wc.last_powerRight+wc.last_powerRight);
+#ifdef TRACE_ENABLED
 	writeDebugStreamLine("**targets (L/R):%d/%d, encoderL: %d, encoderR: %d, total_powe:%d time: %d",
 	leftTarget,rightTarget, wc.last_encoderLeft, wc.last_encoderRight, total_power, nSysTime);
-
+#endif
+  int timeEnd = nSysTime + 5000;
 	while(abs(wc.last_encoderRight) < rightTarget &&
-		abs(wc.last_encoderLeft) <  leftTarget)
+		abs(wc.last_encoderLeft) <  leftTarget && nSysTime < timeEnd)
 	{
 		sleep(control_loop_interval);//must be smaller than sync interval
 		WestCoaster_measureEncoders(wc, false);
 		if(WestCoaster_isStalling(wc)) break;
 		if(sync)WestCoaster_pidMotorSync(wc, total_power, rotation);
+#ifdef TRACE_ENABLED
 		writeDebugStreamLine("targets (L/R):%d/%d, encoder: %d/%d, total_powe:%d time: %d",
 		leftTarget,rightTarget, wc.last_encoderLeft,
 		wc.last_encoderRight, total_power, nSysTime);
-	}
+#endif
+  }
 	return ;
 }
 /**
@@ -270,9 +279,11 @@ void WestCoaster_fullStop(WestCoaster& wc)
 		* These debug messages can be used to tune offsets observedBrakingOffSetL
 		* and observedBrakingOffSetR
 		*/
+#ifdef TRACE_ENABLED
 		writeDebugStreamLine("encoderL: %d, encoderR: %d, time: %d",
 		last_encoderL, last_encoderR, nSysTime);
-		sleep(20);
+#endif
+    sleep(20);
 	}while(nMotorEncoder[wc.encoderL]!=last_encoderL ||
 		nMotorEncoder[wc.encoderR]!=last_encoderR);
 }
@@ -291,14 +302,17 @@ void WestCoaster_rampUpSpeed(WestCoaster& wc, int counts, int power){
 		WestCoaster_measureEncoders(wc, false);
 		if(WestCoaster_isStalling(wc))
 			break;
+#ifdef TRACE_ENABLED
 		writeDebugStreamLine("**targets (L/R):%d/%d, encoderL: %d, encoderR: %d, total_powe:%d time: %d",
 		counts,counts, wc.last_encoderLeft, wc.last_encoderRight, current_power, nSysTime);
+#endif
 	}
 	return ;
 
 }
 
 void WestCoaster_controlledStraightMove(WestCoaster& wc, float inches, int power){
+
 	WestCoaster_resetStates(wc);
 	int countToMove = inchesToCounts(inches);
 	if(countToMove==0) return;
@@ -473,8 +487,10 @@ void WestCoaster_pidMotorSync(WestCoaster& wc, int total_power, bool rotation)
 	// therefore:
 	int powerRight =(int)(total_power/(1+ratio));
 	int powerLeft = (int) (ratio*powerRight);
+#ifdef TRACE_ENABLED
 	writeDebugStreamLine("powerLeft: %d, powerRight: %d, mismatch: %d",
 	powerLeft, powerRight, WestCoaster_getRotPos(wc));
+#endif
 
 	WestCoaster_distributePower(wc, powerLeft, powerRight, rotation);
 }
@@ -523,7 +539,9 @@ void WestCoaster_initMPUPID(tSensors superpro)
 			waited+=20;
 			if(waited>2000)
 			{
+#ifdef TRACE_ENABLED
 				writeDebugStreamLine("super sensors not running!");
+#endif
 				playSound(soundBeepBeep);
 				break;
 			}
@@ -578,7 +596,9 @@ void WestCoaster_MPUOdometer(WestCoaster& wc)
 	if(!super_health)
 	{
 	//	playSound(soundBeepBeep);
+#ifdef TRACE_ENABLED
 		writeDebugStreamLine("***mpu lost, using previous heading");
+#endif
 		//theta=wc.encoderTheta;
 	}
 
@@ -635,9 +655,11 @@ void WestCoaster_pidMPUTurn(WestCoaster& wc, int degrees)
 		if(next_pid_tick<=nSysTime){
 			next_pid_tick += rot_control_interval;
 			powerAvg=PIDCtrlOutput(g_mpu_turn_pid, degrees_turned);
+#ifdef TRACE_ENABLED
+
 			writeDebugStreamLine("current_heading: %f, delta: %f, turned: %f, power from PID:%d",
 			current_heading, delta, degrees_turned, powerAvg);
-
+#endif
 			if(abs(powerAvg)<MOTOR_DEADBAND)
 			{
 				if(powerAvg<0)
@@ -666,9 +688,11 @@ void WestCoaster_pidMPUTurn(WestCoaster& wc, int degrees)
 			{
 				settling=false;
 			}
+#ifdef TRACE_ENABLED
 
 			writeDebugStreamLine("current_heading: %f, delta: %f, turned: %f, power:%d",
 			current_heading, delta, degrees_turned, powerAvg);
+#endif
 			if(PIDCtrlIsOnTarget(g_mpu_turn_pid))//we are at  target, stop
 				break;
 		}
@@ -686,7 +710,7 @@ const float SLOWDOWN_DEGREES = 40.0;
 // usually we can make a full circle in less than 2 sec
 // specify timeout if caller thinks need more time (low power case)
 bool WestCoaster_turnWithMPU(WestCoaster& wc, int degrees, int power,
-    bool ramping=true, unsigned int timeout=3000)
+    bool ramping=true, int timeout=3000)
 {
 	if(power<0){
 		playSound(soundLowBuzz);
@@ -727,9 +751,11 @@ bool WestCoaster_turnWithMPU(WestCoaster& wc, int degrees, int power,
 		WestCoaster_measureMPU(wc);
 		WestCoaster_measureEncoders(wc, false);
 		int degrees_turned =wc.mpuTheta;
+#ifdef TRACE_ENABLED
+
 		writeDebugStreamLine("current_heading: %f,  turned: %f, power:%d",
 		wc.global_heading,  degrees_turned, powerAvg);
-
+#endif
 		if(degrees_turned>degrees && degrees > 0){
 			//we are at  target, stop
 		  res=true;
@@ -767,7 +793,7 @@ bool WestCoaster_turnWithMPU(WestCoaster& wc, int degrees, int power,
 const float SLOWDOWN_DISTANCE = 6.0;
 const float SLOWDOWN_COUNTS = SLOWDOWN_DISTANCE * clicks_per_inch;
 const float MIN_SPEED = 0.005; //inches per ms
-bool WestCoaster_moveStraightWithMPU(WestCoaster& wc, float distance, int power)
+bool WestCoaster_moveStraightWithMPU(WestCoaster& wc, float distance, int power, int timeout=0)
 {
  if(power<0){
 		playSound(soundLowBuzz);
@@ -790,7 +816,8 @@ bool WestCoaster_moveStraightWithMPU(WestCoaster& wc, float distance, int power)
 	powerRight=powerLeft=powerAvg;
 	float leftAdjust=1;
 	float rightAdjust=1;
-	unsigned int timeout=abs(distance)/MIN_SPEED;
+	if(timeout==0)
+	    timeout=abs(distance)/MIN_SPEED;
 	writeDebugStreamLine("timeout:%d",timeout);
 	clearTimer(T1);
 	bool res=false;
@@ -817,13 +844,14 @@ bool WestCoaster_moveStraightWithMPU(WestCoaster& wc, float distance, int power)
 
 		WestCoaster_measureEncoders(wc, false);
 		WestCoaster_measureMPU(wc);
+#ifdef TRACE_ENABLED
 
 		writeDebugStream("encoders(L/R): %d/%d, enc_targ: %d, ",
 		wc.last_encoderLeft, wc.last_encoderRight, countToMove);
 
 		writeDebugStreamLine("current_heading: %f, turned: %f, power L/R:%d/%d",
 		wc.global_heading,  wc.mpuTheta, powerLeft, powerRight);
-
+#endif
 		//correct heading
 		if(abs(wc.mpuTheta)>HEADING_TOLERANCE)
 		{

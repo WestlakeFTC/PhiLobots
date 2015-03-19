@@ -98,7 +98,7 @@ int scanForGoal(WestCoaster& wc, sonar_sensor_t sonarSensor,
        int search_angle, int target_distance_cm, bool scanning=false)
 {
 	static const int ANGLE_STEPS=5;
-	static const int SCAN_POWER=40;
+	static const int SCAN_POWER=60;
 	int min_dist = 255;
 	int min_angle = 0;
 	sleep(WAITFORSONAR);
@@ -114,9 +114,12 @@ int scanForGoal(WestCoaster& wc, sonar_sensor_t sonarSensor,
   		min_dist=distance;
   		min_angle=degrees_turned;
   	}
+#ifdef TRACE_ENABLED
+
   	writeDebugStreamLine("distance:%d, degrees_turned:%d turning negative",
   	                  distance, degrees_turned);
-	  WestCoaster_turnWithMPU(wc, -ANGLE_STEPS, SCAN_POWER);
+#endif
+  	WestCoaster_turnWithMPU(wc, -ANGLE_STEPS, SCAN_POWER);
   	degrees_turned-=ANGLE_STEPS;
   	sleep(WAITFORSONAR);
   	new_dist=readDist(sonarSensor);
@@ -130,10 +133,10 @@ int scanForGoal(WestCoaster& wc, sonar_sensor_t sonarSensor,
   		min_dist=distance;
   		min_angle=degrees_turned;
   	}
-
+#ifdef TRACE_ENABLED
   	writeDebugStreamLine("distance:%d, degrees_turned:%d turning positive",
   	    distance, degrees_turned);
-
+#endif
 	  WestCoaster_turnWithMPU(wc, ANGLE_STEPS, SCAN_POWER);
    	degrees_turned+=ANGLE_STEPS;
     sleep(WAITFORSONAR);
@@ -148,7 +151,7 @@ int scanForGoal(WestCoaster& wc, sonar_sensor_t sonarSensor,
       for(int i=0;i<count;i++)
           WestCoaster_turnWithMPU(wc, step, SCAN_POWER);
    }
-   return new_dist;
+   return min_dist;
 
 
 }
@@ -186,9 +189,12 @@ bool driveToGoal(WestCoaster& wc, sonar_sensor_t sonarSensor,
   int moving_dist_cm=distance-DIST_TOLERANCE-target_distance_cm;
   //int time = 0;
 	if(moving_dist_cm>0){
+#ifdef TRACE_ENABLED
+
 		writeDebugStreamLine("distance:%d (cm), moving %d (cm)",
   	                  distance, moving_dist_cm);
-		WestCoaster_controlledStraightMove(wc, moving_dist_cm/2.54, MOVE_POWER);
+#endif
+  	WestCoaster_controlledStraightMove(wc, moving_dist_cm/2.54, MOVE_POWER);
 	}
 
 	return true;
@@ -212,9 +218,12 @@ bool alignToGoal(WestCoaster& wc, sonar_sensor_t sonarSensor,
   int moving_dist_cm=distance-DIST_TOLERANCE-target_distance_cm;
 
 	if(moving_dist_cm>0){
+#ifdef TRACE_ENABLED
 		writeDebugStreamLine("distance:%d (cm), moving %d (cm)",
   	                  distance, moving_dist_cm);
-		WestCoaster_controlledStraightMove(wc, moving_dist_cm/2.54, MOVE_POWER);
+#endif
+    //WestCoaster_moveStraightWithMPU(wc, -moving_dist_cm/2.54,MOVE_POWER);
+    WestCoaster_controlledStraightMove(wc, moving_dist_cm/2.54, MOVE_POWER);
 	}
 	return true;
 }
