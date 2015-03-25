@@ -49,7 +49,7 @@ void wiggleMove()
 	WestCoaster_turnWithMPU(g_wcDrive,10,60);
 	WestCoaster_controlledStraightMove(g_wcDrive, -7,25);
 	WestCoaster_turnWithMPU(g_wcDrive,-2,60);*/
-	WestCoaster_controlledStraightMove(g_wcDrive, -18,20);
+	WestCoaster_controlledStraightMove(g_wcDrive, -10,20);
 }
 
 void grabGoal()
@@ -60,15 +60,19 @@ void grabGoal()
 	goalGrabberDown();
 	sleep(200);
 }
-
+void doTests();
 void initializeRobot()
 {
 
 	WestCoaster_init(g_wcDrive, FrontL, FrontR, BackL, BackR, FrontL, FrontR);
-	WestCoaster_initMPUPID(S2);
+	WestCoaster_initMPU(S2);
 	goalGrabberUp();
+		//===============
+	// TESTS, comment it out for real
+	//
+  //doTests();
 
-	servo[lift] = LIFT_BOTTOM;
+	/*servo[lift] = LIFT_BOTTOM;
 	motor [Flapper] = 0;
 	pinClosed();
 	servo[foldRoller] = ROLLER_FOLDER_UP;
@@ -78,6 +82,7 @@ void initializeRobot()
 	servoChangeRate[trailerL]=0;
 	servoChangeRate[trailerR]=0;
 	servoChangeRate[lift]=0;
+*/
 	WestCoaster_measureMPU(g_wcDrive);
   initHeading = g_wcDrive.global_heading;
 	//set to true during competition to keep the grabber engaged
@@ -98,16 +103,19 @@ void doTests()
 	*
 	***Turn and move with MPU with speed ramp up***
 	***/
+	while(true){
+		WestCoaster_encoderObservedTurn(g_wcDrive,90);
+	//WestCoaster_allMotorsPowerRot(g_wcDrive, -1080);
+	sleep(1000);
+	}
+	//WestCoaster_controlledEncoderObservedTurn(g_wcDrive, 90-10,70);
 	/*
-	WestCoaster_turnWithMPU(g_wcDrive, -90,70);
-	sleep(2000);
-	WestCoaster_turnWithMPU(g_wcDrive, 90,70);
 	sleep(2000);
 	WestCoaster_turnWithMPU(g_wcDrive, -20,70);
 	sleep(2000);
 	WestCoaster_turnWithMPU(g_wcDrive, 20,70);
-*/
 
+/*
 	sleep(2000);
   WestCoaster_moveStraightWithMPU(g_wcDrive, -110,40);
     WestCoaster_moveStraightWithMPU(g_wcDrive, -15,40);
@@ -128,32 +136,59 @@ void doTests()
 	*/
 	//	WestCoaster_controlledEncoderObservedTurn(g_wcDrive,60,35);
 	//=======================================================================
+	while(true){};
 }
 task main(){
 	initializeRobot();
-		//===============
-	// TESTS
-	//
-  //doTests();
-	//while(true){};
 
-
-  waitForStart();
-	sleep(1000);
+ // waitForStart();
+	/*sleep(1000);
 	servo[foldRoller] = ROLLER_FOLDER_DOWN;
 	sleep(1000);
 	servo[foldRoller] = ROLLER_FOLDER_UP+40;
 	sleep(1000);
-
+*/
 
 
 
 	//go down the ramp
 
-	servo[lift]=LIFT_FOR_60CM;
+	//servo[lift]=LIFT_FOR_60CM;
 
-	WestCoaster_moveStraightWithMPU(g_wcDrive, -65, 40); //from ramp
+	WestCoaster_moveStraightWithMPU(g_wcDrive, -70, 40); //from ramp
+	grabGoal();
+  WestCoaster_turnWithMPU(g_wcDrive, -125, 40);
+  WestCoaster_moveStraightWithMPU(g_wcDrive, -20, 40);
+  goalGrabberUp();
+  WestCoaster_moveStraightWithMPU(g_wcDrive, 16, 40);
+  //WestCoaster_turnWithMPU(g_wcDrive, 140, 40);
+  WestCoaster_measureMPU(g_wcDrive);
+  float delta=g_wcDrive.global_heading-initHeading;
+	//MPU yaw reading increase clockwise, not counter clockwise
+	if(delta>180)//cross 180 from negative to positive)
+	{
+		delta=delta-360;
+	}
+	if(delta<-180)//crosee 180 from positive to negative
+	{
+		delta+=360;
+	}
+	// messed = 360+(initHeading-g_wcDrive.global_heading);
+	WestCoaster_turnWithMPU(g_wcDrive,-delta,40);
+	westCoaster_moveStraightWithMPU(g_wcDrive,-12, 30);
+  grabGoal();
+  WestCoaster_turnWithMPU(g_wcDrive, 7, 60);
+  WestCoaster_moveStraightWithMPU(g_wcDrive,100, 60);
+  WestCoaster_turnWithMPU(g_wcDrive, 45, 60);
+
+  //WestCoaster_turnWithMPU(g_wcDrive, 90, 70)
+	//sleep(500);
+	//WestCoaster_turnWithMPU(g_wcDrive, -90, 70);
+	//WestCoaster_turnWithMPU(g_wcDrive,-90,70);
+
+	/*sleep(500);
 	//zalignToGoal(g_wcDrive, CENTER_GOAL_SONAR, 5, 15);
+	while(true){};
 	WestCoaster_turnWithMPU(g_wcDrive,2,40);
 	grabGoal();
 	sleep(500);
@@ -183,7 +218,7 @@ task main(){
 	int messed = angleDifference(initHeading, g_wcDrive.global_heading);
 	WestCoaster_turnWithMPU(g_wcDrive,-messed,40);
 	  */
-	WestCoaster_turnWithMPU(g_wcDrive,90,40);
+	/*WestCoaster_turnWithMPU(g_wcDrive,90,40);
 	sleep(500);
 	//liftGoUp(LIFT_FOR_90CM, 4000);
 	sleep(500);

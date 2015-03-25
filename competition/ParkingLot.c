@@ -44,16 +44,16 @@ WestCoaster g_wcDrive;
 int initHeading;
 void initializeRobot()
 {
-  // Place code here to sinitialize servos to starting positions.
-  // Sensors are automatically configured and setup by ROBOTC. They may need a brief time to stabilize.
+	// Place code here to sinitialize servos to starting positions.
+	// Sensors are automatically configured and setup by ROBOTC. They may need a brief time to stabilize.
 
 	servo[lift]= LIFT_BOTTOM;
- // while(true){};
-  WestCoaster_init(g_wcDrive,FrontL, FrontR,  BackL, BackR, FrontL, FrontR);
-  WestCoaster_initMPUPID(S2);
-  WestCoaster_measureMPU(g_wcDrive);
-  initHeading = g_wcDrive.global_heading;
-  servo[foldRoller] = ROLLER_FOLDER_UP;
+	// while(true){};
+	WestCoaster_init(g_wcDrive,FrontL, FrontR,  BackL, BackR, FrontL, FrontR);
+	WestCoaster_initMPU(S2);
+	WestCoaster_measureMPU(g_wcDrive);
+	initHeading = g_wcDrive.global_heading;
+	servo[foldRoller] = ROLLER_FOLDER_UP;
 	goalGrabberUp();
 	motor[Flapper] = 0;
 
@@ -66,46 +66,46 @@ void initializeRobot()
 	//set to true during competition to keep the grabber engaged
 	bSystemLeaveServosEnabledOnProgramStop=false;
 
-  return;
+	return;
 }
 void kickFromParking(int goalPosition)
 {
 
-  if(goalPosition == 1){
-  	WestCoaster_moveStraightWithMPU(g_wcDrive,-28, 70);
-    //sleep(100);
-    WestCoaster_turnWithMPU(g_wcDrive,50, 100); //MPU turn
+	if(goalPosition == 1){
+		WestCoaster_moveStraightWithMPU(g_wcDrive,-28, 70);
 		//sleep(100);
-  	WestCoaster_moveStraightWithMPU(g_wcDrive,-10, 70);
-    //sleep(100);
+		WestCoaster_turnWithMPU(g_wcDrive,50, 100); //MPU turn
+		//sleep(100);
+		WestCoaster_moveStraightWithMPU(g_wcDrive,-10, 70);
+		//sleep(100);
 		WestCoaster_turnWithMPU(g_wcDrive,-100, 100); //MPU turn
 		//sleep(100);
 		WestCoaster_forwardFullSpeed(g_wcDrive,-24);
-	  WestCoaster_forwardFullSpeed(g_wcDrive,10);
-	  WestCoaster_forwardFullSpeed(g_wcDrive,-15);
+		WestCoaster_forwardFullSpeed(g_wcDrive,10);
+		WestCoaster_forwardFullSpeed(g_wcDrive,-15);
 
-  }
+	}
 	else if(goalPosition == 2){
 		WestCoaster_moveStraightWithMPU(g_wcDrive,-29,70);
-    //sleep(100);
+		//sleep(100);
 		WestCoaster_turnWithMPU(g_wcDrive,-70, 70);//
 		//sleep(100);
 		WestCoaster_forwardFullSpeed(g_wcDrive,-48);
 		WestCoaster_forwardFullSpeed(g_wcDrive,10);
-	  WestCoaster_forwardFullSpeed(g_wcDrive,-15);
+		WestCoaster_forwardFullSpeed(g_wcDrive,-15);
 	}
 	else if(goalPosition ==3){
 		WestCoaster_moveStraightWithMPU(g_wcDrive,-28,70);
-    //sleep(500);
-	  WestCoaster_turnWithMPU(g_wcDrive,-90, 70);//
+		//sleep(500);
+		WestCoaster_turnWithMPU(g_wcDrive,-90, 70);//
 		//sleep(-100);
 		WestCoaster_moveStraightWithMPU(g_wcDrive,-15, 70);
-    //sleep(200);
+		//sleep(200);
 		WestCoaster_turnWithMPU(g_wcDrive,100, 70);//
 		//sleep(100);
 		WestCoaster_forwardFullSpeed(g_wcDrive,-48);
 		WestCoaster_forwardFullSpeed(g_wcDrive,10);
-	  WestCoaster_forwardFullSpeed(g_wcDrive,-15);
+		WestCoaster_forwardFullSpeed(g_wcDrive,-15);
 	}
 }
 void kickFromGoal()
@@ -123,38 +123,38 @@ void kickFromGoal()
 	//sleep(600);
 	WestCoaster_turnWithMPU(g_wcDrive,-65,70);
 	//sleep(600);
-  WestCoaster_forwardFullSpeed(g_wcDrive, -40);
-  //lower down the lift
+	WestCoaster_forwardFullSpeed(g_wcDrive, -40);
+	//lower down the lift
 	liftGoUp(LIFT_FOR_90CM, 7000);
 	//going back and forth one more time
-  WestCoaster_forwardFullSpeed(g_wcDrive, 20);
-  WestCoaster_forwardFullSpeed(g_wcDrive, -30);
+	WestCoaster_forwardFullSpeed(g_wcDrive, 20);
+	WestCoaster_forwardFullSpeed(g_wcDrive, -30);
 
-  //sleep(1000);
+	//sleep(1000);
 }
 //get very close to the center goal using encoders
 void closeToCenterGoal(int goalPosition)
 {
-  	//assume robot edge lined up with edge of first tile
-   // and center lined up with the center line of field
- if(goalPosition == 1){
-  	WestCoaster_moveStraightWithMPU(g_wcDrive,-15, 70);
+	//assume robot edge lined up with edge of first tile
+	// and center lined up with the center line of field
+	if(goalPosition == 1){
+		WestCoaster_moveStraightWithMPU(g_wcDrive,-15, 70);
 		WestCoaster_turnWithMPU(g_wcDrive, -70, 70);
-  	WestCoaster_moveStraightWithMPU(g_wcDrive, -26,70);
+		WestCoaster_moveStraightWithMPU(g_wcDrive, -26,70);
 		WestCoaster_turnWithMPU(g_wcDrive, 90, 70);
-  	WestCoaster_moveStraightWithMPU(g_wcDrive,-45,70);
+		WestCoaster_moveStraightWithMPU(g_wcDrive,-45,70);
 		WestCoaster_turnWithMPU(g_wcDrive, 90, 70);
 		WestCoaster_moveStraightWithMPU(g_wcDrive,-6,70);
 
-  }
-else if(goalPosition == 2){
-	  WestCoaster_turnWithMPU(g_wcDrive,-45, 70);
+	}
+	else if(goalPosition == 2){
+		WestCoaster_turnWithMPU(g_wcDrive,-45, 70);
 		WestCoaster_moveStraightWithMPU(g_wcDrive,-1.414*24, 70);
 		WestCoaster_turnWithMPU(g_wcDrive,90,70);
 		WestCoaster_moveStraightWithMPU(g_wcDrive,-10, 70);
 	}
 	else if(goalPosition ==3){
-			WestCoaster_moveStraightWithMPU(g_wcDrive,-25, 70);
+		WestCoaster_moveStraightWithMPU(g_wcDrive,-25, 70);
 	}
 }
 
@@ -179,7 +179,7 @@ task main()
 	servo[faucet] = FAUCET_DEPLOYED;
 	servo[lift] = LIFT_FOR_90CM;
 	sleep(10000);
-/*	WestCoaster_moveStraightWithMPU(g_wcDrive,7,30);
+	/*	WestCoaster_moveStraightWithMPU(g_wcDrive,7,30);
 	WestCoaster_turnWithMPU(g_wcDrive, -45, 40);
 	WestCoaster_moveStraightWithMPU(g_wcDrive,75,50);
 	WestCoaster_turnWithMPU(g_wcDrive, -120, 40);
@@ -188,25 +188,25 @@ task main()
 	WestCoaster_moveStraightWithMPU(g_wcDrive,20,50);
 	*?
 	/*
-  WestCoaster_moveStraightWithMPU(g_wcDrive,-4,30);
-  //we only need 100ms or less to determine the center goal
-  //orientation.
-  int goalPosition = determineGoalPosition(CENTER_GOAL_SONAR, 100);
-  //
-  // correct initHeading based on goal position
-  //
-  initHeading +=headingToGoal[goalPosition-1];
-  //make sure it is -180 to 180, consistent with MPU
-  if(initHeading>180){
-  	initHeading -=360;
-  }
-  if(initHeading<-180)
-  {
-  	initHeading+=360;
-  }
+	WestCoaster_moveStraightWithMPU(g_wcDrive,-4,30);
+	//we only need 100ms or less to determine the center goal
+	//orientation.
+	int goalPosition = determineGoalPosition(CENTER_GOAL_SONAR, 100);
+	//
+	// correct initHeading based on goal position
+	//
+	initHeading +=headingToGoal[goalPosition-1];
+	//make sure it is -180 to 180, consistent with MPU
+	if(initHeading>180){
+	initHeading -=360;
+	}
+	if(initHeading<-180)
+	{
+	initHeading+=360;
+	}
 
 #ifndef 	KICK_AND_GOAL
-  kickFromParking(goalPosition);
+	kickFromParking(goalPosition);
 #else
 
 	closeToCenterGoal(goalPosition);

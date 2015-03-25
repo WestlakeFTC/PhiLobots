@@ -1,8 +1,7 @@
 #ifndef _PHILO_DEFS_H_
 #define _PHILO_DEFS_H_
 
-//We use MPU6050 for gyro
-#define MPU_PID
+//uncomment to turn off debug stream
 #define TRACE_ENABLED
 
 //lift servo positions
@@ -42,10 +41,10 @@
 #define HEADING_TOLERANCE 0.5
 #define DISTANCE_TOLERANCE 0.5
 
-#define POWER_ADJUST_FACTOR 1.2
+#define POWER_ADJUST_FACTOR 1.9
 #define SPEED_TARGET 40 //inches per second
 
-#define MOTOR_DEADBAND 30
+#define MOTOR_DEADBAND 20
 #define MIN_STALL_POWER 40
 //servos
 #define ROLLER_FOLDER_DOWN 245

@@ -121,7 +121,7 @@ short SuperSensors_getYaw()
 //////////////////////////////////////////////////////////////
 //needs be at leat 2 for Arduino DUE
 // at least 1 for NANO
-#define DELAY_READ 3
+#define DELAY_READ 1
 task htsuperpro_loop_yaw() {
 	static const int BYTES_TO_READ = 2;
 	static const int monitor_period = 1000;
@@ -182,7 +182,7 @@ task htsuperpro_loop_yaw() {
 		if(!insync) continue;
 
 		hogCPU();
-		superSensors.yaw = -getShort(inputdata[0],inputdata[1]);
+		superSensors.yaw = getShort(inputdata[0],inputdata[1]);
 		releaseCPU();
 		//writeDebugStreamLine("yaw:%d",superSensors.yaw);
 		numOfDataBytes+=3;
@@ -206,7 +206,7 @@ task htsuperpro_loop_yaw() {
 			numOfDataBytes=0;
 			super_health=true;
 		}
-		sleep(DELAY_READ);
+		sleep(10);
 	}
 }
 
