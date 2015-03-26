@@ -116,7 +116,7 @@ task htsuperpro_loop_yaw() {
 		numOfDataBytes+=3;
 		if(nSysTime-lasttime>monitor_period )
 		{
-			if(numOfDataBytes<(monitor_period*3/20))//at most 20 ms cycle time
+			if(numOfDataBytes<(monitor_period*3/50))//at most 50 ms cycle time
 			{
 #ifdef TRACE_ENABLED
      	  writeDebugStreamLine("got %d bytes in %lu ms", numOfDataBytes, monitor_period);
