@@ -34,13 +34,14 @@
 #define SPOUT_IN 160
 //sensors
 //#define USE_HT_SENSOR_MUX
+#define TRACE_ENABLED
 #define CENTER_GOAL_SONAR   S4//msensor_S4_1
 #define GYRO_SENSOR         msensor_S4_2
 
 #define HEADING_TOLERANCE 1
 #define DISTANCE_TOLERANCE (0.5)
 
-#define POWER_ADJUST_FACTOR 4
+#define POWER_ADJUST_FACTOR 3
 #define SPEED_TARGET 20 //inches per second
 
 #define MOTOR_DEADBAND 20
