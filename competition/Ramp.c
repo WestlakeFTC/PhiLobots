@@ -163,17 +163,8 @@ task main(){
   WestCoaster_moveStraightWithMPU(g_wcDrive, 16, 40);
   //WestCoaster_turnWithMPU(g_wcDrive, 140, 40);
   WestCoaster_measureMPU(g_wcDrive);
-  float delta=g_wcDrive.global_heading-initHeading;
-	//MPU yaw reading increase clockwise, not counter clockwise
-	if(delta>180)//cross 180 from negative to positive)
-	{
-		delta=delta-360;
-	}
-	if(delta<-180)//crosee 180 from positive to negative
-	{
-		delta+=360;
-	}
-	// messed = 360+(initHeading-g_wcDrive.global_heading);
+
+  float delta=angleTurned(initHeading,g_wcDrive.global_heading);
 	WestCoaster_turnWithMPU(g_wcDrive,-delta,40);
 	westCoaster_moveStraightWithMPU(g_wcDrive,-12, 30);
   grabGoal();

@@ -62,7 +62,21 @@ void liftGoUp(int position, int wait)
 	servo[lift]=position;
 	sleep(wait);
 }
+float angleTurned(float fromHeading, float toHeading)
+{
+	float delta=toHeading-fromHeading;
+	//normalize it to (-180,180)
+	if(delta>180)
+	{
+		delta-=360;
+	}
+	if(delta<-180)
+	{
+		delta+=360;
+	}
+	return delta;
 
+}
 
 
 #endif
