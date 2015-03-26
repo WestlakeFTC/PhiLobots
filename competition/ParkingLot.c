@@ -51,8 +51,7 @@ void initializeRobot()
 	// while(true){};
 	WestCoaster_init(g_wcDrive,FrontL, FrontR,  BackL, BackR, FrontL, FrontR);
 	WestCoaster_initMPU(S2);
-	WestCoaster_measureMPU(g_wcDrive);
-	initHeading = g_wcDrive.global_heading;
+	initHeading = SuperSensors_getHeading();
 	servo[foldRoller] = ROLLER_FOLDER_UP;
 	goalGrabberUp();
 	motor[Flapper] = 0;
@@ -112,8 +111,8 @@ void kickFromGoal()
 {
 
 	WestCoaster_moveStraightWithMPU(g_wcDrive,10,70);
-	WestCoaster_measureMPU(g_wcDrive);
-	int messed = angleDifference(initHeading, g_wcDrive.global_heading);
+	float current_heading=SuperSensors_getHeading();
+	int messed = angleDifference(initHeading, current_heading);
 
 	//sleep(600);
 

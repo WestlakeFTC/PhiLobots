@@ -94,7 +94,6 @@ typedef struct wc
 	int last_deltaL;//unfiltered left encoder change
 	int last_deltaR_f;
 	int last_deltaR;
-	float encoderTheta;
 	float mpuTheta;
 	float global_heading;
 	int last_powerLeft;
@@ -167,11 +166,8 @@ void WestCoaster_resetStates(WestCoaster& wc)
 	wc.last_deltaL = 0;
 	wc.last_deltaR = 0;
 
-	wc.encoderTheta = 0;
 	wc.mpuTheta = 0;
-	TOrientation orient;
-	SuperSensors_getOrientation(orient);
-	wc.global_heading = orient.yaw*0.01;
+	wc.global_heading = SuperSensors_getHeading();
 	//	writeDebugStreamLine("WC reset, currentHeading: %f", wc.global_heading);
 }
 
@@ -183,9 +179,7 @@ int bad_countinous_right=0;
 void WestCoaster_measureEncoders(WestCoaster& wc, bool allowDrop)
 {
 	int current_encoder=nMotorEncoder[wc.encoderR];
-	if(abs(wc.last_encoderRight-current_encoder)>ENCODER_THRESH
-		|| (!allowDrop && abs(wc.last_encoderRight)>abs(current_encoder)
-                   && abs(wc.last_powerLeft)>MIN_STALL_POWER ) )
+	if(abs(wc.last_encoderRight-current_encoder)>ENCODER_THRESH)
 	{
 #ifdef TRACE_ENABLED
 		writeDebugStreamLine("*****Bogus encoder right jump, assume average speed");
@@ -195,7 +189,18 @@ void WestCoaster_measureEncoders(WestCoaster& wc, bool allowDrop)
 		wc.last_deltaR=wc.last_deltaR_f;
 		if(bad_countinous_right>5)
 			playSound(soundLowBuzzShort);
-	}else
+	}else if (!allowDrop && abs(wc.last_encoderRight)>abs(current_encoder)
+                   && abs(wc.last_powerRight)>MIN_STALL_POWER )
+  {
+#ifdef TRACE_ENABLED
+		writeDebugStreamLine("*****Bogus encoder right drop, reset encoderR filter");
+#endif
+    wc.last_encoderRight = current_encoder;//use this as new starting point
+		wc.last_deltaR = 0;
+		wc.last_deltaR_f = 0;
+		bad_countinous_right = 0;
+  }
+	else
 	{
 		bad_countinous_right = 0;
 		wc.last_deltaR = (current_encoder-wc.last_encoderRight);
@@ -206,9 +211,7 @@ void WestCoaster_measureEncoders(WestCoaster& wc, bool allowDrop)
 	int rawRight=current_encoder;
 
 	current_encoder = nMotorEncoder[wc.encoderL];
-	if(abs(wc.last_encoderLeft-current_encoder)>ENCODER_THRESH
-		|| (!allowDrop && abs(wc.last_encoderLeft)>abs(current_encoder)
-                   && abs(wc.last_powerLeft)>MIN_STALL_POWER) )
+	if(abs(wc.last_encoderLeft-current_encoder)>ENCODER_THRESH )
 	{
 #ifdef TRACE_ENABLED
 		writeDebugStreamLine("*****Bogus encoder left jump, assume average speed");
@@ -218,7 +221,18 @@ void WestCoaster_measureEncoders(WestCoaster& wc, bool allowDrop)
 			playSound(soundLowBuzzShort);
 		wc.last_encoderLeft += wc.last_deltaL_f;
 		wc.last_deltaL=wc.last_deltaL_f;
-	}else
+	}else if (!allowDrop && abs(wc.last_encoderLeft)>abs(current_encoder)
+                   && abs(wc.last_powerLeft)>MIN_STALL_POWER)
+  {
+#ifdef TRACE_ENABLED
+		writeDebugStreamLine("*****Bogus encoder left drop, reset EncoderL filter");
+#endif
+ 		wc.last_encoderLeft=current_encoder;//use this as new starting point
+		wc.last_deltaL=0;
+		wc.last_deltaL_f=0;
+		bad_countinous_left=0;
+  }
+  else
 	{
 		bad_countinous_left = 0;
 		wc.last_deltaL = (current_encoder-wc.last_encoderLeft);
@@ -538,9 +552,8 @@ float angleDifference(float angle1, float angle2)
 }
 void WestCoaster_measureMPU(WestCoaster& wc)
 {
-	TOrientation orient;
-	SuperSensors_getOrientation(orient);
-	float current_heading=0.01*orient.yaw;
+
+	float current_heading=SuperSensors_getHeading();
 	//writeDebugStreamLine("**current_heading: %f, global_heading: %f", current_heading, wc.global_heading);
 	float delta=angleDifference(wc.global_heading, current_heading);
 	wc.mpuTheta+=delta;//accumulated angle change since reset

@@ -83,8 +83,7 @@ void initializeRobot()
 	servoChangeRate[trailerR]=0;
 	servoChangeRate[lift]=0;
 */
-	WestCoaster_measureMPU(g_wcDrive);
-  initHeading = g_wcDrive.global_heading;
+  initHeading = SuperSensors_getHeading();
 	//set to true during competition to keep the grabber engaged
 	bSystemLeaveServosEnabledOnProgramStop=false;
 
@@ -162,11 +161,11 @@ task main(){
   goalGrabberUp();
   WestCoaster_moveStraightWithMPU(g_wcDrive, 16, 40);
   //WestCoaster_turnWithMPU(g_wcDrive, 140, 40);
-  WestCoaster_measureMPU(g_wcDrive);
+  float current_heading = SuperSensors_getHeading();
 
-  float delta=angleTurned(initHeading,g_wcDrive.global_heading);
+  float delta=angleTurned(initHeading,current_heading);
 	WestCoaster_turnWithMPU(g_wcDrive,-delta,40);
-	westCoaster_moveStraightWithMPU(g_wcDrive,-12, 30);
+	WestCoaster_moveStraightWithMPU(g_wcDrive,-12, 30);
   grabGoal();
   WestCoaster_turnWithMPU(g_wcDrive, 7, 60);
   WestCoaster_moveStraightWithMPU(g_wcDrive,100, 60);
