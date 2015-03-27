@@ -49,7 +49,7 @@ void wiggleMove()
 	WestCoaster_turnWithMPU(g_wcDrive,10,60);
 	WestCoaster_controlledStraightMove(g_wcDrive, -7,25);
 	WestCoaster_turnWithMPU(g_wcDrive,-2,60);*/
-	WestCoaster_controlledStraightMove(g_wcDrive, -10,20);
+	WestCoaster_controlledStraightMove(g_wcDrive, -8,20);
 }
 
 void grabGoal()
@@ -154,9 +154,11 @@ task main(){
 
 	//servo[lift]=LIFT_FOR_60CM;
 
-	WestCoaster_moveStraightWithMPU(g_wcDrive, -70, 40); //from ramp
+	WestCoaster_moveStraightWithMPU(g_wcDrive, -60, 20); //from ramp
+	WestCoaster_turnWithMPU(g_wcDrive,-1.5, 40);
+	WestCoaster_moveStraightWithMPU(g_wcDrive, -10, 60);
 	grabGoal();
-  WestCoaster_turnWithMPU(g_wcDrive, -125, 40);
+  WestCoaster_turnWithMPU(g_wcDrive, -135, 40);
   WestCoaster_moveStraightWithMPU(g_wcDrive, -20, 40);
   goalGrabberUp();
   WestCoaster_moveStraightWithMPU(g_wcDrive, 16, 40);
@@ -167,9 +169,11 @@ task main(){
 	WestCoaster_turnWithMPU(g_wcDrive,-delta,40);
 	WestCoaster_moveStraightWithMPU(g_wcDrive,-12, 30);
   grabGoal();
-  WestCoaster_turnWithMPU(g_wcDrive, 7, 60);
-  WestCoaster_moveStraightWithMPU(g_wcDrive,100, 60);
-  WestCoaster_turnWithMPU(g_wcDrive, 45, 60);
+  WestCoaster_moveStraightWithMPU(g_wcDrive, 3, 40)
+  WestCoaster_turnWithMPU(g_wcDrive, 5, 60);
+  WestCoaster_moveStraightWithMPU(g_wcDrive,107, 60);
+  WestCoaster_turnWithMPU(g_wcDrive, 50, 60);
+  WestCoaster_moveStraightWithMPU(g_wcDrive, 20, 40);
 
   //WestCoaster_turnWithMPU(g_wcDrive, 90, 70)
 	//sleep(500);
