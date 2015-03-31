@@ -169,7 +169,7 @@ task main(){
 	WestCoaster_turnWithMPU(g_wcDrive,-delta,40);
 	WestCoaster_moveStraightWithMPU(g_wcDrive,-12, 30);
   grabGoal();
-  WestCoaster_moveStraightWithMPU(g_wcDrive, 3, 40)
+  WestCoaster_moveStraightWithMPU(g_wcDrive, 3, 40);
   WestCoaster_turnWithMPU(g_wcDrive, 5, 60);
   WestCoaster_moveStraightWithMPU(g_wcDrive,107, 60);
   WestCoaster_turnWithMPU(g_wcDrive, 50, 60);
