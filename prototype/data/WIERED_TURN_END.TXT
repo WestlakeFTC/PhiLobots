@@ -2127,6 +2127,14 @@ current_heading: 150.519989,  turned: -105.000000, power:-20
 Left/Right RawEncoder -477/-277, filtered: -477/-277
 current_heading: 144.119995,  turned: -111.000000, power:-20
 encoderL: -477, encoderR: -277, time: 5655842
+
+
+
+//////////////////////////////////////////////////////Why we lost encoders?///////////////////////////////////
+// Maybe the connection to motor controller lost?
+////
+
+
 timeout:4000
 Left/Right RawEncoder 0/0, filtered: 0/0
 encoders(L/R): 0/0, enc_targ: 913, current_heading: 91.079994, turned: -4.120003, power L/R:-5/-5

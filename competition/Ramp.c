@@ -81,8 +81,7 @@ void initializeRobot()
 	//move servos at maximium speed
 	servoChangeRate[trailerL]=0;
 	servoChangeRate[trailerR]=0;
-
-  initHeading = SuperSensors_getHeading();
+  initHeading = SuperSensors_getHeadingBlocked();
 	//set to true during competition to keep the grabber engaged
 	bSystemLeaveServosEnabledOnProgramStop=false;
 
@@ -173,7 +172,7 @@ task main(){
   sleep(500);
   liftGoUp(LIFT_90CM_HEIGHT);
   //WestCoaster_turnWithMPU(g_wcDrive, 140, 40);
-  float current_heading = SuperSensors_getHeading();
+  float current_heading = SuperSensors_getHeadingBlocked();
 
   float delta=angleTurned(initHeading,current_heading);
   writeDebugStreamLine("delta: %d", delta);

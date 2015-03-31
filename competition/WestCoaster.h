@@ -56,7 +56,7 @@ const unsigned int stall_check_interval=2*pos_control_interval;
 //We need sync motors faster than position control
 const unsigned int motor_sync_interval = pos_control_interval/2;
 //outermost control loop interval. This should be the smallest.
-const unsigned int control_loop_interval = motor_sync_interval/5;
+const unsigned int control_loop_interval = motor_sync_interval/10;
 //interval to gradually ramping up power
 const unsigned int ramp_up_interval = pos_control_interval/2;
 
@@ -167,7 +167,7 @@ void WestCoaster_resetStates(WestCoaster& wc)
 	wc.last_deltaR = 0;
 
 	wc.mpuTheta = 0;
-	wc.global_heading = SuperSensors_getHeading();
+	wc.global_heading = SuperSensors_getHeadingBlocked();
 	//	writeDebugStreamLine("WC reset, currentHeading: %f", wc.global_heading);
 }
 
@@ -524,40 +524,7 @@ void WestCoaster_initMPU(tSensors superpro)
 	if(!mpu_inited)
 	{
 		mpu_inited=true;
-		SuperSensors_init_task_yaw(superpro);
-
-		unsigned int waited=0;
-		while(!super_health)
-		{
-			sleep(20);
-			waited+=20;
-			if(waited>2000)
-			{
-#ifdef TRACE_ENABLED
-				writeDebugStreamLine("super sensors not running!");
-#endif
-				playSound(soundBeepBeep);
-				break;
-			}
-		}
-		float last_heading=0;
-		waited=0;
-		while(abs(last_heading-SuperSensors_getHeading())>1)
-		{
-
-			last_heading=SuperSensors_getHeading();
-			sleep(200);
-			waited+=200;
- 		  if(waited>3000)
-			{
-#ifdef TRACE_ENABLED
-				writeDebugStreamLine("super sensors not finished initialization!");
-#endif
-				playSound(soundBeepBeep);
-				mpu_inited=false;
-				break;
-			}
-		}
+		SuperSensors_init(superpro);
 
 	}
 }
@@ -578,7 +545,7 @@ float angleDifference(float angle1, float angle2)
 void WestCoaster_measureMPU(WestCoaster& wc)
 {
 
-	float current_heading=SuperSensors_getHeading();
+	float current_heading=SuperSensors_getHeadingBlocked();
 	//writeDebugStreamLine("**current_heading: %f, global_heading: %f", current_heading, wc.global_heading);
 	float delta=angleDifference(wc.global_heading, current_heading);
 	wc.mpuTheta+=delta;//accumulated angle change since reset
@@ -687,7 +654,7 @@ bool WestCoaster_moveStraightWithMPU(WestCoaster& wc, float distance, int power,
 {
  if(power<0){
 		playSound(soundLowBuzz);
-		writeDebugStreamLine("do you mean positive power?");
+		writeDebugStreamLine("****do you mean positive power?");
 		power=-power;
 	}
 	WestCoaster_resetStates(wc);
@@ -733,7 +700,7 @@ bool WestCoaster_moveStraightWithMPU(WestCoaster& wc, float distance, int power,
 		WestCoaster_distributePower(wc, powerLeft, powerRight, false);
 		long freeTime=control_loop_interval-(nSysTime-last_control_tick);
 		last_control_tick=nSysTime;
-		sleep(control_loop_interval);
+		if(freeTime>3) sleep(freeTime);
 		//else
 			//playSound(soundBeepBeep);
 
@@ -862,7 +829,7 @@ bool WestCoaster_controlledStraightMoveX(WestCoaster& wc, float inches, int powe
     WestCoaster_pidMotorSync(wc, 2*powerAvg, false);
     long freeTime=control_loop_interval-(nSysTime-last_control_tick);
 		last_control_tick=nSysTime;
-		sleep(control_loop_interval);
+		if(freeTime>3)sleep(freeTime);
 		//else
 			//playSound(soundBeepBeep);
 
@@ -968,7 +935,7 @@ bool WestCoaster_moveStraightWithMPUX(WestCoaster& wc, float distance, int power
 	  }
 		long freeTime=control_loop_interval-(nSysTime-last_control_tick);
 		last_control_tick=nSysTime;
-		sleep(control_loop_interval);
+		if(freeTime>3) sleep(freeTime);
 		//else
 			//playSound(soundBeepBeep);
 
