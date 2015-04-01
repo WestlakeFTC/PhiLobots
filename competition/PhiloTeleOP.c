@@ -7,7 +7,7 @@
 #pragma config(Sensor, S4,     HTMUX,          sensorI2CMuxController)
 #pragma config(Motor,  mtr_S1_C1_1,     BackL,         tmotorTetrix, openLoop, encoder)
 #pragma config(Motor,  mtr_S1_C1_2,     FrontL,        tmotorTetrix, openLoop, encoder)
-#pragma config(Motor,  mtr_S1_C2_1,     motorF,        tmotorTetrix, openLoop)
+#pragma config(Motor,  mtr_S1_C2_1,     Lift,          tmotorTetrix, PIDControl, encoder)
 #pragma config(Motor,  mtr_S1_C2_2,     Flapper,       tmotorTetrix, openLoop)
 #pragma config(Motor,  mtr_S1_C3_1,     BackR,         tmotorTetrix, openLoop, encoder)
 #pragma config(Motor,  mtr_S1_C3_2,     FrontR,        tmotorTetrix, openLoop, encoder)
@@ -150,30 +150,46 @@ void nitroCheck(){
 		wasOnLastTime = false;
 	}
 }
-
-void liftGoUp(int position)
-{
-	servo[lift]=position;
+static float lastPostion = 18*2.54;
+int cmToCounts(float cm){
+	int counts = (cm - lastPostion) * 1440.0/(LIFT_RATIO);
+	return counts;
+}
+float countsToCm(int counts){
+	float cm = counts/1440.0*LIFT_RATIO + lastPostion;
+	return cm;
+}
+void liftGoUp(float cm){
+	int countsToTurn = cmToCounts(cm);
+	nMotorEncoder[lift] = 0;
+	nMotorEncoderTarget[lift]=countsToTurn;
+	motor[lift]=50;
+	while(nMotorRunState[motorD] != runStateIdle ){
+  	sleep(10);
+  	writeDebugStreamLine("encoder: %d", nMotorEncoder[motorD]);
+  }
+  lastPostion = countsToCm(nMotorEncoder[lift]);
+	motor[lift] = 0;
 }
 
-void liftToThirty ()
+void liftToThirty()
 {
 	if(!BouncyBtn_checkAndClear(thirtyBtn)){
 		return;
 	}
 	writeDebugStreamLine("thirty engaged");
 
-	liftGoUp(LIFT_FOR_30CM);
+  liftGoUp(LIFT_BOTTOM_HEIGHT);
 }
 
-void liftToSixty ()
+void liftToSixty()
 {
 		if(!BouncyBtn_checkAndClear(sixtyBtn)){
 		return;
 	}
 	writeDebugStreamLine("sixty engaged");
 
-	liftGoUp(LIFT_FOR_60CM);
+	liftGoUp(LIFT_60CM_HEIGHT);
 }
 
 void liftToNinety ()
@@ -183,7 +199,7 @@ void liftToNinety ()
 	}
 	writeDebugStreamLine("ninety engaged");
 
-	liftGoUp(LIFT_FOR_90CM);
+	liftGoUp(LIFT_90CM_HEIGHT);
 }
 
 void liftToOneTwenty ()
@@ -193,7 +209,7 @@ void liftToOneTwenty ()
 	}
 	writeDebugStreamLine("onetwenty engaged");
 
-	liftGoUp(LIFT_FOR_120CM);
+	liftGoUp(LIFT_TOP_HEIGHT);
 }
 
 void controlGoalGrabber()
