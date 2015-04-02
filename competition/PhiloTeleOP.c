@@ -15,9 +15,9 @@
 #pragma config(Motor,  mtr_S3_C1_2,     FanL,          tmotorTetrix, openLoop)
 #pragma config(Servo,  srvo_S3_C2_1,    trailerR,             tServoStandard)
 #pragma config(Servo,  srvo_S3_C2_2,    trailerL,             tServoStandard)
-#pragma config(Servo,  srvo_S3_C2_3,    lift,                 tServoStandard)
+#pragma config(Servo,  srvo_S3_C2_3,    servo3,               tServoNone)
 #pragma config(Servo,  srvo_S3_C2_4,    rakes,                tServoStandard)
-#pragma config(Servo,  srvo_S3_C2_5,    flap,                 tServoStandard)
+#pragma config(Servo,  srvo_S3_C2_5,    servo5,               tServoNone)
 #pragma config(Servo,  srvo_S3_C2_6,    servo12,              tServoStandard)
 #pragma config(Servo,  srvo_S3_C3_1,    servo13,              tServoStandard)
 #pragma config(Servo,  srvo_S3_C3_2,    spout,                tServoStandard)
@@ -25,8 +25,8 @@
 #pragma config(Servo,  srvo_S3_C3_4,    servo16,              tServoStandard)
 #pragma config(Servo,  srvo_S3_C3_5,    servo17,              tServoStandard)
 #pragma config(Servo,  srvo_S3_C3_6,    servo18,              tServoStandard)
-#pragma config(Servo,  srvo_S4_C1_1,    foldRoller,           tServoNone)
-#pragma config(Servo,  srvo_S4_C1_2,    roller,               tServoNone)
+#pragma config(Servo,  srvo_S4_C1_1,    foldRoller,           tServoStandard)
+#pragma config(Servo,  srvo_S4_C1_2,    roller,               tServoStandard)
 #pragma config(Servo,  srvo_S4_C1_3,    servo21,              tServoNone)
 #pragma config(Servo,  srvo_S4_C1_4,    servo22,              tServoNone)
 #pragma config(Servo,  srvo_S4_C1_5,    servo23,              tServoNone)
@@ -45,8 +45,8 @@
 // subsystems as their names suggested
 //
 TBouncyBtn fanBtn, flapperBtn, nitro,
-           flapRevBtn, hingeFaucetBtn, foldRollBtn, rollerBtn, rollRevBtn,
-           spoutBtn, thirtyBtn, sixtyBtn, ninetyBtn, oneTwentyBtn;
+flapRevBtn, hingeFaucetBtn, foldRollBtn, rollerBtn, rollRevBtn,
+spoutBtn, thirtyBtn, sixtyBtn, ninetyBtn, oneTwentyBtn;
 
 int motorScale = 70;
 
@@ -85,33 +85,9 @@ void controlDrive(int rawLeftJoy, int rawRightJoy){
 //*******************q*******************************************
 
 void controlLift( int rawJoy){
-	if(LIFT_BOTTOM>LIFT_TOP)
-	    rawJoy = -rawJoy;
-
-	//80 full joystick pushes to move lift from 0 to max position
-	//this control the sensitivity and the less sensitive the joystick is
-	// the more accurate control can be, but the slower the lift
-	const int lift_per_step=(MAX_LIFT-MIN_LIFT)/10;
-	if(abs(rawJoy)<5){
-		//this might be needed for continuous rotation servo
-		//but we did not have it last time
-		//servo[lift]=127;
-		return;
-	}
-	// fraction of the joystick movement
-	float raw=rawJoy/128.0;
-	// convert joystick movement to steps of the servo
-	int steps_to_move = raw * lift_per_step;
-	int current_lift = ServoValue[lift];
-	writeDebugStreamLine("steps:%d, raw: %d, current lift: %d",
-	steps_to_move, rawJoy, current_lift);
-	current_lift += steps_to_move;
-	if(current_lift<MIN_LIFT)
-		current_lift=MIN_LIFT;
-	if(current_lift>MAX_LIFT)
-		current_lift=MAX_LIFT;
-	servo[lift] = current_lift;
-
+	//TODO
+	int cm=rawJoy/20;
+  moveLift(cm);
 }
 
 void controlFans(){
@@ -150,27 +126,8 @@ void nitroCheck(){
 		wasOnLastTime = false;
 	}
 }
-static float lastPostion = 18*2.54;
-int cmToCounts(float cm){
-	int counts = (cm - lastPostion) * 1440.0/(LIFT_RATIO);
-	return counts;
-}
-float countsToCm(int counts){
-	float cm = counts/1440.0*LIFT_RATIO + lastPostion;
-	return cm;
-}
-void liftGoUp(float cm){
-	int countsToTurn = cmToCounts(cm);
-	nMotorEncoder[lift] = 0;
-	nMotorEncoderTarget[lift]=countsToTurn;
-	motor[lift]=50;
-	while(nMotorRunState[motorD] != runStateIdle ){
-  	sleep(10);
-  	writeDebugStreamLine("encoder: %d", nMotorEncoder[motorD]);
-  }
-  lastPostion = countsToCm(nMotorEncoder[lift]);
-	motor[lift] = 0;
-}
+
+
 
 void liftToThirty()
 {
@@ -179,12 +136,12 @@ void liftToThirty()
 	}
 	writeDebugStreamLine("thirty engaged");
 
-  liftGoUp(LIFT_BOTTOM_HEIGHT);
+	liftGoUp(LIFT_BOTTOM_HEIGHT);
 }
 
 void liftToSixty()
 {
-		if(!BouncyBtn_checkAndClear(sixtyBtn)){
+	if(!BouncyBtn_checkAndClear(sixtyBtn)){
 		return;
 	}
 	writeDebugStreamLine("sixty engaged");
@@ -194,7 +151,7 @@ void liftToSixty()
 
 void liftToNinety ()
 {
-		if(!BouncyBtn_checkAndClear(ninetyBtn)){
+	if(!BouncyBtn_checkAndClear(ninetyBtn)){
 		return;
 	}
 	writeDebugStreamLine("ninety engaged");
@@ -204,7 +161,7 @@ void liftToNinety ()
 
 void liftToOneTwenty ()
 {
-		if(!BouncyBtn_checkAndClear(oneTwentyBtn)){
+	if(!BouncyBtn_checkAndClear(oneTwentyBtn)){
 		return;
 	}
 	writeDebugStreamLine("onetwenty engaged");
@@ -250,20 +207,20 @@ void hingeFaucetOn(){
 }
 /*
 void rollerOn(){
-	if(!BouncyBtn_checkAndClear(rollerBtn)){
-		return;
-	}
-	writeDebugStreamLine("roller rolling");
+if(!BouncyBtn_checkAndClear(rollerBtn)){
+return;
+}
+writeDebugStreamLine("roller rolling");
 
-	static bool wasOnLastTime = false;
-	if(!wasOnLastTime){
-		servo[roller] = 250;
-		wasOnLastTime = true;
-	}
-	else{
-		servo[roller] = 126;
-		wasOnLastTime = false;
-	}
+static bool wasOnLastTime = false;
+if(!wasOnLastTime){
+servo[roller] = 250;
+wasOnLastTime = true;
+}
+else{
+servo[roller] = 126;
+wasOnLastTime = false;
+}
 }
 
 */
@@ -299,7 +256,7 @@ void spoutOn(){
 		pinClosed();
 		wasSpoutOnLastTime = false;
 	}
-		writeDebugStreamLine("pin value:%d", ServoValue[spout]);
+	writeDebugStreamLine("pin value:%d", ServoValue[spout]);
 
 }
 ////////////////////////////////////////////////////////////////////
@@ -322,24 +279,24 @@ void initializeRobot()
 	// They may need a brief time to stabilize.
 	BouncyBtn_init(fanBtn,false, 2); //on joy2, btn#2
 	BouncyBtn_init(flapperBtn,true,7);//on joy1, btn#7
-	BouncyBtn_init(nitro, true, 6); //on joy1, btn#6
-	BouncyBtn_init(flapRevBtn, true, 8);//on joy1, btn#8
-	BouncyBtn_init(hingeFaucetBtn, true, 9);
-	BouncyBtn_init(foldRollBtn, true, 4);
-	BouncyBtn_init(rollerBtn, true, 2);
-	BouncyBtn_init(rollRevBtn, true, 1);
-	BouncyBtn_init(spoutBtn, true, 3);
-	BouncyBtn_init(thirtyBtn, false, 5);
-	BouncyBtn_init(sixtyBtn, false, 6);
-	BouncyBtn_init(ninetyBtn, false,7);
-	BouncyBtn_init(oneTwentyBtn, false, 8);
+  BouncyBtn_init(nitro, true, 6); //on joy1, btn#6
+  BouncyBtn_init(flapRevBtn, true, 8);//on joy1, btn#8
+	BouncyBtn_init(hingeFaucetBtn, true, 9); // true, 9
+	BouncyBtn_init(foldRollBtn, true, 4); // true, 4
+	BouncyBtn_init(rollerBtn, true, 2); // true, 2
+	BouncyBtn_init(rollRevBtn, true, 1); //true, 1
+	BouncyBtn_init(spoutBtn, true, 3); //true, 3
+	BouncyBtn_init(thirtyBtn, false, 5); //false , 5
+	BouncyBtn_init(sixtyBtn, false, 6); //false, 6
+	BouncyBtn_init(ninetyBtn, false,7); //false, 7
+	BouncyBtn_init(oneTwentyBtn, false, 8); //false 8
 
 
-	servo[lift] = LIFT_FOR_90CM;
+
 	goalGrabberDown(); 	//keep goal
-  faucetDeployed();
-  servo[roller] = 126;
-  motor[Flapper]=0;
+	faucetDeployed();
+	servo[roller] = 126;
+	motor[Flapper]=0;
 	servo[foldRoller] = ROLLER_FOLDER_UP;
 	servo[spout]=160;
 	servoChangeRate[trailerL]=0;
@@ -412,11 +369,11 @@ void rollerForward()
 {
 	roller_state = ROLLER_FORWARD;
 	servo[roller] = ROLLER_FORWARD;
-	}
+}
 void rollerStop()
 {
 	roller_state = ROLLER_STOP;
-servo [roller] = ROLLER_STOP;
+	servo [roller] = ROLLER_STOP;
 }
 void rollerReverse()
 {
@@ -511,7 +468,8 @@ task main()
 		//controlRakes();
 
 		controlLift(rawRightJoy2);
-		controlGoalGrabber();
+    checkLiftDone();
+    controlGoalGrabber();
 		sleep(10);
 
 	}
