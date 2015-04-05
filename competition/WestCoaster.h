@@ -542,7 +542,7 @@ float angleDifference(float angle1, float angle2)
 	//MPU yaw reading increase clockwise, not counter clockwise
 	if(delta>180)//cross 180 from negative to positive)
 	{
-		delta=360-delta;
+		delta-=360;
 	}
 	if(delta<-180)//crosee 180 from positive to negative
 	{

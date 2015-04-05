@@ -283,3 +283,6 @@ reducing right power
 Left/Right RawEncoder 0/0, filtered: 0/0
 encoders(L/R): 0/0, enc_targ: 456, current_heading: 122.719994, turned: 120.919991, power L/R:-25/-14
 reducing right power
+
+**** After reset the senor this problem went away ****
+************** need do more testing on the board **************************

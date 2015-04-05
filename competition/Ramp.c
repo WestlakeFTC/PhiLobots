@@ -76,7 +76,7 @@ void initializeRobot()
 	motor [Flapper] = 0;
 	pinClosed();
 	servo[foldRoller] = ROLLER_FOLDER_UP;
-	servo[roller] = 126;
+	servo[roller] = ROLLER_STOP;
 	faucetInitial();
 	//move servos at maximium speed
 	servoChangeRate[trailerL]=0;
@@ -87,10 +87,6 @@ void initializeRobot()
 	bSystemLeaveServosEnabledOnProgramStop=false;
 
 }
-#define ALIGN_FAUCET_TO_CENTER 50 //milliseconds to align faucet
-#define OFF_RAMP_DIST 58 //platform and ramp measure 58 inches long
-#define GOAL_CENTER_TO_EDGE 11.6/2
-#define FAUCET_EXTEND_BACK_CENTER GOAL_CENTER_TO_EDGE+0.5 //measure from the center of the drop to the edge of robot
 void doTests()
 {
 
