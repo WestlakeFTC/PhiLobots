@@ -5,16 +5,7 @@
 #define TRACE_ENABLED
 
 //lift servo positions
-#define LIFT_TOP          20
-//35
-#define LIFT_BOTTOM        226
 
-#define LIFT_FOR_30CM LIFT_BOTTOM
-#define LIFT_FOR_60CM 180
-//165
-#define LIFT_FOR_90CM 117
-//100
-#define LIFT_FOR_120CM LIFT_TOP
 
 #define LIFT_BOTTOM_HEIGHT  18*2.54
 #define LIFT_60CM_HEIGHT 58
@@ -46,7 +37,7 @@
 #define HEADING_TOLERANCE 0.5
 #define DISTANCE_TOLERANCE 0.5
 
-#define POWER_ADJUST_FACTOR 1.9
+#define POWER_ADJUST_FACTOR 1.7
 #define SPEED_TARGET 40 //inches per second
 
 #define MOTOR_DEADBAND 20
@@ -54,12 +45,12 @@
 //servos
 #define ROLLER_FOLDER_DOWN 245
 #define HINGE_FAUCET_FLIP 153
-#define ROLLER_FOLDER_UP 110
+#define ROLLER_FOLDER_UP 128
 
 #define FAUCET_INITIAL	0
 #define FAUCET_DEPLOYED	160
 
-#define PIN_CLOSED 160
+#define PIN_CLOSED 157
 #define PIN_OPEN 50
 
 #endif//_PHILO_DEFS_H_

@@ -86,7 +86,7 @@ void controlDrive(int rawLeftJoy, int rawRightJoy){
 
 void controlLift( int rawJoy){
 	//TODO
-	int cm=rawJoy/20;
+	int cm=rawJoy/30;
   moveLift(cm);
 }
 
