@@ -287,11 +287,11 @@ void initializeRobot()
 	BouncyBtn_init(foldRollBtn, true, 4); // true, 4
 	BouncyBtn_init(rollerBtn, true, 2); // true, 2
 	BouncyBtn_init(rollRevBtn, true, 1); //true, 1
-	BouncyBtn_init(spoutBtn, true, 3); //true, 3
+	BouncyBtn_init(spoutBtn, false, 3); //true, 3
 	BouncyBtn_init(thirtyBtn, false, 5); //false , 5
 	BouncyBtn_init(sixtyBtn, false, 6); //false, 6
-	BouncyBtn_init(ninetyBtn, false,7); //false, 7
-	BouncyBtn_init(oneTwentyBtn, false, 8); //false 8
+	BouncyBtn_init(ninetyBtn, false,8); //false, 7
+	BouncyBtn_init(oneTwentyBtn, false, 7); //false 8
 
 
 

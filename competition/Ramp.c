@@ -135,32 +135,33 @@ void doTests()
 task main(){
 	initializeRobot();
 
- // waitForStart();
+  //waitForStart();
+	pinClosed();
 	sleep(1000);
 	servo[foldRoller] = ROLLER_FOLDER_DOWN;
 	sleep(1000);
 	servo[foldRoller] = ROLLER_FOLDER_UP;
 	sleep(1000);
-
+  pinClosed();
 
 	//go down the ramp
 
 
 
-	WestCoaster_moveStraightWithMPU(g_wcDrive, -60, 45);
-	//pinClosed();
+	WestCoaster_moveStraightWithMPU(g_wcDrive, -70, 70);
+	pinClosed();
 	faucetDeployed();
 	sleep(1000);
+	//must be flipped before lift
 	//pinClosed();
 	liftGoUp(LIFT_60CM_HEIGHT);
 	//from ramp
-	WestCoaster_turnWithMPU(g_wcDrive,2, 40);
-	WestCoaster_moveStraightWithMPU(g_wcDrive, -10, 60);
 	while(!checkLiftDone()){};
+	WestCoaster_encoderObservedTurn(g_wcDrive,5, 80);
 	grabGoal();
-	pinOpen();
-  WestCoaster_turnWithMPU(g_wcDrive, -113, 40);
-  WestCoaster_moveStraightWithMPU(g_wcDrive, -20, 40);
+  WestCoaster_turnWithMPU(g_wcDrive, -130, 60);
+  WestCoaster_moveStraightWithMPU(g_wcDrive, -15, 80);
+  pinOpen();
   goalGrabberUp();
   //////
   //WestCoaster_moveStraightWithMPU(g_wcDrive, 16, 40);
@@ -170,16 +171,16 @@ task main(){
   float current_heading = SuperSensors_getHeading();
 
   float delta=angleTurned(initHeading,current_heading);
-	WestCoaster_turnWithMPU(g_wcDrive,-delta-7,40);
-	WestCoaster_moveStraightWithMPU(g_wcDrive,-30, 30);//-12
+	WestCoaster_turnWithMPU(g_wcDrive,-delta-13 ,60);//10
+	WestCoaster_moveStraightWithMPU(g_wcDrive,-30, 80);//-12
 	while(!checkLiftDone()){};
   grabGoal();
-  fansOn(3000);
-  WestCoaster_turnWithMPU(g_wcDrive,4,40);
+  fansOn(4000);
+  WestCoaster_turnWithMPU(g_wcDrive,6,80);
   //WestCoaster_moveStraightWithMPU(g_wcDrive, 3, 40);
-  WestCoaster_moveStraightWithMPU(g_wcDrive,107, 60);
-  WestCoaster_turnWithMPU(g_wcDrive, 60, 70);
-  WestCoaster_moveStraightWithMPU(g_wcDrive, 10, 60);
+  WestCoaster_moveStraightWithMPU(g_wcDrive,107, 80);
+  WestCoaster_turnWithMPU(g_wcDrive, 70, 70);
+  WestCoaster_moveStraightWithMPU(g_wcDrive, 20, 80);
 
   //WestCoaster_turnWithMPU(g_wcDrive, 90, 70)
 	//sleep(500);

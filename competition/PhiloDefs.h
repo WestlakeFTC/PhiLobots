@@ -10,7 +10,7 @@
 #define LIFT_BOTTOM_HEIGHT  18*2.54
 #define LIFT_60CM_HEIGHT 58
 #define LIFT_90CM_HEIGHT 88
-#define LIFT_TOP_HEIGHT    118
+#define LIFT_TOP_HEIGHT    115
 
 #define LIFT_RATIO		(2* PI*2.54)
 //highest position for lift servo
