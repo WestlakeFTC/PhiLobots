@@ -653,7 +653,7 @@ int WestCoaster_getAverageCount(WestCoaster& wc)
 		return abs(wc.last_encoderRight);
   if(bad_countinous_left<5 && bad_countinous_right>=5)
      return abs(wc.last_encoderLeft);
-  //both are bad or bath are good
+  //both are bad or both are good
   return (abs(wc.last_encoderRight)+abs(wc.last_encoderLeft))/2.0;
 }
 const float SLOWDOWN_DISTANCE = 6.0;
@@ -927,8 +927,11 @@ bool WestCoaster_moveStraightWithMPUX(WestCoaster& wc, float distance, int power
 			ramping_tick += ramp_up_interval;
 			powerAvg += power_ramp_step;
 		}
-		//correct heading
-		if(abs(wc.mpuTheta)>HEADING_TOLERANCE||useMPU)
+		//correct heading when encoders are not good enough
+		if(abs(wc.mpuTheta)>HEADING_TOLERANCE
+			||bad_countinous_right>=3
+	    ||bad_countinous_left>=3
+			||useMPU)
 		{
 
 				powerLeft = powerAvg/leftAdjust;
