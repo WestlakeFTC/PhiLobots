@@ -37,7 +37,7 @@
 #define HEADING_TOLERANCE 0.5
 #define DISTANCE_TOLERANCE 0.5
 
-#define POWER_ADJUST_FACTOR 1.7
+#define POWER_ADJUST_FACTOR 1.4
 #define SPEED_TARGET 40 //inches per second
 
 #define MOTOR_DEADBAND 20
@@ -50,7 +50,7 @@
 #define FAUCET_INITIAL	0
 #define FAUCET_DEPLOYED	160
 
-#define PIN_CLOSED 157
+#define PIN_CLOSED 161
 #define PIN_OPEN 50
 
 #endif//_PHILO_DEFS_H_
