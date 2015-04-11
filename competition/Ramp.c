@@ -135,7 +135,7 @@ void doTests()
 task main(){
 	initializeRobot();
 
-  //waitForStart();
+  waitForStart();
   pinClosed();
 	sleep(1000);
 	servo[foldRoller] = ROLLER_FOLDER_DOWN;
@@ -178,7 +178,7 @@ task main(){
   writeDebugStreamLine("delta: %d", delta);
 	WestCoaster_turnWithMPU(g_wcDrive,(abs(delta)-22) ,60);//10
 	WestCoaster_moveStraightWithMPU(g_wcDrive,-28, 80, 4000);//-12
-//	while(!checkLiftDone()){};
+	while(!checkLiftDone()){};
   grabGoal();
 //  fansOn(4000);
 
