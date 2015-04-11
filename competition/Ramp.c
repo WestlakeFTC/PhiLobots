@@ -70,7 +70,7 @@ void initializeRobot()
 		//===============
 	// TESTS, comment it out for real
 	//
-  //doTests();
+  doTests();
 
 
 	motor [Flapper] = 0;
@@ -92,45 +92,46 @@ void doTests()
 
 	//alignToGoal(g_wcDrive, CENTER_GOAL_SONAR, 5, 15);
 	//grabGoal();
+ /* while(true)
+  {
+  	WestCoaster_turnWithMPU(g_wcDrive,15,80);
+  	sleep(2000);
+  	WestCoaster_turnWithMPU(g_wcDrive,15,80);
+  	sleep(2000);
+  	WestCoaster_turnWithMPU(g_wcDrive, -15,80);
+  	sleep(2000);
+  	WestCoaster_turnWithMPU(g_wcDrive, -15,80);
+  	sleep(2000);
+
+  }*/
 
 	/**
 	*
 	***Turn and move with MPU with speed ramp up***
 	***/
-	while(true){
-		WestCoaster_encoderObservedTurn(g_wcDrive,10);
-	//WestCoaster_allMotorsPowerRot(g_wcDrive, -1080);
-	sleep(1000);
+/*	while(true){
+		WestCoaster_moveStraightWithMPU(g_wcDrive,-30, 80);
+
+    	sleep(5000);
+			WestCoaster_moveStraightWithMPU(g_wcDrive,30, 80);
+      sleep(5000);
+	}*/
+
+while(true){
+		WestCoaster_moveStraightWithMPUX(g_wcDrive,-70, 80);
+
+    	sleep(5000);
+			WestCoaster_moveStraightWithMPUX(g_wcDrive,70, 80);
+      sleep(5000);
 	}
-	//WestCoaster_controlledEncoderObservedTurn(g_wcDrive, 90-10,70);
-	/*
-	sleep(2000);
-	WestCoaster_turnWithMPU(g_wcDrive, -20,70);
-	sleep(2000);
-	WestCoaster_turnWithMPU(g_wcDrive, 20,70);
+/*	while(true)
+	{
+	WestCoaster_controlledStraightMoveX(g_wcDrive,-30,80);
+	sleep(5000);
+	WestCoaster_controlledStraightMoveX(g_wcDrive,30,80);
+	sleep(5000);
 
-/*
-	sleep(2000);
-  WestCoaster_moveStraightWithMPU(g_wcDrive, -110,40);
-    WestCoaster_moveStraightWithMPU(g_wcDrive, -15,40);
-  /*
-  sleep(2000);
-	WestCoaster_moveStraightWithMPU(g_wcDrive, -20,50);
-	sleep(2000);
-	WestCoaster_moveStraightWithMPU(g_wcDrive, 60,50);*/
-
-
-	// WestCoaster_controlledEncoderObservedTurn(g_wcDrive,90,35);
-	//sleep(1500);
-	/*   WestCoaster_controlledEncoderObservedTurn(g_wcDrive,-90,75);
-	sleep(1500);
-	WestCoaster_controlledEncoderObservedTurn(g_wcDrive,180,75);
-	sleep(1500);
-	WestCoaster_controlledEncoderObservedTurn(g_wcDrive,-180,75);
-	*/
-	//	WestCoaster_controlledEncoderObservedTurn(g_wcDrive,60,35);
-	//=======================================================================
-	while(true){};
+	}*/
 }
 task main(){
 	initializeRobot();
