@@ -172,14 +172,15 @@ void WestCoaster_resetStates(WestCoaster& wc)
 }
 
 void WestCoaster_pidMotorSync(WestCoaster& wc, int total_power, bool rotation);
-#define ENCODER_THRESH 400
+#define ENCODER_THRESH 300
 #define ENCODER_FILRER 0.1
 int bad_countinous_left=0;
 int bad_countinous_right=0;
 void WestCoaster_measureEncoders(WestCoaster& wc, bool allowDrop)
 {
 	int current_encoder=nMotorEncoder[wc.encoderR];
-	if(abs(wc.last_encoderRight-current_encoder)>ENCODER_THRESH)
+	if(abs(wc.last_encoderRight-current_encoder)>ENCODER_THRESH
+		&& abs(wc.last_encoderLeft-current_encoder)>(ENCODER_THRESH/2))
 	{
 #ifdef TRACE_ENABLED
 		writeDebugStreamLine("*****Bogus encoder right jump, assume average speed");
@@ -191,7 +192,8 @@ void WestCoaster_measureEncoders(WestCoaster& wc, bool allowDrop)
 			playSound(soundLowBuzzShort);
 		}
 	}else if (!allowDrop && abs(wc.last_encoderRight)>abs(current_encoder)
-                   && abs(wc.last_powerRight)>MIN_STALL_POWER )
+                   && abs(wc.last_powerRight)>MIN_STALL_POWER
+                  && abs(wc.last_encoderLeft-current_encoder)>(ENCODER_THRESH/2))
   {
 #ifdef TRACE_ENABLED
 		writeDebugStreamLine("*****Bogus encoder right drop, reset encoderR filter");
@@ -212,7 +214,8 @@ void WestCoaster_measureEncoders(WestCoaster& wc, bool allowDrop)
 	int rawRight=current_encoder;
 
 	current_encoder = nMotorEncoder[wc.encoderL];
-	if(abs(wc.last_encoderLeft-current_encoder)>ENCODER_THRESH )
+	if(abs(wc.last_encoderLeft-current_encoder)>ENCODER_THRESH
+		&& abs(wc.last_encoderRight-current_encoder)>(ENCODER_THRESH/2))
 	{
 #ifdef TRACE_ENABLED
 		writeDebugStreamLine("*****Bogus encoder left jump, assume average speed");
@@ -223,7 +226,8 @@ void WestCoaster_measureEncoders(WestCoaster& wc, bool allowDrop)
 		wc.last_encoderLeft += wc.last_deltaL_f;
 		wc.last_deltaL=wc.last_deltaL_f;
 	}else if (!allowDrop && abs(wc.last_encoderLeft)>abs(current_encoder)
-                   && abs(wc.last_powerLeft)>MIN_STALL_POWER)
+                   && abs(wc.last_powerLeft)>MIN_STALL_POWER
+                   && abs(wc.last_encoderRight-current_encoder)>(ENCODER_THRESH/2))
   {
 #ifdef TRACE_ENABLED
 		writeDebugStreamLine("*****Bogus encoder left drop, reset EncoderL filter");
