@@ -91,7 +91,7 @@ void doTests()
 
 	//alignToGoal(g_wcDrive, CENTER_GOAL_SONAR, 5, 15);
 	//grabGoal();
- /* while(true)
+  while(true)
   {
   	WestCoaster_turnWithMPU(g_wcDrive,15,80);
   	sleep(2000);
@@ -102,7 +102,7 @@ void doTests()
   	WestCoaster_turnWithMPU(g_wcDrive, -15,80);
   	sleep(2000);
 
-  }*/
+  }
 
 	/**
 	*
@@ -117,11 +117,16 @@ void doTests()
 	}*/
 
 while(true){
-		WestCoaster_moveStraightWithMPUX(g_wcDrive,-70, 80);
+		WestCoaster_moveStraightWithMPU(g_wcDrive, 71, 30);
+    sleep(5000);
+		WestCoaster_moveStraightWithMPUX(g_wcDrive,71, 30);
 
     	sleep(5000);
-			WestCoaster_moveStraightWithMPUX(g_wcDrive,70, 80);
+			WestCoaster_moveStraightWithMPUX(g_wcDrive,-71, 30);
       sleep(5000);
+    		WestCoaster_moveStraightWithMPU(g_wcDrive, -71, 30);
+    	sleep(5000);
+
 	}
 /*	while(true)
 	{
