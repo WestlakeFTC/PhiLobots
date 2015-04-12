@@ -540,6 +540,25 @@ void WestCoaster_initMPU(tSensors superpro)
 				break;
 			}
 		}
+		float last_heading=0;
+		waited=0;
+		while(abs(last_heading-SuperSensors_getHeading())>1)
+		{
+
+			last_heading=SuperSensors_getHeading();
+			sleep(200);
+			waited+=200;
+ 		  if(waited>3000)
+			{
+#ifdef TRACE_ENABLED
+				writeDebugStreamLine("super sensors not finished initialization!");
+#endif
+				playSound(soundBeepBeep);
+				mpu_inited=false;
+				break;
+			}
+		}
+
 	}
 }
 float angleDifference(float angle1, float angle2)
@@ -644,6 +663,7 @@ bool WestCoaster_turnWithMPU(WestCoaster& wc, int degrees, int power,
 			    else
 			    	powerAvg = -min(power,MOTOR_DEADBAND);
 			  }
+			  //ramping=false;
 		}
 
 	}
