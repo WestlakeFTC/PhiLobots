@@ -38,6 +38,42 @@ int readDist(tSensors sonarSensor)
 }
 #endif
 
+
+int findGoalPosition(int distance)
+{
+	int goalPosition;
+
+	if(distance  < POSITION_1_3_DIVIDE && distance >POSITION_3_MIN_DIST){
+		//distance in position 3 range (shorter than position 1)
+		goalPosition = 3;
+	}
+	else if(distance >POSITION_1_3_DIVIDE && distance <POSITION_1_MAX_DIST){
+		//distance is outside position 3 range, within position 1
+		goalPosition = 1;
+	}
+	else if(distance == 255){
+		goalPosition = 2;
+	}
+	else {
+		//Assume position 3 for following reason.
+	  //As position 3 has hole and it's harder to detect,
+	  //3 is more likely to be when distance is
+	  //outside all reasonable ranges above
+		goalPosition = 3;
+	}
+	return goalPosition;
+}
+int getGoalPosition( int left, int right)
+{
+     int goal=2;
+	   if(abs(right-left)>7)
+	     goal=2;
+	   else goal=findGoalPosition(left);
+#ifdef TRACE_ENABLED
+writeDebugStreamLine("left: %d right: %d goal: %d",left, right, goal);
+#endif
+     return goal;
+}
 /**
  * This function uses a sonar sensor to detect
  * distance to the center field structure
@@ -58,25 +94,7 @@ int determineGoalPosition(sonar_sensor_t sonarSensor, long delayms){
 	//wait for sonar sensor to measure distance.
   sleep(delayms);
   distance = readDist(sonarSensor);
-	if(distance  < POSITION_1_3_DIVIDE && distance >POSITION_3_MIN_DIST){
-		//distance in position 3 range (shorter than position 1)
-		goalPosition = 3;
-	}
-	else if(distance >POSITION_1_3_DIVIDE && distance <POSITION_1_MAX_DIST){
-		//distance is outside position 3 range, within position 1
-		goalPosition = 1;
-	}
-	else if(distance == 255){
-		goalPosition = 2;
-	}
-	else {
-		//Assume position 3 for following reason.
-	  //As position 3 has hole and it's harder to detect,
-	  //3 is more likely to be when distance is
-	  //outside all reasonable ranges above
-		goalPosition = 3;
-	}
-	return goalPosition;
+  return findGoalPosition(distance);
 
 }
 

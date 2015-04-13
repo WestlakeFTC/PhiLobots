@@ -41,24 +41,35 @@
 
 WestCoaster g_wcDrive;
 int initHeading;
+
+void test()
+{
+		sleep(1000);
+	initHeading=SuperSensors_getHeadingBlocked();
+	//we only need 100ms or less to determine the center goal
+	//orientation.
+
+	int goalPosition = getGoalPosition(super_distance[0], super_distance[1]);
+	while(true){}
+}
 void initializeRobot()
 {
 	// Place code here to sinitialize servos to starting positions.
 	// Sensors are automatically configured and setup by ROBOTC. They may need a brief time to stabilize.
 
-	// while(true){};
 	WestCoaster_init(g_wcDrive,FrontL, FrontR,  BackL, BackR, FrontL, FrontR);
 	WestCoaster_initMPU(S2);
 	initHeading = SuperSensors_getHeadingBlocked();
+	///////////////////
+	test();
+	//////////////////
+
 	servo[foldRoller] = ROLLER_FOLDER_UP;
 	goalGrabberUp();
 	motor[Flapper] = 0;
 
 	pinClosed();
-	servo[faucet]=0;
-	//move servos at maximium speed
-	servoChangeRate[trailerL]=0;
-	servoChangeRate[trailerR]=0;
+	faucetInitial();
 
 	//set to true during competition to keep the grabber engaged
 	bSystemLeaveServosEnabledOnProgramStop=false;
@@ -173,21 +184,15 @@ task main()
 	servo[foldRoller] = ROLLER_FOLDER_DOWN;
 	sleep(500);
 	servo[foldRoller] = ROLLER_FOLDER_UP;
-	servo[faucet] = FAUCET_DEPLOYED;
-	sleep(10000);
-	/*	WestCoaster_moveStraightWithMPU(g_wcDrive,7,30);
-	WestCoaster_turnWithMPU(g_wcDrive, -45, 40);
-	WestCoaster_moveStraightWithMPU(g_wcDrive,75,50);
-	WestCoaster_turnWithMPU(g_wcDrive, -120, 40);
-	WestCoaster_turnWithMPU(g_wcDrive, 70, 40);
-	WestCoaster_turnWithMPU(g_wcDrive, -140, 40);
-	WestCoaster_moveStraightWithMPU(g_wcDrive,20,50);
-	*?
-	/*
-	WestCoaster_moveStraightWithMPU(g_wcDrive,-4,30);
+	faucetDeployed();
+
+//	WestCoaster_moveStraightWithMPU(g_wcDrive,-4,30);
+	sleep(1000);
+	initHeading=SuperSensors_getHeadingBlocked();
 	//we only need 100ms or less to determine the center goal
 	//orientation.
-	int goalPosition = determineGoalPosition(CENTER_GOAL_SONAR, 100);
+
+	int goalPosition = getGoalPosition(super_distance[0], super_distance[1]);
 	//
 	// correct initHeading based on goal position
 	//
@@ -215,5 +220,5 @@ task main()
 	//go to kickstand
 	kickFromGoal();
 
-#endif*/
+#endif
 }
