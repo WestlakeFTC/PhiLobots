@@ -61,12 +61,44 @@ void grabGoal()
 	goalGrabberDown();
 	sleep(200);
 }
+unsigned int delay_time=0;
+void selectStrategy()
+{
+
+	displayCenteredTextLine(1, "Left and right to:");
+	displayCenteredTextLine(2, "inc/dec delay");
+	displayCenteredTextLine(3, "orange to end selection");
+  bool done=false;
+	// Loop forever
+	while (!done)
+	{
+		// The nNxtButtonPressed variable contains
+	  // the name of the button that is being pressed.
+		// Read this and display its value on the screen.
+		switch(nNxtButtonPressed)
+		{
+			case kLeftButton:
+			   if(delay_time>=2) delay_time -=2;
+			   displayCenteredBigTextLine(4, "del: %d", delay_time);
+			   break;
+			case kEnterButton:
+			   done=true;
+			   break;
+			case kRightButton:
+			   if(delay_time<20) delay_time +=2;
+			   displayCenteredBigTextLine(4, "del: %d", delay_time);
+			   break;
+		}
+		sleep(200);
+  }
+}
 void doTests();
 void initializeRobot()
 {
 
 	WestCoaster_init(g_wcDrive, FrontL, FrontR, BackL, BackR, FrontL, FrontR);
 	WestCoaster_initMPU(S2);
+	selectStrategy();
 	goalGrabberUp();
 		//===============
 	// TESTS, comment it out for real
@@ -142,6 +174,8 @@ task main(){
 	initializeRobot();
 
   waitForStart();
+	writeDebugStreamLine("delay:%d",delay_time);
+  if(delay_time>0) sleep(delay_time*1000);
   pinClosed();
 	sleep(1000);
 	servo[foldRoller] = ROLLER_FOLDER_DOWN;
@@ -186,6 +220,14 @@ task main(){
 	WestCoaster_moveStraightWithMPU(g_wcDrive,-28, 80, 4000);//-12
 	while(!checkLiftDone()){};
   grabGoal();
+  if(delay_time>0)
+  {
+  	  motor[FanL] = -100;
+			motor[FanR] = 100;
+			motor[Flapper]=-100;
+			sleep(20000);
+  	return;
+  }
 //  fansOn(4000);
 
   WestCoaster_turnWithMPU(g_wcDrive,6,80);
