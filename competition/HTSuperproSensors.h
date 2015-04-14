@@ -21,7 +21,7 @@ TSuperSensors superSensors;
 volatile bool super_health=false;
 volatile short super_yaw;
 
-
+#ifdef NON_BLOCKING_SENSORS
 float SuperSensors_getHeading()
 {
 	float heading=0;
@@ -31,6 +31,10 @@ float SuperSensors_getHeading()
 	heading=heading*0.01;
 	return heading;
 }
+#else
+#define SuperSensors_getHeading SuperSensors_getHeadingBlocked
+
+#endif
 
 
 //////////////////////////////////////////////////////////////
@@ -49,7 +53,7 @@ float SuperSensors_getHeading()
 //////////////////////////////////////////////////////////////
 //needs be at leat 2 for Arduino DUE
 // at least 1 for NANO
-#define DELAY_READ 3
+#define DELAY_READ 1
 task htsuperpro_loop_yaw() {
 	static const int BYTES_TO_READ = 2;
 	static const int monitor_period = 1000;
@@ -159,6 +163,7 @@ task htsuperpro_loop() {
 	int numOfDataBytes=0;
 	bool insync =false;
 	while(true) {
+		hogCPU();
 		if(!insync){
 			super_health=false;
  		//this sets S0 to 0, serving as synchronizing bit for beginning
@@ -198,6 +203,7 @@ task htsuperpro_loop() {
 		//	writeDebugStreamLine("got byte %d: %d", i, inputdata[i]);
 		}
 		ubyte parity = HTSPBreadIO(superSensors.sPort, 0xFF);//2ms
+		releaseCPU();
 		sleep(DELAY_READ);
 
 		ubyte myparity=inputdata[0];
@@ -244,22 +250,59 @@ task htsuperpro_loop() {
 	}
 }
 
-
-void SuperSensors_init_task(tSensors sport)
+#ifdef NON_BLOCKING_SENSORS
+bool SuperSensors_init(tSensors sport)
 {
 	superSensors.sPort=sport;
 	// Set B0-7 for input
 	HTSPBsetupIO(sport, 0x0);
 	startTask(htsuperpro_loop);
+
+		unsigned int waited=0;
+		while(!super_health)
+		{
+			sleep(20);
+			waited+=20;
+			if(waited>2000)
+			{
+#ifdef TRACE_ENABLED
+				writeDebugStreamLine("super sensors not running!");
+#endif
+				playSound(soundBeepBeep);
+				break;
+				return false;
+			}
+		}
+		float last_heading=0;
+		waited=0;
+		while(abs(last_heading-SuperSensors_getHeading())>1)
+		{
+
+			last_heading=SuperSensors_getHeading();
+			sleep(200);
+			waited+=200;
+ 		  if(waited>3000)
+			{
+#ifdef TRACE_ENABLED
+				writeDebugStreamLine("super sensors not finished initialization!");
+#endif
+				playSound(soundBeepBeep);
+				return false;
+			}
+		}
+		return true;
 }
 
-
-void SuperSensors_init(tSensors sport)
+#else
+bool SuperSensors_init(tSensors sport)
 {
 	superSensors.sPort=sport;
 	// Set B0-7 for input
 	HTSPBsetupIO(sport, 0x0);
+	return true;
 }
+#endif//NON_BLOCKING_SENSORS
+
 #define DELAY_READ_ONESHOT 1
 #define TIME_OUT_ONESHOT 20
 float SuperSensors_getHeadingBlocked() {

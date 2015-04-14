@@ -107,7 +107,7 @@ void alignToCenterGoal(WestCoaster& wc, int target_distance_cm)
 		return;
 
   int mismatch=super_distance[0]-super_distance[1];
-  int i=0
+  int i=0;
   while(abs(mismatch)>5&&i<5)
   {
       if(i%2==0)
