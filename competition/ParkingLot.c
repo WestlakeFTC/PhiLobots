@@ -61,7 +61,7 @@ void initializeRobot()
 	WestCoaster_initMPU(S2);
 	initHeading = SuperSensors_getHeadingBlocked();
 	///////////////////
-	test();
+	///test();
 	//////////////////
 
 	servo[foldRoller] = ROLLER_FOLDER_UP;
@@ -70,9 +70,6 @@ void initializeRobot()
 
 	pinClosed();
 	faucetInitial();
-
-	//set to true during competition to keep the grabber engaged
-	bSystemLeaveServosEnabledOnProgramStop=false;
 
 	return;
 }
@@ -146,7 +143,7 @@ void closeToCenterGoal(int goalPosition)
 	//assume robot edge lined up with edge of first tile
 	// and center lined up with the center line of field
 	if(goalPosition == 1){
-		WestCoaster_moveStraightWithMPU(g_wcDrive,-15, 70);
+		WestCoaster_moveStraightWithMPU(g_wcDrive,-19, 70);
 		WestCoaster_turnWithMPU(g_wcDrive, -70, 70);
 		WestCoaster_moveStraightWithMPU(g_wcDrive, -26,70);
 		WestCoaster_turnWithMPU(g_wcDrive, 90, 70);
@@ -162,7 +159,7 @@ void closeToCenterGoal(int goalPosition)
 		WestCoaster_moveStraightWithMPU(g_wcDrive,-10, 70);
 	}
 	else if(goalPosition ==3){
-		WestCoaster_moveStraightWithMPU(g_wcDrive,-25, 70);
+		WestCoaster_moveStraightWithMPU(g_wcDrive,-29, 70);
 	}
 }
 
@@ -214,8 +211,7 @@ task main()
 	sleep(600);
 
 	//fine alignment using sonar
-
-	driveToGoal(g_wcDrive, CENTER_GOAL_SONAR, 15, 15);
+  alignToCenterGoal(g_wcDrive, 15);
 	deposit();
 	//go to kickstand
 	kickFromGoal();

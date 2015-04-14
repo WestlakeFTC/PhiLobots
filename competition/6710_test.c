@@ -287,6 +287,11 @@ void initializeRobot()
 
 task main(){
 	initializeRobot();
+	while(true){
+		WestCoaster_moveRight(g_wcDrive,14,60);
+
+	WestCoaster_moveLeft(g_wcDrive, 14, 60);
+}
 	//  waitForStart();
 	/* sleep(1000);
 	servo[foldRoller] = ROLLER_FOLDER_DOWN;

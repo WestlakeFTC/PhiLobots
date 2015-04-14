@@ -141,6 +141,7 @@ void WestCoaster_distributePower(WestCoaster& wc, int powerLeft, int powerRight,
 	releaseCPU();
 }
 
+
 void WestCoaster_allMotorsPowerStraight(WestCoaster& wc,int power){
 
 	WestCoaster_distributePower(wc,power, power, false);
@@ -364,7 +365,26 @@ void WestCoaster_forwardFullSpeed(WestCoaster& wc, float inches, unsigned long t
 	WestCoaster_waitForEncoderCounts(wc, countToMove, countToMove, false, false, timeout);
 	WestCoaster_fullStop(wc);
 }
+void WestCoaster_moveRight(WestCoaster& wc, float inches, int power)
+{
+	WestCoaster_resetStates(wc);
 
+	int counts=inchesToCounts(inches);
+  if(inches<0) power=-power;
+	WestCoaster_distributePower(wc, 0, power, false);
+	WestCoaster_waitForEncoderCounts(wc,counts,counts,false,false,3000);
+	WestCoaster_fullStop(wc);
+}
+
+void WestCoaster_moveLeft(WestCoaster& wc, float inches, int power)
+{
+	WestCoaster_resetStates(wc);
+	int counts=inchesToCounts(inches);
+  if(inches<0) power=-power;
+	WestCoaster_distributePower(wc, power, 0, false);
+	WestCoaster_waitForEncoderCounts(wc,counts,counts,false,false,3000);
+	WestCoaster_fullStop(wc);
+}
 /**
 * This is a predictive controller based on observed offset of encoders after powering
 * off motors. The observed offsets are due to inertia of the robot so they are roughly
@@ -392,7 +412,6 @@ void WestCoaster_observedStraightMove(WestCoaster& wc, float inches, unsigned lo
 	countToMove-observedBrakingOffSetR, false, false, timeout);
 	WestCoaster_fullStop(wc);
 }
-
 
 void WestCoaster_controlledEncoderObservedTurn(WestCoaster& wc, int desired, int powerDesired, unsigned long timeout=2000){
 	if (desired < 0)

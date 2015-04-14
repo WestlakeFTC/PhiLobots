@@ -98,7 +98,31 @@ int determineGoalPosition(sonar_sensor_t sonarSensor, long delayms){
 
 }
 
-#include "WestCoaster.h"
+void alignToCenterGoal(WestCoaster& wc, int target_distance_cm)
+{
+	sleep(300);
+	float heading=SuperSensors_getHeadingBlocked();
+	int avg_dist=(super_distance[0]+super_distance[1])/2;
+	if(avg_dist<=target_distance_cm)
+		return;
+
+  int mismatch=super_distance[0]-super_distance[1];
+  int i=0
+  while(abs(mismatch)>5&&i<5)
+  {
+      if(i%2==0)
+      	WestCoaster_moveLeft(wc, -mismatch/2.54/2,40);
+      else
+      	WestCoaster_moveRight(wc, mismatch/2.54/2,40);
+
+      sleep(300);
+      heading=SuperSensors_getHeadingBlocked();
+      mismatch=super_distance[0]-super_distance[1];
+      i++;
+  }
+  avg_dist=(super_distance[0]+super_distance[1])/2;
+	WestCoaster_moveStraightWithMPU(wc, -(target_distance_cm-avg_dist), 40);
+}
 /*
  * This function rotates robot to left and right within given angle limit
  *     to find a direction at which minimum distance to center goal is
