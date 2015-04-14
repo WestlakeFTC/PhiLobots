@@ -269,7 +269,7 @@ void grabGoal()
 
 void initializeRobot()
 {
-	WestCoaster_init(g_wcDrive,FrontL, FrontR,  BackL, BackR, BackL, BackR);
+	WestCoaster_init(g_wcDrive,FrontL, FrontR,  BackL, BackR, BackL,  BackR);
 	WestCoaster_initMPU(S2);
 	/*startTask(gyro_loop);
 	while(gyro_loop_state!=GYRO_READING)
@@ -288,9 +288,11 @@ void initializeRobot()
 task main(){
 	initializeRobot();
 	while(true){
+		WestCoaster_moveStraightWithMPU(g_wcDrive, 142, 60);
+
 		WestCoaster_moveRight(g_wcDrive,14,60);
 
-	  WestCoaster_moveLeft(g_wcDrive, 14, 60);
+	//  WestCoaster_moveLeft(g_wcDrive, 14, 60);
   }
 	//  waitForStart();
 	/* sleep(1000);

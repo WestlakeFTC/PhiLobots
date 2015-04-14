@@ -294,14 +294,6 @@ bool SuperSensors_init(tSensors sport)
 }
 
 #else
-bool SuperSensors_init(tSensors sport)
-{
-	superSensors.sPort=sport;
-	// Set B0-7 for input
-	HTSPBsetupIO(sport, 0x0);
-	return true;
-}
-#endif//NON_BLOCKING_SENSORS
 
 #define DELAY_READ_ONESHOT 1
 #define TIME_OUT_ONESHOT 20
@@ -315,7 +307,7 @@ float SuperSensors_getHeadingBlocked() {
 		if(!insync){
 			super_health=false;
 			if(nSysTime-start_time>TIME_OUT_ONESHOT)
-				return super_yaw*0.01;
+				return -400;
  		//this sets S0 to 0, serving as synchronizing bit for beginning
 		//of transfer
 			HTSPBSetStrobe(superSensors.sPort,0x0);//3ms
@@ -328,14 +320,14 @@ float SuperSensors_getHeadingBlocked() {
 
 			while(header !=0x55){
   			if(nSysTime-start_time>TIME_OUT_ONESHOT)
-	    			return super_yaw*0.01;
+	    			return -400;
 				header=HTSPBreadIO(superSensors.sPort, 0xFF);
 			//  writeDebugStreamLine("got header byte %d", header);
 			}
 			HTSPBSetStrobe(superSensors.sPort,0x01);
 			while (header==0x55){
    			if(nSysTime-start_time>TIME_OUT_ONESHOT)
-	   			return super_yaw*0.01;
+	   			return -400;
 
 				header=HTSPBreadIO(superSensors.sPort, 0xFF);
 			}
@@ -379,4 +371,15 @@ float SuperSensors_getHeadingBlocked() {
 		return super_yaw*0.01;
 	}
 }
+
+bool SuperSensors_init(tSensors sport)
+{
+	superSensors.sPort=sport;
+	// Set B0-7 for input
+	HTSPBsetupIO(sport, 0x0);
+	if(SuperSensors_getHeading()<-360)
+		return false;
+	return true;
+}
+#endif//NON_BLOCKING_SENSORS
 #endif

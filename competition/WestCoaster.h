@@ -682,6 +682,8 @@ bool WestCoaster_controlledStraightMoveX(WestCoaster& wc, float inches, int powe
 bool WestCoaster_moveStraightWithMPU(WestCoaster& wc, float distance, int power, int timeout=0)
 {
 	if(!mpu_inited){
+		writeDebugStreamLine("****using encoders only");
+
 		return WestCoaster_controlledStraightMoveX(wc, distance, power, timeout);
 	}
 
@@ -873,6 +875,8 @@ bool WestCoaster_controlledStraightMoveX(WestCoaster& wc, float inches, int powe
 
 		writeDebugStream("freetime:%d encoders(L/R): %d/%d, enc_targ: %d, ",freeTime,
 		wc.last_encoderLeft, wc.last_encoderRight, countToMove);
+		writeDebugStreamLine("current_heading: %f, turned: %f, power L/R:%d/%d",
+		wc.global_heading,  wc.mpuTheta, wc.last_powerLeft, wc.last_powerRight);
 
 #endif
 	  int avg_counts=WestCoaster_getAverageCount(wc);
