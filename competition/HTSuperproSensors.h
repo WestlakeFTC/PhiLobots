@@ -261,14 +261,18 @@ void SuperSensors_init(tSensors sport)
 	HTSPBsetupIO(sport, 0x0);
 }
 #define DELAY_READ_ONESHOT 1
+#define TIME_OUT_ONESHOT 20
 float SuperSensors_getHeadingBlocked() {
 	static const int BYTES_TO_READ = 4;
 	ubyte inputdata[BYTES_TO_READ]={0,0,0,0};
 
 	static bool insync =false;
+	unsigned long start_time=nSysTime;
 	while(true) {
 		if(!insync){
 			super_health=false;
+			if(nSysTime-start_time>TIME_OUT_ONESHOT)
+				return super_yaw*0.01;
  		//this sets S0 to 0, serving as synchronizing bit for beginning
 		//of transfer
 			HTSPBSetStrobe(superSensors.sPort,0x0);//3ms
@@ -280,12 +284,18 @@ float SuperSensors_getHeadingBlocked() {
 			//writeDebugStreamLine("got header byte %d", header);
 
 			while(header !=0x55){
+  			if(nSysTime-start_time>TIME_OUT_ONESHOT)
+	    			return super_yaw*0.01;
 				header=HTSPBreadIO(superSensors.sPort, 0xFF);
 			//  writeDebugStreamLine("got header byte %d", header);
 			}
 			HTSPBSetStrobe(superSensors.sPort,0x01);
-			while (header==0x55)
+			while (header==0x55){
+   			if(nSysTime-start_time>TIME_OUT_ONESHOT)
+	   			return super_yaw*0.01;
+
 				header=HTSPBreadIO(superSensors.sPort, 0xFF);
+			}
 
 		  insync=true;
    		inputdata[0]=header;
@@ -314,7 +324,7 @@ float SuperSensors_getHeadingBlocked() {
 		//writeDebugStreamLine("parity: %d my parity byte %d", parity, myparity);
 
 		insync = (parity==myparity);
-		if(!insync){
+		if(!insync ){
   		writeDebugStreamLine("parity: %d my parity byte %d", parity, myparity);
 			continue;
 		}
