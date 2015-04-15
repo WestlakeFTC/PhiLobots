@@ -124,15 +124,15 @@ void doTests()
 
 	//alignToGoal(g_wcDrive, CENTER_GOAL_SONAR, 5, 15);
 	//grabGoal();
-  while(true)
+  //while(true)
   {
-  	WestCoaster_turnWithMPU(g_wcDrive,15,80);
+  	WestCoaster_turnWithMPU(g_wcDrive,5,80);
   	sleep(2000);
-  	WestCoaster_turnWithMPU(g_wcDrive,15,80);
+  	WestCoaster_turnWithMPU(g_wcDrive,5,80);
   	sleep(2000);
-  	WestCoaster_turnWithMPU(g_wcDrive, -15,80);
+  	WestCoaster_turnWithMPU(g_wcDrive, -5,80);
   	sleep(2000);
-  	WestCoaster_turnWithMPU(g_wcDrive, -15,80);
+  	WestCoaster_turnWithMPU(g_wcDrive, -5,80);
   	sleep(2000);
 
   }
@@ -142,33 +142,33 @@ void doTests()
 	***Turn and move with MPU with speed ramp up***
 	***/
 /*	while(true){
-		WestCoaster_moveStraightWithMPU(g_wcDrive,-30, 80);
+		*/WestCoaster_moveStraightWithMPU(g_wcDrive,-30, 80);
 
     	sleep(5000);
 			WestCoaster_moveStraightWithMPU(g_wcDrive,30, 80);
       sleep(5000);
-	}*/
+	//}*/
 
-while(true){
+//while(true){
 		WestCoaster_moveStraightWithMPU(g_wcDrive, 71, 30);
     sleep(5000);
-		WestCoaster_moveStraightWithMPUX(g_wcDrive,71, 30);
+		WestCoaster_moveStraightWithMPUX(g_wcDrive,-71, 30);
 
     	sleep(5000);
-			WestCoaster_moveStraightWithMPUX(g_wcDrive,-71, 30);
+			WestCoaster_moveStraightWithMPUX(g_wcDrive,71, 30);
       sleep(5000);
     		WestCoaster_moveStraightWithMPU(g_wcDrive, -71, 30);
     	sleep(5000);
 
-	}
+	//}
 /*	while(true)
-	{
+	{*/
 	WestCoaster_controlledStraightMoveX(g_wcDrive,-30,80);
 	sleep(5000);
 	WestCoaster_controlledStraightMoveX(g_wcDrive,30,80);
 	sleep(5000);
 
-	}*/
+	/*}*/
 }
 task main(){
 	initializeRobot();

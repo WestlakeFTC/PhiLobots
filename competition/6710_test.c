@@ -289,8 +289,11 @@ task main(){
 	initializeRobot();
 	while(true){
 		WestCoaster_moveStraightWithMPU(g_wcDrive, 142, 60);
+		sleep(5000);
+		WestCoaster_moveStraightWithMPU(g_wcDrive, -142, 60);
+		sleep(5000)
 
-		WestCoaster_moveRight(g_wcDrive,14,60);
+		//WestCoaster_moveRight(g_wcDrive,14,60);
 
 	//  WestCoaster_moveLeft(g_wcDrive, 14, 60);
   }

@@ -58,7 +58,7 @@ const unsigned int motor_sync_interval = pos_control_interval/2;
 //outermost control loop interval. This should be the smallest.
 const unsigned int control_loop_interval = motor_sync_interval/10;
 //interval to gradually ramping up power
-const unsigned int ramp_up_interval = pos_control_interval/2;
+const unsigned int ramp_up_interval = pos_control_interval*2;
 
 const float clicks_per_inch = cpr/(PI*wheelRad*2.0*gear_ratio);
 /**
@@ -717,9 +717,7 @@ bool WestCoaster_moveStraightWithMPU(WestCoaster& wc, float distance, int power,
 	unsigned long last_control_tick=nSysTime;
 	while(time1[T1]<timeout){
 
-		if( ramping && ( ( abs(powerAvg)>=abs(power)
-			|| abs(wc.last_deltaL_f/clicks_per_inch*1000/control_loop_interval)>SPEED_TARGET
-		|| abs(wc.last_deltaL_f/clicks_per_inch*1000/control_loop_interval)>SPEED_TARGET) )
+		if( ramping && ( ( abs(powerAvg)>=abs(power) )
 		)
 		{//done with ramping up power
 			ramping = false;

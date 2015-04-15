@@ -19,7 +19,7 @@ typedef struct htsupersensors
 
 TSuperSensors superSensors;
 volatile bool super_health=false;
-volatile short super_yaw;
+volatile short super_yaw=-400;;
 
 #ifdef NON_BLOCKING_SENSORS
 float SuperSensors_getHeading()
@@ -307,7 +307,7 @@ float SuperSensors_getHeadingBlocked() {
 		if(!insync){
 			super_health=false;
 			if(nSysTime-start_time>TIME_OUT_ONESHOT)
-				return -400;
+				return super_yaw*0.01;
  		//this sets S0 to 0, serving as synchronizing bit for beginning
 		//of transfer
 			HTSPBSetStrobe(superSensors.sPort,0x0);//3ms
@@ -320,14 +320,14 @@ float SuperSensors_getHeadingBlocked() {
 
 			while(header !=0x55){
   			if(nSysTime-start_time>TIME_OUT_ONESHOT)
-	    			return -400;
+	    			return super_yaw*0.01;
 				header=HTSPBreadIO(superSensors.sPort, 0xFF);
 			//  writeDebugStreamLine("got header byte %d", header);
 			}
 			HTSPBSetStrobe(superSensors.sPort,0x01);
 			while (header==0x55){
    			if(nSysTime-start_time>TIME_OUT_ONESHOT)
-	   			return -400;
+	   			return super_yaw*0.01;
 
 				header=HTSPBreadIO(superSensors.sPort, 0xFF);
 			}

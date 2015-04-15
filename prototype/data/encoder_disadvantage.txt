@@ -1,0 +1,10 @@
+Left/Right RawEncoder -6832/5887, filtered: -6832/5887
+freetime:-9 encoders(L/R): -6832/5887, enc_targ: 6489, current_heading: 136.889999, turned: 0.279999, power L/R:-20/-20
+Left/Right RawEncoder -6832/5931, filtered: -6832/5931
+freetime:-9 encoders(L/R): -6832/5931, enc_targ: 6489, current_heading: 136.819992, turned: 0.209991, power L/R:-20/-20
+Left/Right RawEncoder -6940/5973, filtered: -6940/5973
+freetime:-9 encoders(L/R): -6940/5973, enc_targ: 6489, current_heading: 136.879990, turned: 0.269989, power L/R:-20/-20
+Left/Right RawEncoder -6940/6012, filtered: -6940/6012
+freetime:-8 encoders(L/R): -6940/6012, enc_targ: 6489, current_heading: 136.910004, turned: 0.300003, power L/R:-20/-20
+Left/Right RawEncoder -7032/6052, filtered: -7032/6052
+freetime:-9 encoders(L/R): -7032/6052, enc_targ: 6489, current_heading: 136.879990, turned: 0.269989, power L/R:-20/-20
