@@ -1042,6 +1042,7 @@ bool WestCoaster_moveStraightWithMPUX(WestCoaster& wc, float distance, int power
 			    else
 			    	powerAvg = -min(MOTOR_DEADBAND,power);
 			  }
+			  ramping=false;
 		}
 
 
