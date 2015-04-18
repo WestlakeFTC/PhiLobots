@@ -27,7 +27,7 @@
 #define FLAPPER_REV         0
 
 #define ROLLER_FORWARD     255
-#define ROLLER_STOP        126
+#define ROLLER_STOP        128
 #define ROLLER_REV         0
 ///sensors
 #define USE_HT_SENSOR_MUX
@@ -47,10 +47,10 @@
 #define HINGE_FAUCET_FLIP 153
 #define ROLLER_FOLDER_UP 128
 
-#define FAUCET_INITIAL	0
-#define FAUCET_DEPLOYED	160
+#define FAUCET_INITIAL	7
+#define FAUCET_DEPLOYED	175
 
-#define PIN_CLOSED 161
-#define PIN_OPEN 50
+#define PIN_OPEN 163
+#define PIN_CLOSED 45
 
 #endif//_PHILO_DEFS_H_
