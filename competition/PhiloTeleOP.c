@@ -87,7 +87,7 @@ void controlDrive(int rawLeftJoy, int rawRightJoy){
 void controlLift( int rawJoy){
 	//TODO
 	int cm=rawJoy/30;
-  moveLift(cm);
+	moveLift(cm);
 }
 
 void controlFans(){
@@ -281,8 +281,8 @@ void initializeRobot()
 	// They may need a brief time to stabilize.
 	BouncyBtn_init(fanBtn,false, 2); //on joy2, btn#2
 	BouncyBtn_init(flapperBtn,true,7);//on joy1, btn#7
-  BouncyBtn_init(nitro, true, 6); //on joy1, btn#6
-  BouncyBtn_init(flapRevBtn, true, 8);//on joy1, btn#8
+	BouncyBtn_init(nitro, true, 6); //on joy1, btn#6
+	BouncyBtn_init(flapRevBtn, true, 8);//on joy1, btn#8
 	BouncyBtn_init(hingeFaucetBtn, true, 9); // true, 9
 	BouncyBtn_init(foldRollBtn, true, 4); // true, 4
 	BouncyBtn_init(rollerBtn, true, 2); // true, 2
@@ -475,8 +475,8 @@ task main()
 		//controlRakes();
 
 		controlLift(rawRightJoy2);
-    checkLiftDone();
-    controlGoalGrabber();
+		checkLiftDone();
+		controlGoalGrabber();
 		sleep(10);
 
 	}

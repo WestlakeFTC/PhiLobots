@@ -38,7 +38,7 @@
 #include "CenterGoalUs.h"
 #include "PhiloUtils.h"
 #include "JoystickDriver.c"
-//#define NON_BLOCKING_SENSORS
+#define NON_BLOCKING_SENSORS
 WestCoaster g_wcDrive;
 int initHeading;
 
@@ -96,14 +96,14 @@ void doTests();
 void initializeRobot()
 {
 
-	WestCoaster_init(g_wcDrive, FrontL, FrontR, BackL, BackR, FrontL, FrontR);
+	WestCoaster_init(g_wcDrive, FrontL, FrontR, BackL, BackR, FrontR, FrontR);
 	WestCoaster_initMPU(S2);
-	selectStrategy();
+	//selectStrategy();
 	goalGrabberUp();
 		//===============
 	// TESTS, comment it out for real
 	//
-  doTests();
+  //doTests();
 
 
 	motor [Flapper] = 0;
@@ -173,37 +173,41 @@ void doTests()
 task main(){
 	initializeRobot();
 
-  waitForStart();
-	writeDebugStreamLine("delay:%d",delay_time);
-  if(delay_time>0) sleep(delay_time*1000);
+  //waitForStart();
+	//writeDebugStreamLine("delay:%d",delay_time);
+ // if(delay_time>0) sleep(delay_time*1000);
   pinClosed();
 
 	//go down the ramp
 
 
 
-	WestCoaster_moveStraightWithMPU(g_wcDrive, -73, 20);
-	servo[foldRoller] = ROLLER_FOLDER_DOWN;
-	sleep(700);
-	servo[foldRoller] = ROLLER_FOLDER_UP;
-	sleep(700);
+	WestCoaster_moveStraightWithMPU(g_wcDrive,-68, 20);
 
- 	//must be flipped before lift
-	pinClosed();
+
+	sleep(1000);
+
+	servo[foldRoller] = ROLLER_FOLDER_DOWN;
+	sleep(1000)
 	liftGoUp(LIFT_60CM_HEIGHT);
+	pinClosed();
 	faucetDeployed();
+	pinClosed();
+	servo[foldRoller] = ROLLER_FOLDER_UP;
+
 	//from ramp
 	while(!checkLiftDone()){};
 //	WestCoaster_encoderObservedTurn(g_wcDrive,6, 80); //-3 for school
-	float delta1=angleTurned(initHeading,SuperSensors_getHeading());
-  writeDebugStreamLine("delta: %d", delta1);
-	WestCoaster_turnWithMPU(g_wcDrive,-delta1 ,60);//10
+	//float delta1=angleTurned(initHeading,SuperSensors_getHeading());
+ // writeDebugStreamLine("delta: %d", delta1);
+	//WestCoaster_turnWithMPU(g_wcDrive,-delta1 ,60);//10
 
 	grabGoal();
-  WestCoaster_turnWithMPU(g_wcDrive, -125, 60);
+  WestCoaster_turnWithMPU(g_wcDrive, -125, 80);
 
-  WestCoaster_moveStraightWithMPU(g_wcDrive, -15, 80);
+  //WestCoaster_moveStraightWithMPU(g_wcDrive, -15, 80);
   pinOpen();
+
   //sleep (3000);
 
   goalGrabberUp();
@@ -212,36 +216,22 @@ task main(){
   //////
   sleep(500);
   liftGoUp(LIFT_90CM_HEIGHT);
-  //WestCoaster_turnWithMPU(g_wcDrive, 140, 40);
   float current_heading = SuperSensors_getHeading();
 
   float delta=angleTurned(initHeading,current_heading);
   writeDebugStreamLine("delta: %d", delta);
-	WestCoaster_turnWithMPU(g_wcDrive,(abs(delta)-25) ,60);//10
-	WestCoaster_moveStraightWithMPU(g_wcDrive,-28, 80, 4000);//-12
-	while(!checkLiftDone()){};
-  grabGoal();
-  if(delay_time>0)
-  {
-  	  motor[FanL] = -100;
-			motor[FanR] = 100;
-			motor[Flapper]=-100;
-			sleep(20000);
-  	return;
-  }
-//  fansOn(4000);
+	WestCoaster_turnWithMPU(g_wcDrive,(abs(delta)-10) ,80);//10
 
-  WestCoaster_turnWithMPU(g_wcDrive,6,80);
-   motor[FanL] = -100;
-	motor[FanR] = 100;
-	motor[Flapper]=-100;
-  //WestCoaster_moveStraightWithMPU(g_wcDrive, 3, 40);
-  WestCoaster_moveStraightWithMPU(g_wcDrive,107, 80);
-  motor[FanL] = 0;
-  motor[FanR] = 0;
-  motor[Flapper]=0;
-  WestCoaster_turnWithMPU(g_wcDrive, 60, 70);
-  WestCoaster_moveStraightWithMPU(g_wcDrive, 20, 80);
+	WestCoaster_moveStraightWithMPU(g_wcDrive,-25, 80);//-12
+	while(!checkLiftDone()){};
+  goalGrabberDown();
+  WestCoaster_moveStraightWithMPU(g_wcDrive, 15, 80);
+
+  goalGrabberUp();
+  grabGoal();
+
+  fansOn(7000);
+
 
   //WestCoaster_turnWithMPU(g_wcDrive, 90, 70)
 	//sleep(500);

@@ -29,9 +29,14 @@ void faucetDeployed() {
 
 void pinOpen(){
 	servo[spout]=PIN_OPEN;
+	sleep(500);
+	servo[spout]=PIN_CLOSED;
+  sleep(500);
+  servo[spout]=PIN_OPEN;
 	}
 void pinClosed(){
 	servo[spout]=PIN_CLOSED;
+	sleep(500);
 }
 
 void fansOn(unsigned long time)
