@@ -173,7 +173,7 @@ void doTests()
 task main(){
 	initializeRobot();
 
-  //waitForStart();
+  waitForStart();
 	//writeDebugStreamLine("delay:%d",delay_time);
  // if(delay_time>0) sleep(delay_time*1000);
   pinClosed();
@@ -188,7 +188,7 @@ task main(){
 	sleep(1000);
 
 	servo[foldRoller] = ROLLER_FOLDER_DOWN;
-	sleep(1000)
+	sleep(1000);
 	liftGoUp(LIFT_60CM_HEIGHT);
 	pinClosed();
 	faucetDeployed();

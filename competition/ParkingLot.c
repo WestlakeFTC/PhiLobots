@@ -169,7 +169,7 @@ const int headingToGoal[3] ={90, 45, 0};
 task main()
 {
 	initializeRobot();
-	//waitForStart();
+	waitForStart();
 
   servo[foldRoller] = ROLLER_FOLDER_UP;
 
