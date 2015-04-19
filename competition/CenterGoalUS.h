@@ -68,7 +68,10 @@ int getGoalPosition( int left, int right)
      int goal=2;
 	   if(abs(right-left)>7)
 	     goal=2;
-	   else goal=findGoalPosition(left);
+	   else if(left<90||left<90||right>140||right<90)
+	     goal=2;
+	   else
+	     goal=findGoalPosition(left);
 #ifdef TRACE_ENABLED
 writeDebugStreamLine("left: %d right: %d goal: %d",left, right, goal);
 #endif

@@ -586,7 +586,7 @@ bool WestCoaster_turnWithMPU(WestCoaster& wc, int degrees, int power,
 		WestCoaster_controlledEncoderObservedTurn(wc, degrees, power, timeout);
 		return true;
 	}
-
+  bool slow_down=ramping;
 	WestCoaster_resetStates(wc);
 	int powerAvg=0;
 	//increase power 10% each step during ramp-up phase
@@ -641,7 +641,7 @@ bool WestCoaster_turnWithMPU(WestCoaster& wc, int degrees, int power,
 
 		if(WestCoaster_isStalling(wc))
 			break;
-		if( abs(degrees_turned-degrees) < SLOWDOWN_DEGREES)
+		if( slow_down && abs(degrees_turned-degrees) < SLOWDOWN_DEGREES)
 		{
 				float ratio = abs(degrees_turned-degrees) /(2* SLOWDOWN_DEGREES);
 				if (ratio<0.5)
@@ -702,8 +702,6 @@ bool WestCoaster_moveStraightWithMPU(WestCoaster& wc, float distance, int power,
 	if ( distance<0 ){
 		power_ramp_step = -5;
 	}
-
-	bool ramping=true;
 	unsigned long ramping_tick=nSysTime;
 	int powerLeft, powerRight;
 	powerRight=powerLeft=powerAvg;
@@ -714,11 +712,11 @@ bool WestCoaster_moveStraightWithMPU(WestCoaster& wc, float distance, int power,
 	writeDebugStreamLine("timeout:%d",timeout);
 	clearTimer(T1);
 	bool res=false;
+	bool ramping = true;
 	unsigned long last_control_tick=nSysTime;
 	while(time1[T1]<timeout){
 
-		if( ramping && ( ( abs(powerAvg)>=abs(power) )
-		)
+		if( ramping && ( abs(powerAvg)>=abs(power) ))
 		{//done with ramping up power
 			ramping = false;
 		}

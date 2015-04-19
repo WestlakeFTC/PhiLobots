@@ -19,7 +19,7 @@ typedef struct htsupersensors
 
 TSuperSensors superSensors;
 volatile bool super_health=false;
-volatile short super_yaw=-400;;
+volatile short super_yaw=-400;
 
 #ifdef NON_BLOCKING_SENSORS
 float SuperSensors_getHeading()

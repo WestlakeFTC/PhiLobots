@@ -6,8 +6,8 @@
  */
 
 void goalGrabberUp() {
-		servo[trailerR] = 200;
-		servo[trailerL] = 75;
+		servo[trailerR] = 220;
+		servo[trailerL] = 60;
 }
 
 void goalGrabberDown() {
