@@ -61,10 +61,32 @@ void initializeRobot()
 
 	return;
 }
+void block(){
+	WestCoaster_forwardFullSpeed(g_wcDrive, -15);
+	WestCoaster_turnWithMPU(g_wcDrive,75,70);
+	WestCoaster_forwardFullSpeed(g_wcDrive,40);
+	sleep(3000);
+}
+
+void defenseFromParking(int goalPosition)
+{
+  block();
+	if(goalPosition == 1){
+		WestCoaster_turnWithMPU(g_wcDrive,-3, 40, false,5000);
+		WestCoaster_moveStraightWithMPU(g_wcDrive,-31,80);
+	}
+	else if(goalPosition == 2){
+			WestCoaster_moveStraightWithMPU(g_wcDrive,-25,80);
+	}
+	else if(goalPosition ==3){
+		WestCoaster_turnWithMPU(g_wcDrive,-15, 40, false,5000);
+	}
+}
 void kickFromParking(int goalPosition)
 {
+		if(goalPosition == 1){
 
-	if(goalPosition == 1){
+
 		WestCoaster_moveStraightWithMPU(g_wcDrive,-31, 70);
 		//sleep(100);
 		//sleep(100);
@@ -79,11 +101,10 @@ void kickFromParking(int goalPosition)
 		WestCoaster_turnWithMPU(g_wcDrive,2, 40, false,5000); //MPU turn
 		WestCoaster_forwardFullSpeed(g_wcDrive,-30);
 		  servo[foldRoller] = ROLLER_FOLDER_UP;
-		//WestCoaster_forwardFullSpeed(g_wcDrive,-18);
-		  //servo[foldRoller] = ROLLER_FOLDER_UP;
 
 	}
 	else if(goalPosition == 2){
+
 		WestCoaster_moveStraightWithMPU(g_wcDrive,-26,70);
 		//sleep(100);
 		WestCoaster_turnWithMPU(g_wcDrive,25, 70);//
@@ -93,6 +114,7 @@ void kickFromParking(int goalPosition)
 		WestCoaster_forwardFullSpeed(g_wcDrive,-15);
 	}
 	else if(goalPosition ==3){
+
 		WestCoaster_moveStraightWithMPU(g_wcDrive,-22,70);
 		//sleep(500);
 		WestCoaster_turnWithMPU(g_wcDrive,75, 70);//
@@ -104,7 +126,9 @@ void kickFromParking(int goalPosition)
 		WestCoaster_forwardFullSpeed(g_wcDrive,-48);
 		WestCoaster_forwardFullSpeed(g_wcDrive,10);
 		WestCoaster_forwardFullSpeed(g_wcDrive,-15);
+
 	}
+
 }
 void kickFromGoal()
 {
@@ -214,4 +238,7 @@ task main()
 	kickFromGoal();
 
 #endif
+servo[foldRoller] = ROLLER_FOLDER_DOWN;
+sleep(1000);
+
 }
