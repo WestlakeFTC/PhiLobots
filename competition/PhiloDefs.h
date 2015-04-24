@@ -50,7 +50,7 @@
 #define FAUCET_INITIAL	7
 #define FAUCET_DEPLOYED	175
 
-#define PIN_OPEN 170
+#define PIN_OPEN 190
 #define PIN_CLOSED 45
 
 #endif//_PHILO_DEFS_H_

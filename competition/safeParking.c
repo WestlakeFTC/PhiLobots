@@ -64,7 +64,7 @@ task main()
 {
 	initializeRobot();
 	waitForStart();
-	WestCoaster_forwardFullSpeed(g_wcDrive, 30);
+	WestCoaster_forwardFullSpeed(g_wcDrive, 40);
   servo[foldRoller] = ROLLER_FOLDER_DOWN;
 	sleep(1000);
 	faucetDeployed();

@@ -35,7 +35,7 @@
 #define NON_BLOCKING_SENSORS
 #include "PhiloDefs.h"
 #include "WestCoaster.h"
-#include "CenterGoalUs.h"
+//#include "CenterGoalUs.h"
 #include "PhiloUtils.h"
 #include "JoystickDriver.c"
 
@@ -229,10 +229,7 @@ task main(){
 
   goalGrabberUp();
   grabGoal();
-
-  fansOn(7000);
-
-
+  sleep(10000);
   //WestCoaster_turnWithMPU(g_wcDrive, 90, 70)
 	//sleep(500);
 	//WestCoaster_turnWithMPU(g_wcDrive, -90, 70);

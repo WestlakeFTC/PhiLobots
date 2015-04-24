@@ -104,7 +104,7 @@ int determineGoalPosition(sonar_sensor_t sonarSensor, long delayms){
 void alignToCenterGoal(WestCoaster& wc, int target_distance_cm)
 {
 	sleep(300);
-	float heading=SuperSensors_getHeadingBlocked();
+	float heading=SuperSensors_getHeading();
 	int avg_dist=(super_distance[0]+super_distance[1])/2;
 	if(avg_dist<=target_distance_cm)
 		return;
@@ -119,7 +119,7 @@ void alignToCenterGoal(WestCoaster& wc, int target_distance_cm)
       	WestCoaster_moveRight(wc, mismatch/2.54/2,40);
 
       sleep(300);
-      heading=SuperSensors_getHeadingBlocked();
+      heading=SuperSensors_getHeading();
       mismatch=super_distance[0]-super_distance[1];
       i++;
   }

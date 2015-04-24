@@ -101,8 +101,6 @@ void controlFans(){
 		fanOn = true;
 	}
 	else{
-		motor[FanL] = 0;
-		motor[FanR] = 0;
 		fanOn = false;
 	}
 }
@@ -461,6 +459,9 @@ task main()
 		if(fanOn)
 		{
 			rampFansPower();
+		}
+		else{
+			rampDownFansPower();
 		}
 		controlFlappers();
 		nitroCheck();
