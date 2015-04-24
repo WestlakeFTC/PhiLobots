@@ -8,8 +8,8 @@
 
 
 #define LIFT_BOTTOM_HEIGHT  18*2.54
-#define LIFT_60CM_HEIGHT 58
-#define LIFT_90CM_HEIGHT 88
+#define LIFT_60CM_HEIGHT 63
+#define LIFT_90CM_HEIGHT 89
 #define LIFT_TOP_HEIGHT    115
 
 #define LIFT_RATIO		(2* PI*2.54)
@@ -50,7 +50,7 @@
 #define FAUCET_INITIAL	7
 #define FAUCET_DEPLOYED	175
 
-#define PIN_OPEN 163
+#define PIN_OPEN 170
 #define PIN_CLOSED 45
 
 #endif//_PHILO_DEFS_H_

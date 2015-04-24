@@ -38,7 +38,29 @@ void pinClosed(){
 	servo[spout]=PIN_CLOSED;
 	sleep(500);
 }
+void rampFansPower(){
+		static int power = 70;
+		static int powerAvg = 0;
+		static bool ramping = true;
+		writeDebugStreamLine("fan pressed");
+	  static int power_ramp_step = 10; //10% power increase
+	  static int power_fan_ramp_up_interval = 100;
+	  static unsigned long ramping_tick=nSysTime;
+		if( ramping && powerAvg>= power )
+			{//done with ramping up power
+				ramping = false;
+				return;
+			}
 
+			if( ramping && ramping_tick<=nSysTime )
+		{
+				ramping_tick += power_fan_ramp_up_interval;
+				powerAvg += power_ramp_step;
+		}
+		motor[FanL] = -powerAvg;
+		motor[FanR] = powerAvg;
+
+}
 void fansOn(unsigned long time)
 {
 	unsigned long targetTime = nSysTime + 500;

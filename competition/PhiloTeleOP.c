@@ -90,23 +90,20 @@ void controlLift( int rawJoy){
 	moveLift(cm);
 }
 
+static bool fanOn = false;
 void controlFans(){
 
 	if(!BouncyBtn_checkAndClear(fanBtn)){
 		return;
 	}
 	writeDebugStreamLine("fan pressed");
-
-	static bool wasOnLastTime = false;
-	if(!wasOnLastTime){
-		motor[FanL] = -100;
-		motor[FanR] = 100;
-		wasOnLastTime = true;
+	if(!fanOn){
+		fanOn = true;
 	}
 	else{
 		motor[FanL] = 0;
 		motor[FanR] = 0;
-		wasOnLastTime = false;
+		fanOn = false;
 	}
 }
 
@@ -296,7 +293,7 @@ void initializeRobot()
 
 
 	goalGrabberDown(); 	//keep goal
-	faucetDeployed();
+  faucetDeployed();
 	servo[roller] = 126;
 	servo[roller2] = 127;
 	motor[Flapper]=0;
@@ -461,6 +458,10 @@ task main()
 
 		controlDrive(rawLeftJoy, rawRightJoy);
 		controlFans();
+		if(fanOn)
+		{
+			rampFansPower();
+		}
 		controlFlappers();
 		nitroCheck();
 		hingeFaucetOn();
