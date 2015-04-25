@@ -70,7 +70,7 @@ task main()
 	faucetDeployed();
 	sleep(1000);
 	servo[foldRoller] = ROLLER_FOLDER_UP;
-  liftGoUp(LIFT_90CM_HEIGHT);
+  liftGoUp(LIFT_60CM_HEIGHT);
   sleep(10000);
 
 }
