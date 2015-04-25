@@ -39,7 +39,7 @@ void pinClosed(){
 	sleep(500);
 }
 int last_fan_power=0;
-void rampFansPower(){
+bool rampFansPower(){
 		static int power = 100;
 		static int powerAvg = 0;
 		static bool ramping = true;
@@ -50,7 +50,7 @@ void rampFansPower(){
 		if( ramping && powerAvg>= power )
 			{//done with ramping up power
 				ramping = false;
-				return;
+				return false;
 			}
 
 			if( ramping && ramping_tick<=nSysTime )
@@ -61,9 +61,9 @@ void rampFansPower(){
 		motor[FanL] = -powerAvg;
 		motor[FanR] = powerAvg;
 		last_fan_power= powerAvg;
-
+		return true;
 }
-void rampDownFansPower(){
+bool rampDownFansPower(){
 		static int powerAvg = last_fan_power;
 		static bool ramping = true;
 		writeDebugStreamLine("fan pressed");
@@ -73,7 +73,7 @@ void rampDownFansPower(){
 		if( ramping && powerAvg<= 0 )
 			{//done with ramping up power
 				ramping = false;
-				return;
+				return false;
 			}
 
 			if( ramping && ramping_tick<=nSysTime )
@@ -83,6 +83,7 @@ void rampDownFansPower(){
 		}
 		motor[FanL] = -powerAvg;
 		motor[FanR] = powerAvg;
+		return true;
 
 }
 void fansOn(unsigned long time)
@@ -95,13 +96,15 @@ void fansOn(unsigned long time)
 	}
 	motor[Flapper]=-100;
 	targetTime=nSysTime+time;
-	while(nSysTime < targetTime)
+	bool ramping=true;
+	while(nSysTime < targetTime && ramping)
 	{
-		rampFansPower();
+		ramping=rampFansPower();
 	}
-	int targetTimeone=nSysTime+5000;
-  while(nSysTime < targetTimeone){
-  	rampDownFansPower();
+	unsigned long targetTimeone=nSysTime+5000;
+	ramping=true;
+  while(nSysTime < targetTimeone && ramping){
+  	ramping=rampDownFansPower();
   }
  	motor[Flapper]=0;
 	sleep(100);
